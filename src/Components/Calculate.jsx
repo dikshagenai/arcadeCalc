@@ -46,6 +46,13 @@ const Calculate = () => {
         // to avoid invalid url making issues
         if (!publicUrl.includes("https://www.cloudskillsboost.google/public_profiles/")) {
             showAlert("Please provide a valid Url.", "False")
+            setCalculateText("Calculate Points")
+            return
+        }
+        else if (publicUrl === '') {
+            showAlert("Please enter a valid url", "False")
+            setCalculateText("Calculate Points")
+            return
         }
         else {
             // interacting with the api
@@ -53,8 +60,7 @@ const Calculate = () => {
                 {
                     method: "POST",
                     headers: {
-                        "auth-token": localStorage.getItem('token'),
-                        "Content-Type": "application/json",
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify({ publicUrl })
                 })
@@ -81,7 +87,7 @@ const Calculate = () => {
     }
     return (
         <>
-            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-full mx-auto" style={{ "background-color": "white" }}>
+            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-full mx-auto" style={{ "backgroundColor": "white" }}>
                 <div className="text-center mb-2">
                     <h1 className="text-2xl font-bold text-gray-900 ">
                         <span className="text-blue-500">G</span>
