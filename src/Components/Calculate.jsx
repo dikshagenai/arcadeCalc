@@ -58,7 +58,7 @@ const Calculate = () => {
         }
         else {
             // interacting with the api
-            const BASE_URL = process.env.BASE_URL || 'http://localhost:5000'
+            const BASE_URL = process.env.BASE_URL || 'https://arcadecalc.onrender.com'
             var response = await fetch(`${BASE_URL}/calculate`,
                 {
                     method: "POST",
