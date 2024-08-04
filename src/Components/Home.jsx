@@ -14,7 +14,7 @@ const Home = () => {
 
                 <div className='mb-2'>
                     <strong>Arcade Cloud Digital Leader Challenge (1 to 5 August): </strong>
-                    <a className='text-blue-500' href="https://github.com/CloudHustlers/Digital_Leader/tree/main" target="_blank" rel="noopener noreferrer">Solution here</a>
+                    <a className='text-blue-500' href="https://github.com/CloudHustlers/Digital_Leader/tree/main" target="_blank" rel="noreferrer">Solution here</a>
                 </div>
 
                 <div className="mb-2">

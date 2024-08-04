@@ -23,7 +23,7 @@ const Contact = () => {
                 </strong>
                 <hr className='my-1 w-2/6' />
                 <p className='mb-2'>
-                    Explore our more projects from <a className='text-blue-600 underline' href="https://github.com/deepanshu-prajapati01?tab=repositories" target="_blank" rel="noopener noreferrer">here.</a>
+                    Explore our more projects from <a className='text-blue-600 underline' href="https://github.com/deepanshu-prajapati01?tab=repositories" target="_blank" rel="noreferrer">here.</a>
                 </p>
 
 
