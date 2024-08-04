@@ -56,8 +56,8 @@ const Calculate = () => {
         }
         else {
             // interacting with the api
-            const BASE_URL = process.env.BASE_URL || 'http://localhost'
-            const PORT = process.env.PORT || 5000
+            const BASE_URL = process.env.BASE_URL
+            const PORT = process.env.PORT
             var response = await fetch(`${BASE_URL}:${PORT}/calculate`,
                 {
                     method: "POST",
