@@ -56,7 +56,7 @@ const Calculate = () => {
         }
         else {
             // interacting with the api
-            var response = await fetch(`http://localhost:5000/calculate`,
+            var response = await fetch(`${process.env.BASE_URL}:${process.env.PORT}/calculate`,
                 {
                     method: "POST",
                     headers: {
