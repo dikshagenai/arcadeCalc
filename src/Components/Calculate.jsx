@@ -42,6 +42,7 @@ const Calculate = () => {
     // ------------------------- Function to calculate the points
     const calculatePoints = async () => {
         setCalculateText("Calculating Points...")
+        let tempMessage = '';
 
         // to avoid invalid url making issues
         if (!publicUrl.includes("https://www.cloudskillsboost.google/public_profiles/")) {
@@ -73,14 +74,14 @@ const Calculate = () => {
 
         if (response.status === 200) {
             console.log(result)
-            var tempMessage = result['result']['data']['totalPoints']
+            tempMessage = result['result']['data']['totalPoints']
             showAlert(`Total Points: ${tempMessage}`, "True")
             setDetailedOutput(true); // code works fine and we can show detailed json
         }
 
         else {
             // FOR ANY CASE CODE SHOWS ERROR SO, MAKING IT TO SHOW THE ERROR MESSAGE.
-            var tempMessage = result['result']['message']
+            tempMessage = result['result']['message']
             showAlert(tempMessage, "False")
 
         }
