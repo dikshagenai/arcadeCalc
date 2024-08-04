@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Alert from "./Alert"
+require('dotenv').config();
 
 const Calculate = () => {
 
