@@ -4,15 +4,15 @@ const Navbar = () => {
     return (
         <>
 
-            <nav className='bg-blue-500 p-3 text-white flex justify-between mb-5'>
-                <span className='text-2xl font-bold'>Arcade Calc</span>
-                <ul className='flex text-xl mt-1'>
-                    <li className='mr-9 cursor-pointer hover:underline'><Link to="/">Home</Link></li>
-                    <li className='mr-9 cursor-pointer hover:underline'><Link to="/calculate">Calculate Points</Link></li>
-                    <li className='mr-9 cursor-pointer hover:underline'><Link to="/contact">Contact Me</Link></li>
-                    <li></li>
+            <nav className='bg-blue-500 p-2 sm:p-3 text-white flex justify-center w-screen'>
+                <span className='font-bold text-xl md:text-2xl lg:text-3xl'><Link to="/">Arcade Calc</Link></span></nav>
+            <nav className='bg-blue-500 p-2 sm:p-3 text-white flex justify-center mb-5'>
+                <ul className='flex w-auto space-x-6 sm:text-sm md:text-xl md:space-x-24 lg:space-x-36'>
+                    <li className='text-wrap text-center cursor-pointer hover:underline'><Link to="/">Home</Link></li>
+                    <li className='text-wrap text-center cursor-pointer hover:underline'><Link to="/calculate">Calculate Points</Link></li>
+                    <li className='text-wrap text-center cursor-pointer hover:underline'><Link to="/contact">Contact Me</Link></li>
                 </ul>
-            </nav>
+            </nav >
 
         </>
     )
