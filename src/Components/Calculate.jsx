@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Alert from "./Alert"
-require('dotenv').config();
 
 const Calculate = () => {
 
@@ -28,7 +27,8 @@ const Calculate = () => {
     // function to change the value in the text box too 
     const onChange = (e) => {
         setPublicUrl(e.target.value);
-        showAlert("", "False")
+        showAlert("‎", "False");
+        setDetailedOutput(false)
     }
 
     // ------------------------------- THis function can open json in new tab 
@@ -42,6 +42,12 @@ const Calculate = () => {
 
     // ------------------------- Function to calculate the points
     const calculatePoints = async () => {
+
+        // below 2 lines to make sure about not showing more information without response 
+        showAlert("‎", "False");
+        setDetailedOutput(false)
+
+        // function starts here!
         setCalculateText("Calculating Points...")
         let tempMessage = '';
 
@@ -58,15 +64,23 @@ const Calculate = () => {
         }
         else {
             // interacting with the api
-            const BASE_URL = process.env.BASE_URL || 'https://arcadecalc.onrender.com'
-            var response = await fetch(`${BASE_URL}/calculate`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ publicUrl })
-                })
+            try {
+                // to avoid any kind of error
+                const BASE_URL = 'https://arcadecalc.onrender.com'
+                var response = await fetch(`${BASE_URL}/calculate`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ publicUrl })
+                    })
+            } catch (error) {
+                showAlert("Internal Server Error! Please try again later.", "False")
+                setCalculateText("Calculate Points")
+                return
+            }
+
         }
 
         let result = await response.json()
@@ -112,7 +126,7 @@ const Calculate = () => {
                 <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</button>
 
                 <Alert success={alert["success"]} alertText={alert["alertText"]} />
-                <p className="mt-2 text-gray-500 text-xs">Last Updated: 3/8/24 5:00 PM</p>
+                <p className="mt-2 text-gray-500 text-xs">Last Updated: 5/8/24 2:23 PM</p>
 
 
             </div>

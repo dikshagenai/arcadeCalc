@@ -4,6 +4,9 @@ const Contact = () => {
     const [body, setBody] = useState('')
 
     const sendEmail = () => {
+        if (body === ''){
+            return
+        }
         var recipient = 'deepanshubawaliya@gmail.com'
         var mailtoLink = "mailto:" + recipient + "?subject=" + encodeURIComponent("Email from Arcade Calc") + "&body=" + encodeURIComponent(body);
         window.location.href = mailtoLink;
