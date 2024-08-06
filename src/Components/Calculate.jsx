@@ -26,6 +26,9 @@ const Calculate = () => {
 
     // function to change the value in the text box too 
     const onChange = (e) => {
+        if (calculateText === 'Calculating Points...') {
+            return
+        }
         setPublicUrl(e.target.value);
         showAlert("‎", "False");
         setDetailedOutput(false)
@@ -104,7 +107,7 @@ const Calculate = () => {
     }
     return (
         <>
-            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-full mx-auto" style={{ "backgroundColor": "white" }}>
+            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-full mx-auto bg-black hover:ring-pink-400 hover:ring-2 hover:ring-inset">
                 <div className="text-center mb-2">
                     <h1 className="text-2xl font-bold text-gray-900 ">
                         <span className="text-blue-500">G</span>
@@ -113,20 +116,20 @@ const Calculate = () => {
                         <span className="text-blue-500">g</span>
                         <span className="text-green-500">l</span>
                         <span className="text-red-500">e</span>
-                        <span className="text-gray-400 ml-2">Cloud</span>
+                        <span className="text-white ml-2">Cloud</span>
                     </h1>
-                    <h2 className="text-sm font-semibold text-gray-600">Facilitator '24</h2>
-                    <h3 className="mb-1 text-xl text-black mt-2 font-bold">Points Calculator</h3></div>
+                    <h2 className="text-sm font-semibold text-white">Facilitator '24</h2>
+                    <h3 className="mb-1 text-xl text-yellow-500 mt-2 font-bold press-start-2p-regular">Points Calculator</h3></div>
+
+                {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
+                <input className={`border p-2 rounded w-full my-2 hover:${calculateText === 'Calculate Points' ? '' : 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange}></input>
+                <button className={`bg-blue-500 hover:bg-blue-400 hover:translate-y-px text-white px-4 py-2 rounded w-full hover:${calculateText === 'Calculate Points' ? '' : 'cursor-no-drop'}`} onClick={calculatePoints}>{calculateText}</button>
 
 
-                <input className="border p-2 rounded w-full mb-4" placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange}></input>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded w-full" onClick={calculatePoints}>{calculateText}</button>
-
-
-                <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</button>
+                <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400 hover:translate-y-px ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</button>
 
                 <Alert success={alert["success"]} alertText={alert["alertText"]} />
-                <p className="mt-2 text-gray-500 text-xs">Last Updated: 5/8/24 2:23 PM</p>
+                <p className="mt-2 text-gray-500 text-xs">Last Updated: 6/8/24 10:55 AM</p>
 
 
             </div>

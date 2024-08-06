@@ -5,9 +5,10 @@ import {
   Route
 } from "react-router-dom";
 
-import Home from "./Components/Home"
+import Updates from "./Components/Updates"
 import Calculate from './Components/Calculate';
 import Contact from './Components/Contact';
+import Home from './Components/Home'
 
 
 
@@ -27,6 +28,13 @@ function App() {
           <Route exact path="/" element={
             <>
               <Home />
+            </>
+          } />
+
+
+          <Route exact path="/updates" element={
+            <>
+              <Updates />
             </>
           } />
 

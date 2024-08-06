@@ -1,18 +1,34 @@
 import React, { useState } from 'react'
+import Alert from './Alert'
 const Contact = () => {
 
     const [body, setBody] = useState('')
+    // -------------------------------- FOR THE OUTPUT/ALERT COMPONENT
+    const [alert, setAlert] = useState({
+        "success": "False",
+        "alertText": "‎"
+    })
+
+    const showAlert = (message, success) => {
+        setAlert({
+            "success": success,
+            "alertText": message
+        })
+    }
 
     const sendEmail = () => {
-        if (body === ''){
+        if (body === '') {
+            showAlert("Please write something to proceed.", "False")
             return
         }
         var recipient = 'deepanshubawaliya@gmail.com'
         var mailtoLink = "mailto:" + recipient + "?subject=" + encodeURIComponent("Email from Arcade Calc") + "&body=" + encodeURIComponent(body);
+        showAlert("Taking you to Gmail.", "True")
         window.location.href = mailtoLink;
     }
 
     const onChange = (e) => {
+        showAlert("‎", "False")
         setBody(e.target.value)
 
     }
@@ -20,19 +36,21 @@ const Contact = () => {
 
     return (
         <>
-            <div className="p-4 rounded border border-gray-200 max-w-md w-full mx-auto" style={{ "background-color": "white" }}>
-                <strong className='text-xl mt-3'>
+            <div className="p-4 rounded border border-gray-200 max-w-md w-full mx-auto bg-black">
+                <strong className='text-xl mt-3 text-white'>
                     Get In Touch
                 </strong>
                 <hr className='my-1 w-2/6' />
-                <p className='mb-2'>
+                <p className='mb-2 text-white'>
                     Explore our more projects from <a className='text-blue-600 underline' href="https://github.com/deepanshu-prajapati01?tab=repositories" target="_blank" rel="noreferrer">here.</a>
                 </p>
 
 
                 <textarea className="border p-2 rounded w-full my-2" name="body" id="query" rows={5} placeholder='What can we help you?*' value={body} onChange={onChange} />
 
-                <button className="bg-blue-500 text-white px-4 py-2 rounded w-full" onClick={sendEmail}>Send</button>
+                <button className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-400 hover:translate-y-px" onClick={sendEmail}>Send</button>
+
+                <Alert success={alert["success"]} alertText={alert["alertText"]} />
             </div>
             <div className='flex p-4 max-w-md w-full mx-auto justify-between'>
                 <div>
