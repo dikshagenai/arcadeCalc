@@ -4,7 +4,7 @@ import Footer from './Footer'
 const Home = () => {
     return (
         <>
-            <div className="m-auto w-5/6 py-2 px-6  bg mb-5 shadow-lg">
+            <div className="m-auto mb-5 px-6 sm:w-5/6 sm:py-2 sm:shadow-lg">
                 <p className='py-2'>
                     Arcade Calc is a platform to provide latest updates regarding the <span className='font-bold'>Google Cloud Arcade Program.</span>
                 </p>
@@ -16,8 +16,8 @@ const Home = () => {
                     The Arcade with Google Cloud is a gamified learning experience designed to boost your cloud skills. Each month, it features two games: an introductory “Level 1” and a more advanced “Level 2.” By completing hands-on labs, you earn digital badges that award points. These points can be redeemed for Google Cloud swag like backpacks, t-shirts, and mugs, or even charitable donations. The games cover various topics related to Google Cloud products and technology, allowing you to showcase your skills. Additionally, there are Trivia Challenges with associated trivia questions. <Link target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' to="https://go.cloudskillsboost.google/arcade">No quarters needed—participate for free!</Link>
                 </p>
 
-                <div className='my-3 py-3 shadow-lg bg-gray-400 rounded-md'>
-                    <strong className='flex mb-3 justify-center text-sm sm:text-lg md:text-2xl'>Previous Arcade Prizes</strong>
+                <div className='my-3 py-3 bg-gray-400 rounded-md'>
+                    <strong className='flex mb-3 justify-center underline text-lg sm:text-xl md:text-2xl'>Previous Arcade Prizes</strong>
 
 
                     <div className="flex justify-center flex-wrap  py-3">

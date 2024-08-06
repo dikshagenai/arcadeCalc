@@ -4,7 +4,7 @@ import Footer from './Footer'
 const Updates = () => {
     return (
         <>
-            <div className="m-auto w-5/6 py-2 px-6  bg mb-5 shadow-lg">
+            <div className="m-auto px-6 mb-5 sm:w-5/6 sm:py-2 sm:shadow-lg">
 
                 <div className='flex space-x-3 mb-4 justify-center sm:mb-8'>
                     <strong className='text-2xl underline'> Important Updates:  </strong>
