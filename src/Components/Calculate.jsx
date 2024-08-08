@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Alert from "./Alert"
+import LastUpdated from './LastUpdated'
 
 const Calculate = () => {
 
@@ -129,7 +130,7 @@ const Calculate = () => {
                 <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400 hover:translate-y-px ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</button>
 
                 <Alert success={alert["success"]} alertText={alert["alertText"]} />
-                <p className="mt-2 text-gray-500 text-xs">Last Updated: 6/8/24 10:55 AM</p>
+                <LastUpdated />
 
 
             </div>
