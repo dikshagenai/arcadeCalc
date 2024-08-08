@@ -14,10 +14,10 @@ class Arcade {
         this.skillBadgesFile = "SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
         this.UnknownBadgesFile = "UnknownBadgesFile.txt"; // this will contain all the badges that aren't available 
         this.SpecialBadges = "SpecialBadges.json";
+        this.badgeType = 'Unknown';
 
 
-
-        // The course which gives 5 points.
+        //^ The course which gives 5 points.
         this.courseBadge = [
             "Digital Transformation with Google Cloud",
             "Exploring Data Transformation with Google Cloud",
@@ -29,6 +29,7 @@ class Arcade {
         this.coursePoints = 5;
     }
 
+    //^ ------------------------------------------- CODE TO EXTRACT ALL SKILL BADGES INTO A FILE 
     async extractSkillBadges() {
         console.log("Extracting all the names of skill badges");
         try {
@@ -59,6 +60,7 @@ class Arcade {
 
     }
 
+    //^ ------------------------------------------- CODE TO CONVERT MONTH STRING TO MONTH INTEGER
     monthInt(monthStr) {
         const months = {
             "Jan": 1,
@@ -77,7 +79,7 @@ class Arcade {
         return months[monthStr] || null; // Handle invalid month strings
     }
 
-
+    //^------------------------------------------- CODE TO SCRAP THE PAGE
     async scrapPage(publicUrl) {
         const badgesDict = {}; // this will be as a element in `badgesList`, and it will have information about the badge.
         const badgesList = []; // This will have a collection of badges   
@@ -95,15 +97,16 @@ class Arcade {
 
         try {
 
-            // This block to check whether user send the real site
+            //^ This block to check whether user send the real site
             if (!publicUrl.includes("https://www.cloudskillsboost.google/public_profiles/")) {
                 message = "Please provide a valid url"
                 success = "False"
                 statusCode = 400
                 return { data, success, message, statusCode };
             }
-            
 
+
+            //^ ----------------------CODE to extract the DOM, if unable return error----------------------
             try {
                 console.log("Extracting the DOM...");
                 var response = await axios.get(publicUrl);
@@ -113,13 +116,17 @@ class Arcade {
                 success = "False"
                 statusCode = 503 // Service Unavailable.
                 return { data, success, message, statusCode };
-
             }
+            //^ -----------------------------------------------------------------------------------------------
 
+
+            // extract the sub part of the main DOM
             const $ = cheerio.load(response.data);
             const badgesArea = $('main').first().html();
             const soup2 = cheerio.load(badgesArea); // create soup2 for sub DOM (poor code logic)    
 
+
+            //^ ---------------------------------Checking for the skillBadges file if not extract it...-------------
             let skillBadges;
             while (true) {
                 try {
@@ -133,7 +140,10 @@ class Arcade {
                     }
                 }
             }
+            //^ --------------------------------------------------------------------------------------------------------
 
+
+            //^ --------------------------------Code to checkOut for the Special Badges...
             let specialBadges = null;
             try {
                 if (fs.existsSync(this.SpecialBadges)) {
@@ -147,22 +157,29 @@ class Arcade {
                 statusCode = 500 // internal server error
                 message = "Error while reading the specialBadges file!"
                 return { data, success, message, statusCode };
-
             }
+            //^ -------------------------------------------------------------------------------
 
+
+
+
+
+            //^ -----------------------Running a loop for all the `profile-badge`-----------------------
             soup2('.profile-badge').each((i, badge) => {
                 const badgesDict = {};
+                this.badgeType = 'Unknown' // making the badgeType unknown
                 const soup3 = cheerio.load(badge);
+
+                //  parsing badge details -> Name, Claimed On
                 const badgeLink = soup3('a').first().attr('href').trim();
                 let badgeName = soup3('img').first().attr('alt').trim();
                 badgeName = badgeName.split(" ").slice(2).join(" ");
-
                 let badgeEarnedOn = soup3('span').last().text().trim().split(" ");
                 const month = badgeEarnedOn[1];
                 const monthInInteger = this.monthInt(month);
                 let date, year;
 
-
+                // parsing date and year
                 if (badgeEarnedOn[2] === "") {
                     date = parseInt(badgeEarnedOn[3].split(",")[0]);
                     year = parseInt(badgeEarnedOn[4]);
@@ -171,35 +188,55 @@ class Arcade {
                     year = parseInt(badgeEarnedOn[3]);
                 }
 
-                // ----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
+                //^ ----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
+
+                // ! Skill Badge
+
                 if (skillBadges.includes(badgeName)) {
                     if (year === 2024 && monthInInteger === 7 && (date >= 22 || date <= 31)) {
                         point = 1;  // monsoon event have 1 skill badge = 1 arcade point
                         data["totalPoints"] += point;
                         console.log("Skill Badge (Monsoon Event) : " + point + " => " + data["totalPoints"]);
+                        this.badgeType = 'Skill Badge (Monsoon Event)' // skill badge claimed during monsoon event!
+
                     } else if (year === 2024 && monthInInteger > 7) {
                         point = 0.5; // normally 1 skill badge = 0.5 arcade point
                         data["totalPoints"] += point;
                         console.log("Skill Badge : " + point + " => " + data["totalPoints"]);
+                        this.badgeType = 'Skill Badge'
                     }
-                } else if (this.courseBadge.includes(badgeName)) {
+                }
+
+                // ! Arcade Cloud Digital Leader Challenge
+
+                else if (this.courseBadge.includes(badgeName)) {
                     if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
                         this.coursePoints -= 1;
                         if (this.coursePoints === 0) {
                             point = 5; // due to the fact of providing free 5 arcade points after successful completion of the course.
                             data["totalPoints"] += point;
-                            badgeName = "Special Course giving 5 points"; // Renaming it for better knowledge
+                            badgeName = "Arcade Cloud Digital Leader Challenge"; // Renaming it for better knowledge
+                            this.badgeType = 'Arcade Cloud Digital Leader Challenge worth 5 Arcade points' // if completed within time period...
+
                         } else {
                             point = 0;
                             data["totalPoints"] += point;
+                            this.badgeType = 'Introductory Badge'
                         }
                     }
-                } else {
+                }
+
+                // ! Special Badges - (Trivia games and Arcade Badges)
+
+                else {
                     if (specialBadges && badgeName in specialBadges) {
-                        point = specialBadges[badgeName];
+                        this.badgeType = specialBadges[badgeName][0] // Badge Type -- `Arcade Badge` or `Trivia Badge`
+                        point = specialBadges[badgeName][1] // Point is at 1 index number
                         data["totalPoints"] += point;
-                        console.log("Arcade Badge : " + point + " => " + data["totalPoints"]);
-                    } else {
+                        console.log(this.badgeType + " : " + point + " => " + data["totalPoints"]);
+                    }
+
+                    else {
                         console.log(`NOT FOUND: '${badgeName}'`);
                         try {
                             fs.appendFileSync("NOTFOUND.txt", `${badgeName}\n`);
@@ -212,6 +249,7 @@ class Arcade {
                         }
                         point = 0;
                         data["totalPoints"] += point; // point not added
+                        this.badgeType = 'Unknown';
                     }
                 }
 
@@ -220,6 +258,7 @@ class Arcade {
                 badgesDict["Badge link"] = badgeLink;
                 badgesDict["Earned On"] = `${date} ${month} ${year}`;
                 badgesDict["Arcade Point"] = point;
+                badgesDict["Badge Type"] = this.badgeType;
                 badgesList.push(badgesDict);
             });
 

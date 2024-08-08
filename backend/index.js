@@ -28,7 +28,7 @@ app.post('/calculate', async (req, res) => {
 });
 
 const url = `https://arcadecalc.onrender.com`; // Replace with your Render URL
-const interval = 60000; // Interval in milliseconds (1 minute)
+const interval = 300000; // Interval in milliseconds (5 minutes)
 
 //Reloader Function
 function reloadWebsite() {
