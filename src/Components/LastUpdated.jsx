@@ -5,7 +5,7 @@ const LastUpdated = () => {
     return (
 
         <p className="mt-2 text-gray-500 text-xs">
-            This site was last updated on: {deployTime}
+            Last Updated: {deployTime}
         </p>
 
     );
