@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "prebuild": "node set-deploy-time.js",
-    "build": "set \"REACT_APP_DEPLOY_TIME=%DATE% %TIME%\" && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
