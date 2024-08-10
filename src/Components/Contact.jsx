@@ -36,7 +36,7 @@ const Contact = () => {
 
     return (
         <>
-            <div className="p-4 rounded border border-gray-200 max-w-md w-full mx-auto bg-black">
+            <div className="p-4 rounded border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black">
                 <strong className='text-xl mt-3 text-white'>
                     Get In Touch
                 </strong>
@@ -52,7 +52,7 @@ const Contact = () => {
 
                 <Alert success={alert["success"]} alertText={alert["alertText"]} />
             </div>
-            <div className='flex p-4 max-w-md w-full mx-auto justify-between'>
+            <div className='flex p-4 max-w-md w-5/6 sm:w-full mx-auto justify-between'>
                 <div>
                     <strong>Deepanshu Prajapati</strong>
                     <p>Baiyanpur, Sonipat</p>

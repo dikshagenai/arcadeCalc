@@ -12,7 +12,7 @@ class Arcade {
 
     constructor() {
         this.skillBadgesFile = "SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
-        this.UnknownBadgesFile = "UnknownBadgesFile.txt"; // this will contain all the badges that aren't available 
+        this.UnknownBadgesFile = "UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
         this.SpecialBadges = "SpecialBadges.json";
         this.badgeType = 'Unknown';
 
@@ -89,6 +89,16 @@ class Arcade {
         data["badges"] = badgesList; // this key of have 
         data["last checked"] = new Date().toISOString().slice(0, 19).replace('T', ' '); // This key will have 
 
+        // ! For counting the number of trivia, games and skill badges
+        // ! below one contains all data
+        const ArcadeBadgesStatus = {
+            "Trivia Badges": 0,
+            "Game Badges": 0,
+            "Skill Badges": 0,
+            "Facilitator BONUS": 0
+        }
+        data["FacilitatorStatus"] = ArcadeBadgesStatus; // & adding data to the main JSON output...
+
         // Giving out with the return value if any error occur 
 
         var success = "None"; // About successful
@@ -112,7 +122,7 @@ class Arcade {
                 var response = await axios.get(publicUrl);
                 console.log("DOM extracted successfully!");
             } catch (error) {
-                message = "Error in extracting the DOM, Please check your internet connection."
+                message = "Error in extracting the DOM, Please contact the administrator to fix."
                 success = "False"
                 statusCode = 503 // Service Unavailable.
                 return { data, success, message, statusCode };
@@ -199,15 +209,24 @@ class Arcade {
                         console.log("Skill Badge (Monsoon Event) : " + point + " => " + data["totalPoints"]);
                         this.badgeType = 'Skill Badge (Monsoon Event)' // skill badge claimed during monsoon event!
 
+                        // * This will only count for arcade facilitator program... 
+                        ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
+
                     } else if (year === 2024 && monthInInteger > 7) {
                         point = 0.5; // normally 1 skill badge = 0.5 arcade point
                         data["totalPoints"] += point;
                         console.log("Skill Badge : " + point + " => " + data["totalPoints"]);
                         this.badgeType = 'Skill Badge'
+
+                        // * This will only count for arcade facilitator program...
+                        if (monthInInteger <= 9) {
+                            ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
+                        }
                     }
                 }
 
                 // ! Arcade Cloud Digital Leader Challenge
+                // & No skill badge or game/trivia badge will be incremented...
 
                 else if (this.courseBadge.includes(badgeName)) {
                     if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
@@ -234,6 +253,16 @@ class Arcade {
                         point = specialBadges[badgeName][1] // Point is at 1 index number
                         data["totalPoints"] += point;
                         console.log(this.badgeType + " : " + point + " => " + data["totalPoints"]);
+
+                        // & Updating badges count for games and trivia badges...
+                        // * Also make sure not to add badges after the Arcade Facilitator Program...
+                        if (this.badgeType === "Arcade Badge" && monthInInteger <= 9) {
+                            ArcadeBadgesStatus['Game Badges'] += 1;   // & incremented
+                        }
+                        // * Also make sure not to add badges after the Arcade Facilitator Program...
+                        else if (this.badgeType === "Trivia Badge" && monthInInteger <= 9) {
+                            ArcadeBadgesStatus["Trivia Badges"] += 1; // & incremented...
+                        }
                     }
 
                     else {
@@ -265,6 +294,37 @@ class Arcade {
             success = "True"
             message = "Result Fetched Successfully!"
             statusCode = 200
+
+
+            // ! CODE TO MAKE POINT SYSTEM FOR ARCADE FACILITATOR
+            // * Ultimate Milestone
+            if (ArcadeBadgesStatus["Game Badges"] >= 6 && ArcadeBadgesStatus["Trivia Badges"] >= 8 && ArcadeBadgesStatus["Skill Badges"] >= 42) {
+                ArcadeBadgesStatus["Facilitator BONUS"] += 60
+            }
+
+            // * Milestone 3
+            else if (ArcadeBadgesStatus["Game Badges"] >= 5 && ArcadeBadgesStatus["Trivia Badges"] >= 6 && ArcadeBadgesStatus["Skill Badges"] >= 28) {
+                ArcadeBadgesStatus["Facilitator BONUS"] += 40
+            }
+
+            // * Milestone 2
+            else if (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 18) {
+                ArcadeBadgesStatus["Facilitator BONUS"] += 25
+            }
+
+            // * Milestone 1
+            else if (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 8) {
+                ArcadeBadgesStatus["Facilitator BONUS"] += 10
+            }
+
+            // * Nothing
+            else {
+                ArcadeBadgesStatus["Facilitator BONUS"] += 0;
+            }
+
+            // & this segment returns the total points (if user registered under any facilitator also...)
+            data["totalPointsFacilitator"] = ArcadeBadgesStatus["Facilitator BONUS"] + data["totalPoints"];
+
             return { data, success, message, statusCode }; // return data
 
         } catch (err) {

@@ -70,6 +70,7 @@ const Calculate = () => {
             // interacting with the api
             try {
                 // to avoid any kind of error
+                // const BASE_URL = 'http://localhost:5000'
                 const BASE_URL = 'https://arcadecalc.onrender.com'
                 var response = await fetch(`${BASE_URL}/calculate`,
                     {
@@ -80,7 +81,7 @@ const Calculate = () => {
                         body: JSON.stringify({ publicUrl })
                     })
             } catch (error) {
-                showAlert("Internal Server Error! Please try again later.", "False")
+                showAlert("Please check your internet connection.", "False")
                 setCalculateText("Calculate Points")
                 return
             }
@@ -108,7 +109,7 @@ const Calculate = () => {
     }
     return (
         <>
-            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-full mx-auto bg-black hover:ring-pink-400 hover:ring-2 hover:ring-inset">
+            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:ring-pink-400 hover:ring-2 hover:ring-inset">
                 <div className="text-center mb-2">
                     <h1 className="text-2xl font-bold text-gray-900 ">
                         <span className="text-blue-500">G</span>
@@ -123,7 +124,8 @@ const Calculate = () => {
                     <h3 className="mb-1 text-xl text-yellow-500 mt-2 font-bold press-start-2p-regular">Points Calculator</h3></div>
 
                 {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
-                <input className={`border p-2 rounded w-full my-2 hover:${calculateText === 'Calculate Points' ? '' : 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange}></input>
+                <input className={`border p-2 rounded w-full my-2 hover:${calculateText === 'Calculate Points' ? '' : 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} />
+
                 <button className={`bg-blue-500 hover:bg-blue-400 hover:translate-y-px text-white px-4 py-2 rounded w-full hover:${calculateText === 'Calculate Points' ? '' : 'cursor-no-drop'}`} onClick={calculatePoints}>{calculateText}</button>
 
 

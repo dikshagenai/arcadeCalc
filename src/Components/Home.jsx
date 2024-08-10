@@ -22,22 +22,22 @@ const Home = () => {
 
                     <div className="flex justify-center flex-wrap  py-3">
                         <div className="w-full md:w-1/2 lg:w-1/4 mb-4 md:mb-2 lg:mr-4 text-center">
-                            <img src="https://i.ibb.co/NjNhZcd/hgsdjbfnnkjdfnjkndfjkn.png" alt="Tier 1" />
+                            <img src="https://i.ibb.co/NjNhZcd/hgsdjbfnnkjdfnjkndfjkn.png" width={2000} height={1800} alt="Tier 1" />
                             <p className="text-xl font-bold">Standard Tier</p>
                             <p className="text-xl">(10 Points)</p>
                         </div>
                         <div className="w-full md:w-1/2 lg:w-1/4 mb-4 md:mb-2 lg:mr-4 text-center">
-                            <img src="https://i.ibb.co/RT4X6hT/sdfnmjxbjsbchjbd.png" alt="Tier 2" />
+                            <img src="https://i.ibb.co/RT4X6hT/sdfnmjxbjsbchjbd.png" width={2000} height={1800} alt="Tier 2" />
                             <p className="text-xl font-bold">Advance Tier</p>
                             <p className="text-xl">(25 Points)</p>
                         </div>
                         <div className="w-full md:w-1/2 lg:w-1/4 mb-4 md:mb-2 lg:mr-4 text-center">
-                            <img src="https://i.ibb.co/qkyP1Z3/shgbdjnjnxc.png" alt="Tier 3" />
+                            <img src="https://i.ibb.co/qkyP1Z3/shgbdjnjnxc.png" width={2000} height={1800} alt="Tier 3" />
                             <p className="text-xl font-bold">Premium Tier</p>
                             <p className="text-xl">(40 Points)</p>
                         </div>
                         <div className="w-full md:w-1/2 lg:w-1/4 mb-4 md:mb-2 lg:mr-4 text-center">
-                            <img src="https://i.ibb.co/1Z3dmCC/ejrnkm.png" alt="Tier 4" />
+                            <img src="https://i.ibb.co/1Z3dmCC/ejrnkm.png" width={2000} height={1800} alt="Tier 4" />
                             <p className="text-xl font-bold">Premium plus Tier</p>
                             <p className="text-xl">(60 Points)</p>
                         </div>
