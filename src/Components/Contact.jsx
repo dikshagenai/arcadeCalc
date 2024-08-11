@@ -46,7 +46,7 @@ const Contact = () => {
                 </p>
 
 
-                <textarea className="border p-2 rounded w-full my-2" name="body" id="query" rows={5} placeholder='What can we help you?*' value={body} onChange={onChange} />
+                <textarea className="border p-2 rounded w-full my-2" name="body" id="query" rows={5} placeholder='How can we help you?*' value={body} onChange={onChange} />
 
                 <button className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-400 hover:translate-y-px" onClick={sendEmail}>Send</button>
 

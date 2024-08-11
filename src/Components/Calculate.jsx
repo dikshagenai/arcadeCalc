@@ -115,7 +115,7 @@ const Calculate = () => {
     }
     return (
         <>
-            <div className="mt-3 p-6 rounded shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:ring-pink-400 hover:ring-2 hover:ring-inset">
+            <div className="mt-3 p-3 sm:p-6 rounded shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:ring-pink-400 hover:ring-2 hover:ring-inset">
                 <div className="text-center mb-2">
                     <h1 className="text-2xl font-bold text-gray-900 ">
                         <span className="text-blue-500">G</span>
