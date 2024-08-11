@@ -7,13 +7,15 @@ const Calculate = () => {
     // -------------------------------- FOR THE OUTPUT/ALERT COMPONENT
     const [alert, setAlert] = useState({
         "success": "False",
-        "alertText": "‎"
+        "alertText": "‎",
+        "additionalMSG": '‎'
     })
 
-    const showAlert = (message, success) => {
+    const showAlert = (message, success, additionalMSG = '') => {
         setAlert({
             "success": success,
-            "alertText": message
+            "alertText": message,
+            "additionalMSG": additionalMSG
         })
     }
 
@@ -31,7 +33,7 @@ const Calculate = () => {
             return
         }
         setPublicUrl(e.target.value);
-        showAlert("‎", "False");
+        showAlert("‎", "False", "‎");
         setDetailedOutput(false)
     }
 
@@ -48,7 +50,7 @@ const Calculate = () => {
     const calculatePoints = async () => {
 
         // below 2 lines to make sure about not showing more information without response 
-        showAlert("‎", "False");
+        showAlert("‎", "False", "‎");
         setDetailedOutput(false)
 
         // function starts here!
@@ -93,9 +95,13 @@ const Calculate = () => {
 
 
         if (response.status === 200) {
-            console.log(result)
+            // console.log(result)
             tempMessage = result['result']['data']['totalPoints']
-            showAlert(`Total Points: ${tempMessage}`, "True")
+
+            let facilitatorPoints = result['result']['data']['totalPointsFacilitator'] // & for the Facilitator Points 
+            
+            showAlert(`Arcade Points: ${tempMessage}`, "True",
+                `Facilitator Points: ${facilitatorPoints}`)
             setDetailedOutput(true); // code works fine and we can show detailed json
         }
 
@@ -121,7 +127,8 @@ const Calculate = () => {
                         <span className="text-white ml-2">Cloud</span>
                     </h1>
                     <h2 className="text-sm font-semibold text-white">Facilitator '24</h2>
-                    <h3 className="mb-1 text-xl text-yellow-500 mt-2 font-bold press-start-2p-regular">Points Calculator</h3></div>
+                    <h3 className="mb-1 text-xl text-yellow-500 mt-2 font-bold press-start-2p-regular">Points Calculator</h3>
+                </div>
 
                 {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
                 <input className={`border p-2 rounded w-full my-2 hover:${calculateText === 'Calculate Points' ? '' : 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} />
@@ -131,9 +138,15 @@ const Calculate = () => {
 
                 <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400 hover:translate-y-px ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</button>
 
-                <Alert success={alert["success"]} alertText={alert["alertText"]} />
-                <LastUpdated />
+                <Alert success={alert["success"]} alertText={alert["alertText"]} additionalMSG={alert["additionalMSG"]} />
 
+                <div className="mb-2 text-white">
+                    <p>
+                        <strong>NOTE: </strong>
+                        <span>If you have joined under any Facilitator, then consider the <strong className='italic'>Facilitator Points</strong>; otherwise, consider the <strong className='italic'>Arcade Points</strong>.</span>
+                    </p>
+                </div>
+                <LastUpdated />
 
             </div>
         </>
