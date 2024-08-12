@@ -37,5 +37,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#3b82f6",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "logo": "./favicon_io/favicon.ico"
 }
