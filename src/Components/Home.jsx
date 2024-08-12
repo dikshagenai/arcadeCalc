@@ -10,9 +10,9 @@ const Home = () => {
                 </p>
 
                 <p className='pt-3 pb-2'>
-                    <strong className=''># What is Google Cloud Arcade Program?</strong>
+                    <strong className=''>What is Google Cloud Arcade Program?</strong>
                 </p>
-                <p>
+                <p className='indent-8 sm:indent-13'>
                     The Arcade with Google Cloud is a gamified learning experience designed to boost your cloud skills. Each month, it features two games: an introductory “Level 1” and a more advanced “Level 2.” By completing hands-on labs, you earn digital badges that award points. These points can be redeemed for Google Cloud swag like backpacks, t-shirts, and mugs, or even charitable donations. The games cover various topics related to Google Cloud products and technology, allowing you to showcase your skills. Additionally, there are Trivia Challenges with associated trivia questions. <Link target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' to="https://go.cloudskillsboost.google/arcade">No quarters needed—participate for free!</Link>
                 </p>
 
