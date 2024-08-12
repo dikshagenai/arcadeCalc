@@ -36,13 +36,13 @@ const Contact = () => {
 
     return (
         <>
-            <div className="p-3 sm:p-6 rounded border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black  hover:ring-yellow-500 hover:ring-4 hover:ring-inset">
+            <div className="p-3 sm:p-6 rounded border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black   hover:bg-gray-900 transition-all duration-300">
                 <strong className='text-xl mt-3 text-white'>
                     Get In Touch
                 </strong>
                 <hr className='my-1 w-2/6' />
                 <p className='mb-2 text-white'>
-                    Explore our more projects from <a className='text-blue-600 underline' href="https://github.com/deepanshu-prajapati01?tab=repositories" target="_blank" rel="noreferrer">here.</a>
+                    Explore our more projects from <a className='text-blue-600 underline ' href="https://github.com/deepanshu-prajapati01?tab=repositories" target="_blank" rel="noreferrer">here.</a>
                 </p>
 
 

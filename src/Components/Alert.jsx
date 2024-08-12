@@ -8,7 +8,7 @@ export default function Alert({ success = "False",
 
     return (
         <>
-            <div id="Alert" className={`flex flex-col justify-center text-xl p-2 ${success === "True" ? "text-blue-500" : "text-red-500"} `} role="alert">
+            <div id="Alert" className={`flex flex-col justify-center text-md p-2 ${success === "True" ? "text-blue-500" : "text-red-500"} `} role="alert">
                 <span>{alertText}</span>
                 <span className='text-yellow-500'>{additionalMSG}</span>
             </div>
