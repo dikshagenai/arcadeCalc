@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Alert from "./Alert"
 import LastUpdated from './LastUpdated'
 
@@ -35,6 +35,15 @@ const Calculate = () => {
         setPublicUrl(e.target.value);
         showAlert("‎", "False", "‎");
         setDetailedOutput(false)
+    }
+
+    // ------------------------------- MAKING USER ABLE TO CLICK THE BUTTON WHILE STAYING IN THE TEXT BOX
+
+    const buttonRef = useRef(null)
+    const handleClickEventFromText = (e) => {
+        if (e.key === "Enter") {
+            buttonRef.current.click()
+        }
     }
 
     // ------------------------------- THis function can open json in new tab 
@@ -115,7 +124,7 @@ const Calculate = () => {
     }
     return (
         <>
-            <div className="mt-3 p-3 px-6 sm:p-6 rounded shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
+            <div className="mt-3 p-3 px-6 sm:p-6 rounded sm:rounded-sm md:rounded-md lg:rounded-lg shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
                 <div className="text-center mb-2">
                     <h1 className="text-xl font-bold text-gray-900 ">
                         <span className="text-blue-500">G</span>
@@ -131,9 +140,9 @@ const Calculate = () => {
                 </div>
 
                 {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
-                <input className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} />
+                <input className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
 
-                <button className={`bg-blue-500 hover:bg-blue-400 hover:translate-y-px text-white px-4 py-2 rounded w-full hover:${isCalculating && 'cursor-no-drop'}`} onClick={calculatePoints}>
+                <button className={`bg-blue-500 hover:bg-blue-400 hover:translate-y-px text-white px-4 py-2 rounded w-full hover:${isCalculating && 'cursor-no-drop'}`} onClick={calculatePoints} ref={buttonRef}>
 
                     {/* Below is a ternary operation which make sure to show what type of text */}
                     {
