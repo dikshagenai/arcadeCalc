@@ -95,7 +95,8 @@ class Arcade {
             "Trivia Badges": 0,
             "Game Badges": 0,
             "Skill Badges": 0,
-            "Facilitator BONUS": 0
+            "Facilitator BONUS": 0,
+            "Milestone Earned": "None"
         }
         data["FacilitatorStatus"] = ArcadeBadgesStatus; // & adding data to the main JSON output...
 
@@ -300,26 +301,31 @@ class Arcade {
             // * Ultimate Milestone
             if (ArcadeBadgesStatus["Game Badges"] >= 6 && ArcadeBadgesStatus["Trivia Badges"] >= 8 && ArcadeBadgesStatus["Skill Badges"] >= 42) {
                 ArcadeBadgesStatus["Facilitator BONUS"] += 25
+                ArcadeBadgesStatus["Milestone Earned"] = "Ultimate Milestone"
             }
 
             // * Milestone 3
             else if (ArcadeBadgesStatus["Game Badges"] >= 5 && ArcadeBadgesStatus["Trivia Badges"] >= 6 && ArcadeBadgesStatus["Skill Badges"] >= 28) {
                 ArcadeBadgesStatus["Facilitator BONUS"] += 15
+                ArcadeBadgesStatus["Milestone Earned"] = "Milestone 3"
             }
 
             // * Milestone 2
             else if (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 18) {
                 ArcadeBadgesStatus["Facilitator BONUS"] += 9
+                ArcadeBadgesStatus["Milestone Earned"] = "Milestone 2"
             }
 
             // * Milestone 1
             else if (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 8) {
                 ArcadeBadgesStatus["Facilitator BONUS"] += 2
+                ArcadeBadgesStatus["Milestone Earned"] = "Milestone 1"
             }
 
             // * Nothing
             else {
                 ArcadeBadgesStatus["Facilitator BONUS"] += 0;
+                ArcadeBadgesStatus["Milestone Earned"] = "NaN"
             }
 
             // & this segment returns the total points (if user registered under any facilitator also...)
