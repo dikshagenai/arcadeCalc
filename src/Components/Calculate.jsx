@@ -174,24 +174,26 @@ const Calculate = () => {
     return (
         <>
             <div className="my-3 p-3 px-6 sm:p-6 rounded sm:rounded-sm md:rounded-md lg:rounded-lg shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
-                <div className="text-center mb-2">
-                    <h1 className="text-xl font-bold text-gray-900 ">
-                        <span className="text-blue-500">G</span>
-                        <span className="text-red-500">o</span>
-                        <span className="text-yellow-500">o</span>
-                        <span className="text-blue-500">g</span>
-                        <span className="text-green-500">l</span>
-                        <span className="text-red-500">e</span>
-                        <span className="text-white ml-2">Cloud</span>
-                    </h1>
-                    <h2 className="text-sm font-semibold text-white">Facilitator '24</h2>
-                    <h3 className="mb-1 text-sm sm:text-md text-yellow-500 mt-2 font-bold press-start-2p-regular">Points Calculator</h3>
-                </div>
-
-
-
-                {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
+            
+            {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
                 <div ref={calculatePointsRef}>
+                    <div className="text-center mb-2">
+                        <h1 className="text-xl font-bold text-gray-900 ">
+                            <span className="text-blue-500">G</span>
+                            <span className="text-red-500">o</span>
+                            <span className="text-yellow-500">o</span>
+                            <span className="text-blue-500">g</span>
+                            <span className="text-green-500">l</span>
+                            <span className="text-red-500">e</span>
+                            <span className="text-white ml-2">Cloud</span>
+                        </h1>
+                        <h2 className="text-sm font-semibold text-white">Facilitator '24</h2>
+                        <h3 className="mb-1 text-sm sm:text-md text-yellow-500 mt-2 font-bold press-start-2p-regular">Points Calculator</h3>
+                    </div>
+
+
+
+
                     {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
                     <input className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
 
@@ -262,7 +264,7 @@ const Calculate = () => {
                                 </tr>
                                 <tr className='border border-black'>
                                     <td className='text-center py-1 border-r border-black hover:text-red-500 hover:cursor-pointer hover:-translate-y-px transition-all hover:scale-95 '>Milestone Earned </td>
-                                    <td className='text-center py-1 hover:text-red-500 hover:cursor-pointer hover:-translate-y-px transition-all hover:scale-95 '>{isClickedDetailedOutput ? detailedOutputJSON['FacilitatorStatus']['Milestone Earned'] : 'None'}</td>
+                                    <td className='text-center py-1 bg-green-500 text-white hover:cursor-pointer transition-all '>{isClickedDetailedOutput ? detailedOutputJSON['FacilitatorStatus']['Milestone Earned'] : 'None'}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -271,7 +273,7 @@ const Calculate = () => {
 
 
                     {/* THis div is for the main part means it contains the whole part.. */}
-                    <hr className='h-px bg-gray-300' />
+                    <hr className='h-px bg-gray-300 my-2' />
                     <div className="mt-1 overflow-y-auto max-h-80">
                         {/* this div contains children which are of 4 div m1, m2, m3, m4 */}
 
