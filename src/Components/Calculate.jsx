@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Alert from "./Alert"
 import LastUpdated from './LastUpdated'
 import { FaArrowLeft } from "react-icons/fa6";
@@ -11,6 +11,13 @@ const Calculate = () => {
     // ---------------------------------- Ref about the 2 components ---> Calculate Points and Detailed Output
     const calculatePointsRef = useRef(null)
     const detailedOutputRef = useRef(null)
+
+    const inputTextBox = useRef(null)
+
+    useEffect(() => {
+        inputTextBox.current.focus()
+    }, [])
+
 
     // -------------------------------- FOR THE OUTPUT/ALERT COMPONENT
     const [alert, setAlert] = useState({
@@ -174,8 +181,8 @@ const Calculate = () => {
     return (
         <>
             <div className="my-3 p-3 px-6 sm:p-6 rounded sm:rounded-sm md:rounded-md lg:rounded-lg shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
-            
-            {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
+
+                {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
                 <div ref={calculatePointsRef}>
                     <div className="text-center mb-2">
                         <h1 className="text-xl font-bold text-gray-900 ">
@@ -195,7 +202,7 @@ const Calculate = () => {
 
 
                     {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
-                    <input className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
+                    <input ref={inputTextBox} className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
 
                     <button className={`bg-blue-500 hover:bg-blue-400 hover:translate-y-px text-white px-4 py-2 rounded w-full hover:scale-105 transition-all hover:${isCalculating && 'cursor-no-drop'}`} onClick={calculatePoints} ref={buttonRef}>
 
@@ -278,6 +285,15 @@ const Calculate = () => {
                         {/* this div contains children which are of 4 div m1, m2, m3, m4 */}
 
                         <div className="overflow-y-auto max-h-48">
+
+
+                            {/* below div is just to fix some classes error because they are dynamically generated and in the process of converting output.css they won't be extracted!  */}
+                            <div className="text-yellow-600 bg-yellow-500 bg-yellow-200
+                                            text-green-600 bg-green-500 bg-green-200
+                                            text-blue-600 bg-blue-500 bg-blue-200
+                                            text-red-600 bg-red-500 bg-red-200 hidden">
+                            </div>
+
 
                             {Object.entries(milestoneJson).map(([milestoneName, milestoneData]) => {
 
