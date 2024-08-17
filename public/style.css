@@ -3,3 +3,11 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@media (min-width: 640px) {
+    .sm\:press-start-2p-regular {
+        font-family: "Press Start 2P", system-ui !important;
+        font-weight: 400 !important;
+        font-style: normal !important;
+    }
+}

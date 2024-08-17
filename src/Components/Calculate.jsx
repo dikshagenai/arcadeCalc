@@ -3,6 +3,7 @@ import Alert from "./Alert"
 import LastUpdated from './LastUpdated'
 import { FaArrowLeft } from "react-icons/fa6";
 import milestoneJson from '../assets/Milestones.json'
+import { motion } from 'framer-motion';
 
 const Calculate = () => {
 
@@ -202,7 +203,10 @@ const Calculate = () => {
                     {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
                     <input ref={inputTextBox} className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
 
-                    <button className={`bg-blue-500 hover:bg-blue-400 hover:translate-y-px text-white px-4 py-2 rounded w-full hover:scale-105 transition-all hover:${isCalculating && 'cursor-no-drop'}`} onClick={calculatePoints} ref={buttonRef}>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`bg-blue-500 hover:bg-blue-400 text-white px-4 py-2 rounded w-full hover:${isCalculating && 'cursor-no-drop'}`} onClick={calculatePoints} ref={buttonRef}>
 
                         {/* Below is a ternary operation which make sure to show what type of text */}
                         {
@@ -213,19 +217,22 @@ const Calculate = () => {
                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
-                                    <span className='text-sm'>Processing...</span>
+                                    <span className='text-sm sm:text-lg'>Processing...</span>
                                 </div>
                             </>
                                 : <>
                                     {/* SHOW WHEN NOT CALCULATING  */}
                                     <div className='flex justify-center items-center'>
-                                        <span className='text-sm'>Calculate Points</span>
+                                        <span className='text-sm sm:text-lg'>Calculate Points</span>
                                     </div>
                                 </>
                         }
-                    </button >
+                    </motion.button >
 
-                    <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400 hover:translate-y-px hover:scale-105 transition-all ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</button>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400  ${detailedOutput === true ? '' : "hidden"}`} onClick={() => { showJsonInNewTab(detailedOutputJSON) }}>Show Detailed Output</motion.button>
 
 
 
@@ -242,7 +249,7 @@ const Calculate = () => {
 
 
                     {/* DIV FOR THE TEXT BOX */}
-                    <div className="text-xs sm:text-sm overflow-y-auto max-h-64 my-1 rounded-lg bg-pink-500 w-full scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100 custom-scrollbar">
+                    <div className="text-xs sm:text-sm overflow-hidden max-h-64 my-1 rounded-lg bg-pink-500 w-full scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100 custom-scrollbar">
 
                         <div className="py-1 flex justify-center items-center"><strong className='text-white text-lg sm:text-xl'>Progress Report</strong></div>
 
@@ -269,7 +276,11 @@ const Calculate = () => {
                                 </tr>
                                 <tr className='border border-black'>
                                     <td className='text-center py-1 border-r border-black hover:text-red-500 hover:cursor-pointer hover:-translate-y-px transition-all hover:scale-95 '>Milestone Earned </td>
-                                    <td className='text-center py-1 bg-green-500 text-white hover:cursor-pointer transition-all '>{isClickedDetailedOutput ? detailedOutputJSON['FacilitatorStatus']['Milestone Earned'] : 'None'}</td>
+                                    <motion.td
+                                        initial={{ opacity: 0, scale: 1.2 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 1 }}
+                                        className='text-center py-1 bg-green-500 text-white hover:cursor-pointer transition-all '>{isClickedDetailedOutput ? detailedOutputJSON['FacilitatorStatus']['Milestone Earned'] : 'None'}</motion.td>
                                 </tr>
                             </tbody>
                         </table>
@@ -298,12 +309,15 @@ const Calculate = () => {
                                 // ! This is the repeated Element
 
                                 return (<div className="p-2 my-1 rounded-md sm:rounded-lg bg-white w-full border border-black " key={milestoneName} >
-                                    <span><strong className={`text-${milestoneData["themeColor"]}-500`}>{milestoneData['milestoneName']}</strong>{milestoneData['milestoneRequirements']}
+                                    <span><strong className={`text-${milestoneData["themeColor"]}-500`}>{milestoneData['milestoneName']}</strong>
+                                        <div className='hidden sm:block'>{milestoneData['milestoneRequirements']}</div>
                                     </span>
 
 
-                                    <div className={`text-xs font-semibold flex sm:justify-end justify-center items-center py-1 mx-3`}>
-                                        <span className={`rounded p-2 text-${milestoneData['themeColor']}-600 bg-${milestoneData['themeColor']}-200 `}>+{milestoneData['rewardedPoints']} Points</span>
+                                    <div className={` text-xs font-semibold flex sm:justify-end justify-center items-center py-1 mx-3`}>
+                                        <span className={`${(
+                                            percentageProgressJson[milestoneName] / milestoneData['requiredPoints'] * 100).toFixed(2) === '100.00' && 'animate-bounce'}
+                                        rounded p-2 text-${milestoneData['themeColor']}-600 bg-${milestoneData['themeColor']}-200 `}>+{milestoneData['rewardedPoints']} Points</span>
                                     </div>
 
 
@@ -388,12 +402,15 @@ const Calculate = () => {
 
 
                     {/* TO GO BACK */}
-                    <button className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400 hover:translate-y-px transition-all hover:scale-105`} onClick={resetEverything}>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className={`bg-green-500 text-white px-4 py-2 my-2 rounded w-full hover:bg-green-400`} onClick={resetEverything}>
                         <div className='flex justify-center items-center align-baseline gap-2'>
                             <FaArrowLeft />
                             <span>Go Back</span>
                         </div>
-                    </button>
+                    </motion.button>
                 </div>
 
 
