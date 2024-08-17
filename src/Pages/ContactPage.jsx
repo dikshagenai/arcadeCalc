@@ -1,6 +1,9 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import Contact from '../Components/Contact'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
+
 
 const ContactPage = () => {
     return (
@@ -26,7 +29,11 @@ const ContactPage = () => {
 
 
             {/* Main Component */}
-            <Contact />
+            <div className='min-h-screen flex flex-col'>
+                <Navbar />
+                <Contact />
+                <Footer />
+            </div>
         </>
     )
 }

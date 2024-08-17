@@ -1,10 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import Home from '../Components/Home'
+import Footer from '../Components/Footer'
+import Navbar from '../Components/Navbar'
 
 const HomePage = () => {
     return (
-        <>
+        < >
             {/* This part is used for better SEO | Meta Tags */}
             <Helmet>
                 {/* <!-- Meta Tags --> */}
@@ -26,7 +28,13 @@ const HomePage = () => {
 
 
             {/* Main Component */}
-            <Home />
+            <div className='min-h-screen flex flex-col'>
+                <Navbar />
+                <Home />
+                <Footer />
+            </div>
+
+
         </>
     )
 }

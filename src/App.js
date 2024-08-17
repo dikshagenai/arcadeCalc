@@ -1,4 +1,3 @@
-import Navbar from './Components/Navbar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,7 +21,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={
             <>
-              <Navbar />
               <HomePage />
             </>
           } />
@@ -30,21 +28,18 @@ function App() {
 
           <Route exact path="/updates" element={
             <>
-              <Navbar />
               <UpdatesPage />
             </>
           } />
 
           <Route exact path="/calculate" element={
             <>
-              <Navbar />
               <CalculatePage />
             </>
           } />
 
           <Route exact path="/contact" element={
             <>
-              <Navbar />
               <ContactPage />
             </>
           } />

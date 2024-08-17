@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from './Footer'
 const Home = () => {
     return (
         <>
-            <div className="m-auto mb-5 px-6 sm:w-5/6 sm:py-2 sm:shadow-lg">
+            <div className="mx-auto mb-5 px-6 sm:w-5/6 sm:py-2 sm:shadow-lg">
                 <p className='py-2'>
                     <span className='font-bold'>Arcade Calc</span> is a platform to provide latest updates regarding the <span className='font-bold font-serif'>Google Cloud Arcade Program.</span>
                 </p>
@@ -22,9 +21,10 @@ const Home = () => {
                     <span className='font-semibold'> Week 2,</span>
                     <span className='font-semibold'> Week 3,</span> and
                     <span className='font-semibold'> Week 4.</span>
-                    <p>
-                        By completing hands-on labs, you earn digital badges that award points. These points can be redeemed for Google Cloud swag like backpacks, t-shirts, and mugs, etc. The games cover various topics related to Google Cloud products and technology, allowing you to showcase your skills. <Link target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' to="https://go.cloudskillsboost.google/arcade">No quarters needed—participate for free!</Link>
-                    </p>
+                </p>
+
+                <p>
+                    By completing hands-on labs, you earn digital badges that award points. These points can be redeemed for Google Cloud swag like backpacks, t-shirts, and mugs, etc. The games cover various topics related to Google Cloud products and technology, allowing you to showcase your skills. <Link target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' to="https://go.cloudskillsboost.google/arcade">No quarters needed—participate for free!</Link>
                 </p>
 
                 <p className='mt-3 py-2'>
@@ -59,8 +59,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
-            <Footer />
         </>
     )
 }
