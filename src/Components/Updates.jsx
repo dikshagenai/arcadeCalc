@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from './Footer'
 import links from '../assets/SkillBadgesWithLink.json'
 
 

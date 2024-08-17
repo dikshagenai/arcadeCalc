@@ -13,7 +13,7 @@ const Navbar = () => {
 
             <header className='bg-blue-500 p-2 sm:p-3 text-white flex justify-center '>
                 <span className='font-bold text-xl md:text-2xl lg:text-3xl'>
-                    <Link to="/">
+                    <Link className='sm:press-start-2p-regular font-serif' to="/">
                         Arcade Calc
                     </Link>
                 </span>
