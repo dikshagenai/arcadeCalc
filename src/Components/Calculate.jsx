@@ -4,8 +4,6 @@ import LastUpdated from './LastUpdated'
 import { FaArrowLeft } from "react-icons/fa6";
 import milestoneJson from '../assets/Milestones.json'
 
-
-
 const Calculate = () => {
 
     // ---------------------------------- Ref about the 2 components ---> Calculate Points and Detailed Output

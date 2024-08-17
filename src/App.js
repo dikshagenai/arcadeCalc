@@ -5,48 +5,54 @@ import {
   Route
 } from "react-router-dom";
 
-import Updates from "./Components/Updates"
-import Calculate from './Components/Calculate';
-import Contact from './Components/Contact';
-import Home from './Components/Home'
-
+import HomePage from './Pages/HomePage';
+import UpdatesPage from './Pages/UpdatesPage';
+import CalculatePage from './Pages/CalculatePage';
+import ContactPage from './Pages/ContactPage';
+import NotFound from './Pages/NotFound';
 
 
 function App() {
-
-
-
-
 
   return (
     <>
 
       <Router>
-        <Navbar />
 
         <Routes>
           <Route exact path="/" element={
             <>
-              <Home />
+              <Navbar />
+              <HomePage />
             </>
           } />
 
 
           <Route exact path="/updates" element={
             <>
-              <Updates />
+              <Navbar />
+              <UpdatesPage />
             </>
           } />
 
           <Route exact path="/calculate" element={
             <>
-              <Calculate />
+              <Navbar />
+              <CalculatePage />
             </>
           } />
 
           <Route exact path="/contact" element={
             <>
-              <Contact />
+              <Navbar />
+              <ContactPage />
+            </>
+          } />
+
+          {/* 404 Not Found Error */}
+          <Route path="*" element={
+            <>
+              <NotFound />
             </>
           } />
 
