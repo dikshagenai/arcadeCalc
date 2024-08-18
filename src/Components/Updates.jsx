@@ -1,7 +1,6 @@
 import React from 'react'
 import links from '../assets/SkillBadgesWithLink.json'
 
-
 const Updates = () => {
 
     return (

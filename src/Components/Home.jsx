@@ -24,11 +24,11 @@ const Home = () => {
                 </p>
 
                 <p>
-                    By completing hands-on labs, you earn digital badges that award points. These points can be redeemed for Google Cloud swag like backpacks, t-shirts, and mugs, etc. The games cover various topics related to Google Cloud products and technology, allowing you to showcase your skills. <Link target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' to="https://go.cloudskillsboost.google/arcade">No quarters needed—participate for free!</Link>
+                    By completing hands-on labs, you earn digital badges that award points. These points can be redeemed for Google Cloud swag like backpacks, t-shirts, and mugs, etc. The games cover various topics related to Google Cloud products and technology, allowing you to showcase your skills. <Link target='_blank' rel="noreferrer" className='text-blue-500 hover:underline' to="https://go.cloudskillsboost.google/arcade" tabIndex={-1}>No quarters needed—participate for free!</Link>
                 </p>
 
                 <p className='mt-3 py-2'>
-                    If you want to track your points of <span className='font-semibold '>Google Cloud Arcade Facilitator Program </span><Link className='text-blue-500' to={'/calculate'}>click here.</Link>
+                    If you want to track your points of <span className='font-semibold '>Google Cloud Arcade Facilitator Program </span><Link className='text-blue-500' to={'/calculate'} tabIndex={-1}>click here.</Link>
                 </p>
 
                 <div className='my-3 py-3 bg-gray-400 rounded-md'>

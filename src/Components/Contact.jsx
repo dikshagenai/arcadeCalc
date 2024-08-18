@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Alert from './Alert'
+import { motion } from 'framer-motion'
+
 const Contact = () => {
 
     const [body, setBody] = useState('')
@@ -36,7 +38,7 @@ const Contact = () => {
 
     return (
         <>
-            <div className="p-3 sm:p-6 rounded border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black   hover:bg-gray-900 transition-all duration-300">
+            <div className="p-3 sm:p-6 rounded-md lg:rounded-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black   hover:bg-gray-900 transition-all duration-300">
                 <strong className='text-xl mt-3 text-white'>
                     Get In Touch
                 </strong>
@@ -48,7 +50,10 @@ const Contact = () => {
 
                 <textarea className="border p-2 rounded w-full my-2" name="body" id="query" rows={5} placeholder='How can we help you?*' value={body} onChange={onChange} />
 
-                <button className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-400 hover:translate-y-px" onClick={sendEmail}>Send</button>
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-400 hover:translate-y-px" onClick={sendEmail}>Send</motion.button>
 
                 <Alert success={alert["success"]} alertText={alert["alertText"]} />
             </div>
