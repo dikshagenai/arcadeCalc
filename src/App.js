@@ -9,6 +9,7 @@ import UpdatesPage from './Pages/UpdatesPage';
 import CalculatePage from './Pages/CalculatePage';
 import ContactPage from './Pages/ContactPage';
 import NotFound from './Pages/NotFound';
+import SkillBadgesPage from "./Pages/SkillBadgesPage";
 
 
 function App() {
@@ -41,6 +42,12 @@ function App() {
           <Route exact path="/contact" element={
             <>
               <ContactPage />
+            </>
+          } />
+
+          <Route exact path="/skillBadges" element={
+            <>
+              <SkillBadgesPage />
             </>
           } />
 
