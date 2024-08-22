@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import Home from '../Components/Home'
 import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
+// import TempBar from '../Components/TempBar'
 
 const HomePage = () => {
     return (
@@ -30,6 +31,7 @@ const HomePage = () => {
             {/* Main Component */}
             <div className='min-h-screen flex flex-col'>
                 <Navbar />
+                {/* <TempBar /> */}
                 <Home />
                 <Footer />
             </div>
