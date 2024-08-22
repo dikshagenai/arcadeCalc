@@ -179,7 +179,7 @@ const Calculate = () => {
 
     return (
         <>
-            <div className="my-3 p-3 px-6 sm:p-6 rounded sm:rounded-sm md:rounded-md lg:rounded-lg shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
+            <div className="my-3 p-3 px-6 sm:p-6 rounded-xl shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
 
                 {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
                 <div ref={calculatePointsRef}>
@@ -201,7 +201,7 @@ const Calculate = () => {
 
 
                     {/* Calculate Text if equals to 'Calculate Points' means no search is going... allow user else not */}
-                    <input ref={inputTextBox} className={`border p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
+                    <input ref={inputTextBox} className={`outline-none  p-2 rounded w-full my-2 hover:${isCalculating && 'cursor-wait'}`} placeholder="Enter your public profile URL" type="text" name='publicUrl' value={publicUrl} onChange={onChange} onKeyDown={handleClickEventFromText} />
 
                     <motion.button
                         whileHover={{ scale: 1.05 }}

@@ -52,9 +52,9 @@ const Navbar = () => {
             <header className='w-full mb-5'>
                 <nav className='flex items-center w-full py-5 bg-black sm:px-3 justify-evenly'>
                     {/* elem -1 */}
-                    <div className='flex flex-1 ml-6 text-white sm:ml-3'>
+                    <Link className='flex flex-1 ml-6 text-white sm:ml-3' to="/">
                         <img width={32} height={32} className='font-bold text-white ' src="/favicon_io/favicon-32x32.png" alt="Arcade Calc" />
-                    </div>
+                    </Link>
 
                     {/* elem -2  */}
                     <div className='flex items-center justify-end flex-1'>
@@ -97,20 +97,13 @@ const Navbar = () => {
                                 <MdOutlineClose className='flex-shrink-0 text-2xl sm:hidden cursor-pointer' onClick={toggleHamburger} />
                             </button>
 
-                            <ul className="space-y-7">
-                                <li className={`${location.pathname === '/' ? 'text-blue-500' : 'text-black'} `} tabIndex={-1}><Link to="/" tabIndex={2}>Home</Link></li>
-
-                                <li className={`${location.pathname === '/calculate' ? 'text-blue-500' : 'text-black'} `} tabIndex={-1}><Link to="/calculate" tabIndex={3}>Calculate Points</Link></li>
-
-                                <li className={`${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} tabIndex={-1}><Link to="/updates" tabIndex={4}>Updates</Link></li>
-
-                                <li className={`${location.pathname === '/contact' ? 'text-blue-500' : 'text-black'} `} tabIndex={-1}><Link to="/contact" tabIndex={5}>Contact Me</Link></li>
-
-                                <li className={`${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} tabIndex={-1}><Link to="/skillBadges" tabIndex={6}>Skill Badges</Link></li>
-
-
-
-                            </ul>
+                            <div className="space-y-7 flex flex-col">
+                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/' ? 'text-blue-500' : 'text-black'} `} to="/" tabIndex={2}><span>Home</span></Link>
+                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/calculate' ? 'text-blue-500' : 'text-black'} `} to="/calculate" tabIndex={3}><span>Calculate Points</span></Link>
+                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} to="/updates" tabIndex={4}><span>Updates</span></Link>
+                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/contact' ? 'text-blue-500' : 'text-black'} `} to="/contact" tabIndex={5}><span>Contact Me</span></Link>
+                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span>Skill Badges</span></Link>
+                            </div>
 
                         </div>
                     </div>

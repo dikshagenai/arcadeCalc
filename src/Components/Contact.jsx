@@ -48,7 +48,7 @@ const Contact = () => {
                 </p>
 
 
-                <textarea className="border p-2 rounded w-full my-2" name="body" id="query" rows={5} placeholder='How can we help you?*' value={body} onChange={onChange} />
+                <textarea className="outline-none border p-2 rounded w-full my-2" name="body" id="query" rows={5} placeholder='How can we help you?*' value={body} onChange={onChange} />
 
                 <motion.button
                     whileHover={{ scale: 1.05 }}
