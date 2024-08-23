@@ -179,7 +179,7 @@ const Calculate = () => {
 
     return (
         <>
-            <div className="my-3 p-3 px-6 sm:p-6 rounded-xl shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
+            <div className="font-mono my-3 p-3 px-6 sm:p-6 rounded-xl shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
 
                 {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
                 <div ref={calculatePointsRef}>

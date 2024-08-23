@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom'
 import { FaYoutube } from "react-icons/fa";
 import { TbCornerDownRight } from "react-icons/tb";
 import { motion } from 'framer-motion';
-import { SlBadge } from "react-icons/sl";
-
+    
 
 const SkillBadges = () => {
     return (
         <>
-            <div className="w-full px-5 mx-auto mb-5 sm:w-5/6 sm:py-2 sm:shadow-lg sm:rounded-lg">
+            <div className="w-full px-5 mx-auto mb-5 sm:w-5/6 sm:py-2 sm:shadow-lg sm:rounded-lg font-mono">
                 <div className='mt-3 mb-5' >
                     {/* <div className='flex my-3 sm:items-center sm:justify-center'>
                         <strong className='p-2 font-sans text-base text-white bg-yellow-500 rounded-lg sm:text-xl sm:px-4 sm:py-2 '> &gt; Skill Badges</strong>
@@ -25,15 +24,14 @@ const SkillBadges = () => {
                         <div className="w-full my-1">
                             <div className="flex items-center justify-center">
                                 <div className='flex items-center justify-center w-full px-2 space-x-2 text-lg text-center text-white bg-pink-500 rounded-t-lg sm:text-xl sm:py-2 sm:px-4'>
-                                    <strong className='py-1 text-sm sm:py-0 sm:text-lg md:text-xl '>Easy Skill Badges</strong>
-                                    <SlBadge className='flex-shrink-0 react-icon-mobile sm:react-icon-sm md:react-icon-md lg:react-icon-lg xl:react-icon-xl' />
+                                    <strong className='py-1 text-sm sm:py-0 sm:text-lg md:text-xl font-serif'>Easy Skill Badges</strong>
 
                                 </div>
                             </div>
                             <div className="w-full bg-white">
                                 <div className='relative flex justify-between w-full text-white bg-blue-500 border border-black custom-column-line'>
-                                    <span className='flex-1 py-1 text-center'>Badge Name</span>
-                                    <span className='flex-1 py-1 text-center'>Solution</span>
+                                    <span className='flex-1 py-1 text-center font-serif'>Badge Name</span>
+                                    <span className='flex-1 py-1 text-center font-serif'>Solution</span>
                                 </div>
 
                                 <div className="overflow-x-hidden overflow-y-auto border border-black rounded-b-lg max-h-96 sm:max-h-svh scrollbar-hide">
@@ -89,15 +87,13 @@ const SkillBadges = () => {
                         <div className="w-full my-1 rounded-lg">
                             <div className="flex items-center justify-center">
                                 <div className='flex items-center justify-center w-full px-2 space-x-2 text-lg text-center text-white bg-pink-500 rounded-t-lg sm:text-xl sm:py-2 sm:px-4'>
-                                    <strong className='py-1 text-sm sm:py-0 sm:text-lg md:text-xl '>Lengthy Skill Badges</strong>
-                                    <SlBadge className='flex-shrink-0 react-icon-mobile sm:react-icon-sm md:react-icon-md lg:react-icon-lg xl:react-icon-xl' />
-
+                                    <strong className='py-1 text-sm sm:py-0 sm:text-lg md:text-xl font-serif'>Lengthy Skill Badges</strong>
                                 </div>
                             </div>
                             <div className="w-full bg-white">
                                 <div className='relative flex justify-between w-full text-white bg-blue-500 border border-black custom-column-line'>
-                                    <span className='flex-1 py-1 text-center'>Badge Name</span>
-                                    <span className='flex-1 py-1 text-center'>Solution</span>
+                                    <span className='flex-1 py-1 text-center font-serif'>Badge Name</span>
+                                    <span className='flex-1 py-1 text-center font-serif'>Solution</span>
                                 </div>
 
                                 <div className="overflow-x-hidden overflow-y-auto border border-black rounded-b-lg max-h-96 sm:max-h-svh scrollbar-hide">

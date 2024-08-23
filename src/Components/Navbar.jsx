@@ -3,6 +3,11 @@ import { Link, useLocation } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
 import { useEffect } from 'react';
+import { FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+
+
 
 
 const Navbar = () => {
@@ -28,6 +33,20 @@ const Navbar = () => {
             if (IsMenuExpanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
                 setIsMenuExpanded(false);
             }
+            else if (IsMenuExpanded && navbarRef.current) {
+                // Below these 2 conditions check if the clicked item is span or the parentElement of span i.e Link
+                if (event.target.classList.contains('nav-bar-link')) {
+                    setIsMenuExpanded(false);
+                    return;
+                } else {
+                    if (event.target.parentElement.classList.contains('nav-bar-link')) {
+                        setIsMenuExpanded(false)
+                        return;
+                    }
+
+                }
+            }
+
         };
 
 
@@ -48,7 +67,7 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='w-full mb-5 select-none'>
+            <header className='w-full mb-5 select-none font-serif'>
                 <nav className='flex items-center w-full py-5 bg-black sm:px-3 justify-evenly'>
                     {/* elem -1 */}
                     <div className='flex flex-1 ml-6 text-white sm:ml-3'>
@@ -75,7 +94,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Toggled Navbar */}
-                        <div className={`z-30 top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 ${IsMenuExpanded ? 'fixed' : 'hidden'}`} ref={navbarRef}>
+                        <div className={`z-30 top-4 right-4 w-full max-w-xs bg-gray-200 rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 ${IsMenuExpanded ? 'fixed' : 'hidden'}`} ref={navbarRef}>
                             <button type="button" className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 " onClick={toggleHamburger}>
                                 <span className="sr-only">
                                     Close navigation
@@ -83,12 +102,24 @@ const Navbar = () => {
                                 <MdOutlineClose className='flex-shrink-0 text-2xl sm:hidden cursor-pointer' onClick={toggleHamburger} />
                             </button>
 
-                            <div className="space-y-7 flex flex-col">
-                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/' ? 'text-blue-500' : 'text-black'} `} to="/" tabIndex={2}><span>Home</span></Link>
-                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/calculate' ? 'text-blue-500' : 'text-black'} `} to="/calculate" tabIndex={3}><span>Calculate Points</span></Link>
-                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} to="/updates" tabIndex={4}><span>Updates</span></Link>
-                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/contact' ? 'text-blue-500' : 'text-black'} `} to="/contact" tabIndex={5}><span>Contact Me</span></Link>
-                                <Link className={`w-full p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span>Skill Badges</span></Link>
+                            <div className="flex flex-col">
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/' ? 'text-blue-500' : 'text-black'} `} to="/" tabIndex={2}><span className='nav-bar-link'>Home</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/calculate' ? 'text-blue-500' : 'text-black'} `} to="/calculate" tabIndex={3}><span className='nav-bar-link'>Calculate Points</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} to="/updates" tabIndex={4}><span className='nav-bar-link'>Updates</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/contact' ? 'text-blue-500' : 'text-black'} `} to="/contact" tabIndex={5}><span className='nav-bar-link'>Contact Me</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span className='nav-bar-link'>Skill Badges</span></Link>
+
+                                <div className='flex justify-center items-center py-5 p-2 w-full my-auto'>
+                                    <Link className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.instagram.com/deepanshu_prajapati01/"}>
+                                        <FaInstagram className='text-2xl' />
+                                    </Link>
+                                    <Link className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.linkedin.com/in/deepanshu-prajapati01/"}>
+                                        <FaLinkedin className='text-2xl' />
+                                    </Link>
+                                    <Link className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://github.com/deepanshu-prajapati01"}>
+                                        <FaGithub className='text-2xl' />
+                                    </Link>
+                                </div>
                             </div>
 
                         </div>

@@ -38,8 +38,8 @@ const Contact = () => {
 
     return (
         <>
-            <div className="p-3 sm:p-6 rounded-md lg:rounded-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black   hover:bg-gray-900 transition-all duration-300">
-                <strong className='text-xl mt-3 text-white'>
+            <div className="font-mono p-3 sm:p-6 rounded-md lg:rounded-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black   hover:bg-gray-900 transition-all duration-300">
+                <strong className='text-xl mt-3 text-white font-serif'>
                     Get In Touch
                 </strong>
                 <hr className='my-1 w-2/6' />
@@ -58,14 +58,14 @@ const Contact = () => {
                 <Alert success={alert["success"]} alertText={alert["alertText"]} />
             </div>
             <div className='flex p-4 max-w-md w-5/6 sm:w-full mx-auto justify-between'>
-                <div>
+                <div className='font-serif'>
                     <strong>Deepanshu Prajapati</strong>
                     <p>Baiyanpur, Sonipat</p>
                     <p>2nd year | HCE</p>
                 </div>
 
                 <div className='space-y-2'>
-                    <strong className='flex justify-center'>VISIT US</strong>
+                    <strong className='flex justify-center font-serif'>VISIT US</strong>
                     <ul className="flex">
                         <li className="ms-3"><a className="link-dark" rel="noreferrer" target='_blank' href="https://github.com/deepanshu-prajapati01">
                             {/* GITHUB SVG */}
