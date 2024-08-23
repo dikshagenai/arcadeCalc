@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdOutlineClose } from "react-icons/md";
