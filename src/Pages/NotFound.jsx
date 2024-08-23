@@ -1,32 +1,49 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 const NotFound = () => {
     return (
         <>
-            <div className="flex justify-center items-center bg[#c7f8f8 h-[100vh] w-[100vw]">
-                <div className="flex flex-col h-[40vh] sm:h-[80vh] w-5/6 sm:justify-center sm:items-center sm:bg-black sm:rounded-lg">
-                    <div className="p-4 rounded-lg w-full bg-black flex flex-col text-white justify-center items-center ">
-
-                        <div className=' flex items-center p-1 justify-center mb-3 sm:mb-5'>
-                            <strong className='press-start-2p-regular sm:text-3xl text-xl '>Error - 404</strong>
-                        </div>
-
-                        <div className='font-serif flex text-2xl p-1 mb-2 sm:mb-3 '>
-                            This page doesn't exist.
-                        </div>
 
 
+            {/* This part is used for better SEO | Meta Tags */}
+            <Helmet>
+                {/* <!-- Meta Tags --> */}
+                <title>404 - Arcade Calc</title>
+                <link rel="canonical" href="/404" />
 
-                        <div className="font-serif text-lg p-1">
-                            Would you like return back to
-                            <Link className='text-red-300 font-bold' to={"/"}> the homepage.</Link>
+                {/* <!-- Open Graph Meta Tags --> */}
+                <meta property="og:title" content="404 - Arcade Calc" />
+            </Helmet>
 
-                        </div>
 
-                    </div>
+
+
+            {/* Main element */}
+            <div className="flex flex-col justify-center items-center my-auto select-none bg-black text-white py-[20vh] mx-[5%] sm:mx-[20%] rounded-lg">
+                <div className=' flex items-center p-1 justify-center mb-3 sm:mb-5'>
+                    <strong className='press-start-2p-regular sm:text-3xl text-xl '>404</strong>
                 </div>
+
+                <div className='font-serif flex text-base sm:text-2xl p-1 mb-2 sm:mb-3 justify-center mx-5'>
+                    This page could not be found.
+                </div>
+
+
+
+                <div className="font-serif text-lg p-1 hidden sm:block">
+                    <Link className='text-red-300 font-bold' to={"/"}>Go to site home</Link>
+                </div>
+
             </div>
+
+
+
+
+
+
+
         </>
     )
 }

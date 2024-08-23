@@ -1,8 +1,6 @@
 import React from 'react'
 import SkillBadges from '../Components/SkillBadges'
 import { Helmet } from 'react-helmet-async'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 
 const SkillBadgesPage = () => {
     return (
@@ -28,11 +26,7 @@ const SkillBadgesPage = () => {
 
 
             {/* Main Component */}
-            <div className='flex flex-col min-h-screen'>
-                <Navbar />
                 <SkillBadges />
-                <Footer />
-            </div>
         </>
     )
 }

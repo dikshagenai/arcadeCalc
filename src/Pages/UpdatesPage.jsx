@@ -1,8 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import Updates from '../Components/Updates'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 
 const UpdatesPage = () => {
     return (
@@ -27,11 +25,7 @@ const UpdatesPage = () => {
 
 
             {/* Main Component */}
-            <div className='min-h-screen flex flex-col'>
-                <Navbar />
                 <Updates />
-                <Footer />
-            </div>
         </>
     )
 }

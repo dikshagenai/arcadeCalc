@@ -1,8 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import Calculate from '../Components/Calculate'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 
 const CalculatePage = () => {
     return (
@@ -29,11 +27,7 @@ const CalculatePage = () => {
 
 
             {/* Main Component */}
-            <div className='min-h-screen flex flex-col'>
-                <Navbar />
-                <Calculate />
-                <Footer />
-            </div>
+            <Calculate />
         </>
     )
 }

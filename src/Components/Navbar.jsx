@@ -49,38 +49,25 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='w-full mb-5'>
+            <header className='w-full mb-5 select-none'>
                 <nav className='flex items-center w-full py-5 bg-black sm:px-3 justify-evenly'>
                     {/* elem -1 */}
-                    <Link className='flex flex-1 ml-6 text-white sm:ml-3' to="/">
-                        <img width={32} height={32} className='font-bold text-white ' src="/favicon_io/favicon-32x32.png" alt="Arcade Calc" />
-                    </Link>
+                    <div className='flex flex-1 ml-6 text-white sm:ml-3'>
+                        <Link to="/">
+                            <img width={32} height={32} className='font-bold text-white ' src="/favicon_io/favicon-32x32.png" alt="Arcade Calc" />
+                        </Link>
+                    </div>
 
                     {/* elem -2  */}
                     <div className='flex items-center justify-end flex-1'>
 
                         <div className='flex-1 mr-6  flex items-center justify-end sm:mr-3'>
                             <ul className='hidden sm:flex items-center justify-end space-x-0 space-y-2 text-white sm:space-y-0 sm:space-x-2'>
-                                <motion.li
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/' && 'text-blue-500 font-bold'} hover:text-blue-500  `} tabIndex={-1}><Link to="/" tabIndex={2}>Home</Link></motion.li>
-                                <motion.li
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/calculate' && 'text-blue-500 font-bold'} hover:text-blue-500  `} tabIndex={-1}><Link to="/calculate" tabIndex={3}>Calculate Points</Link></motion.li>
-                                <motion.li
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/updates' && 'text-blue-500 font-bold'} hover:text-blue-500  `} tabIndex={-1}><Link to="/updates" tabIndex={4}>Updates</Link></motion.li>
-                                <motion.li
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/contact' && 'text-blue-500 font-bold'} hover:text-blue-500  `} tabIndex={-1}><Link to="/contact" tabIndex={5}>Contact Me</Link></motion.li>
-                                <motion.li
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
-                                    className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/skillBadges' && 'text-blue-500 font-bold'} hover:text-blue-500  `} tabIndex={-1}><Link to="/skillBadges" tabIndex={6}>Skill Badges</Link></motion.li>
+                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/" tabIndex={2}>Home</Link></li>
+                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/calculate' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/calculate" tabIndex={3}>Calculate Points</Link></li>
+                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/updates' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/updates" tabIndex={4}>Updates</Link></li>
+                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/contact' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/contact" tabIndex={5}>Contact Me</Link></li>
+                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/skillBadges' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/skillBadges" tabIndex={6}>Skill Badges</Link></li>
                             </ul>
 
 

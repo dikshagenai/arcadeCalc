@@ -183,7 +183,7 @@ const Calculate = () => {
 
                 {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
                 <div ref={calculatePointsRef}>
-                    <div className="text-center mb-2">
+                    <div className="text-center mb-2 select-none">
                         <h1 className="text-xl font-bold text-gray-900 ">
                             <span className="text-blue-500">G</span>
                             <span className="text-red-500">o</span>
@@ -418,7 +418,7 @@ const Calculate = () => {
 
 
                 {/* Footer of the card */}
-                <div className="mb-2 text-white">
+                <div className="mb-2 text-white select-none">
                     <p className='text-sm'>
                         <strong>NOTE: </strong>
                         <span>If you have joined under any Facilitator, then only consider the <strong className='italic'>Facilitator Points</strong>; otherwise, consider the <strong className='italic'>Arcade Points</strong>.</span>
