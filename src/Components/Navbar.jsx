@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 
 
 const Navbar = () => {
+    const timeLimit = 500
     const navbarRef = useRef(null);
     const location = useLocation();
     const [IsMenuExpanded, setIsMenuExpanded] = useState(false)
@@ -21,7 +22,7 @@ const Navbar = () => {
         setTimeout(async () => {
             navbarRef.current.classList.remove('fixed')
             navbarRef.current.classList.add('hidden')
-        }, 1000);
+        }, timeLimit);
     }
 
     const showNavBar = () => {
@@ -46,15 +47,17 @@ const Navbar = () => {
         }
     };
 
-    const removeExpandedMenu = () => {
-        hideNavBar();
-    }
+
 
 
 
 
 
     useEffect(() => {
+        const removeExpandedMenu = () => {
+            hideNavBar();
+        }
+
         const handleClickOutside = (event) => {
             if (IsMenuExpanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
                 removeExpandedMenu()
@@ -63,10 +66,12 @@ const Navbar = () => {
                 // Below these 2 conditions check if the clicked item is span or the parentElement of span i.e Link
                 if (event.target.classList.contains('nav-bar-link')) {
                     removeExpandedMenu()
+
                     return;
                 } else {
                     if (event.target.parentElement.classList.contains('nav-bar-link')) {
                         removeExpandedMenu()
+
                         return;
                     }
 
@@ -121,13 +126,13 @@ const Navbar = () => {
 
                         {/* Toggled Navbar */}
                         <motion.div
-                            initial={{ opacity: 0 }}
+                            initial={{ opacity: 0, right: '-10rem', top: '1rem' }}
                             animate={{
                                 right: IsMenuExpanded ? '1rem' : '-10rem',
                                 top: IsMenuExpanded ? '1rem' : '1rem',
                                 opacity: IsMenuExpanded ? 1 : 0
                             }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: timeLimit/1000 }}
 
 
                             id='mobile-navbar'
@@ -147,7 +152,7 @@ const Navbar = () => {
                                 <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span className='nav-bar-link'>Skill Badges</span></Link>
 
                                 <div className='flex justify-center items-center py-5 p-2 w-full my-auto'>
-                                    <Link target='_blank' rel="noreferrer"  className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.instagram.com/deepanshu_prajapati01/"}>
+                                    <Link target='_blank' rel="noreferrer" className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.instagram.com/deepanshu_prajapati01/"}>
                                         <FaInstagram className='text-2xl' />
                                     </Link>
                                     <Link target='_blank' rel="noreferrer" className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.linkedin.com/in/deepanshu-prajapati01/"}>
