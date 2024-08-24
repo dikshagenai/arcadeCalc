@@ -170,10 +170,10 @@ const Navbar = () => {
 
                         {/* Toggled Navbar */}
                         <motion.div
-                            initial={{ opacity: 0, right: '-10rem', top: '1rem' }}
+                            initial={{ opacity: 0, right: '-10rem', top: '0' }}
                             animate={{
-                                right: IsMenuExpanded ? '1rem' : '-10rem',
-                                top: IsMenuExpanded ? '1rem' : '1rem',
+                                right: IsMenuExpanded ? '0' : '-10rem',
+                                top: IsMenuExpanded ? '0' : '0',
                                 opacity: IsMenuExpanded ? 1 : 0
                             }}
                             transition={{ duration: timeLimit / 1000 }}
