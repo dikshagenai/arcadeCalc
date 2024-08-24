@@ -179,7 +179,7 @@ const Calculate = () => {
 
     return (
         <>
-            <div className="font-mono my-3 p-3 px-6 sm:p-6 rounded-xl shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
+            <div className="font-mono my-3 p-4 px-6 sm:p-6 rounded-xl shadow-lg border border-gray-200 max-w-md w-5/6 sm:w-full mx-auto bg-black hover:bg-gray-900 transition-all duration-300">
 
                 {/* SHOW THIS PART WHILE CALCULATING THE POINTS.... */}
                 <div ref={calculatePointsRef}>
@@ -370,11 +370,17 @@ const Calculate = () => {
                                         </div>
 
                                         <div className="mt-2 bg-gray-300 rounded-full w-full">
-                                            <div className={`h-2 rounded-full bg-${milestoneData['themeColor']}-500`} style={{
-                                                width: (isClickedDetailedOutput ? (
-                                                    (percentageProgressJson[milestoneName] / milestoneData['requiredPoints'] * 100).toFixed(2) + '%'
-                                                ) : '0')
-                                            }}></div>
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{
+                                                    width: (isClickedDetailedOutput ? (
+                                                        (percentageProgressJson[milestoneName] / milestoneData['requiredPoints'] * 100).toFixed(2) + '%'
+                                                    ) : '0')
+                                                }}
+                                                transition={{ duration: 1 }}
+                                                viewport={{once: true}}
+
+                                                className={`h-2 rounded-full bg-${milestoneData['themeColor']}-500`} ></motion.div>
                                         </div>
                                     </div>
 
