@@ -667,6 +667,9 @@ video {
 .flex {
   display: flex;
 }
+.inline-flex {
+  display: inline-flex;
+}
 .table {
   display: table;
 }
@@ -702,6 +705,9 @@ video {
 }
 .w-1\/2 {
   width: 50%;
+}
+.w-2 {
+  width: 0.5rem;
 }
 .w-2\/6 {
   width: 33.333333%;
@@ -933,6 +939,10 @@ video {
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+.bg-sky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;

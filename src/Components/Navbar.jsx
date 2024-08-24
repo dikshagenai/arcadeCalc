@@ -12,6 +12,8 @@ import { motion } from 'framer-motion';
 
 
 const Navbar = () => {
+
+
     const timeLimit = 500
     const navbarRef = useRef(null);
     const location = useLocation();
@@ -34,7 +36,6 @@ const Navbar = () => {
 
     const toggleHamburger = (event) => {
         event.stopPropagation()
-        // setIsMenuExpanded(prevState => !prevState);
         if (IsMenuExpanded === true) {
             // to hide the navbar
             hideNavBar();
@@ -46,9 +47,46 @@ const Navbar = () => {
 
         }
     };
+    
+    const updateNotificationRef = useRef(null)
+    const updateNotificationRefMobile = useRef(null);
+    // Extract the value from localStorage
+    const lastUpdatedFromStorage = localStorage.getItem('updatePage');
+
+    // Keeps track of the new notifications
+    useEffect(() => {
+        // Update Page highlight, if new updates added.
+        const addNotificationSymbol = () => {
+            updateNotificationRef.current.classList.remove('hidden')
+            updateNotificationRef.current.classList.add('inline-flex')
+            updateNotificationRefMobile.current.classList.remove('hidden')
+            updateNotificationRefMobile.current.classList.add('inline-flex')
+        }
+
+        const removeNotificationSymbol = () => {
+            updateNotificationRef.current.classList.remove('inline-flex')
+            updateNotificationRef.current.classList.add('hidden')
+            updateNotificationRefMobile.current.classList.remove('inline-flex')
+            updateNotificationRefMobile.current.classList.add('hidden')
+        }
 
 
-
+        try {
+            const lastUpdated = parseInt(localStorage.getItem('updatePage'))
+            if (lastUpdated && lastUpdated < parseInt(process.env.REACT_APP_LAST_UPDATED)) {
+                addNotificationSymbol()
+            }
+            else if (lastUpdated && lastUpdated === parseInt(process.env.REACT_APP_LAST_UPDATED)) {
+                removeNotificationSymbol()
+            }
+            else {
+                localStorage.setItem('updatePage', 0)
+                addNotificationSymbol()
+            }
+        } catch (error) {
+            console.error("Failed to get last modified status of Updates Page", error)
+        }
+    }, [lastUpdatedFromStorage]);
 
 
 
@@ -114,7 +152,13 @@ const Navbar = () => {
                             <ul className='hidden sm:flex items-center justify-end space-x-0 space-y-2 text-white sm:space-y-0 sm:space-x-2'>
                                 <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/" tabIndex={2}>Home</Link></li>
                                 <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/calculate' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/calculate" tabIndex={3}>Calculate Points</Link></li>
-                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/updates' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/updates" tabIndex={4}>Updates</Link></li>
+                                <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/updates' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}>
+                                    <Link to="/updates" tabIndex={4} className='flex'>
+                                        Updates
+                                        <span className='newNotification relative hidden rounded-full h-2 w-2 bg-sky-500' ref={updateNotificationRef} ></span>
+
+                                    </Link>
+                                </li>
                                 <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/contact' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/contact" tabIndex={5}>Contact Me</Link></li>
                                 <li className={` sm:px-3 text-nowrap text-center cursor-pointer ${location.pathname === '/skillBadges' && 'text-blue-500 font-bold'} hover:text-blue-300  `} tabIndex={-1}><Link to="/skillBadges" tabIndex={6}>Skill Badges</Link></li>
                             </ul>
@@ -132,7 +176,7 @@ const Navbar = () => {
                                 top: IsMenuExpanded ? '1rem' : '1rem',
                                 opacity: IsMenuExpanded ? 1 : 0
                             }}
-                            transition={{ duration: timeLimit/1000 }}
+                            transition={{ duration: timeLimit / 1000 }}
 
 
                             id='mobile-navbar'
@@ -144,10 +188,20 @@ const Navbar = () => {
                                 <MdOutlineClose className='flex-shrink-0 text-2xl sm:hidden cursor-pointer' onClick={toggleHamburger} />
                             </button>
 
+
+                            {/* <Link to="/updates" tabIndex={4} className='flex'>
+                                Updates
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+
+                            </Link> */}
+
+
                             <div className="flex flex-col">
                                 <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/' ? 'text-blue-500' : 'text-black'} `} to="/" tabIndex={2}><span className='nav-bar-link'>Home</span></Link>
                                 <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/calculate' ? 'text-blue-500' : 'text-black'} `} to="/calculate" tabIndex={3}><span className='nav-bar-link'>Calculate Points</span></Link>
-                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} to="/updates" tabIndex={4}><span className='nav-bar-link'>Updates</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center ${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} to="/updates" tabIndex={4}>
+                                    <span className='nav-bar-link'>Updates</span>
+                                    <span className='newNotification nav-bar-link relative rounded-full h-2 w-2 bg-sky-500' ref={updateNotificationRefMobile}></span></Link>
                                 <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/contact' ? 'text-blue-500' : 'text-black'} `} to="/contact" tabIndex={5}><span className='nav-bar-link'>Contact Me</span></Link>
                                 <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span className='nav-bar-link'>Skill Badges</span></Link>
 
