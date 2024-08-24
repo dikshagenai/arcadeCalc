@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 
 
@@ -15,13 +16,38 @@ const Navbar = () => {
     const location = useLocation();
     const [IsMenuExpanded, setIsMenuExpanded] = useState(false)
 
+    const hideNavBar = async () => {
+        setIsMenuExpanded(false)
+        setTimeout(async () => {
+            navbarRef.current.classList.remove('fixed')
+            navbarRef.current.classList.add('hidden')
+        }, 1000);
+    }
+
+    const showNavBar = () => {
+        setIsMenuExpanded(true)
+        navbarRef.current.classList.remove('hidden')
+        navbarRef.current.classList.add('fixed')
+    }
+
+
     const toggleHamburger = (event) => {
         event.stopPropagation()
-        setIsMenuExpanded(prevState => !prevState);
+        // setIsMenuExpanded(prevState => !prevState);
+        if (IsMenuExpanded === true) {
+            // to hide the navbar
+            hideNavBar();
+        }
+
+        else if (IsMenuExpanded === false) {
+            // to show the navbar
+            showNavBar();
+
+        }
     };
 
     const removeExpandedMenu = () => {
-        setIsMenuExpanded(false)
+        hideNavBar();
     }
 
 
@@ -31,16 +57,16 @@ const Navbar = () => {
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (IsMenuExpanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
-                setIsMenuExpanded(false);
+                removeExpandedMenu()
             }
             else if (IsMenuExpanded && navbarRef.current) {
                 // Below these 2 conditions check if the clicked item is span or the parentElement of span i.e Link
                 if (event.target.classList.contains('nav-bar-link')) {
-                    setIsMenuExpanded(false);
+                    removeExpandedMenu()
                     return;
                 } else {
                     if (event.target.parentElement.classList.contains('nav-bar-link')) {
-                        setIsMenuExpanded(false)
+                        removeExpandedMenu()
                         return;
                     }
 
@@ -94,7 +120,18 @@ const Navbar = () => {
                         </div>
 
                         {/* Toggled Navbar */}
-                        <div className={`z-30 top-4 right-4 w-full max-w-xs bg-gray-200 rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 ${IsMenuExpanded ? 'fixed' : 'hidden'}`} ref={navbarRef}>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                right: IsMenuExpanded ? '1rem' : '-10rem',
+                                top: IsMenuExpanded ? '1rem' : '1rem',
+                                opacity: IsMenuExpanded ? 1 : 0
+                            }}
+                            transition={{ duration: 1 }}
+
+
+                            id='mobile-navbar'
+                            className={`z-30 top-4 right-4 w-full max-w-xs bg-gray-200 rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 hidden`} ref={navbarRef}>
                             <button type="button" className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 " onClick={toggleHamburger}>
                                 <span className="sr-only">
                                     Close navigation
@@ -110,19 +147,19 @@ const Navbar = () => {
                                 <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span className='nav-bar-link'>Skill Badges</span></Link>
 
                                 <div className='flex justify-center items-center py-5 p-2 w-full my-auto'>
-                                    <Link className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.instagram.com/deepanshu_prajapati01/"}>
+                                    <Link target='_blank' rel="noreferrer"  className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.instagram.com/deepanshu_prajapati01/"}>
                                         <FaInstagram className='text-2xl' />
                                     </Link>
-                                    <Link className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.linkedin.com/in/deepanshu-prajapati01/"}>
+                                    <Link target='_blank' rel="noreferrer" className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.linkedin.com/in/deepanshu-prajapati01/"}>
                                         <FaLinkedin className='text-2xl' />
                                     </Link>
-                                    <Link className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://github.com/deepanshu-prajapati01"}>
+                                    <Link target='_blank' rel="noreferrer" className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://github.com/deepanshu-prajapati01"}>
                                         <FaGithub className='text-2xl' />
                                     </Link>
                                 </div>
                             </div>
 
-                        </div>
+                        </motion.div>
                     </div>
 
 
