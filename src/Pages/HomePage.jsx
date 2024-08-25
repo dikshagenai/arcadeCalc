@@ -26,7 +26,7 @@ const HomePage = () => {
 
 
             {/* Main Component */}
-                <Home />
+            <Home />
 
 
         </>

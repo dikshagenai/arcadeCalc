@@ -14,7 +14,9 @@ const Calculate = () => {
     const inputTextBox = useRef(null)
 
     useEffect(() => {
-        inputTextBox.current.focus()
+        if (window.innerWidth > 760) {
+            inputTextBox.current.focus()
+        }
     }, [])
 
 
@@ -378,7 +380,7 @@ const Calculate = () => {
                                                     ) : '0')
                                                 }}
                                                 transition={{ duration: 1 }}
-                                                viewport={{once: true}}
+                                                viewport={{ once: true }}
 
                                                 className={`h-2 rounded-full bg-${milestoneData['themeColor']}-500`} ></motion.div>
                                         </div>

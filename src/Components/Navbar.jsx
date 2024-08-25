@@ -47,7 +47,7 @@ const Navbar = () => {
 
         }
     };
-    
+
     const updateNotificationRef = useRef(null)
     const updateNotificationRefMobile = useRef(null);
     // Extract the value from localStorage
@@ -136,13 +136,13 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='w-full mb-5 select-none font-serif'>
+            <header className='z-30 w-full mb-5 select-none font-serif fixed '>
                 <nav className='flex items-center w-full py-5 bg-black sm:px-3 justify-evenly'>
                     {/* elem -1 */}
                     <div className='flex flex-1 ml-6 text-white sm:ml-3'>
-                        <Link to="/">
+                        <a href="/">
                             <img width={32} height={32} className='font-bold text-white ' src="/favicon_io/favicon-32x32.png" alt="Arcade Calc" />
-                        </Link>
+                        </a>
                     </div>
 
                     {/* elem -2  */}
@@ -180,7 +180,7 @@ const Navbar = () => {
 
 
                             id='mobile-navbar'
-                            className={`z-30 top-4 right-4 w-full max-w-xs bg-gray-200 rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 hidden`} ref={navbarRef}>
+                            className={`z-30 top-4 right-4 w-full max-w-xs bg-gray-900 rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 hidden`} ref={navbarRef}>
                             <button type="button" className="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 " onClick={toggleHamburger}>
                                 <span className="sr-only">
                                     Close navigation
@@ -197,13 +197,13 @@ const Navbar = () => {
 
 
                             <div className="flex flex-col">
-                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/' ? 'text-blue-500' : 'text-black'} `} to="/" tabIndex={2}><span className='nav-bar-link'>Home</span></Link>
-                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/calculate' ? 'text-blue-500' : 'text-black'} `} to="/calculate" tabIndex={3}><span className='nav-bar-link'>Calculate Points</span></Link>
-                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center ${location.pathname === '/updates' ? 'text-blue-500' : 'text-black'} `} to="/updates" tabIndex={4}>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/' ? 'text-blue-500' : 'text-white'} `} to="/" tabIndex={2}><span className='nav-bar-link'>Home</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/calculate' ? 'text-blue-500' : 'text-white'} `} to="/calculate" tabIndex={3}><span className='nav-bar-link'>Calculate Points</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center ${location.pathname === '/updates' ? 'text-blue-500' : 'text-white'} `} to="/updates" tabIndex={4}>
                                     <span className='nav-bar-link'>Updates</span>
                                     <span className='newNotification nav-bar-link relative rounded-full h-2 w-2 bg-sky-500' ref={updateNotificationRefMobile}></span></Link>
-                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/contact' ? 'text-blue-500' : 'text-black'} `} to="/contact" tabIndex={5}><span className='nav-bar-link'>Contact Me</span></Link>
-                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-black'} `} to="/skillBadges" tabIndex={6}><span className='nav-bar-link'>Skill Badges</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/contact' ? 'text-blue-500' : 'text-white'} `} to="/contact" tabIndex={5}><span className='nav-bar-link'>Contact Me</span></Link>
+                                <Link className={`nav-bar-link w-full my-auto py-5 border-b border-gray-400 p-2 flex justify-center items-center  ${location.pathname === '/skillBadges' ? 'text-blue-500' : 'text-white'} `} to="/skillBadges" tabIndex={6}><span className='nav-bar-link'>Skill Badges</span></Link>
 
                                 <div className='flex justify-center items-center py-5 p-2 w-full my-auto'>
                                     <Link target='_blank' rel="noreferrer" className='bg-gray-300 p-2 rounded-lg mx-2 flex-1 flex justify-center items-center border-gray-400' to={"https://www.instagram.com/deepanshu_prajapati01/"}>
