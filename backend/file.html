@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Deepanshu Prajapati | Google Cloud Skills Boost</title>
+  <meta name="action-cable-url" content="/cable" />
+  <script>
+    //<![CDATA[
+    window.gon = {}; gon.deployment = "google-run";
+    //]]>
+  </script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', "GTM-5XSKHDX");
+  </script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-2X30ZRBDSG" async="async"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', "G-2X30ZRBDSG", {
+      user_id: ""
+    });
+  </script>
+  <script
+    src="https://cdn.qwiklabs.com/assets/hallofmirrors/polyfills/webcomponents-loader-b1b28b59480cca2ab0c23485f64ba2ec8893bdc9.js"></script>
+  <script src="https://cdn.qwiklabs.com/assets/vendor-5ee6eafe71fd3831091397e1aa344044a8642273.js"></script>
+  <script src="https://cdn.qwiklabs.com/assets/application-bc1370bd7242725a111bd73a0deb268d31c65153.js"></script>
+  <script
+    src="https://cdn.qwiklabs.com/assets/hallofmirrors/hallofmirrors-e9907829fcf4b341abf5fb5f43f6a5f5db8d9de7.js"></script>
+  <script src="https://support.google.com/inapp/api.js"></script>
+
+
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token"
+    content="C6kGTkLz3T32pP8WijqkxFhoP2AsNIdsm1VKdlsXthQxuDSrxFVpaYjcMSH+Yv8Byft6mZaOrWogqR6ZwtlR6g==" />
+  <meta content='width=device-width, initial-scale=1.0, user-scalable=yes' name='viewport'>
+  <meta content='1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0' name='google-site-verification'>
+  <meta content='#3681E4' property='msapplication-TileColor'>
+  <meta content='/favicon-144.png' property='msapplication-TileImage'>
+  <meta
+    content='{&quot;userId&quot;:null,&quot;experimentIds&quot;:[&quot;show_annual_purchase_now&quot;,&quot;rise_poc&quot;,&quot;one_tap&quot;,&quot;alexandria_show_bundle_errors&quot;,&quot;innovator_membership_modal&quot;,&quot;onramp&quot;,&quot;iw_ai_assistant&quot;,&quot;cache_explore_page_result&quot;,&quot;ai_skills&quot;,&quot;program_announcements&quot;,&quot;monsoon_quota&quot;,&quot;canonical_domain_redirect&quot;,&quot;new_report_fields&quot;,&quot;gcsbo_free&quot;,&quot;entity_api_keys&quot;,&quot;guest_user&quot;,&quot;show_interview_warmup&quot;,&quot;oauth_risc_shutoff&quot;,&quot;hide_price&quot;,&quot;course_monetization&quot;,&quot;innovator_membership&quot;,&quot;content_provider_admin&quot;,&quot;credly_integration_announcement_modal&quot;,&quot;catalog_filters_button&quot;,&quot;chat_off_for_signed_out_users&quot;,&quot;search_autocomplete&quot;,&quot;alexandria_subscriptions_pagination&quot;,&quot;dedup_badge&quot;,&quot;hide_unpopular_filters&quot;,&quot;used_in&quot;,&quot;teams&quot;,&quot;landing_page&quot;,&quot;reroute_new_interview_warmup&quot;,&quot;credly&quot;,&quot;tell_navy_allowed_zones&quot;,&quot;search_updates&quot;,&quot;learning_plan_search&quot;]}'
+    name='help-api-product-data'>
+  <meta content='{&quot;groupIds&quot;:[]}' name='help-api-custom-data'>
+  <meta
+    content='Qwiklabs provides real Google Cloud environments that help developers and IT professionals learn cloud platforms and software, such as Firebase, Kubernetes and more.'
+    name='description'>
+  <meta content='Qwiklabs' name='author'>
+  <meta content='Deepanshu Prajapati | Google Cloud Skills Boost' property='og:title'>
+  <meta content='website' property='og:type'>
+  <meta content='/favicon-144.png' property='og:image'>
+  <meta content='Qwiklabs' property='og:site_name'>
+  <meta
+    content='Qwiklabs provides real Google Cloud environments that help developers and IT professionals learn cloud platforms and software, such as Firebase, Kubernetes and more.'
+    property='og:description'>
+  <meta content='/qwiklabs_logo_900x887.png' property='og:logo' size='900x887'>
+  <meta content='/qwiklabs_logo_994x187.png' property='og:logo' size='994x187'>
+
+
+  <meta property="og:url"
+    content="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901" />
+  <link href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901"
+    rel="canonical" />
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=ar'
+    hreflang='ar' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=de'
+    hreflang='de' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=es'
+    hreflang='es' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=fr'
+    hreflang='fr' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=fr_CA'
+    hreflang='fr-CA' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=he'
+    hreflang='he' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=id'
+    hreflang='id' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=it'
+    hreflang='it' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=ja'
+    hreflang='ja' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=ko'
+    hreflang='ko' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=pl'
+    hreflang='pl' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=pt_BR'
+    hreflang='pt-BR' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=pt_PT'
+    hreflang='pt-PT' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=ru'
+    hreflang='ru' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=tr'
+    hreflang='tr' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=uk'
+    hreflang='uk' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=zh'
+    hreflang='zh' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?locale=zh_TW'
+    hreflang='zh-TW' rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901' hreflang='en'
+    rel='alternate'>
+  <link href='https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901'
+    hreflang='x-default' rel='alternate'>
+  <link href='https://cdn.qwiklabs.com/X46FrQX4iLxHW5MxL8jICvgZM0evMEKscCeQO%2BazGdo%3D' rel='shortcut icon'
+    type='image/x-icon'>
+
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Oswald:400|Roboto+Mono:400,700|Roboto:300,400,500,700|Google+Sans:300,400,500,700|Google+Sans+Display:400|Material+Icons|Google+Material+Icons|Google+Sans+Text:400,500,700"
+    media="screen" />
+
+  <link rel="stylesheet" href="https://cdn.qwiklabs.com/assets/application-6201d64c90741793828aba56c2d40eb4337b8591.css"
+    media="all" />
+  <link rel="stylesheet" href="https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css"
+    media="screen" />
+
+
+  <style>
+    :root {
+      --primary-text-on-surface-color: #1c3ee9;
+      --primary-text-on-surface-color-dark: #1536d9;
+      --primary-text-on-surface-color-darker: #1330c4;
+      --primary-text-on-surface-color-darkest: #112baf;
+      --primary-surface-color: #1a73e8;
+      --primary-surface-color-rgb: 26, 115, 232;
+      --primary-surface-color-light: #d1e3fa;
+      --primary-surface-color-lightest: #e8f1fd;
+      --text-on-primary-color: #ffffff;
+      --accent-text-on-surface-color: #f000e8;
+      --accent-surface-color: #f9ab00;
+      --accent-surface-color-rgb: 249, 171, 0;
+      --accent-surface-color-light: #ffefcc;
+      --text-on-accent-color: #202124;
+    }
+  </style>
+
+
+
+</head>
+
+<body class=''>
+  <ql-drawer-container class='body-container'>
+    <ql-drawer id='app-nav' mode='over' slot='drawer' width='288'>
+      <div class='nav-panel__logo'>
+        <div class="custom-logo"><img alt="Google Cloud Skills Boost" height="24" aria-label="Google Cloud Skills Boost"
+            src="https://cdn.qwiklabs.com/PGyhmgS3zZncIEGywnx5UXsKwepRRFQ9BhAg%2FWHNrlQ%3D" /></div>
+      </div>
+      <nav class='ql-sidenav'>
+        <ql-sidenav-item href='/paths' icon='playlist_add_check' label='Paths'></ql-sidenav-item>
+
+        <ql-sidenav-item href='/catalog' icon='school' label='Explore'></ql-sidenav-item>
+
+        <ql-sidenav-item href='/subscriptions' icon='subscriptions' label='Subscriptions'></ql-sidenav-item>
+
+      </nav>
+
+    </ql-drawer>
+    <ql-drawer-content class='body-content' slot='drawer-content'>
+      <ql-toolbar class='sticky app-toolbar' jumpEnabled role='banner'>
+        <div class='toolbar-navigation' slot='navigation'>
+          <ql-toggle-button for="app-nav" icon="menu" label="Toggle navigation drawer" tip="Menu"
+            class=""></ql-toggle-button>
+        </div>
+        <div class='toolbar-title ql-title-medium' slot='title'><a class="custom-logo"
+            aria-label="Google Cloud Skills Boost" href="/">
+            <div class="custom-logo"><img alt="Google Cloud Skills Boost" height="24"
+                aria-label="Google Cloud Skills Boost"
+                src="https://cdn.qwiklabs.com/PGyhmgS3zZncIEGywnx5UXsKwepRRFQ9BhAg%2FWHNrlQ%3D" /></div>
+          </a></div>
+        <div class='toolbar-actions' slot='action'>
+
+          <ql-icon-button class='mobile-hide' icon='help_outline' id='help-menu-button' label='Open help menu'
+            tip='Help'></ql-icon-button>
+          <ql-menu for='help-menu-button' id='help-menu'>
+            <ql-menu-item data-analytics-action='opened_help' data-analytics-label='profile' label='Help Center'
+              onclick='hallofmirrors.helpService.startHelp({&quot;productData&quot;:{&quot;userId&quot;:null},&quot;context&quot;:&quot;profile&quot;})'></ql-menu-item>
+            <ql-menu-item href='mailto:support@qwiklabs.com' label='Email support'></ql-menu-item>
+            <ql-menu-item
+              href='https://reportingwidget.google.com/widget/54?cid=1&amp;url=https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901?'
+              label='Report Illegal Content'></ql-menu-item>
+          </ql-menu>
+
+          <ql-button data-analytics-action='clicked_header_join' href='/users/sign_up'>
+            Join
+          </ql-button>
+          <ql-button data-analytics-action='clicked_header_sign_in' href='/users/sign_in'>
+            Sign in
+          </ql-button>
+
+
+        </div>
+      </ql-toolbar>
+      <div class='page-header'>
+      </div>
+      <main id='jump-content'>
+
+        <div class='text--center'>
+          <ql-avatar class='profile-avatar l-mbl' size='160'
+            src='https://lh3.googleusercontent.com/a/ACg8ocKOqnn1E5QfsmkCdQedO2RhGGHcbTNJP_EfpibS5Kj3S_u9Qg=s320-c'></ql-avatar>
+          <h1 class='ql-display-small'>
+            Deepanshu Prajapati
+          </h1>
+          <p class='ql-body-large l-mbl'>
+            Member since 2024
+          </p>
+          <div class='profile-league'>
+            <h2 class='ql-headline-medium'>Diamond League</h2>
+            <strong>33960 points</strong>
+            <img width="120"
+              src="https://cdn.qwiklabs.com/assets/leagues/diamond_sm-6bb229d2803807410116694fb0aed7f6f43aa63a.png" />
+          </div>
+          <div class='profile-badges'>
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9666522"><img
+                  alt="Badge for Implement Load Balancing on Compute Engine"
+                  src="https://cdn.qwiklabs.com/gwaziiY9l16dYBocReK5WM6Xe%2Ft3NoOo4026BzAdP%2FY%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Implement Load Balancing on Compute Engine
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 30, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-0' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9666229"><img
+                  alt="Badge for Get Started with Dataplex"
+                  src="https://cdn.qwiklabs.com/95bg9lvs4ofAYzNPQvruZuta%2BoBBZ%2FOjXKHB8RIJCqU%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Get Started with Dataplex
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 30, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-1' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9665890"><img
+                  alt="Badge for Get Started with Google Workspace Tools"
+                  src="https://cdn.qwiklabs.com/f5Mr8u%2Boze%2F5F0QqT4tpDjHVQeGYgdGflVzvSrEXEMs%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Get Started with Google Workspace Tools
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 30, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-2' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9657692"><img
+                  alt="Badge for App Engine: 3 Ways"
+                  src="https://cdn.qwiklabs.com/18RW9hCoxeoVzbkxI%2BEYO2oIELps0sJ4FzbOvZxXOWM%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                App Engine: 3 Ways
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 29, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-3' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9657475"><img
+                  alt="Badge for Mitigate Threats and Vulnerabilities with Security Command Center"
+                  src="https://cdn.qwiklabs.com/ipP%2Fo0bnY4CWQUWJ05%2ByyQ1%2BSoK3MrI7Um1pbtlf6GY%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Mitigate Threats and Vulnerabilities with Security Command Center
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 29, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-4' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9657216"><img
+                  alt="Badge for Networking Fundamentals on Google Cloud"
+                  src="https://cdn.qwiklabs.com/%2FX2jwzmWtD0IjbWRpVyW9CH0tjmbSpgY8oDBwdYxN5M%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Networking Fundamentals on Google Cloud
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 29, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-5' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9643486"><img
+                  alt="Badge for The Arcade June Speedrun"
+                  src="https://cdn.qwiklabs.com/o3vvQUlhdeUttI4qFkalaySen%2BXT4d1j%2FkELDMem7nw%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade June Speedrun
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 28, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-6' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9628772"><img
+                  alt="Badge for Level 2: Develop and Deploy"
+                  src="https://cdn.qwiklabs.com/4Ql0saQsWdhgRSQGresvulExWUOiLL3X4pgk5FKQJ70%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Level 2: Develop and Deploy
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 27, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-7' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9627794"><img
+                  alt="Badge for The Arcade Trivia June 2024 Week 4"
+                  src="https://cdn.qwiklabs.com/sgZMu5mc%2Fy41LjezVGQXrwsgiu3xDKbrfzTJS4HKRGs%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia June 2024 Week 4
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 27, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-8' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9615008"><img
+                  alt="Badge for The Arcade Trivia June 2024 Week 3"
+                  src="https://cdn.qwiklabs.com/ZkE31hT0bSh8WrOtcN04VfbqYYjvYL6QmnfIUdqsQnI%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia June 2024 Week 3
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 26, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-9' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9614478"><img
+                  alt="Badge for The Arcade Trivia June 2024 Week 2"
+                  src="https://cdn.qwiklabs.com/dKR8q5nnI%2BZg5FSiwiQMz%2BFyLqaAey1H%2BjF7Oxd9IzM%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia June 2024 Week 2
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 26, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-10' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9614115"><img
+                  alt="Badge for The Arcade Trivia June 2024 Week 1"
+                  src="https://cdn.qwiklabs.com/tDT%2Bn9STku1lrd4G1%2BO628kd8oVev7Vz2FEo9decG2A%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia June 2024 Week 1
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 26, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-11' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9609535"><img
+                  alt="Badge for Level 1: Cloud Networking"
+                  src="https://cdn.qwiklabs.com/9Fiim%2FtWfwxf7oxCqEd%2Fh2PT%2BTj0TFg%2Fyv%2Fi6NpAk%2BI%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Level 1: Cloud Networking
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 26, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-12' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9368321"><img
+                  alt="Badge for Level 3: GenAIus Travels"
+                  src="https://cdn.qwiklabs.com/RiB%2FxJsrAucb%2FjJFO9cVLycyeO9qOV2CwldsWo%2FM0OE%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Level 3: GenAIus Travels
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 8, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-13' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9299766"><img
+                  alt="Badge for Build a Data Warehouse with BigQuery"
+                  src="https://cdn.qwiklabs.com/ot8wA4n6ClilzPd3HCez4wopmfQEhtgperFfjREB4nI%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Build a Data Warehouse with BigQuery
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned Jun 3, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-14' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9180585"><img
+                  alt="Badge for Introduction to Generative AI"
+                  src="https://cdn.qwiklabs.com/KJbv0GOIxc4Ze8p7LH1Ke4TeOMBGPqAus29iGiFw5po%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Introduction to Generative AI
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 26, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-15' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9180511"><img
+                  alt="Badge for The Arcade Trivia May 2024 Week 4"
+                  src="https://cdn.qwiklabs.com/C5el0whPHCIth9r2EFUYL1PYTd0bz%2FGcDaJeCHKsA50%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia May 2024 Week 4
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 26, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-16' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9137345"><img
+                  alt="Badge for The Arcade Trivia May 2024 Week 3"
+                  src="https://cdn.qwiklabs.com/58i%2FKkeg%2BMoHEjMyuTEtdbxuj3DjEoU%2Bk3s3nbV%2FV%2Fk%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia May 2024 Week 3
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 23, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-17' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9132571"><img
+                  alt="Badge for The Arcade Health Tech"
+                  src="https://cdn.qwiklabs.com/eI84IS7KRyV3uM%2FYv05Wbhy3HfiOIlOSMMEZv2iaQsQ%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Health Tech
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 23, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-18' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9130710"><img
+                  alt="Badge for The Arcade Trivia May 2024 Week 2"
+                  src="https://cdn.qwiklabs.com/qRqp%2F8RpkA%2Fk%2FYj9bGwN78ojGJlizQtdXpxxNvBjvPM%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia May 2024 Week 2
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 23, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-19' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9120363"><img
+                  alt="Badge for The Arcade Trivia May 2024 Week 1"
+                  src="https://cdn.qwiklabs.com/3%2FRRosV4Xn4Ur5bDicxwSAO82P1laIZumQB9aDbiFE8%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                The Arcade Trivia May 2024 Week 1
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 22, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-20' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9119851"><img
+                  alt="Badge for Manage Data Models in Looker"
+                  src="https://cdn.qwiklabs.com/duy7iN%2BxmDI0xUTYnyjoCDLNxyPpa0Q24WbHZTkBDV4%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Manage Data Models in Looker
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 22, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-21' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9119401"><img
+                  alt="Badge for Derive Insights from BigQuery Data"
+                  src="https://cdn.qwiklabs.com/H9ejZ3tOWmxmAxE78ILPxvd%2FLQAjzq2Bi8TbpRkCNDk%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Derive Insights from BigQuery Data
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 22, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-22' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9118948"><img
+                  alt="Badge for Perform Predictive Data Analysis in BigQuery"
+                  src="https://cdn.qwiklabs.com/AX%2B9jIITVd7mqWAfNhSREi4FP5ep%2Fv9%2BZvrGnZEbQd0%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Perform Predictive Data Analysis in BigQuery
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 22, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-23' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9118314"><img
+                  alt="Badge for Level 2: Data with BigQuery"
+                  src="https://cdn.qwiklabs.com/MhSCUJvAtSMUzPCiP5awY3v1ZzgzKiw63K7pFCANWvo%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Level 2: Data with BigQuery
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 22, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-24' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9064104"><img
+                  alt="Badge for Secure BigLake Data"
+                  src="https://cdn.qwiklabs.com/a1g8TomyetnYU0HAG1Ms95WK1QbmrxiTuVfdqGr9JcM%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Secure BigLake Data
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 18, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-25' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9063576"><img
+                  alt="Badge for Configure Service Accounts and IAM Roles for Google Cloud"
+                  src="https://cdn.qwiklabs.com/WbUxwAElFJf9nLQsRMgACD3bcizi4Yb2EFuAWRFo1iY%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Configure Service Accounts and IAM Roles for Google Cloud
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 18, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-26' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/9061379"><img
+                  alt="Badge for Level 1: Security and Compliance"
+                  src="https://cdn.qwiklabs.com/18e7mXsO47H8ldZnOk%2BBTGPOtcypwabqc3s3zbXEerU%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Level 1: Security and Compliance
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 18, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-27' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/8955944"><img
+                  alt="Badge for Develop GenAI Apps with Gemini and Streamlit"
+                  src="https://cdn.qwiklabs.com/Wd0M6LLiUyTjAcKQd7IChkWEF%2BuAndWsKPKmgAAd5ZY%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Develop GenAI Apps with Gemini and Streamlit
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 10, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-28' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/8949278"><img
+                  alt="Badge for Level 3: GenAIus Registries"
+                  src="https://cdn.qwiklabs.com/CmKnJgGc%2FJXb%2FDCvu%2BzgvGfxxEQQ4kfQV5P9o3wUK0c%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Level 3: GenAIus Registries
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 9, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-29' tip='Learn more'></ql-button>
+            </div>
+
+            <div class='profile-badge'>
+              <a class="badge-image"
+                href="https://www.cloudskillsboost.google/public_profiles/5c1e434b-0957-430c-bedb-7dd616c30901/badges/8948701"><img
+                  alt="Badge for Prompt Design in Vertex AI"
+                  src="https://cdn.qwiklabs.com/Zd4Z2gdc58uW%2Fu5AcTNOvKnjokXECt8jfHGoYqqgz6w%3D" />
+              </a><span class='ql-title-medium l-mts'>
+                Prompt Design in Vertex AI
+              </span>
+              <span class='ql-body-medium l-mbs'>
+                Earned May 9, 2024 EDT
+              </span>
+              <ql-button hairline label='Learn more' modal='public-profile-award-modal-30' tip='Learn more'></ql-button>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+
+    </ql-drawer-content>
+  </ql-drawer-container>
+
+  <span class='hidden' id='flash-sibling-before'></span>
+  <ql-snackbar></ql-snackbar>
+
+  <script data-glue-cookie-notification-bar-category='2B'
+    src='https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js'></script>
+
+
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Implement Load Balancing on Compute Engine'
+    id='public-profile-award-modal-0'>
+    <p>Complete the introductory Implement Load Balancing on Compute Engine skill badge to demonstrate skills in the
+      following: writing gcloud commands and using Cloud Shell, creating and deploying virtual machines in Compute
+      Engine, and configuring network and HTTP load balancers. A skill badge is an exclusive digital badge issued by
+      Google Cloud in recognition of your proficiency with Google Cloud products and services and tests your ability to
+      apply your knowledge in an interactive hands-on environment. Complete this skill badge, and the final assessment
+      challenge lab, to receive a skill badge that you can share with your network.</p>
+    <ql-button href='/course_templates/648' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Get Started with Dataplex' id='public-profile-award-modal-1'>
+    <p>Earn a skill badge by completing the Get Started with Dataplex quest, where you use Dataplex to start creating a
+      data mesh on Google Cloud. A skill badge is an exclusive digital badge issued by Google Cloud in recognition of
+      your proficiency with Google Cloud products and services and tests your ability to apply your knowledge in an
+      interactive hands-on environment. Complete this Skill Badge, and the final assessment challenge lab, to receive a
+      digital badge that you can share with your network.</p>
+    <ql-button href='/course_templates/726' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Get Started with Google Workspace Tools'
+    id='public-profile-award-modal-2'>
+    <p>Earn an introductory skill badge by completing the Get Started with Google Workspace Tools course, where you will
+      get introduced to Google's collaborative platform and learn to use Gmail, Calendar, Meet, Drive, Sheets, and
+      AppSheet. A skill badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency
+      with Google Cloud products and services and tests your ability to apply your knowledge in an interactive hands-on
+      environment. Complete the skill badge, and final assessment challenge lab, to receive a digital badge that you can
+      share with your network.</p>
+    <ql-button href='/course_templates/676' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='App Engine: 3 Ways' id='public-profile-award-modal-3'>
+    <p>Earn a skill badge by completing the App Engine: 3 ways quest, where you learn how to use App Engine with Python,
+      Go, and PHP. A skill badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency
+      with Google Cloud products and services and tests your ability to apply your knowledge in an interactive hands-on
+      environment. Complete this Skill Badge, and the final assessment challenge lab, to receive a digital badge that
+      you can share with your network.</p>
+    <ql-button href='/course_templates/671' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Mitigate Threats and Vulnerabilities with Security Command Center'
+    id='public-profile-award-modal-4'>
+    <p>Complete the intermediate Mitigate Threats and Vulnerabilities with Security Command Center skill badge to
+      demonstrate skills in the following: preventing and managing environment threats, identifying and mitigating
+      application vulnerabilities, and responding to security anomalies.</p>
+    <ql-button href='/course_templates/759' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Networking Fundamentals on Google Cloud'
+    id='public-profile-award-modal-5'>
+    <p>Earn a skill badge by completing the Networking Fundamentals on Google Cloud quest, where you learn how to work
+      with VPC networks and load balancers on Google Cloud. A skill badge is an exclusive digital badge issued by Google
+      Cloud in recognition of your proficiency with Google Cloud products and services and tests your ability to apply
+      your knowledge in an interactive hands-on environment. Complete this Skill Badge, and the final assessment
+      challenge lab, to receive a digital badge that you can share with your network.</p>
+    <ql-button href='/course_templates/748' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade June Speedrun' id='public-profile-award-modal-6'>
+    <p>Race to the finish line with the Arcade June Speedrun and pick up valuable skills along with an exclusive Google
+      Cloud Credential. Get hands-on experience with APIs, learn how to build a serverless app, and more! No prior
+      experience needed.</p>
+    <ql-button href='/games/1435' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Level 2: Develop and Deploy' id='public-profile-award-modal-7'>
+    <p>Bring your ideas to life by gaining hands-on experience in application development and deployment on Google Cloud
+      Platform. Master security, traffic management, and learn to use development frameworks while earning a Google
+      Cloud Credential. No prior experience needed!</p>
+    <ql-button href='/games/1420' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia June 2024 Week 4' id='public-profile-award-modal-8'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for June Week 4! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the June Trivia Week 4 badge!</p>
+    <ql-button href='/games/1438' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia June 2024 Week 3' id='public-profile-award-modal-9'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for June Week 3! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the June Trivia Week 3 badge!</p>
+    <ql-button href='/games/1432' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia June 2024 Week 2' id='public-profile-award-modal-10'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for June Week 2! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the June Trivia Week 2 badge!</p>
+    <ql-button href='/games/1428' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia June 2024 Week 1' id='public-profile-award-modal-11'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for June Week 1! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the June Trivia Week 1 badge!</p>
+    <ql-button href='/games/1418' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Level 1: Cloud Networking' id='public-profile-award-modal-12'>
+    <p>The Cloud hums with constant communication, and the backbone of that connection is networking, linking all your
+      resources and services. Get ready to gain hands-on experience with Google Cloud's powerful networking tools and
+      earn an exclusive Google Cloud Credential�no prior experience needed!</p>
+    <ql-button href='/games/1421' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Level 3: GenAIus Travels' id='public-profile-award-modal-13'>
+    <p>Excited to follow your favorite soccer/football stars on their next quest? Use GenAIus Travel Guides to learn how
+      to interact with chat applications, master prompt engineering, understand the importance of context in AI, and
+      work with Generative AI. Earn an exclusive Google Cloud Generative AI Credential and showcase your new skills! No
+      prior experience needed! </p>
+    <ql-button href='/games/1419' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Build a Data Warehouse with BigQuery'
+    id='public-profile-award-modal-14'>
+    <p>Complete the intermediate Build a Data Warehouse with BigQuery skill badge to demonstrate skills in the
+      following: joining data to create new tables, troubleshooting joins, appending data with unions, creating
+      date-partitioned tables, and working with JSON, arrays, and structs in BigQuery. A skill badge is an exclusive
+      digital badge issued by Google Cloud in recognition of your proficiency with Google Cloud products and services
+      and tests your ability to apply your knowledge in an interactive hands-on environment. Complete the skill badge
+      course, and final assessment challenge lab, to receive a digital badge that you can share with your network. For
+      practice with BigQuery fundamentals (including working with the console and command line), complete the course
+      titled BigQuery Basics for Data Analysts.</p>
+    <ql-button href='/course_templates/624' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Introduction to Generative AI' id='public-profile-award-modal-15'>
+    <p>This is an introductory level microlearning course aimed at explaining what Generative AI is, how it is used, and
+      how it differs from traditional machine learning methods. It also covers Google Tools to help you develop your own
+      Gen AI apps.</p>
+    <ql-button href='/course_templates/536' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia May 2024 Week 4' id='public-profile-award-modal-16'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for May Week 4! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the May Trivia Week 4 badge!</p>
+    <ql-button href='/games/1411' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia May 2024 Week 3' id='public-profile-award-modal-17'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for May Week 3! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the May Trivia Week 3 badge!</p>
+    <ql-button href='/games/1404' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Health Tech' id='public-profile-award-modal-18'>
+    <p>AI is transforming health tech by improving diagnostics, personalizing treatments, and enhancing patient care
+      through advanced data analysis and predictive analytics. This synergy promises greater efficiency, reduced costs,
+      and better health outcomes for patients worldwide. Game on now to gain hands-on experience with the latest health
+      tech and earn an exclusive Google Cloud Credential�no prior experience needed!</p>
+    <ql-button href='/games/1410' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia May 2024 Week 2' id='public-profile-award-modal-19'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for May Week 2! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the May Trivia Week 2 badge!</p>
+    <ql-button href='/games/1398' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='The Arcade Trivia May 2024 Week 1' id='public-profile-award-modal-20'>
+    <p>Hey there! You're invited to game on with the Arcade Trivia for May Week 1! Play throughout the month and boost
+      your cloud learning journey. Every week, we'll release a new set of questions to test your knowledge of Google
+      Cloud Platform. Get started now and earn the May Trivia Week 1 badge!</p>
+    <ql-button href='/games/1383' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Manage Data Models in Looker' id='public-profile-award-modal-21'>
+    <p>Complete the intermediate Manage Data Models in Looker skill badge to demonstrate skills in the following:
+      maintaining LookML project health; utilizing SQL runner for data validation; employing LookML best practices;
+      optimizing queries and reports for performance; and implementing persistent derived tables and caching policies. A
+      skill badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency with Google
+      Cloud products and services and tests your ability to apply your knowledge in an interactive hands-on environment.
+      Complete this skill badge course, and the final assessment challenge lab, to receive a digital badge that you can
+      share with your network.</p>
+    <ql-button href='/course_templates/651' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Derive Insights from BigQuery Data' id='public-profile-award-modal-22'>
+    <p>Complete the introductory Derive Insights from BigQuery Data skill badge to demonstrate skills in the following:
+      write SQL queries, query public tables, load sample data into BigQuery, troubleshoot common syntax errors with the
+      query validator in BigQuery, and create reports in Looker Studio by connecting to BigQuery data. A skill badge is
+      an exclusive digital badge issued by Google Cloud in recognition of your proficiency with Google Cloud products
+      and services and tests your ability to apply your knowledge in an interactive hands-on environment. Complete this
+      skill badge course, and the final assessment challenge lab, to receive a skill badge that you can share with your
+      network.</p>
+    <ql-button href='/course_templates/623' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Perform Predictive Data Analysis in BigQuery'
+    id='public-profile-award-modal-23'>
+    <p>Earn the intermediate skill badge by completing the Perform Predictive Data Analysis in BigQuery course, where
+      you will gain practical experience on the fundamentals
+      of sports data science using BigQuery, including how to create a soccer dataset in BigQuery by importing CSV and
+      JSON files; harness the power of BigQuery with sophisticated SQL analytical concepts, including using BigQuery ML
+      to train an expected goals model on the soccer event data, and evaluate the impressiveness of World Cup goals. A
+      skill badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency with Google
+      Cloud products and services and tests your ability to apply your knowledge in an interactive hands-on environment.
+      Complete the skill badge course, and final assessment challenge lab, to receive a digital badge that you can share
+      with your network.</p>
+    <ql-button href='/course_templates/656' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Level 2: Data with BigQuery' id='public-profile-award-modal-24'>
+    <p>Discover the craft of turning data into actionable insights and earn a Google Cloud Credential along the way! No
+      prior experience needed!</p>
+    <ql-button href='/games/1381' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Secure BigLake Data' id='public-profile-award-modal-25'>
+    <p>Earn a skill badge by completing the Secure BigLake Data quest, where you use IAM, BigQuery, BigLake, and Data
+      Catalog within Dataplex to create and secure BigLake tables. A skill badge is an exclusive digital badge issued by
+      Google Cloud in recognition of your proficiency with Google Cloud products and services and tests your ability to
+      apply your knowledge in an interactive hands-on environment. Complete this Skill Badge, and the final assessment
+      challenge lab, to receive a digital badge that you can share with your network.</p>
+    <ql-button href='/course_templates/751' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Configure Service Accounts and IAM Roles for Google Cloud'
+    id='public-profile-award-modal-26'>
+    <p>Earn a skill badge by completing the Configure Service Accounts and IAM Roles for Google Cloud quest, where you
+      learn about service accounts, custom roles, and how to set permissions using gcloud .
+      A skill badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency with Google
+      Cloud products and services and tests your ability to apply your knowledge in an interactive hands-on environment.
+      Complete this Skill Badge, and the final assessment challenge lab, to receive a digital badge that you can share
+      with your network.</p>
+    <ql-button href='/course_templates/702' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Level 1: Security and Compliance' id='public-profile-award-modal-27'>
+    <p>Today's fast-paced digital world needs security experts. Become one by mastering the fine points of security and
+      compliance in the Cloud! Boost your skillset with a Google Cloud Credential- No prior experience required!</p>
+    <ql-button href='/games/1382' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Develop GenAI Apps with Gemini and Streamlit'
+    id='public-profile-award-modal-28'>
+    <p>Complete the intermediate Develop GenAI Apps with Gemini and Streamlit skill badge to demonstrate skills in the
+      following: text generation, applying function calls with the Python SDK and the Gemini API, and deploying a
+      Streamlit application with Cloud Run. You will explore different ways to prompt Gemini for text generation, use
+      Cloud Shell to test and iterate on a Streamlit application, and then package it as a Docker container deployed in
+      Cloud Run. A skill badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency
+      with Google Cloud products and services and tests your ability to apply your knowledge in an interactive hands-on
+      environment. Complete this skill badge course and the final assessment challenge lab to receive a skill badge that
+      you can share with your network.</p>
+    <ql-button href='/course_templates/978' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Level 3: GenAIus Registries' id='public-profile-award-modal-29'>
+    <p>Today, developers need all the tools to shine. Artifact Registry is your one-stop shop for storing and managing
+      your code. Learn how to start building your dream code and earn a Google Cloud Credential along the way!- No prior
+      experience needed! </p>
+    <ql-button href='/games/1388' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+  <ql-dialog dismissalLabel='Dismiss' headline='Prompt Design in Vertex AI' id='public-profile-award-modal-30'>
+    <p>Complete the introductory Prompt Design in Vertex AI skill badge to demonstrate skills in the following: prompt
+      engineering, image analysis, and multimodal generative techniques, within Vertex AI. Discover how to craft
+      effective prompts, guide generative AI output, and apply Gemini models to real-world marketing scenarios. A skill
+      badge is an exclusive digital badge issued by Google Cloud in recognition of your proficiency with Google Cloud
+      products and services and tests your ability to apply your knowledge in an interactive hands-on environment.
+      Complete this skill badge course and the final assessment challenge lab to receive a skill badge that you can
+      share with your network.</p>
+    <ql-button href='/course_templates/976' label='Learn more' method='get' slot='action' text>
+      Learn more
+    </ql-button>
+  </ql-dialog>
+
+
+
+  <script>
+    document.addEventListener("turbo:load", function () {
+      ql.initMaterialInputs();
+      initChosen();
+      initTabs();
+      ql.list.init();
+      ql.favoriting.init();
+      ql.header.myAccount.init();
+      initTooltips();
+      ql.autocomplete.init();
+      ql.modals.init();
+      ql.toggleButtons.init();
+      ql.analytics.init();
+      Turbo.session.drive = false;
+      ql.jumpContent.init();
+
+    }, { once: true });
+  </script>
+
+</body>
+
+</html>

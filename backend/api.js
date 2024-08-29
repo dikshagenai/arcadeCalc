@@ -86,7 +86,10 @@ class Arcade {
         const data = {}; // all data about the user will be stored in this
         let point = 0;
         data["totalPoints"] = point; // totalPoints about the user
-        data["name"] = '' // Name of the user.
+
+        let userDetails = {};
+        data["userDetails"] = userDetails // Details of the user.
+
         data["badges"] = badgesList; // this key of have 
         data["last checked"] = new Date().toISOString().slice(0, 19).replace('T', ' '); // This key will have 
 
@@ -135,10 +138,38 @@ class Arcade {
             // extract the sub part of the main DOM
             const $ = cheerio.load(response.data);
 
-            // ! ---------------------------------------------  Adding name to the main ------------------------------------- 
+            // ! ---------------------------------------------  Fetching user details --------------------------------
+
+            // ^ for fetching name
             let name = $('.ql-display-small');
-            name = name.text().replaceAll('\n', '')
-            data["name"] = name
+            name = name.text().replaceAll('\n', '').trim()
+            userDetails["name"] = name
+
+            // ^ for fetching the user img
+            let userImg = $('#jump-content >div:first-child .profile-avatar');
+            userImg = userImg.attr('src');
+            userDetails["img"] = userImg
+
+            // ^ for fetching the user's points
+            let memberSince = $('#jump-content >div:first-child .ql-body-large')
+            memberSince = memberSince.text().replaceAll('\n', '').trim()
+            userDetails["memberSince"] = memberSince
+
+            // ^ for fetching the user's points
+            let userPoints = $('#jump-content >div:first-child .profile-league >strong')
+            userPoints = userPoints.text().replaceAll('\n', '').trim()
+            userDetails["points"] = userPoints
+
+            // ^ for fetching the user's league url
+            let leagueImg = $('#jump-content >div:first-child .profile-league >img')
+            leagueImg = leagueImg.attr('src')
+            userDetails["leagueImg"] = leagueImg;
+
+            // ^ for fetching the user's league name
+            let leagueName = $('#jump-content >div:first-child .profile-league >h2')
+            leagueName = leagueName.text().replaceAll('\n', '').trim()
+            userDetails["leagueName"] = leagueName;
+
 
             // ! ------------------------------------------------------------------------------------------------------------
 
