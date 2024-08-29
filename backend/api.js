@@ -86,6 +86,7 @@ class Arcade {
         const data = {}; // all data about the user will be stored in this
         let point = 0;
         data["totalPoints"] = point; // totalPoints about the user
+        data["name"] = '' // Name of the user.
         data["badges"] = badgesList; // this key of have 
         data["last checked"] = new Date().toISOString().slice(0, 19).replace('T', ' '); // This key will have 
 
@@ -123,7 +124,7 @@ class Arcade {
                 var response = await axios.get(publicUrl);
                 console.log("DOM extracted successfully!");
             } catch (error) {
-                message = "Error in extracting the DOM, Please contact the administrator to fix."
+                message = "404 : No user found with the requested url."
                 success = "False"
                 statusCode = 503 // Service Unavailable.
                 return { data, success, message, statusCode };
@@ -133,6 +134,14 @@ class Arcade {
 
             // extract the sub part of the main DOM
             const $ = cheerio.load(response.data);
+
+            // ! ---------------------------------------------  Adding name to the main ------------------------------------- 
+            let name = $('.ql-display-small');
+            name = name.text().replaceAll('\n', '')
+            data["name"] = name
+
+            // ! ------------------------------------------------------------------------------------------------------------
+
             const badgesArea = $('main').first().html();
             const soup2 = cheerio.load(badgesArea); // create soup2 for sub DOM (poor code logic)    
 
@@ -166,7 +175,7 @@ class Arcade {
                 console.error(err);
                 success = "False"
                 statusCode = 500 // internal server error
-                message = "Error while reading the specialBadges file!"
+                message = "Its not you, it's us. Please contact the administrator to solve the issue."
                 return { data, success, message, statusCode };
             }
             //^ -------------------------------------------------------------------------------
@@ -336,7 +345,7 @@ class Arcade {
         } catch (err) {
             console.error(`Unknown error occurred: ${err}`);
             success = "False"
-            message = "Error in scraping"
+            message = "Please contact the administrator to solve the issue."
             statusCode = 410 // code is outdated and needs to be upgraded!
             return { data, success, message, statusCode }; // return data
         }
