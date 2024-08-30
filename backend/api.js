@@ -91,7 +91,7 @@ class Arcade {
         data["userDetails"] = userDetails // Details of the user.
 
         data["badges"] = badgesList; // this key of have 
-        data["last checked"] = new Date().toISOString().slice(0, 19).replace('T', ' '); // This key will have 
+        data["lastChecked"] = new Date().toISOString().slice(0, 19).replace('T', ' '); // This key will have 
 
         // ! For counting the number of trivia, games and skill badges
         // ! below one contains all data
@@ -148,7 +148,7 @@ class Arcade {
             // ^ for fetching the user img
             let userImg = $('#jump-content >div:first-child .profile-avatar');
             userImg = userImg.attr('src');
-            userDetails["img"] = userImg
+            userDetails["userImg"] = userImg
 
             // ^ for fetching the user's points
             let memberSince = $('#jump-content >div:first-child .ql-body-large')
@@ -243,7 +243,7 @@ class Arcade {
 
                 // ! Skill Badge
 
-                if (skillBadges.includes(badgeName)) {
+                if (skillBadges && skillBadges.includes(badgeName)) {
                     if (year === 2024 && monthInInteger === 7 && (date >= 22 || date <= 31)) {
                         point = 1;  // monsoon event have 1 skill badge = 1 arcade point
                         data["totalPoints"] += point;
@@ -368,8 +368,50 @@ class Arcade {
                 ArcadeBadgesStatus["Milestone Earned"] = "NaN"
             }
 
+
+            // ! Code to tell the user about the swags he will achieve without any facilitator
+            data['swagsWithoutFacilitator'] = 'None'
+
+            if (data['totalPoints'] >= 65) {
+                data['swagsWithoutFacilitator'] = 'Premium Plus'
+            }
+            else if (data['totalPoints'] >= 45 && data['totalPoints'] < 65) {
+                data['swagsWithoutFacilitator'] = 'Premium'
+            }
+            else if (data['totalPoints'] >= 30 && data['totalPoints'] < 45) {
+                data['swagsWithoutFacilitator'] = 'Advanced'
+            }
+            else if (data['totalPoints'] >= 15 && data['totalPoints'] < 30) {
+                data['swagsWithoutFacilitator'] = 'Standard'
+            }
+            else {
+                data['swagsWithoutFacilitator'] = 'None'
+            }
+
+
             // & this segment returns the total points (if user registered under any facilitator also...)
             data["totalPointsFacilitator"] = ArcadeBadgesStatus["Facilitator BONUS"] + data["totalPoints"];
+
+            // ! Code to tell the user about the swags he will get with facilitator.
+            data['swagsWithFacilitator'] = 'None'
+
+            if (data['totalPointsFacilitator'] >= 65) {
+                data['swagsWithFacilitator'] = 'Premium Plus'
+            }
+            else if (data['totalPointsFacilitator'] >= 45 && data['totalPointsFacilitator'] < 65) {
+                data['swagsWithFacilitator'] = 'Premium'
+            }
+            else if (data['totalPointsFacilitator'] >= 30 && data['totalPointsFacilitator'] < 45) {
+                data['swagsWithFacilitator'] = 'Advanced'
+            }
+            else if (data['totalPointsFacilitator'] >= 15 && data['totalPoints'] < 30) {
+                data['swagsWithFacilitator'] = 'Standard'
+            }
+            else {
+                data['swagsWithFacilitator'] = 'None'
+            }
+
+
 
             return { data, success, message, statusCode }; // return data
 
