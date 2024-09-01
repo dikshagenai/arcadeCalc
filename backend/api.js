@@ -91,7 +91,15 @@ class Arcade {
         data["userDetails"] = userDetails // Details of the user.
 
         data["badges"] = badgesList; // this key of have 
-        data["lastChecked"] = new Date().toISOString().slice(0, 19).replace('T', ' '); // This key will have 
+        
+        
+        // Below this will take care of the site's last modification
+        const date = new Date();
+        const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        const indiaTime = new Intl.DateTimeFormat('en-GB', options).format(date).replace(',', '');
+        data["lastChecked"] = indiaTime // This key will have 
+
+
 
         // ! For counting the number of trivia, games and skill badges
         // ! below one contains all data
