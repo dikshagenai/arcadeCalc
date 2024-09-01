@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { MdOutlineTipsAndUpdates } from "react-icons/md";
 import augustUpdates from '../assets/updates/augustUpdates.json'
+import septemberUpdates from '../assets/updates/septemberUpdates.json'
 
 
 const Updates = () => {
@@ -32,6 +33,14 @@ const Updates = () => {
                 </div>
 
                 <div className='flex flex-col mb-4 gap-y-2 '>
+                    {Object.entries(septemberUpdates).map(([title, description]) => {
+                        return (
+                            <div key={title} className='border border-black gap-x-2 px-3 rounded-md sm:py-3 p-1'>
+                                <strong className='mr-1 font-bold font-serif'>{title}: </strong>
+                                <span className='font-mono'>{description}</span>
+                            </div>
+                        )
+                    })}
                     {Object.entries(augustUpdates).map(([title, description]) => {
                         return (
                             <div key={title} className='border border-black gap-x-2 px-3 rounded-md sm:py-3 p-1'>
