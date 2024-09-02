@@ -2,10 +2,12 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const Arcade = require("./api")
+const Arcade = require("./workersEndPoints/calculationMain")
 const cors = require("cors")
 const axios = require('axios');
 
+// const IncompleteSkillBadges = require('./workersEndPoints/IncompleteSkillBadges');
+const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
 
 app.use(express.json());
 app.use(cors())
@@ -15,6 +17,7 @@ app.get('/', async (req, res) => {
 })
 
 
+// ! For handling the calculation part of main application.
 app.post('/calculate', async (req, res) => {
     const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
     try {
@@ -27,6 +30,24 @@ app.post('/calculate', async (req, res) => {
 
 });
 
+
+// ! For giving out the list of skill badges with their respective link. which user haven't completed yet.
+app.post('/incompleteSkillBadges', async (req, res) => {
+    const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
+    try {
+        var result = await new IncompleteSkillBadges().scrapPage(publicUrl)
+        console.log(result)
+        // res.status(result["statusCode"]).json({ result })
+        res.status(200).json({ result })
+    } catch (error) {
+        res.status(500).send("Internal Server Error Occurred!")
+    }
+
+});
+
+
+
+// * Reload the website every 5 minutes. Replace with your Render URL.
 const url = `https://arcadecalc.onrender.com`; // Replace with your Render URL
 const interval = 300000; // Interval in milliseconds (5 minutes)
 

@@ -7,15 +7,18 @@
 const axios = require('axios');
 const fs = require('fs');
 const cheerio = require('cheerio');
+const specialBadges = require('../requiredFiles/SpecialBadges.json')
+const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
+
+
+
 
 class Arcade {
 
     constructor() {
-        this.skillBadgesFile = "SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
-        this.UnknownBadgesFile = "UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
-        this.SpecialBadges = "SpecialBadges.json";
+        this.skillBadgesFile = "../requiredFiles/SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
+        this.UnknownBadgesFile = "./prototypeFiles/UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
         this.badgeType = 'Unknown';
-
 
         //^ The course which gives 5 points.
         this.courseBadge = [
@@ -29,36 +32,7 @@ class Arcade {
         this.coursePoints = 5;
     }
 
-    //^ ------------------------------------------- CODE TO EXTRACT ALL SKILL BADGES INTO A FILE 
-    async extractSkillBadges() {
-        console.log("Extracting all the names of skill badges");
-        try {
-            const urls = [];
-            for (let page = 1; page < 10; page++) {
-                const url = `https://www.cloudskillsboost.google/catalog?format%5B%5D=courses&keywords=&locale=&page=${page}&skill-badge%5B%5D=skill-badge`;
-                urls.push(url);
-            }
 
-            const badges = [];
-            for (const url of urls) {
-                const response = await axios.get(url);
-                const $ = cheerio.load(response.data);
-                $('h3').each((i, h3) => {
-                    const a_tag = $(h3).find('a');
-                    if (a_tag.length) {
-                        badges.push(a_tag.text().trim());
-                    }
-                });
-            }
-            fs.writeFileSync(this.skillBadgesFile, badges.join('\n'));
-        } catch (error) {
-            setSuccess("False")
-            setStatusCode(500) // Bad Gateway
-            setMessage("Internal Server Error")
-            console.log("Error while extracting Skill Badges: " + error);
-        }
-
-    }
 
     //^ ------------------------------------------- CODE TO CONVERT MONTH STRING TO MONTH INTEGER
     monthInt(monthStr) {
@@ -81,6 +55,11 @@ class Arcade {
 
     //^------------------------------------------- CODE TO SCRAP THE PAGE
     async scrapPage(publicUrl) {
+
+        // For path...
+        const { default: path } = await import('path')
+        const __dirname = path.resolve()
+
         const badgesDict = {}; // this will be as a element in `badgesList`, and it will have information about the badge.
         const badgesList = []; // This will have a collection of badges   
         const data = {}; // all data about the user will be stored in this
@@ -91,8 +70,8 @@ class Arcade {
         data["userDetails"] = userDetails // Details of the user.
 
         data["badges"] = badgesList; // this key of have 
-        
-        
+
+
         // Below this will take care of the site's last modification
         const date = new Date();
         const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
@@ -187,37 +166,26 @@ class Arcade {
 
             //^ ---------------------------------Checking for the skillBadges file if not extract it...-------------
             let skillBadges;
-            while (true) {
-                try {
-                    skillBadges = fs.readFileSync(this.skillBadgesFile, 'utf-8').split("\n").map(badge => badge.trim());
-                    break;
-                } catch {
-                    await this.extractSkillBadges();
-                    if (statusCode === 500) {
-                        return { data, success, message, statusCode };
-                        // Don't want to go further due to extracting issues.
-                    }
-                }
+            try {
+
+                var temp = []
+                Object.keys(skillBadgesWithLinks).forEach((badge) => {
+                    temp.push(badge.trim())
+                })
+                console.log(skillBadges)
+                skillBadges = temp;
+                console.log(skillBadges)
+            } catch {
+
+                message = 'Error in the server, please try again later.'
+                success = 'False';
+                statusCode = 500 // internal server error
+                return { data, success, message, statusCode };
+                // Don't want to go further due to extracting issues.
+
             }
             //^ --------------------------------------------------------------------------------------------------------
 
-
-            //^ --------------------------------Code to checkOut for the Special Badges...
-            let specialBadges = null;
-            try {
-                if (fs.existsSync(this.SpecialBadges)) {
-                    specialBadges = JSON.parse(fs.readFileSync(this.SpecialBadges, 'utf-8'));
-                } else {
-                    console.log(`No file found with the name of ${this.SpecialBadges}.`); // in case admin makes naming issues.
-                }
-            } catch (err) {
-                console.error(err);
-                success = "False"
-                statusCode = 500 // internal server error
-                message = "Its not you, it's us. Please contact the administrator to solve the issue."
-                return { data, success, message, statusCode };
-            }
-            //^ -------------------------------------------------------------------------------
 
 
 
@@ -297,7 +265,7 @@ class Arcade {
                 // ! Special Badges - (Trivia games and Arcade Badges)
 
                 else {
-                    if (specialBadges && badgeName in specialBadges) {
+                    if (specialBadges && Object.keys(specialBadges).includes(badgeName)) {
                         this.badgeType = specialBadges[badgeName][0] // Badge Type -- `Arcade Badge` or `Trivia Badge`
                         point = specialBadges[badgeName][1] // Point is at 1 index number
                         data["totalPoints"] += point;
@@ -317,7 +285,12 @@ class Arcade {
                     else {
                         console.log(`NOT FOUND: '${badgeName}'`);
                         try {
-                            fs.appendFileSync("NOTFOUND.txt", `${badgeName}\n`);
+                            // fs.readFileSync(path.join(__dirname, this.UnknownBadgesFile), function (err, data) {
+                            //     if (err) {
+                            //         fs.createWriteStream(path.join(__dirname, this.UnknownBadgesFile))
+                            //     }
+                            // })
+                            fs.appendFileSync(path.join(__dirname, this.UnknownBadgesFile), `${badgeName}\n`);
                         } catch (err) {
                             console.error(err);
 
@@ -432,5 +405,16 @@ class Arcade {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = Arcade;
