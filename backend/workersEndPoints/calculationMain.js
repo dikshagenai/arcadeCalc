@@ -9,7 +9,7 @@ const fs = require('fs');
 const cheerio = require('cheerio');
 const specialBadges = require('../requiredFiles/SpecialBadges.json')
 const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
-
+const calculateFacilitatorMilestone = require('./Functions/calculateFacilitatorMilestone')
 
 
 
@@ -82,7 +82,7 @@ class Arcade {
 
         // ! For counting the number of trivia, games and skill badges
         // ! below one contains all data
-        const ArcadeBadgesStatus = {
+        let ArcadeBadgesStatus = {
             "Trivia Badges": 0,
             "Game Badges": 0,
             "Skill Badges": 0,
@@ -172,9 +172,7 @@ class Arcade {
                 Object.keys(skillBadgesWithLinks).forEach((badge) => {
                     temp.push(badge.trim())
                 })
-                console.log(skillBadges)
                 skillBadges = temp;
-                console.log(skillBadges)
             } catch {
 
                 message = 'Error in the server, please try again later.'
@@ -319,34 +317,15 @@ class Arcade {
 
 
             // ! CODE TO MAKE POINT SYSTEM FOR ARCADE FACILITATOR
-            // * Ultimate Milestone
-            if (ArcadeBadgesStatus["Game Badges"] >= 6 && ArcadeBadgesStatus["Trivia Badges"] >= 8 && ArcadeBadgesStatus["Skill Badges"] >= 42) {
-                ArcadeBadgesStatus["Facilitator BONUS"] += 25
-                ArcadeBadgesStatus["Milestone Earned"] = "Ultimate Milestone"
-            }
+            // ! Updated Code here
 
-            // * Milestone 3
-            else if (ArcadeBadgesStatus["Game Badges"] >= 5 && ArcadeBadgesStatus["Trivia Badges"] >= 6 && ArcadeBadgesStatus["Skill Badges"] >= 28) {
-                ArcadeBadgesStatus["Facilitator BONUS"] += 15
-                ArcadeBadgesStatus["Milestone Earned"] = "Milestone 3"
-            }
+            // here using another file to update the arcade facilitator points for particular milestone
+            console.log(calculateFacilitatorMilestone)
+            try {
+                ArcadeBadgesStatus = await calculateFacilitatorMilestone(ArcadeBadgesStatus)
 
-            // * Milestone 2
-            else if (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 18) {
-                ArcadeBadgesStatus["Facilitator BONUS"] += 9
-                ArcadeBadgesStatus["Milestone Earned"] = "Milestone 2"
-            }
-
-            // * Milestone 1
-            else if (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 8) {
-                ArcadeBadgesStatus["Facilitator BONUS"] += 2
-                ArcadeBadgesStatus["Milestone Earned"] = "Milestone 1"
-            }
-
-            // * Nothing
-            else {
-                ArcadeBadgesStatus["Facilitator BONUS"] += 0;
-                ArcadeBadgesStatus["Milestone Earned"] = "NaN"
+            } catch (error) {
+                console.log(error);
             }
 
 
@@ -371,6 +350,7 @@ class Arcade {
 
 
             // & this segment returns the total points (if user registered under any facilitator also...)
+            console.log(ArcadeBadgesStatus)
             data["totalPointsFacilitator"] = ArcadeBadgesStatus["Facilitator BONUS"] + data["totalPoints"];
 
             // ! Code to tell the user about the swags he will get with facilitator.

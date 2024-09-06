@@ -2,7 +2,7 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 
 //^ ------------------------------------------- CODE TO EXTRACT ALL SKILL BADGES INTO A FILE 
-const extractSkillBadges = () => {
+const extractSkillBadges = async () => {
 
     console.log("Extracting all the names of skill badges");
     try {

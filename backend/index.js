@@ -7,6 +7,7 @@ const cors = require("cors")
 const axios = require('axios');
 
 // const IncompleteSkillBadges = require('./workersEndPoints/IncompleteSkillBadges');
+// const SkillBadgesWithImages = require('./testFiles/extractAllSkillBadgesImage') use this incase skillBadgeLinkImages json lose
 const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
 
 app.use(express.json());
@@ -44,6 +45,38 @@ app.post('/incompleteSkillBadges', async (req, res) => {
     }
 
 });
+
+
+// // ! use this incase you lost skill badge images to get back all data
+// app.post('/test', async (req, res) => {
+//     try {
+//         var result = await new SkillBadgesWithImages().main()
+//         console.log(result)
+//         // res.status(result["statusCode"]).json({ result })
+//         res.status(200).json({ result })
+//     } catch (error) {
+//         res.status(500).send(error.message)
+//     }
+
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

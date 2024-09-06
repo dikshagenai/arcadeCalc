@@ -558,6 +558,9 @@ video {
 .right-5 {
   right: 1.25rem;
 }
+.top-24 {
+  top: 6rem;
+}
 .top-4 {
   top: 1rem;
 }
@@ -615,6 +618,9 @@ video {
 }
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mb-24 {
+  margin-bottom: 6rem;
 }
 .mb-3 {
   margin-bottom: 0.75rem;
@@ -684,6 +690,9 @@ video {
 }
 .h-8 {
   height: 2rem;
+}
+.h-fit {
+  height: fit-content;
 }
 .h-px {
   height: 1px;

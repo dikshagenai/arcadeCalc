@@ -6,8 +6,9 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// import skillBadgesWithLinks from './SkillBadgesWithLink.json'
-const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesWithLink.json')
+// json file have structure like 
+// {BadgeName : ['Badge Link', "Badge Image"]}
+const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesLinkImages.json')
 
 
 
