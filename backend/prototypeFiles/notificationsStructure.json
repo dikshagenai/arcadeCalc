@@ -1,0 +1,12 @@
+{
+    "definingKeys": {
+        "2024": "YEAR",
+        "JAN": "January",
+        "01": "Date as 1",
+        "TB": "Trivia Badge",
+        "SB": "Skill Badge",
+        "GB": "Game Badge"
+    },
+    "Separator": "-",
+    "Series": "MonthName-DATE-|BadgeType|"
+}

@@ -53,7 +53,7 @@ app.post('/incompleteSkillBadges', async (req, res) => {
 
 // ! For giving out the notification from the file present.
 
-app.post('/notification', async (req, res) => {
+app.post('/notifications', async (req, res) => {
     res.status(200).json(notificationsData)
 })
 
