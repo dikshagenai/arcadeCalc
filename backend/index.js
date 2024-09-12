@@ -6,6 +6,10 @@ const Arcade = require("./workersEndPoints/calculationMain")
 const cors = require("cors")
 const axios = require('axios');
 
+// Notifications file
+const notificationsData = require('./requiredFiles/NotificationsFile.json')
+
+
 // const IncompleteSkillBadges = require('./workersEndPoints/IncompleteSkillBadges');
 // const SkillBadgesWithImages = require('./testFiles/extractAllSkillBadgesImage') use this incase skillBadgeLinkImages json lose
 const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
@@ -47,18 +51,12 @@ app.post('/incompleteSkillBadges', async (req, res) => {
 });
 
 
-// // ! use this incase you lost skill badge images to get back all data
-// app.post('/test', async (req, res) => {
-//     try {
-//         var result = await new SkillBadgesWithImages().main()
-//         console.log(result)
-//         // res.status(result["statusCode"]).json({ result })
-//         res.status(200).json({ result })
-//     } catch (error) {
-//         res.status(500).send(error.message)
-//     }
+// ! For giving out the notification from the file present.
 
-// });
+app.post('/notification', async (req, res) => {
+    res.status(200).json(notificationsData)
+})
+
 
 
 

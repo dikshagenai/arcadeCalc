@@ -1,0 +1,15 @@
+{
+    "Notifications": [
+        {
+            "imageUrl": "https://i.ibb.co/RhTqyWK/sep-week-1.png",
+            "content": "Trivia Badge for week 1 is live now!",
+            "redirectTo": "https://go.cloudskillsboost.google/arcade"
+        },
+        {
+            "imageUrl": "https://i.ibb.co/rFMNBjn/Sep-week2.png",
+            "content": "Trivia Badge for week 2 is live now!",
+            "redirectTo": "https://go.cloudskillsboost.google/arcade"
+        }
+    ],
+    "lastUpdated": "2024-09-12T11:00:00Z"
+}
