@@ -1,5 +1,0 @@
-https://arcadecalc.netlify.app/
-https://arcadecalc.netlify.app/updates
-https://arcadecalc.netlify.app/calculate
-https://arcadecalc.netlify.app/contact
-https://arcadecalc.netlify.app/skillBadges

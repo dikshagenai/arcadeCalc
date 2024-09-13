@@ -1,56 +1,21 @@
 {
-  "name": "arcadehelper",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://arcadecalc.netlify.app/",
+  "name": "arcadehelperbackend",
+  "version": "1.0.0",
+  "description": "This is the backend for my arcade helper demo website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "author": "@deepanshu-prajapati01",
+  "license": "ISC",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "autoprefixer": "^10.4.20",
-    "dotenv": "^16.4.5",
-    "framer-motion": "^11.3.24",
-    "postcss-cli": "^11.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet-async": "^2.0.5",
-    "react-icons": "^5.3.0",
-    "react-router-dom": "^6.26.0",
-    "react-scripts": "5.0.1",
-    "tailwind-scrollbar": "^3.1.0",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "build:css": "postcss src/tailwind.css -o src/output.css",
-    "start": "react-scripts start",
-    "prebuild": "node set-deploy-time.js",
-    "build": "npm run build:css && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "yes": "npm run build:css && npm run prebuild && react-scripts start"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "os-browserify": "^0.3.0",
-    "path-browserify": "^1.0.1",
-    "tailwindcss": "^3.4.9"
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.5"
   }
 }
