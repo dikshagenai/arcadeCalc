@@ -1,88 +1,107 @@
-// server.js
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
-const Arcade = require("./workersEndPoints/calculationMain")
-const cors = require("cors")
+const Arcade = require("./workersEndPoints/calculationMain");
+const cors = require("cors");
 const axios = require('axios');
 
 // Notifications file
-const notificationsData = require('./requiredFiles/NotificationsFile.json')
-
+const notificationsData = require('./requiredFiles/NotificationsFile.json');
 
 // const IncompleteSkillBadges = require('./workersEndPoints/IncompleteSkillBadges');
 // const SkillBadgesWithImages = require('./testFiles/extractAllSkillBadgesImage') use this incase skillBadgeLinkImages json lose
 const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 app.get('/', async (req, res) => {
-    res.status(200).send("Server is Live!")
-})
-
+    res.status(200).send("Server is Live!");
+});
 
 // ! For handling the calculation part of main application.
 app.post('/calculate', async (req, res) => {
     const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
     try {
-        var result = await new Arcade().scrapPage(publicUrl)
-        console.log(result)
-        res.status(result["statusCode"]).json({ result })
+        var result = await new Arcade().scrapPage(publicUrl);
+        console.log(result);
+        res.status(result["statusCode"]).json({ result });
     } catch (error) {
-        res.status(500).send("Internal Server Error Occurred!")
+        res.status(500).send("Internal Server Error Occurred!");
     }
-
 });
-
 
 // ! For giving out the list of skill badges with their respective link. which user haven't completed yet.
 app.post('/incompleteSkillBadges', async (req, res) => {
     const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
     try {
-        var result = await new IncompleteSkillBadges().scrapPage(publicUrl)
-        console.log(result)
+        var result = await new IncompleteSkillBadges().scrapPage(publicUrl);
+        console.log(result);
         // res.status(result["statusCode"]).json({ result })
-        res.status(200).json({ result })
+        res.status(200).json({ result });
     } catch (error) {
-        res.status(500).send("Internal Server Error Occurred!")
+        res.status(500).send("Internal Server Error Occurred!");
     }
-
 });
 
-
 // ! For giving out the notification from the file present.
-
 app.post('/notifications', async (req, res) => {
-    res.status(200).json(notificationsData)
-})
+    res.status(200).json(notificationsData);
+});
 
+// New endpoint to handle contact form submissions
+app.post('/contact', (req, res) => {
+    const { email, query } = req.body;
+    if (!email || !query) {
+        return res.status(400).send("Email and query are required.");
+    }
 
+    const dateTime = new Date().toISOString();
+    const newEntry = { [dateTime]: [email, query] };
 
+    const filePath = path.join(__dirname, 'requiredFiles', 'contactdetails.json');
 
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err && err.code !== 'ENOENT') {
+            return res.status(500).send("Internal Server Error Occurred!");
+        }
 
+        const jsonData = data ? JSON.parse(data) : {};
+        Object.assign(jsonData, newEntry);
 
+        fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), (err) => {
+            if (err) {
+                return res.status(500).send("Internal Server Error Occurred!");
+            }
+            res.status(200).send("Contact details saved successfully.");
+        });
+    });
+});
 
+// New endpoint to retrieve contact data
+app.get('/contactData', (req, res) => {
+    const filePath = path.join(__dirname, 'requiredFiles', 'contactdetails.json');
 
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            if (err.code === 'ENOENT') {
+                return res.status(200).json({});
+            }
+            return res.status(500).send("Internal Server Error Occurred!");
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
+        const jsonData = data ? JSON.parse(data) : {};
+        res.status(200).json(jsonData);
+    });
+});
 
 // * Reload the website every 5 minutes. Replace with your Render URL.
 const url = `https://arcadecalc.onrender.com`; // Replace with your Render URL
 const interval = 300000; // Interval in milliseconds (5 minutes)
 
-//Reloader Function
+// Reloader Function
 function reloadWebsite() {
     axios.get(url)
         .then(response => {
@@ -94,8 +113,6 @@ function reloadWebsite() {
 }
 
 setInterval(reloadWebsite, interval);
-
-
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
