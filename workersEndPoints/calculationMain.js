@@ -10,6 +10,7 @@ const cheerio = require('cheerio');
 const specialBadges = require('../requiredFiles/SpecialBadges.json')
 const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
 const calculateFacilitatorMilestone = require('./Functions/calculateFacilitatorMilestone')
+const Database = "https://arcadecalc-backend-2.onrender.com"
 
 
 
@@ -373,6 +374,32 @@ class Arcade {
             }
 
 
+            // ! Collecting user data in my database!
+            var splitPublicUrl = publicUrl.split('https://www.cloudskillsboost.google/public_profiles/')[1]
+            var dataForDataBase = {
+                splitPublicUrl: {
+                    "name": userDetails.name,
+                    "publicUrl": publicUrl,
+                    "normalPoints": data.totalPoints,
+                    "swagsWithoutFacilitator": data.swagsWithoutFacilitator,
+                    "facilitatorPoints": data.totalPointsFacilitator,
+                    "swagsWithFacilitator": data.swagsWithFacilitator
+                }
+            }
+
+            // ^ Adding data in my database
+            try {
+                fetch(`${Database}/api/users/addUser`,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ data: dataForDataBase })
+                    })
+            } catch (error) {
+                console.log(error.message);
+            }
 
             return { data, success, message, statusCode }; // return data
 

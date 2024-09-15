@@ -10,6 +10,9 @@ const axios = require('axios');
 // Notifications file
 const notificationsData = require('./requiredFiles/NotificationsFile.json');
 
+// database
+const Database = "https://arcadecalc-backend-2.onrender.com"
+
 // const IncompleteSkillBadges = require('./workersEndPoints/IncompleteSkillBadges');
 // const SkillBadgesWithImages = require('./testFiles/extractAllSkillBadgesImage') use this incase skillBadgeLinkImages json lose
 const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
@@ -24,6 +27,21 @@ app.get('/', async (req, res) => {
 // ! For handling the calculation part of main application.
 app.post('/calculate', async (req, res) => {
     const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
+
+    // ^ INCREMENTING USER IN SERVER
+    try {
+        fetch(`${Database}/api/users/incrementUser`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+    } catch (error) {
+        console.log(error.message);
+    }
+
+
     try {
         var result = await new Arcade().scrapPage(publicUrl);
         console.log(result);
