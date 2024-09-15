@@ -377,7 +377,7 @@ class Arcade {
             // ! Collecting user data in my database!
             var splitPublicUrl = publicUrl.split('https://www.cloudskillsboost.google/public_profiles/')[1]
             var dataForDataBase = {
-                splitPublicUrl: {
+                [splitPublicUrl]: {
                     "name": userDetails.name,
                     "publicUrl": publicUrl,
                     "normalPoints": data.totalPoints,
