@@ -61,7 +61,7 @@ app.post('/contact', (req, res) => {
     const dateTime = new Date().toISOString();
     const newEntry = { [dateTime]: [email, query] };
 
-    const filePath = path.join(__dirname, 'requiredFiles', 'contactdetails.json');
+    const filePath = path.join(__dirname, 'requiredFiles', 'contactDetails.json');
 
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err && err.code !== 'ENOENT') {
@@ -82,7 +82,7 @@ app.post('/contact', (req, res) => {
 
 // New endpoint to retrieve contact data
 app.get('/contactData', (req, res) => {
-    const filePath = path.join(__dirname, 'requiredFiles', 'contactdetails.json');
+    const filePath = path.join(__dirname, 'requiredFiles', 'contactDetails.json');
 
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
