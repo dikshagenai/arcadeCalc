@@ -75,11 +75,10 @@ app.post('/notifications', async (req, res) => {
 
         if (response.statusCode === 200) {
             var notificationsFromDB = await response.json();
-            var parsedJSON = JSON.parse(notificationsFromDB);
-            res.status(200).json(parsedJSON);
+            res.status(200).json(notificationsFromDB);
         }
         else {
-            res.status(500).json({ error: "Internal Server Error Occurred!" });
+            res.status(403).json({ error: "Failed to fetch data" });
         }
     } catch (error) {
         console.log(error.message);
