@@ -73,9 +73,8 @@ app.post('/notifications', async (req, res) => {
                 }
             })
 
-        if (response.statusCode === 200) {
-            var notificationsFromDB = await response.json();
-            res.status(200).json(notificationsFromDB);
+        if (response.ok) {
+            res.status(200).json(await response.json());
         }
         else {
             res.status(403).json({ error: "Failed to fetch data" });
