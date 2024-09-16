@@ -75,14 +75,15 @@ app.post('/notifications', async (req, res) => {
 
         if (response.statusCode === 200) {
             var notificationsFromDB = await response.json();
-            res.status(200).json(notificationsFromDB);
+            var parsedJSON = JSON.parse(notificationsFromDB);
+            res.status(200).json(parsedJSON);
         }
         else {
-            res.status(500).send("Internal Server Error Occurred!");
+            res.status(500).json({ error: "Internal Server Error Occurred!" });
         }
     } catch (error) {
         console.log(error.message);
-        res.status(500).send("Internal Server Error Occurred!");
+        res.status(500).json({ error: "Internal Server Error Occurred!" });
     }
 
 });
