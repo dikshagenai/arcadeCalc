@@ -7,14 +7,10 @@ const Arcade = require("./workersEndPoints/calculationMain");
 const cors = require("cors");
 const axios = require('axios');
 
-// Notifications file
-const notificationsData = require('./requiredFiles/NotificationsFile.json');
 
 // database
 const Database = "https://arcadecalc-backend-2.onrender.com"
 
-// const IncompleteSkillBadges = require('./workersEndPoints/IncompleteSkillBadges');
-// const SkillBadgesWithImages = require('./testFiles/extractAllSkillBadgesImage') use this incase skillBadgeLinkImages json lose
 const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
 
 app.use(express.json());
@@ -66,7 +62,29 @@ app.post('/incompleteSkillBadges', async (req, res) => {
 
 // ! For giving out the notification from the file present.
 app.post('/notifications', async (req, res) => {
-    res.status(200).json(notificationsData);
+
+    // ^ INCREMENTING USER IN SERVER
+    try {
+        var response = await fetch(`${Database}/api/notifications/getNotifications`,
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+
+        if (response.statusCode === 200) {
+            var notificationsFromDB = await response.json();
+            res.status(200).json(notificationsFromDB);
+        }
+        else {
+            res.status(500).send("Internal Server Error Occurred!");
+        }
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send("Internal Server Error Occurred!");
+    }
+
 });
 
 // New endpoint to handle contact form submissions
