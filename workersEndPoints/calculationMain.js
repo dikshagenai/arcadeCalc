@@ -87,7 +87,7 @@ class Arcade {
             "Trivia Badges": 0,
             "Game Badges": 0,
             "Skill Badges": 0,
-            "Other Badges ": 0,
+            "Other Badges": 0,
             "Facilitator BONUS": 0,
             "Milestone Earned": "None"
         }
@@ -282,7 +282,7 @@ class Arcade {
                         }
 
                         else if (this.badgeType === "Other Badge" && monthInInteger <= 9) {
-                            ArcadeBadgesStatus["Other Badges "] += 1;
+                            ArcadeBadgesStatus["Other Badges"] += 1;
                         }
                     }
 
