@@ -133,7 +133,12 @@ app.get('/contactData', (req, res) => {
 });
 
 // * Reload the website every 5 minutes. Replace with your Render URL.
-const url = `https://arcadecalc.onrender.com`; // Replace with your Render URL
+
+
+// const url = `https://arcadecalc.onrender.com`; // Replace with your Render URL
+const url = "https://arcadecalc-f7cj.onrender.com/"; // Second server url
+
+
 const interval = 300000; // Interval in milliseconds (5 minutes)
 
 // Reloader Function
