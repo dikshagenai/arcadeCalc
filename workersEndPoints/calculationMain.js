@@ -339,7 +339,7 @@ class Arcade {
             data['swagsWithoutFacilitator'] = 'None'
 
             if (data['totalPoints'] >= 65) {
-                data['swagsWithoutFacilitator'] = 'Premium Plus'
+                data['swagsWithoutFacilitator'] = 'PremiumPlus'
             }
             else if (data['totalPoints'] >= 45 && data['totalPoints'] < 65) {
                 data['swagsWithoutFacilitator'] = 'Premium'
@@ -361,22 +361,90 @@ class Arcade {
 
             // ! Code to tell the user about the swags he will get with facilitator.
             data['swagsWithFacilitator'] = 'None'
+            data['swagsInfo'] = {}
 
             if (data['totalPointsFacilitator'] >= 65) {
-                data['swagsWithFacilitator'] = 'Premium Plus'
+                data['swagsWithFacilitator'] = 'PremiumPlus'
+                data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: '!', Premium: '!', PremiumPlus: true }
+
+                // adding swag details
+                data['swagsInfo']['swagsDetails'] = {
+                    "Info": {
+                        "Unfortunately!": "The swag items haven't been officially revealed yet!"
+                    }
+                }
             }
             else if (data['totalPointsFacilitator'] >= 45 && data['totalPointsFacilitator'] < 65) {
                 data['swagsWithFacilitator'] = 'Premium'
+                data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: '!', Premium: true, PremiumPlus: false }
+
+                // adding swag details
+                data['swagsInfo']['swagsDetails'] = {
+                    "Info": {
+                        "Unfortunately!": "The swag items haven't been officially revealed yet!"
+                    }
+                }
             }
             else if (data['totalPointsFacilitator'] >= 30 && data['totalPointsFacilitator'] < 45) {
                 data['swagsWithFacilitator'] = 'Advanced'
+                data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: true, Premium: false, PremiumPlus: false }
+
+                // adding swag details
+                data['swagsInfo']['swagsDetails'] = {
+                    "Info": {
+                        "Unfortunately!": "The swag items haven't been officially revealed yet!"
+                    }
+                }
             }
             else if (data['totalPointsFacilitator'] >= 15 && data['totalPoints'] < 30) {
                 data['swagsWithFacilitator'] = 'Standard'
+                data['swagsInfo']['icons'] = { 'Standard': true, Advanced: false, Premium: false, PremiumPlus: false }
+
+                // adding swag details
+                const swagsDetails = require('../requiredFiles/swagsInfo/StandardMilestone.json')
+                data['swagsInfo']['swagsDetails'] = swagsDetails
             }
             else {
                 data['swagsWithFacilitator'] = 'None'
+                data['swagsInfo']['icons'] = { 'Standard': false, Advanced: false, Premium: false, PremiumPlus: false }
+
+                // adding no swag eligible info
+                data['swagsInfo']['swagsDetails'] = {
+                    "Sorry, you are not eligible for any swags": {
+                        "Game Badges": "worth 1 point per badge",
+                        "Trivia Badges": "worth 1 point per badge",
+                        "Skill Badges": "worth 0.5 point per badge"
+                    }
+                }
             }
+
+
+            // adding information according to the swags (with facilitator only \-)
+
+            // Standard Milestone 
+            data['swagsInfo']['Standard'] = {
+                "image": "https://i.ibb.co/txBRWb9/fegvdf.png",
+                requiredPoints: 15,
+            }
+
+            // Advanced Milestone
+            data['swagsInfo']['Advanced'] = {
+                "image": "https://i.ibb.co/sVvZsmb/30points.png",
+                requiredPoints: 30,
+            }
+
+            // Premium Milestone
+            data['swagsInfo']['Premium'] = {
+                "image": "https://i.ibb.co/MCmx8cJ/45-points.png",
+                requiredPoints: 45,
+            }
+
+            // PremiumPlus Milestone
+            data['swagsInfo']['PremiumPlus'] = {
+                "image": "https://i.ibb.co/JBJpsJz/65points.png",
+                requiredPoints: 65,
+            }
+
 
 
             // ! Collecting user data in my database!
@@ -405,6 +473,11 @@ class Arcade {
             } catch (error) {
                 console.log(error.message);
             }
+
+
+            //    Deleting the badges because no use of it in the frontend (for now!)
+            delete data.badges;
+
 
             return { data, success, message, statusCode }; // return data
 
