@@ -7,9 +7,9 @@ const Arcade = require("./workersEndPoints/calculationMain");
 const cors = require("cors");
 const axios = require('axios');
 
+const { SERVER, DATABASE } = require('./buildTime')
 
-// database
-const Database = "https://arcadecalc-backend-2.onrender.com"
+
 
 const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
 
@@ -26,7 +26,7 @@ app.post('/calculate', async (req, res) => {
 
     // ^ INCREMENTING USER IN SERVER
     try {
-        fetch(`${Database}/api/users/incrementUser`,
+        fetch(`${DATABASE}/api/users/incrementUser`,
             {
                 method: "POST",
                 headers: {
@@ -60,31 +60,7 @@ app.post('/incompleteSkillBadges', async (req, res) => {
     }
 });
 
-// ! For giving out the notification from the file present.
-app.post('/notifications', async (req, res) => {
 
-    // ^ INCREMENTING USER IN SERVER
-    try {
-        var response = await fetch(`${Database}/api/notifications/getNotifications`,
-            {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-
-        if (response.ok) {
-            res.status(200).json(await response.json());
-        }
-        else {
-            res.status(403).json({ error: "Failed to fetch data" });
-        }
-    } catch (error) {
-        console.log(error.message);
-        res.status(500).json({ error: "Internal Server Error Occurred!" });
-    }
-
-});
 
 // New endpoint to handle contact form submissions
 app.post('/contact', (req, res) => {
@@ -135,15 +111,11 @@ app.get('/contactData', (req, res) => {
 // * Reload the website every 5 minutes. Replace with your Render URL.
 
 
-// const url = `https://arcadecalc.onrender.com`; // Replace with your Render URL
-const url = "https://arcadecalc-f7cj.onrender.com/"; // Second server url
-
-
 const interval = 300000; // Interval in milliseconds (5 minutes)
 
 // Reloader Function
 function reloadWebsite() {
-    axios.get(url)
+    axios.get(SERVER)
         .then(response => {
             console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
         })

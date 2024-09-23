@@ -10,7 +10,7 @@ const cheerio = require('cheerio');
 const specialBadges = require('../requiredFiles/SpecialBadges.json')
 const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
 const calculateFacilitatorMilestone = require('./Functions/calculateFacilitatorMilestone')
-const Database = "https://arcadecalc-backend-2.onrender.com"
+const { SERVER, DATABASE } = require('../buildTime')
 
 
 
@@ -462,7 +462,7 @@ class Arcade {
 
             // ^ Adding data in my database
             try {
-                fetch(`${Database}/api/users/addUser`,
+                fetch(`${DATABASE}/api/users/addUser`,
                     {
                         method: "POST",
                         headers: {
