@@ -402,7 +402,8 @@ class Arcade {
                 data['swagsInfo']['icons'] = { 'Standard': true, Advanced: false, Premium: false, PremiumPlus: false }
 
                 // adding swag details
-                const swagsDetails = require('../requiredFiles/swagsInfo/StandardMilestone.json')
+                // ! const swagsDetails = require('../requiredFiles/swagsInfo/StandardMilestone.json')
+                const swagsDetails = require('../../requiredFiles/swagsInfo/StandardMilestone.json')
                 data['swagsInfo']['swagsDetails'] = swagsDetails
             }
             else {
