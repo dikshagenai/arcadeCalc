@@ -5,7 +5,7 @@ const cors = require("cors");
 const axios = require('axios');
 
 // * Files
-const { SERVER } = require('./buildTime')
+const SERVER = require('./buildTime')
 
 // * Database Connection
 const connectToMongo = require('./db');
