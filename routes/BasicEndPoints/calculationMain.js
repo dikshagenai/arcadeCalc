@@ -7,10 +7,11 @@
 const axios = require('axios');
 const fs = require('fs');
 const cheerio = require('cheerio');
-const specialBadges = require('../requiredFiles/SpecialBadges.json')
-const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
-const calculateFacilitatorMilestone = require('./Functions/calculateFacilitatorMilestone')
-const { SERVER, DATABASE } = require('../buildTime')
+const specialBadges = require('../../requiredFiles/SpecialBadges.json')
+const skillBadgesWithLinks = require('../../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
+const calculateFacilitatorMilestone = require('../BasicEndPoints/Functions/calculateFacilitatorMilestone')
+
+const User = require('../../models/Users')
 
 
 
@@ -112,9 +113,9 @@ class Arcade {
 
             //^ ----------------------CODE to extract the DOM, if unable return error----------------------
             try {
-                console.log("Extracting the DOM...");
+                // console.log("Extracting the DOM...");
                 var response = await axios.get(publicUrl);
-                console.log("DOM extracted successfully!");
+                // console.log("DOM extracted successfully!");
             } catch (error) {
                 message = "404 : No user found with the requested url."
                 success = "False"
@@ -223,7 +224,7 @@ class Arcade {
                     if (year === 2024 && monthInInteger === 7 && (date >= 22 || date <= 31)) {
                         point = 1;  // monsoon event have 1 skill badge = 1 arcade point
                         data["totalPoints"] += point;
-                        console.log("Skill Badge (Monsoon Event) : " + point + " => " + data["totalPoints"]);
+                        // console.log("Skill Badge (Monsoon Event) : " + point + " => " + data["totalPoints"]);
                         this.badgeType = 'Skill Badge (Monsoon Event)' // skill badge claimed during monsoon event!
 
                         // * This will only count for arcade facilitator program... 
@@ -232,7 +233,7 @@ class Arcade {
                     } else if (year === 2024 && monthInInteger > 7) {
                         point = 0.5; // normally 1 skill badge = 0.5 arcade point
                         data["totalPoints"] += point;
-                        console.log("Skill Badge : " + point + " => " + data["totalPoints"]);
+                        // console.log("Skill Badge : " + point + " => " + data["totalPoints"]);
                         this.badgeType = 'Skill Badge'
 
                         // * This will only count for arcade facilitator program...
@@ -269,7 +270,7 @@ class Arcade {
                         this.badgeType = specialBadges[badgeName][0] // Badge Type -- `Arcade Badge` or `Trivia Badge`
                         point = specialBadges[badgeName][1] // Point is at 1 index number
                         data["totalPoints"] += point;
-                        console.log(this.badgeType + " : " + point + " => " + data["totalPoints"]);
+                        // console.log(this.badgeType + " : " + point + " => " + data["totalPoints"]);
 
                         // & Updating badges count for games and trivia badges...
                         // * Also make sure not to add badges after the Arcade Facilitator Program...
@@ -287,7 +288,7 @@ class Arcade {
                     }
 
                     else {
-                        console.log(`NOT FOUND: '${badgeName}'`);
+                        // console.log(`NOT FOUND: '${badgeName}'`);
                         try {
                             // fs.readFileSync(path.join(__dirname, this.UnknownBadgesFile), function (err, data) {
                             //     if (err) {
@@ -326,7 +327,7 @@ class Arcade {
             // ! Updated Code here
 
             // here using another file to update the arcade facilitator points for particular milestone
-            console.log(calculateFacilitatorMilestone)
+            // console.log(calculateFacilitatorMilestone)
             try {
                 ArcadeBadgesStatus = await calculateFacilitatorMilestone(ArcadeBadgesStatus)
 
@@ -356,7 +357,7 @@ class Arcade {
 
 
             // & this segment returns the total points (if user registered under any facilitator also...)
-            console.log(ArcadeBadgesStatus)
+            // console.log(ArcadeBadgesStatus)
             data["totalPointsFacilitator"] = ArcadeBadgesStatus["Facilitator BONUS"] + data["totalPoints"];
 
             // ! Code to tell the user about the swags he will get with facilitator.
@@ -450,28 +451,28 @@ class Arcade {
             // ! Collecting user data in my database!
             var splitPublicUrl = publicUrl.split('https://www.cloudskillsboost.google/public_profiles/')[1]
             var dataForDataBase = {
-                [splitPublicUrl]: {
-                    "name": userDetails.name,
-                    "publicUrl": publicUrl,
-                    "normalPoints": data.totalPoints,
-                    "swagsWithoutFacilitator": data.swagsWithoutFacilitator,
-                    "facilitatorPoints": data.totalPointsFacilitator,
-                    "swagsWithFacilitator": data.swagsWithFacilitator
-                }
+                "id": splitPublicUrl,
+                "name": userDetails.name,
+                "publicUrl": publicUrl,
+                "normalPoints": data.totalPoints,
+                "swagsWithoutFacilitator": data.swagsWithoutFacilitator,
+                "facilitatorPoints": data.totalPointsFacilitator,
+                "swagsWithFacilitator": data.swagsWithFacilitator
             }
+
 
             // ^ Adding data in my database
             try {
-                fetch(`${DATABASE}/api/users/addUser`,
-                    {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({ data: dataForDataBase })
-                    })
+                var user = await User.findOneAndUpdate(
+                    { id: dataForDataBase['id'] },
+                    dataForDataBase,
+                    { upsert: true, new: true }
+                );
+                console.log("\n\n\n\nUser has been successfully updated!\n\n\n\n");
+                console.log(user)
             } catch (error) {
-                console.log(error.message);
+                console.error(error);``
+                console.log("\n\n\n\nAn error occurred while adding data to my database.\n\n\n\n");
             }
 
 

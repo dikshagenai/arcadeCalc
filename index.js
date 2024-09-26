@@ -1,112 +1,61 @@
+// * Imports
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const app = express();
 const PORT = process.env.PORT || 5000;
-const Arcade = require("./workersEndPoints/calculationMain");
 const cors = require("cors");
 const axios = require('axios');
 
-const { SERVER, DATABASE } = require('./buildTime')
+// * Files
+const { SERVER } = require('./buildTime')
+
+// * Database Connection
+const connectToMongo = require('./db');
+connectToMongo();
 
 
-
-const IncompleteSkillBadges = require('./workersEndPoints/incompleteSkillBadges');
-
+// * Starting Server!
+const app = express();
 app.use(express.json());
 app.use(cors());
 
+
+
+
+
+// ! Routes
+
+// ^ Indicate Server is Live!
 app.get('/', async (req, res) => {
     res.status(200).send("Server is Live!");
 });
 
-// ! For handling the calculation part of main application.
-app.post('/calculate', async (req, res) => {
-    const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
 
-    // ^ INCREMENTING USER IN SERVER
-    try {
-        fetch(`${DATABASE}/api/users/incrementUser`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-    } catch (error) {
-        console.log(error.message);
-    }
+// ^ For calculating points
+app.use('/calculate', require('./routes/NoAuthRequired/calculate'));
 
-
-    try {
-        var result = await new Arcade().scrapPage(publicUrl);
-        console.log(result);
-        res.status(result["statusCode"]).json({ result });
-    } catch (error) {
-        res.status(500).send("Internal Server Error Occurred!");
-    }
-});
-
-// ! For giving out the list of skill badges with their respective link. which user haven't completed yet.
-app.post('/incompleteSkillBadges', async (req, res) => {
-    const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
-    try {
-        var result = await new IncompleteSkillBadges().scrapPage(publicUrl);
-        console.log(result);
-        // res.status(result["statusCode"]).json({ result })
-        res.status(200).json({ result });
-    } catch (error) {
-        res.status(500).send("Internal Server Error Occurred!");
-    }
-});
+// ^ For Incomplete Skill Badges.
+app.use('/incompleteSkillBadges', require('./routes/NoAuthRequired/incompleteSkillBadges'));
 
 
 
-// New endpoint to handle contact form submissions
-app.post('/contact', (req, res) => {
-    const { email, query } = req.body;
-    if (!email || !query) {
-        return res.status(400).send("Email and query are required.");
-    }
+// ! API BASED REQUESTS.
+// & For storing Users and Notifications.
+app.use("/api/users", require("./routes/NoAuthRequired/users.js"));
+app.use("/api/notifications", require("./routes/NoAuthRequired/notifications.js"));
 
-    const dateTime = new Date().toISOString();
-    const newEntry = { [dateTime]: [email, query] };
+// & For storing responses of the contact page.
+app.use("/api/contact", require("./routes/NoAuthRequired/contact.js"));
 
-    const filePath = path.join(__dirname, 'requiredFiles', 'contactDetails.json');
 
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err && err.code !== 'ENOENT') {
-            return res.status(500).send("Internal Server Error Occurred!");
-        }
+// & For Admin
+app.use("/admin", require("./routes/AuthRequired/admin.js")); // used for login
+app.use("/admin/users", require("./routes/AuthRequired/users")) // used for fetching users.
+app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
+app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
 
-        const jsonData = data ? JSON.parse(data) : {};
-        Object.assign(jsonData, newEntry);
 
-        fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), (err) => {
-            if (err) {
-                return res.status(500).send("Internal Server Error Occurred!");
-            }
-            res.status(200).send("Contact details saved successfully.");
-        });
-    });
-});
 
-// New endpoint to retrieve contact data
-app.get('/contactData', (req, res) => {
-    const filePath = path.join(__dirname, 'requiredFiles', 'contactDetails.json');
 
-    fs.readFile(filePath, 'utf8', (err, data) => {
-        if (err) {
-            if (err.code === 'ENOENT') {
-                return res.status(200).json({});
-            }
-            return res.status(500).send("Internal Server Error Occurred!");
-        }
 
-        const jsonData = data ? JSON.parse(data) : {};
-        res.status(200).json(jsonData);
-    });
-});
 
 // * Reload the website every 5 minutes. Replace with your Render URL.
 

@@ -8,7 +8,7 @@ const cheerio = require('cheerio');
 
 // json file have structure like 
 // {BadgeName : ['Badge Link', "Badge Image"]}
-const skillBadgesWithLinks = require('../requiredFiles/SkillBadgesLinkImages.json')
+const skillBadgesWithLinks = require('../../requiredFiles/SkillBadgesLinkImages.json')
 
 
 
