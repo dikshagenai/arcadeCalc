@@ -469,17 +469,29 @@ class Arcade {
 
             // ^ Adding data in my database
             try {
-                var user = await User.findOneAndUpdate(
-                    { id: dataForDataBase['id'] },
-                    dataForDataBase,
-                    { upsert: true, new: true }
-                );
-                console.log("\n\n\n\nUser has been successfully updated!\n\n\n\n");
-                console.log(user)
+                // Check if the user already exists
+                var existingUser = await User.findOne({ id: dataForDataBase['id'] });
+
+                if (!existingUser) {
+                    // If the user does not exist, create a new entry
+                    var user = await User.create(dataForDataBase);
+                    console.log("\n\n\n\nUser has been successfully added!\n\n\n\n");
+                } else {
+                    // If the user exists, update the existing entry
+                    var user = await User.findOneAndUpdate(
+                        { id: dataForDataBase['id'] },
+                        dataForDataBase,
+                        { new: true }
+                    );
+                    console.log("\n\n\n\nUser has been successfully updated!\n\n\n\n");
+                }
+
+                console.log(user);
             } catch (error) {
-                console.error(error); ``
+                console.error(error);
                 console.log("\n\n\n\nAn error occurred while adding data to my database.\n\n\n\n");
             }
+
 
 
             //    Deleting the badges because no use of it in the frontend (for now!)
