@@ -14,17 +14,23 @@ router.post('/', async (req, res) => {
         // Endpoint to increment totalVisitedUsers
         var entries = await IncrementUser.findOne();
         if (!entries) {
-            IncrementUser.create({ totalVisitedUsers: 1 })
-        }
-        else {
-            await IncrementUser.findOneAndUpdate({}, { $inc: { totalVisitedUsers: 1 } }, { new: true });
+            await IncrementUser.create({ totalVisitedUsers: 1, updates: [{ timestamp: new Date(), count: 1 }] });
+        } else {
+            await IncrementUser.findOneAndUpdate(
+                {},
+                {
+                    $inc: { totalVisitedUsers: 1 },
+                    $push: { updates: { timestamp: new Date(), count: 1 } }
+                },
+                { new: true }
+            );
         }
 
         console.log("User successfully incremented!");
     } catch (error) {
-        console.log("Failed to increment user.")
-
+        console.log("Failed to increment user.");
     }
+
 
 
     try {
