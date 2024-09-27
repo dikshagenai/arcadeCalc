@@ -83,7 +83,7 @@ class Arcade {
 
 
         // ! For counting the number of trivia, games and skill badges
-        // ! below one contains all data
+        // ! below one contains all data - This one is for Arcade Facilitator Program!
         let ArcadeBadgesStatus = {
             "Trivia Badges": 0,
             "Game Badges": 0,
@@ -92,7 +92,19 @@ class Arcade {
             "Facilitator BONUS": 0,
             "Milestone Earned": "None"
         }
+
+        // ! Below is the one to count all the main Arcade Program.
+        let NormalArcadeBadgesStatus = {
+            "Trivia Badges": 0,
+            "Game Badges": 0,
+            "Skill Badges": 0,
+            "Other Badges": 0,
+            "Facilitator BONUS": 0,
+        }
+
+
         data["FacilitatorStatus"] = ArcadeBadgesStatus; // & adding data to the main JSON output...
+        data["ArcadeStatus"] = NormalArcadeBadgesStatus; // & adding data to the main JSON output... This one is not different from Arcade.
 
         // Giving out with the return value if any error occur 
 
@@ -229,6 +241,7 @@ class Arcade {
 
                         // * This will only count for arcade facilitator program... 
                         ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
+                        NormalArcadeBadgesStatus["Skill Badges"] += 1 // & Adding this count in main Arcade program too.
 
                     } else if (year === 2024 && monthInInteger > 7) {
                         point = 0.5; // normally 1 skill badge = 0.5 arcade point
@@ -237,8 +250,9 @@ class Arcade {
                         this.badgeType = 'Skill Badge'
 
                         // * This will only count for arcade facilitator program...
-                        if (monthInInteger <= 9) {
+                        if (monthInInteger <= 9 && (date <= 27)) {
                             ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
+                            NormalArcadeBadgesStatus["Skill Badges"] += 1; // & Adding this count in main Arcade program too.
                         }
                     }
                 }
@@ -274,16 +288,40 @@ class Arcade {
 
                         // & Updating badges count for games and trivia badges...
                         // * Also make sure not to add badges after the Arcade Facilitator Program...
-                        if (this.badgeType === "Arcade Badge" && monthInInteger <= 9) {
-                            ArcadeBadgesStatus['Game Badges'] += 1;   // & incremented
+                        if (this.badgeType === "Arcade Badge") {
+
+                            if (monthInInteger <= 9 && (date <= 27)) {
+                                ArcadeBadgesStatus['Game Badges'] += 1;   // & incremented
+                            }
+
+                            if (monthInInteger < 12) // add ending date here
+                            {
+                                NormalArcadeBadgesStatus['Game Badges'] += 1; // & incremented... for the main Arcade program
+                            }
+
                         }
                         // * Also make sure not to add badges after the Arcade Facilitator Program...
-                        else if (this.badgeType === "Trivia Badge" && monthInInteger <= 9) {
-                            ArcadeBadgesStatus["Trivia Badges"] += 1; // & incremented...
+                        else if (this.badgeType === "Trivia Badge" && monthInInteger <= 9 && (date <= 27)) {
+                            if (monthInInteger <= 9 && (date <= 27)) {
+                                ArcadeBadgesStatus['Trivia Badges'] += 1;   // & incremented
+                            }
+
+                            if (monthInInteger < 12) // add ending date here
+                            {
+                                NormalArcadeBadgesStatus['Trivia Badges'] += 1; // & incremented... for the main Arcade program
+                            }
                         }
 
-                        else if (this.badgeType === "Other Badge" && monthInInteger <= 9) {
-                            ArcadeBadgesStatus["Other Badges"] += 1;
+                        else if (this.badgeType === "Other Badge" && monthInInteger <= 9 && (date <= 27)) {
+                            if (monthInInteger <= 9 && (date <= 27)) {
+                                ArcadeBadgesStatus['Other Badges'] += 1;   // & incremented
+                            }
+
+                            if (monthInInteger < 12) // add ending date here
+                            {
+                                NormalArcadeBadgesStatus['Other Badges'] += 1; // & incremented... for the main Arcade program
+                            }
+
                         }
                     }
 
@@ -368,56 +406,23 @@ class Arcade {
                 data['swagsWithFacilitator'] = 'PremiumPlus'
                 data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: '!', Premium: '!', PremiumPlus: true }
 
-                // adding swag details
-                data['swagsInfo']['swagsDetails'] = {
-                    "Info": {
-                        "Unfortunately!": "The swag items haven't been officially revealed yet!"
-                    }
-                }
+
             }
             else if (data['totalPointsFacilitator'] >= 45 && data['totalPointsFacilitator'] < 65) {
                 data['swagsWithFacilitator'] = 'Premium'
                 data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: '!', Premium: true, PremiumPlus: false }
-
-                // adding swag details
-                data['swagsInfo']['swagsDetails'] = {
-                    "Info": {
-                        "Unfortunately!": "The swag items haven't been officially revealed yet!"
-                    }
-                }
             }
             else if (data['totalPointsFacilitator'] >= 30 && data['totalPointsFacilitator'] < 45) {
                 data['swagsWithFacilitator'] = 'Advanced'
                 data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: true, Premium: false, PremiumPlus: false }
-
-                // adding swag details
-                data['swagsInfo']['swagsDetails'] = {
-                    "Info": {
-                        "Unfortunately!": "The swag items haven't been officially revealed yet!"
-                    }
-                }
             }
             else if (data['totalPointsFacilitator'] >= 15 && data['totalPoints'] < 30) {
                 data['swagsWithFacilitator'] = 'Standard'
                 data['swagsInfo']['icons'] = { 'Standard': true, Advanced: false, Premium: false, PremiumPlus: false }
-
-                // adding swag details
-                // ! const swagsDetails = require('../requiredFiles/swagsInfo/StandardMilestone.json')
-                const swagsDetails = require('../../requiredFiles/swagsInfo/StandardMilestone.json')
-                data['swagsInfo']['swagsDetails'] = swagsDetails
             }
             else {
                 data['swagsWithFacilitator'] = 'None'
                 data['swagsInfo']['icons'] = { 'Standard': false, Advanced: false, Premium: false, PremiumPlus: false }
-
-                // adding no swag eligible info
-                data['swagsInfo']['swagsDetails'] = {
-                    "Sorry, you are not eligible for any swags": {
-                        "Game Badges": "worth 1 point per badge",
-                        "Trivia Badges": "worth 1 point per badge",
-                        "Skill Badges": "worth 0.5 point per badge"
-                    }
-                }
             }
 
 
@@ -443,7 +448,7 @@ class Arcade {
 
             // PremiumPlus Milestone
             data['swagsInfo']['PremiumPlus'] = {
-                "image": "https://i.ibb.co/JBJpsJz/65points.png",
+                "image": "https://i.ibb.co/qF1BFSz/Untitled-2.png",
                 requiredPoints: 65,
             }
 
@@ -472,7 +477,7 @@ class Arcade {
                 console.log("\n\n\n\nUser has been successfully updated!\n\n\n\n");
                 console.log(user)
             } catch (error) {
-                console.error(error);``
+                console.error(error); ``
                 console.log("\n\n\n\nAn error occurred while adding data to my database.\n\n\n\n");
             }
 
