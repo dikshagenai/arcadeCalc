@@ -233,6 +233,10 @@ class Arcade {
                 // ! Skill Badge
 
                 if (skillBadges && skillBadges.includes(badgeName)) {
+
+                    console.log(`\n\n\nBadge: ${badgeName}, Date: ${date}, ${monthInInteger}, ${year}\n\n\n`)
+
+
                     if (year === 2024 && monthInInteger === 7 && (date >= 22 || date <= 31)) {
                         point = 1;  // monsoon event have 1 skill badge = 1 arcade point
                         data["totalPoints"] += point;
@@ -250,8 +254,11 @@ class Arcade {
                         this.badgeType = 'Skill Badge'
 
                         // * This will only count for arcade facilitator program...
-                        if (monthInInteger <= 9 && (date <= 27)) {
+                        if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
                             ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
+                            NormalArcadeBadgesStatus["Skill Badges"] += 1; // & Adding this count in main Arcade program too.
+                        }
+                        else if (monthInInteger >= 9 && monthInInteger <= 12) {
                             NormalArcadeBadgesStatus["Skill Badges"] += 1; // & Adding this count in main Arcade program too.
                         }
                     }
@@ -290,7 +297,8 @@ class Arcade {
                         // * Also make sure not to add badges after the Arcade Facilitator Program...
                         if (this.badgeType === "Arcade Badge") {
 
-                            if (monthInInteger <= 9 && (date <= 27)) {
+                            // if (monthInInteger <= 9 && (date <= 27)) {
+                            if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
                                 ArcadeBadgesStatus['Game Badges'] += 1;   // & incremented
                             }
 
@@ -301,8 +309,9 @@ class Arcade {
 
                         }
                         // * Also make sure not to add badges after the Arcade Facilitator Program...
-                        else if (this.badgeType === "Trivia Badge" && monthInInteger <= 9 && (date <= 27)) {
-                            if (monthInInteger <= 9 && (date <= 27)) {
+                        else if (this.badgeType === "Trivia Badge") {
+                            // if (monthInInteger <= 9 && (date <= 27)) {
+                                if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
                                 ArcadeBadgesStatus['Trivia Badges'] += 1;   // & incremented
                             }
 
@@ -326,7 +335,7 @@ class Arcade {
                     }
 
                     else {
-                        // console.log(`NOT FOUND: '${badgeName}'`);
+                        console.log(`NOT FOUND: '${badgeName}'`);
                         try {
                             // fs.readFileSync(path.join(__dirname, this.UnknownBadgesFile), function (err, data) {
                             //     if (err) {
