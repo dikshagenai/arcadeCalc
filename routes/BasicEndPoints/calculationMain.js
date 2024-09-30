@@ -237,7 +237,7 @@ class Arcade {
                     console.log(`\n\n\nBadge: ${badgeName}, Date: ${date}, ${monthInInteger}, ${year}\n\n\n`)
 
 
-                    if (year === 2024 && monthInInteger === 7 && (date >= 22 || date <= 31)) {
+                    if (year === 2024 && monthInInteger === 7 && (date >= 22 && date <= 31)) {
                         point = 1;  // monsoon event have 1 skill badge = 1 arcade point
                         data["totalPoints"] += point;
                         // console.log("Skill Badge (Monsoon Event) : " + point + " => " + data["totalPoints"]);
