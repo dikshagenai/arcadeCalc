@@ -18,7 +18,7 @@ const User = require('../../models/Users')
 class Arcade {
 
     constructor() {
-        this.skillBadgesFile = "../requiredFiles/SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
+        // this.skillBadgesFile = "../requiredFiles/SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
         this.UnknownBadgesFile = "./prototypeFiles/UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
         this.badgeType = 'Unknown';
 
