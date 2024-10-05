@@ -6,7 +6,7 @@ const IncrementUser = require('../../models/UsersCount');
 
 
 // Main calculation
-router.post('/', async (req, res) => {
+    router.post('/', async (req, res) => {
     const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
 
     // ^ INCREMENTING USER IN SERVER
