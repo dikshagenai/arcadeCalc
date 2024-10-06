@@ -6,7 +6,7 @@ const IncrementUser = require('../../models/UsersCount');
 
 
 // Main calculation
-    router.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
     const publicUrl = req.body.publicUrl; // Assuming you send data as JSON
 
     // ^ INCREMENTING USER IN SERVER
@@ -14,12 +14,12 @@ const IncrementUser = require('../../models/UsersCount');
         // Endpoint to increment totalVisitedUsers
         var entries = await IncrementUser.findOne();
         if (!entries) {
-            await IncrementUser.create({ totalVisitedUsers: 1, updates: [{ timestamp: new Date(), count: 1 }] });
+            await IncrementUser.create({ dashboardSearches: 1, updates: [{ timestamp: new Date(), count: 1 }] });
         } else {
             await IncrementUser.findOneAndUpdate(
                 {},
                 {
-                    $inc: { totalVisitedUsers: 1 },
+                    $inc: { dashboardSearches: 1 },
                     $push: { updates: { timestamp: new Date(), count: 1 } }
                 },
                 { new: true }
