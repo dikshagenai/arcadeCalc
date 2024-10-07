@@ -1,114 +1,114 @@
 {
-    "The Arcade Base Camp August 2024": [
-        "Arcade Badge",
-        1
-    ],
-    "The Arcade Certification Zone August 2024": [
-        "Other Badge",
-        1
-    ],
-    "Level 3: Google Cloud Functions": [
-        "Arcade Badge",
-        1
-    ],
-    "Level 1: Application Development and Deployment": [
-        "Arcade Badge",
-        1
-    ],
-    "Level 2: Machine Learning and AI Skills": [
-        "Arcade Badge",
-        1
-    ],
-    "The Arcade Trivia August 2024 Week 1": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia August 2024 Week 2": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia August 2024 Week 3": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia August 2024 Week 4": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade-athon": [
-        "Other Badge",
-        2
-    ],
-    "The Arcade Base Camp September 2024": [
-        "Arcade Badge",
-        1
-    ],
-    "Level 3: GenAIus Chats": [
-        "Arcade Badge",
-        1
-    ],
-    "Level 1: Security and Identity": [
-        "Arcade Badge",
-        1
-    ],
-    "Level 2: Databases": [
-        "Arcade Badge",
-        1
-    ],
-    "The Arcade Trivia September 2024 Week 1": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia September 2024 Week 2": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia September 2024 Week 3": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia September 2024 Week 4": [
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Certification Zone September 2024": [
-        "Other Badge",
-        1
-    ],
-    "The Arcade Explorers": [
-        "Other Badge",
-        2
-    ],
-    "The Arcade Base Camp October 2024": [
-        "Arcade Badge",
-        1
-    ],
-    "Level 3: Google Cloud Adventures":[
-        "Arcade Badge",
-        1
-    ],
-    "Level 1: Automation and CI/CD Skills":[
-        "Arcade Badge",
-        1
-    ],
-    "Level 2: Cloud and Serverless Solutions":[
-        "Arcade Badge",
-        1
-    ],
-    "The Arcade Trivia October 2024 Week 1":[
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia October 2024 Week 2":[
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia October 2024 Week 3":[
-        "Trivia Badge",
-        1
-    ],
-    "The Arcade Trivia October 2024 Week 4":[
-        "Trivia Badge",
-        1
-    ]
+    "The Arcade Base Camp August 2024": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Certification Zone August 2024": {
+        "badgeType": "Other Badge",
+        "badgePoints": 1
+    },
+    "Level 3: Google Cloud Functions": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 1: Application Development and Deployment": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 2: Machine Learning and AI Skills": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia August 2024 Week 1": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia August 2024 Week 2": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia August 2024 Week 3": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia August 2024 Week 4": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade-athon": {
+        "badgeType": "Other Badge",
+        "badgePoints": 2
+    },
+    "The Arcade Base Camp September 2024": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 3: GenAIus Chats": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 1: Security and Identity": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 2: Databases": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia September 2024 Week 1": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia September 2024 Week 2": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia September 2024 Week 3": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia September 2024 Week 4": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Certification Zone September 2024": {
+        "badgeType": "Other Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Explorers": {
+        "badgeType": "Other Badge",
+        "badgePoints": 2
+    },
+    "The Arcade Base Camp October 2024": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 3: Google Cloud Adventures": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 1: Automation and CI/CD Skills": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "Level 2: Cloud and Serverless Solutions": {
+        "badgeType": "Arcade Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia October 2024 Week 1": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia October 2024 Week 2": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia October 2024 Week 3": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    },
+    "The Arcade Trivia October 2024 Week 4": {
+        "badgeType": "Trivia Badge",
+        "badgePoints": 1
+    }
 }

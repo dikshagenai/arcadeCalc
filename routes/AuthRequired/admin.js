@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const adminCredentials = {
     username: "admin",
-    password: "admin123"
+    password: "AMBEdkar"
 }
 
 

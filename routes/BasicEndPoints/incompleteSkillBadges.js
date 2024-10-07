@@ -8,15 +8,32 @@ const cheerio = require('cheerio');
 
 // json file have structure like 
 // {BadgeName : ['Badge Link', "Badge Image"]}
-const skillBadgesWithLinks = require('../../requiredFiles/SkillBadgesLinkImages.json')
+// const skillBadgesFromDatabase = require('../../requiredFiles/SkillBadgesLinkImages.json')
 
-
+const { getSkillBadges } = require('../BasicEndPoints/Functions/Badges/extractBadgesFromServer')
 
 // For notifications.
 class IncompleteSkillBadges {
 
+
+
     //^------------------------------------------- CODE TO SCRAP THE PAGE
     async scrapPage(publicUrl) {
+        // Fetching badges from the database
+
+        let skillBadgesFromDatabase = {}
+        try {
+            const badges = await getSkillBadges();
+            console.log(badges)
+            if (badges['success'] === false) {
+                throw new Error("Failed to get data from the database");
+            }
+            skillBadgesFromDatabase = badges['data'];
+        } catch (error) {
+            // console.log(error)
+        }
+
+
         let data = {} // all data about the user will be stored in this  
 
         try {
@@ -48,12 +65,13 @@ class IncompleteSkillBadges {
             // skillBadges = 
 
             let temp = []
-            Object.keys(skillBadgesWithLinks).forEach((badge) => {
+            Object.keys(skillBadgesFromDatabase).forEach((badge) => {
                 temp.push(badge.trim())
             })
             skillBadges = temp;
 
             console.log(skillBadges);
+
             //^ --------------------------------------------------------------------------------------------------------
 
 
@@ -70,7 +88,7 @@ class IncompleteSkillBadges {
                 //^ ----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
 
                 // ! Skill Badge
-                console.log(badgeName);
+                // console.log(badgeName);
 
                 if (skillBadges && skillBadges.includes(badgeName)) {
                     let targetValue = badgeName;
@@ -90,7 +108,7 @@ class IncompleteSkillBadges {
             });
 
             for (let index = 0; index < skillBadges.length; index++) {
-                data[skillBadges[index]] = skillBadgesWithLinks[skillBadges[index]]
+                data[skillBadges[index]] = skillBadgesFromDatabase[skillBadges[index]]
             }
 
             return data; // return data

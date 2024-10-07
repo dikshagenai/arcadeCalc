@@ -45,8 +45,8 @@ app.use("/api/notifications", require("./routes/NoAuthRequired/notifications.js"
 // & For storing responses of the contact page.
 app.use("/api/contact", require("./routes/NoAuthRequired/contact.js"));
 
-// & For fetching gen ai badges data 
-app.use("/api/genai", require("./routes/BasicEndPoints/genAiBadges.js"))
+// & For fetching badges.
+app.use("/api/badges", require("./routes/BasicEndPoints/extractBadgesFromDB.js"))
 
 // & For Admin
 app.use("/admin", require("./routes/AuthRequired/admin.js")); // used for login

@@ -7,19 +7,29 @@
 const axios = require('axios');
 const fs = require('fs');
 const cheerio = require('cheerio');
-const specialBadges = require('../../requiredFiles/SpecialBadges.json')
-const skillBadgesWithLinks = require('../../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
+
+
+// fetch badges from database
+const { getSkillBadges, getSpecialBadges } = require('../BasicEndPoints/Functions/Badges/extractBadgesFromServer')
+
+// add unknown badges in the database!
+const addUnknownBadges = require('../BasicEndPoints/Functions/Badges/addUnknownBadgesToServer')
+
+
+// const specialBadges = require('../../requiredFiles/SpecialBadges.json')
+// const skillBadgesWithLinks = require('../../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
 const calculateFacilitatorMilestone = require('../BasicEndPoints/Functions/calculateFacilitatorMilestone')
 
+// MongoDB: Database Models.
 const User = require('../../models/Users')
-
 
 
 class Arcade {
 
     constructor() {
         // this.skillBadgesFile = "../requiredFiles/SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
-        this.UnknownBadgesFile = "./prototypeFiles/UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
+        // this.UnknownBadgesFile = "./prototypeFiles/UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
+        this.UnknownBadges = []
         this.badgeType = 'Unknown';
 
         //^ The course which gives 5 points.
@@ -58,9 +68,6 @@ class Arcade {
     //^------------------------------------------- CODE TO SCRAP THE PAGE
     async scrapPage(publicUrl) {
 
-        // For path...
-        const { default: path } = await import('path')
-        const __dirname = path.resolve()
 
         const badgesDict = {}; // this will be as a element in `badgesList`, and it will have information about the badge.
         const badgesList = []; // This will have a collection of badges   
@@ -179,24 +186,47 @@ class Arcade {
             const soup2 = cheerio.load(badgesArea); // create soup2 for sub DOM (poor code logic)    
 
 
-            //^ ---------------------------------Checking for the skillBadges file if not extract it...-------------
+            //^ ---------------------------------This part is saving the skillBadges as well as special badges in the run time-------------
+
+            // * SKILL BADGES FROM THE SERVER
             let skillBadges;
             try {
-
                 var temp = []
-                Object.keys(skillBadgesWithLinks).forEach((badge) => {
+                // this will be used just to make sure we get data!
+                var badges = await getSkillBadges()
+                if (badges['success'] === false) {
+                    throw new Error("Failed to fetch data from DataBase!")
+                }
+                Object.keys(badges['data']).forEach((badge) => {
                     temp.push(badge.trim())
                 })
                 skillBadges = temp;
-            } catch {
-
+            } catch (error) {
                 message = 'Error in the server, please try again later.'
                 success = 'False';
                 statusCode = 500 // internal server error
-                return { data, success, message, statusCode };
+                return { data, success, message, statusCode, error };
                 // Don't want to go further due to extracting issues.
-
             }
+
+
+            // * SPECIAL BADGES FROM THE SERVER
+            let specialBadges = {};
+            try {
+                var badges = await getSpecialBadges();
+                if (badges['success'] === false) {
+                    throw new Error("Failed to fetch data from DataBase!")
+                }
+                specialBadges = badges['data']
+            } catch (error) {
+                message = 'Error in the server, please try again later.'
+                success = 'False';
+                statusCode = 500 // internal server error
+                return { data, success, message, statusCode, error };
+                // Don't want to go further due to extracting issues.
+            }
+
+
             //^ --------------------------------------------------------------------------------------------------------
 
 
@@ -234,7 +264,7 @@ class Arcade {
 
                 if (skillBadges && skillBadges.includes(badgeName)) {
 
-                    console.log(`\n\n\nBadge: ${badgeName}, Date: ${date}, ${monthInInteger}, ${year}\n\n\n`)
+                    // console.log(`\n\n\nBadge: ${badgeName}, Date: ${date}, ${monthInInteger}, ${year}\n\n\n`)
 
 
                     if (year === 2024 && monthInInteger === 7 && (date >= 22 && date <= 31)) {
@@ -288,8 +318,8 @@ class Arcade {
 
                 else {
                     if (specialBadges && Object.keys(specialBadges).includes(badgeName)) {
-                        this.badgeType = specialBadges[badgeName][0] // Badge Type -- `Arcade Badge` or `Trivia Badge`
-                        point = specialBadges[badgeName][1] // Point is at 1 index number
+                        this.badgeType = specialBadges[badgeName]['badgeType'] // Badge Type -- `Arcade Badge` or `Trivia Badge`
+                        point = specialBadges[badgeName]['badgePoints'] // Point is at 1 index number
                         data["totalPoints"] += point;
                         // console.log(this.badgeType + " : " + point + " => " + data["totalPoints"]);
 
@@ -311,7 +341,7 @@ class Arcade {
                         // * Also make sure not to add badges after the Arcade Facilitator Program...
                         else if (this.badgeType === "Trivia Badge") {
                             // if (monthInInteger <= 9 && (date <= 27)) {
-                                if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
+                            if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
                                 ArcadeBadgesStatus['Trivia Badges'] += 1;   // & incremented
                             }
 
@@ -335,21 +365,8 @@ class Arcade {
                     }
 
                     else {
-                        console.log(`NOT FOUND: '${badgeName}'`);
-                        try {
-                            // fs.readFileSync(path.join(__dirname, this.UnknownBadgesFile), function (err, data) {
-                            //     if (err) {
-                            //         fs.createWriteStream(path.join(__dirname, this.UnknownBadgesFile))
-                            //     }
-                            // })
-                            fs.appendFileSync(path.join(__dirname, this.UnknownBadgesFile), `${badgeName}\n`);
-                        } catch (err) {
-                            console.error(err);
-
-                            statusCode = 500;
-                            success = "False"
-                            message = "Error occurred while writing NOTFOUND.txt file."
-                        }
+                        // console.log(`NOT FOUND: '${badgeName}'`);
+                        this.UnknownBadges.push(badgeName);
                         point = 0;
                         data["totalPoints"] += point; // point not added
                         this.badgeType = 'Unknown';
@@ -487,11 +504,11 @@ class Arcade {
                     dataForDataBase,
                     { upsert: true, new: true }
                 );
-                console.log("\n\n\n\nUser has been successfully updated!\n\n\n\n");
+                console.log("User has been successfully updated!");
                 console.log(user);
             } catch (error) {
                 console.error(error);
-                console.log("\n\n\n\nAn error occurred while adding data to my database.\n\n\n\n");
+                console.log("An error occurred while adding data to my database.");
             }
 
 
@@ -499,6 +516,13 @@ class Arcade {
 
             //    Deleting the badges because no use of it in the frontend (for now!)
             delete data.badges;
+
+            // * Adding the badges to database which haven't been found!
+            try {
+                addUnknownBadges(this.UnknownBadges)
+            } catch (err) {
+                console.error(err);
+            }
 
 
             return { data, success, message, statusCode }; // return data
