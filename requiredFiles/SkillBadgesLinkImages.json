@@ -342,5 +342,9 @@
   "Get Started with Sensitive Data Protection": {
     "link": "https://www.cloudskillsboost.google/course_templates/750",
     "image": "https://cdn.qwiklabs.com/Kf77tCnkMKzyzHaLnmrwvkx%2FUtDN0jwNuUzWJIJ5U3w%3D"
+  },
+  "Generative AI Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/catalog?keywords=&locale=&skill-badge%5B%5D=skill-badge&format%5B%5D=any&language%5B%5D=any",
+    "image":"https://cdn.qwiklabs.com/k9yBO4r4zNb7%2F3CkTRXDUxuHg9bwMBehcFFPVwwB4IU%3D"
   }
 }
