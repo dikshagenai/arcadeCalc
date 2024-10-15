@@ -468,7 +468,7 @@ class Arcade {
 
             // Premium Milestone
             data['swagsInfo']['Premium'] = {
-                "image": "https://i.ibb.co/MCmx8cJ/45-points.png",
+                "image": "https://i.ibb.co/fkSbQWx/Untitled-3.png",
                 requiredPoints: 45,
             }
 
