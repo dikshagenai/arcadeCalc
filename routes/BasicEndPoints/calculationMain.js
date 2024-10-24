@@ -462,7 +462,7 @@ class Arcade {
 
             // Advanced Milestone
             data['swagsInfo']['Advanced'] = {
-                "image": "https://i.ibb.co/sVvZsmb/30points.png",
+                "image": "https://i.ibb.co/dthc0qc/Untitled-7.png",
                 requiredPoints: 30,
             }
 
