@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../../models/Users')
 const jwt = require('jsonwebtoken');
 
+const AdminAuthentication = require('../../middleware/verifyAdmin')
 
 
 // * Middleware to check user authentication.
@@ -41,6 +42,9 @@ router.post('/login',
         }
     })
 
+router.post('/checkLogin', AdminAuthentication, async (req, res) => {
+    return res.status(200).json({ message: "Authorized Access", success: true });
+})
 
 
 

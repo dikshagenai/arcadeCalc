@@ -166,7 +166,7 @@ class Arcade {
 
             // ^ for fetching the user's points
             let userPoints = $('#jump-content >div:first-child .profile-league >strong')
-            userPoints = userPoints.text().replaceAll('\n', '').trim()
+            userPoints = userPoints.text().replaceAll('\n', '').trim().split(' ')[0]
             userDetails["points"] = userPoints
 
             // ^ for fetching the user's league url
@@ -176,7 +176,7 @@ class Arcade {
 
             // ^ for fetching the user's league name
             let leagueName = $('#jump-content >div:first-child .profile-league >h2')
-            leagueName = leagueName.text().replaceAll('\n', '').trim()
+            leagueName = leagueName.text().replaceAll('\n', '').trim().split(' ')[0]
             userDetails["leagueName"] = leagueName;
 
 
