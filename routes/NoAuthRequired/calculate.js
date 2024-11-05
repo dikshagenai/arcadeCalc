@@ -35,10 +35,16 @@ router.post('/', async (req, res) => {
 
     try {
         var result = await new Arcade().scrapPage(publicUrl);
-        console.log(result);
-        res.status(result["statusCode"]).json({ result });
+        res.status(result['data']["additionalData"]['statusCode']).json( result );
     } catch (error) {
-        res.status(500).send("Internal Server Error Occurred!");
+        res.status(500).json(
+            {
+                message: "Some error occurred!",
+                error: error,
+                statusCode: 500,
+                success: false
+            }
+        );
     }
 })
 

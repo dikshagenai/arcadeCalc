@@ -1,112 +1,117 @@
 
-const calculateFacilitatorMilestone = function async(ArcadeBadgesStatus) {
+const calculateFacilitatorMilestone = function async(badgesDuringFacilitatorEvent) {
 
-    if ((ArcadeBadgesStatus["Game Badges"] >= 6 && ArcadeBadgesStatus["Trivia Badges"] >= 8 && ArcadeBadgesStatus["Skill Badges"] >= 42) || (ArcadeBadgesStatus["Game Badges"] >= 4 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 44)) {
+    let result = {
+        milestoneBonusPoints: 0,
+        milestoneEarned: "NaN"
+    };
+
+    if ((badgesDuringFacilitatorEvent["gameBadges"] >= 6 && badgesDuringFacilitatorEvent["triviaBadges"] >= 8 && badgesDuringFacilitatorEvent["skillBadges"] >= 42) || (badgesDuringFacilitatorEvent["gameBadges"] >= 4 && badgesDuringFacilitatorEvent["triviaBadges"] >= 4 && badgesDuringFacilitatorEvent["skillBadges"] >= 44)) {
 
         // ! If user has completed both milestone he will get max. points.
-        if ((ArcadeBadgesStatus["Game Badges"] >= 6 && ArcadeBadgesStatus["Trivia Badges"] >= 8 && ArcadeBadgesStatus["Skill Badges"] >= 42) && (ArcadeBadgesStatus["Game Badges"] >= 4 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 44)) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 30
-            ArcadeBadgesStatus["Milestone Earned"] = "Ultimate Milestone - (2)"
+        if ((badgesDuringFacilitatorEvent["gameBadges"] >= 6 && badgesDuringFacilitatorEvent["triviaBadges"] >= 8 && badgesDuringFacilitatorEvent["skillBadges"] >= 42) && (badgesDuringFacilitatorEvent["gameBadges"] >= 4 && badgesDuringFacilitatorEvent["triviaBadges"] >= 4 && badgesDuringFacilitatorEvent["skillBadges"] >= 44)) {
+            result['milestoneBonusPoints'] += 30
+            result["milestoneEarned"] = "Ultimate Milestone - (2)"
         }
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 6 && ArcadeBadgesStatus["Trivia Badges"] >= 8 && ArcadeBadgesStatus["Skill Badges"] >= 42) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 25
-            ArcadeBadgesStatus["Milestone Earned"] = "Ultimate Milestone - (1)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 6 && badgesDuringFacilitatorEvent["triviaBadges"] >= 8 && badgesDuringFacilitatorEvent["skillBadges"] >= 42) {
+            result['milestoneBonusPoints'] += 25
+            result["milestoneEarned"] = "Ultimate Milestone - (1)"
         }
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 4 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 44) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 30
-            ArcadeBadgesStatus["Milestone Earned"] = "Ultimate Milestone - (2)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 4 && badgesDuringFacilitatorEvent["triviaBadges"] >= 4 && badgesDuringFacilitatorEvent["skillBadges"] >= 44) {
+            result['milestoneBonusPoints'] += 30
+            result["milestoneEarned"] = "Ultimate Milestone - (2)"
         }
         else {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 0;
-            ArcadeBadgesStatus["Milestone Earned"] = "NaN"
+            result['milestoneBonusPoints'] += 0;
+            result["milestoneEarned"] = "NaN"
         }
 
     }
 
-    else if ((ArcadeBadgesStatus["Game Badges"] >= 5 && ArcadeBadgesStatus["Trivia Badges"] >= 6 && ArcadeBadgesStatus["Skill Badges"] >= 28) || (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 3 && ArcadeBadgesStatus["Skill Badges"] >= 30)) {
+    else if ((badgesDuringFacilitatorEvent["gameBadges"] >= 5 && badgesDuringFacilitatorEvent["triviaBadges"] >= 6 && badgesDuringFacilitatorEvent["skillBadges"] >= 28) || (badgesDuringFacilitatorEvent["gameBadges"] >= 3 && badgesDuringFacilitatorEvent["triviaBadges"] >= 3 && badgesDuringFacilitatorEvent["skillBadges"] >= 30)) {
 
         // ! If user has completed both milestone he will get max. points.
-        if ((ArcadeBadgesStatus["Game Badges"] >= 5 && ArcadeBadgesStatus["Trivia Badges"] >= 6 && ArcadeBadgesStatus["Skill Badges"] >= 28) && (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 3 && ArcadeBadgesStatus["Skill Badges"] >= 30)) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 19
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 3 - (2)"
+        if ((badgesDuringFacilitatorEvent["gameBadges"] >= 5 && badgesDuringFacilitatorEvent["triviaBadges"] >= 6 && badgesDuringFacilitatorEvent["skillBadges"] >= 28) && (badgesDuringFacilitatorEvent["gameBadges"] >= 3 && badgesDuringFacilitatorEvent["triviaBadges"] >= 3 && badgesDuringFacilitatorEvent["skillBadges"] >= 30)) {
+            result['milestoneBonusPoints'] += 19
+            result["milestoneEarned"] = "Milestone 3 - (2)"
         }
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 5 && ArcadeBadgesStatus["Trivia Badges"] >= 6 && ArcadeBadgesStatus["Skill Badges"] >= 28) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 15
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 3 - (1)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 5 && badgesDuringFacilitatorEvent["triviaBadges"] >= 6 && badgesDuringFacilitatorEvent["skillBadges"] >= 28) {
+            result['milestoneBonusPoints'] += 15
+            result["milestoneEarned"] = "Milestone 3 - (1)"
         }
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 3 && ArcadeBadgesStatus["Skill Badges"] >= 30) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 19
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 3 - (2)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 3 && badgesDuringFacilitatorEvent["triviaBadges"] >= 3 && badgesDuringFacilitatorEvent["skillBadges"] >= 30) {
+            result['milestoneBonusPoints'] += 19
+            result["milestoneEarned"] = "Milestone 3 - (2)"
         }
         else {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 0;
-            ArcadeBadgesStatus["Milestone Earned"] = "NaN"
+            result['milestoneBonusPoints'] += 0;
+            result["milestoneEarned"] = "NaN"
         }
 
     }
 
-    else if ((ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 18) || (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 20)) {
+    else if ((badgesDuringFacilitatorEvent["gameBadges"] >= 3 && badgesDuringFacilitatorEvent["triviaBadges"] >= 4 && badgesDuringFacilitatorEvent["skillBadges"] >= 18) || (badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 20)) {
 
 
         // ! If user has completed both milestone he will get max. points.
-        if ((ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 18) && (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 20)) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 11
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 2 - (2)"
+        if ((badgesDuringFacilitatorEvent["gameBadges"] >= 3 && badgesDuringFacilitatorEvent["triviaBadges"] >= 4 && badgesDuringFacilitatorEvent["skillBadges"] >= 18) && (badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 20)) {
+            result['milestoneBonusPoints'] += 11
+            result["milestoneEarned"] = "Milestone 2 - (2)"
         }
 
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 3 && ArcadeBadgesStatus["Trivia Badges"] >= 4 && ArcadeBadgesStatus["Skill Badges"] >= 18) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 9
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 2 - (1)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 3 && badgesDuringFacilitatorEvent["triviaBadges"] >= 4 && badgesDuringFacilitatorEvent["skillBadges"] >= 18) {
+            result['milestoneBonusPoints'] += 9
+            result["milestoneEarned"] = "Milestone 2 - (1)"
         }
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 20) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 11
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 2 - (2)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 20) {
+            result['milestoneBonusPoints'] += 11
+            result["milestoneEarned"] = "Milestone 2 - (2)"
         }
         else {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 0;
-            ArcadeBadgesStatus["Milestone Earned"] = "NaN"
+            result['milestoneBonusPoints'] += 0;
+            result["milestoneEarned"] = "NaN"
         }
 
     }
 
-    else if ((ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 8) || (ArcadeBadgesStatus["Game Badges"] >= 1 && ArcadeBadgesStatus["Trivia Badges"] >= 1 && ArcadeBadgesStatus["Skill Badges"] >= 10)) {
+    else if ((badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 8) || (badgesDuringFacilitatorEvent["gameBadges"] >= 1 && badgesDuringFacilitatorEvent["triviaBadges"] >= 1 && badgesDuringFacilitatorEvent["skillBadges"] >= 10)) {
 
 
         // ! If user has completed both milestone he will get max. points.
-        if ((ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 8) && (ArcadeBadgesStatus["Game Badges"] >= 1 && ArcadeBadgesStatus["Trivia Badges"] >= 1 && ArcadeBadgesStatus["Skill Badges"] >= 10)) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 3
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 1 - (2)"
+        if ((badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 8) && (badgesDuringFacilitatorEvent["gameBadges"] >= 1 && badgesDuringFacilitatorEvent["triviaBadges"] >= 1 && badgesDuringFacilitatorEvent["skillBadges"] >= 10)) {
+            result['milestoneBonusPoints'] += 3
+            result["milestoneEarned"] = "Milestone 1 - (2)"
         }
 
-        if (ArcadeBadgesStatus["Game Badges"] >= 2 && ArcadeBadgesStatus["Trivia Badges"] >= 2 && ArcadeBadgesStatus["Skill Badges"] >= 8) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 2
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 1 - (1)"
+        if (badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 8) {
+            result['milestoneBonusPoints'] += 2
+            result["milestoneEarned"] = "Milestone 1 - (1)"
         }
 
-        else if (ArcadeBadgesStatus["Game Badges"] >= 1 && ArcadeBadgesStatus["Trivia Badges"] >= 1 && ArcadeBadgesStatus["Skill Badges"] >= 10) {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 3
-            ArcadeBadgesStatus["Milestone Earned"] = "Milestone 1 - (2)"
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 1 && badgesDuringFacilitatorEvent["triviaBadges"] >= 1 && badgesDuringFacilitatorEvent["skillBadges"] >= 10) {
+            result['milestoneBonusPoints'] += 3
+            result["milestoneEarned"] = "Milestone 1 - (2)"
         }
         else {
-            ArcadeBadgesStatus["Facilitator BONUS"] += 0;
-            ArcadeBadgesStatus["Milestone Earned"] = "NaN"
+            result['milestoneBonusPoints'] += 0;
+            result["milestoneEarned"] = "NaN"
         }
 
     }
 
     // * Nothing
     else {
-        ArcadeBadgesStatus["Facilitator BONUS"] += 0;
-        ArcadeBadgesStatus["Milestone Earned"] = "NaN"
+        result['milestoneBonusPoints'] += 0;
+        result["milestoneEarned"] = "NaN"
     }
 
-    return ArcadeBadgesStatus;
+    return result;
 
 }
 

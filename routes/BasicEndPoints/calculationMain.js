@@ -14,10 +14,6 @@ const { getSkillBadges, getSpecialBadges } = require('../BasicEndPoints/Function
 
 // add unknown badges in the database!
 const addUnknownBadges = require('../BasicEndPoints/Functions/Badges/addUnknownBadgesToServer')
-
-
-// const specialBadges = require('../../requiredFiles/SpecialBadges.json')
-// const skillBadgesWithLinks = require('../../requiredFiles/SkillBadgesWithLink.json') // file having skill badges as well as links.
 const calculateFacilitatorMilestone = require('../BasicEndPoints/Functions/calculateFacilitatorMilestone')
 
 // MongoDB: Database Models.
@@ -27,8 +23,6 @@ const User = require('../../models/Users')
 class Arcade {
 
     constructor() {
-        // this.skillBadgesFile = "../requiredFiles/SkillBadgesExtracted.txt"; // this file will contain all the skill badges 
-        // this.UnknownBadgesFile = "./prototypeFiles/UnknownBadgesFile.txt";  // this will contain all the badges that aren't available 
         this.UnknownBadges = []
         this.badgeType = 'Unknown';
 
@@ -65,147 +59,189 @@ class Arcade {
         return months[monthStr] || null; // Handle invalid month strings
     }
 
+
+    // ^--------------------------------  -------------------------------------------
+
+
+
+
+    // ^-------------------------------- CODE TO SCRAP USER DETAILS IF IT GOT THE WEBPAGE DATA
+    scrapUserDetails = ($, userDetails) => {
+        // ^ for fetching name
+        let name = $('.ql-display-small');
+        name = name.text().replaceAll('\n', '').trim()
+        userDetails["name"] = name
+
+        // ^ for fetching the user img
+        let userImg = $('#jump-content >div:first-child .profile-avatar');
+        userImg = userImg.attr('src');
+        userDetails["profileImage"] = userImg
+
+        // ^ for fetching the user's points
+        let memberSince = $('#jump-content >div:first-child .ql-body-large')
+        memberSince = memberSince.text().replaceAll('\n', '').trim()
+        userDetails["memberSince"] = memberSince
+
+        // ^ for fetching the user's points
+        let userPoints = $('#jump-content >div:first-child .profile-league >strong')
+        userPoints = userPoints.text().replaceAll('\n', '').trim().split(' ')[0]
+        userDetails["leaderboardPoints"] = userPoints
+
+        // ^ for fetching the user's league url
+        let leagueImg = $('#jump-content >div:first-child .profile-league >img')
+        leagueImg = leagueImg.attr('src')
+        userDetails["leagueImg"] = leagueImg;
+
+        // ^ for fetching the user's league name
+        let leagueName = $('#jump-content >div:first-child .profile-league >h2')
+        leagueName = leagueName.text().replaceAll('\n', '').trim().split(' ')[0]
+        userDetails["leagueName"] = leagueName;
+
+        // it returns the userDetails object after modifying in every aspect, putting all the data.
+        return userDetails;
+    }
+
+
+
+
     //^------------------------------------------- CODE TO SCRAP THE PAGE
     async scrapPage(publicUrl) {
 
+        // & -------------------------------- defining all the subDicts to be used in the data field. --------------------------------
 
-        const badgesDict = {}; // this will be as a element in `badgesList`, and it will have information about the badge.
-        const badgesList = []; // This will have a collection of badges   
-        const data = {}; // all data about the user will be stored in this
-        let point = 0;
-        data["totalPoints"] = point; // totalPoints about the user
-
-        let userDetails = {};
-        data["userDetails"] = userDetails // Details of the user.
-
-        data["badges"] = badgesList; // this key of have 
-
-
-        // Below this will take care of the site's last modification
-        const date = new Date();
-        const options = { timeZone: 'Asia/Kolkata', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-        const indiaTime = new Intl.DateTimeFormat('en-GB', options).format(date).replace(',', '');
-        data["lastChecked"] = indiaTime // This key will have 
+        // will store details about the user such as name, leaderboardData, etc.
+        let userDetails = {
+            "name": "",
+            "profileImage": "",
+            "memberSince": "",
+            "leaderboardPoints": "",
+            "leagueImg": "",
+            "leagueName": "",
+        };
 
 
+        // this will contain all the badges completed during the facilitator event and will have the bonus points inside of it.
+        let badgesDuringFacilitatorEvent = {
+            "triviaBadges": 0,
+            "gameBadges": 0,
+            "skillBadges": 0,
+        };
 
-        // ! For counting the number of trivia, games and skill badges
-        // ! below one contains all data - This one is for Arcade Facilitator Program!
-        let ArcadeBadgesStatus = {
-            "Trivia Badges": 0,
-            "Game Badges": 0,
-            "Skill Badges": 0,
-            "Other Badges": 0,
-            "Facilitator BONUS": 0,
-            "Milestone Earned": "None"
+        // this will contain all the badges completed during the arcade.
+        let badgesThroughoutTheArcade = {
+            "triviaBadges": 0,
+            "gameBadges": 0,
+            "skillBadges": 0,
+            "otherBadges": 0,
+        };
+
+        // this will contain all the information related to the swags. - swagsList, swagsForFacilitator, swagsForNonFacilitator.
+        let swags = {
+            swagsInfo: {
+                "Standard": {},
+                "Advanced": {},
+                "Premium": {},
+                "PremiumPlus": {}
+            },
+
+            "facilitatorApplicant": "",
+            "withoutFacilitatorApplicant": "",
+        };
+
+        // this will contain all the data related to the points - facilitator, nonFacilitator, milestoneBonusPoints, milestoneEarned
+        let pointsData = {
+            facilitator: 0,
+            nonFacilitator: 0,
+            milestoneBonusPoints: 0,
+            milestoneEarned: "",
+        };
+
+        // data related to things if something went wrong! - WILL HAVE DEFAULT VALUES 
+        let additionalData = {
+            "error": "No Error",
+            "message": "No Error",
+            "success": "False",
+            "statusCode": 200,
         }
 
-        // ! Below is the one to count all the main Arcade Program.
-        let NormalArcadeBadgesStatus = {
-            "Trivia Badges": 0,
-            "Game Badges": 0,
-            "Skill Badges": 0,
-            "Other Badges": 0,
-            "Facilitator BONUS": 0,
-        }
+
+        // ~ THE MAIN PART WHERE ALL DATA IS GOING TO BE STORED.
+        const data = {
+            userDetails, badgesDuringFacilitatorEvent, badgesThroughoutTheArcade, swags, pointsData, additionalData
+        };
 
 
-        data["FacilitatorStatus"] = ArcadeBadgesStatus; // & adding data to the main JSON output...
-        data["ArcadeStatus"] = NormalArcadeBadgesStatus; // & adding data to the main JSON output... This one is not different from Arcade.
 
-        // Giving out with the return value if any error occur 
 
-        var success = "None"; // About successful
-        var statusCode = 204; // No content
-        var message = " "; // No text
+        // & fields that can be the part of the main data but are removed idk why! 
+        let badgesDict = {
+            // badgeName: { earnedOn: data, badgeType: typeOfTheBadge }
+        };
+        // this will contain all the badges in this format. -> {badgeName:{earnedOn:data, badgeType: typeOfTheBadge}} 
+        // ~ type of the badge can be 'Arcade', 'Trivia', 'Skill', 'Other'.
+
+
+        // & ----------------------------------------------------   END OF LINE ----------------------------------------------------
+
 
         try {
 
             //^ This block to check whether user send the real site
             if (!publicUrl.includes("https://www.cloudskillsboost.google/public_profiles/")) {
-                message = "Please provide a valid url"
-                success = "False"
-                statusCode = 400
-                return { data, success, message, statusCode };
+                additionalData['message'] = 'Failed to scrap the page as user have provided incorrect url.'
+                additionalData['error'] = 'Invalid URL'
+                additionalData['statusCode'] = 400
+                return { data };
             }
 
 
             //^ ----------------------CODE to extract the DOM, if unable return error----------------------
             try {
-                // console.log("Extracting the DOM...");
                 var response = await axios.get(publicUrl);
-                // console.log("DOM extracted successfully!");
             } catch (error) {
-                message = "404 : No user found with the requested url."
-                success = "False"
-                statusCode = 503 // Service Unavailable.
-                return { data, success, message, statusCode };
+                additionalData['message'] = 'No user found with the requested url.'
+                additionalData['error'] = 'Invalid URL'
+                additionalData['statusCode'] = 400;
+                return { data };
             }
             //^ -----------------------------------------------------------------------------------------------
 
 
-            // extract the sub part of the main DOM
+            // & extracting th main DOM
             const $ = cheerio.load(response.data);
 
-            // ! ---------------------------------------------  Fetching user details --------------------------------
 
-            // ^ for fetching name
-            let name = $('.ql-display-small');
-            name = name.text().replaceAll('\n', '').trim()
-            userDetails["name"] = name
-
-            // ^ for fetching the user img
-            let userImg = $('#jump-content >div:first-child .profile-avatar');
-            userImg = userImg.attr('src');
-            userDetails["userImg"] = userImg
-
-            // ^ for fetching the user's points
-            let memberSince = $('#jump-content >div:first-child .ql-body-large')
-            memberSince = memberSince.text().replaceAll('\n', '').trim()
-            userDetails["memberSince"] = memberSince
-
-            // ^ for fetching the user's points
-            let userPoints = $('#jump-content >div:first-child .profile-league >strong')
-            userPoints = userPoints.text().replaceAll('\n', '').trim().split(' ')[0]
-            userDetails["points"] = userPoints
-
-            // ^ for fetching the user's league url
-            let leagueImg = $('#jump-content >div:first-child .profile-league >img')
-            leagueImg = leagueImg.attr('src')
-            userDetails["leagueImg"] = leagueImg;
-
-            // ^ for fetching the user's league name
-            let leagueName = $('#jump-content >div:first-child .profile-league >h2')
-            leagueName = leagueName.text().replaceAll('\n', '').trim().split(' ')[0]
-            userDetails["leagueName"] = leagueName;
+            // ~ Feeds all the details of the user to this main object
+            // ~ Part for userDetails has been finished here!
+            userDetails = this.scrapUserDetails($, userDetails)
 
 
-            // ! ------------------------------------------------------------------------------------------------------------
-
+            // & create subSoup for sub DOM (poor code logic)    
             const badgesArea = $('main').first().html();
-            const soup2 = cheerio.load(badgesArea); // create soup2 for sub DOM (poor code logic)    
+            const subSoup = cheerio.load(badgesArea);
 
 
             //^ ---------------------------------This part is saving the skillBadges as well as special badges in the run time-------------
 
             // * SKILL BADGES FROM THE SERVER
-            let skillBadges;
+            let skillBadges = [];
             try {
-                var temp = []
-                // this will be used just to make sure we get data!
+
+                // ` This will fetch all the skillBadges from our Mongos Database!    
                 var badges = await getSkillBadges()
+
                 if (badges['success'] === false) {
-                    throw new Error("Failed to fetch data from DataBase!")
+                    throw new Error("Failed to contact to the Database, please try later!")
                 }
-                Object.keys(badges['data']).forEach((badge) => {
-                    temp.push(badge.trim())
-                })
-                skillBadges = temp;
+
+                // All the names of the skillBadges are now stored in this list. `skillBadges`.
+                skillBadges = Object.keys(badges['data']).map(badge => badge.trim());
+
             } catch (error) {
-                message = 'Error in the server, please try again later.'
-                success = 'False';
-                statusCode = 500 // internal server error
-                return { data, success, message, statusCode, error };
+                additionalData['message'] = 'Failed to fetch details, please reach out for support!';
+                additionalData['error'] = error;
+                additionalData['success'] = false;
+                return { data };
                 // Don't want to go further due to extracting issues.
             }
 
@@ -215,14 +251,15 @@ class Arcade {
             try {
                 var badges = await getSpecialBadges();
                 if (badges['success'] === false) {
-                    throw new Error("Failed to fetch data from DataBase!")
+                    throw new Error("Failed to contact to the Database, please try later!")
                 }
                 specialBadges = badges['data']
             } catch (error) {
-                message = 'Error in the server, please try again later.'
-                success = 'False';
-                statusCode = 500 // internal server error
-                return { data, success, message, statusCode, error };
+                additionalData['message'] = 'Failed to fetch details, please reach out for support!';
+                additionalData['error'] = error;
+                additionalData['success'] = false;
+                additionalData['statusCode'] = 500;
+                return { data };
                 // Don't want to go further due to extracting issues.
             }
 
@@ -235,16 +272,15 @@ class Arcade {
 
 
             //^ -----------------------Running a loop for all the `profile-badge`-----------------------
-            soup2('.profile-badge').each((i, badge) => {
-                const badgesDict = {};
-                this.badgeType = 'Unknown' // making the badgeType unknown
-                const soup3 = cheerio.load(badge);
+            subSoup('.profile-badge').each((i, badge) => {
+
+
+                const $ = cheerio.load(badge);
 
                 //  parsing badge details -> Name, Claimed On
-                const badgeLink = soup3('a').first().attr('href').trim();
-                let badgeName = soup3('img').first().attr('alt').trim();
+                let badgeName = $('img').first().attr('alt').trim();
                 badgeName = badgeName.split(" ").slice(2).join(" ");
-                let badgeEarnedOn = soup3('span').last().text().trim().split(" ");
+                let badgeEarnedOn = $('span').last().text().trim().split(" ");
                 const month = badgeEarnedOn[1];
                 const monthInInteger = this.monthInt(month);
                 let date, year;
@@ -260,240 +296,214 @@ class Arcade {
 
                 //^ ----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
 
-                // ! Skill Badge
-
+                // ~ Skill Badge
                 if (skillBadges && skillBadges.includes(badgeName)) {
 
-                    // console.log(`\n\n\nBadge: ${badgeName}, Date: ${date}, ${monthInInteger}, ${year}\n\n\n`)
-
-
+                    // ^ Monsoon Event 
                     if (year === 2024 && monthInInteger === 7 && (date >= 22 && date <= 31)) {
-                        point = 1;  // monsoon event have 1 skill badge = 1 arcade point
-                        data["totalPoints"] += point;
-                        // console.log("Skill Badge (Monsoon Event) : " + point + " => " + data["totalPoints"]);
-                        this.badgeType = 'Skill Badge (Monsoon Event)' // skill badge claimed during monsoon event!
+                        // monsoon event have 1 skill badge = 1 arcade point
+                        pointsData['nonFacilitator'] += 1
 
-                        // * This will only count for arcade facilitator program... 
-                        ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
-                        NormalArcadeBadgesStatus["Skill Badges"] += 1 // & Adding this count in main Arcade program too.
+                        // * Increment the count of skillBadges for both applicants.
+                        badgesDuringFacilitatorEvent['skillBadges'] += 1;
+                        badgesThroughoutTheArcade['skillBadges'] += 1;
 
-                    } else if (year === 2024 && monthInInteger > 7) {
-                        point = 0.5; // normally 1 skill badge = 0.5 arcade point
-                        data["totalPoints"] += point;
-                        // console.log("Skill Badge : " + point + " => " + data["totalPoints"]);
-                        this.badgeType = 'Skill Badge'
+                    }
 
-                        // * This will only count for arcade facilitator program...
+                    // ^ Normal Event Throughout the Arcade.
+                    else if (year === 2024 && monthInInteger > 7) {
+                        // normally 1 skill badge = 0.5 arcade point
+                        pointsData['nonFacilitator'] += 0.5
+
+                        // * Increment the count of skillBadges for both applicants. 
                         if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
-                            ArcadeBadgesStatus["Skill Badges"] += 1; // & increase the count of skill badges...
-                            NormalArcadeBadgesStatus["Skill Badges"] += 1; // & Adding this count in main Arcade program too.
+                            badgesDuringFacilitatorEvent['skillBadges'] += 1;
+                            badgesThroughoutTheArcade['skillBadges'] += 1;
                         }
+
+                        // * This will only count for normal event because facilitator program has been ended.
                         else if (monthInInteger >= 9 && monthInInteger <= 12) {
-                            NormalArcadeBadgesStatus["Skill Badges"] += 1; // & Adding this count in main Arcade program too.
+                            badgesThroughoutTheArcade['skillBadges'] += 1;
                         }
                     }
                 }
 
-                // ! Arcade Cloud Digital Leader Challenge
-                // & No skill badge or game/trivia badge will be incremented...
-
+                // ~ Arcade Cloud Digital Leader Challenge
                 else if (this.courseBadge.includes(badgeName)) {
                     if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
                         this.coursePoints -= 1;
                         if (this.coursePoints === 0) {
-                            point = 5; // due to the fact of providing free 5 arcade points after successful completion of the course.
-                            data["totalPoints"] += point;
-                            badgeName = "Arcade Cloud Digital Leader Challenge"; // Renaming it for better knowledge
-                            this.badgeType = 'Arcade Cloud Digital Leader Challenge worth 5 Arcade points' // if completed within time period...
-
-                        } else {
-                            point = 0;
-                            data["totalPoints"] += point;
-                            this.badgeType = 'Introductory Badge'
+                            // * As user has completed this course during this specific time period, he will be awarded for 5 BONUS POINTS.
+                            pointsData['nonFacilitator'] += 5;
                         }
                     }
                 }
 
-                // ! Special Badges - (Trivia games and Arcade Badges)
-
+                // ~ Special Badges - (Trivia games and Arcade Badges)
                 else {
                     if (specialBadges && Object.keys(specialBadges).includes(badgeName)) {
-                        this.badgeType = specialBadges[badgeName]['badgeType'] // Badge Type -- `Arcade Badge` or `Trivia Badge`
-                        point = specialBadges[badgeName]['badgePoints'] // Point is at 1 index number
-                        data["totalPoints"] += point;
-                        // console.log(this.badgeType + " : " + point + " => " + data["totalPoints"]);
+                        let badgeType = specialBadges[badgeName]['badgeType'] // Badge Type -- `Arcade Badge` or `Trivia Badge`
 
-                        // & Updating badges count for games and trivia badges...
-                        // * Also make sure not to add badges after the Arcade Facilitator Program...
-                        if (this.badgeType === "Arcade Badge") {
+                        let point = specialBadges[badgeName]['badgePoints'] // point from the mongoDatabase.
+                        pointsData['nonFacilitator'] += point;
+
+
+                        // & CODE BELOW IS ONLY RESPONSIBLE TO UPDATE THE COUNT...
+                        // * Arcade/Game Badges
+                        if (badgeType === "Arcade Badge") {
 
                             // if (monthInInteger <= 9 && (date <= 27)) {
                             if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
-                                ArcadeBadgesStatus['Game Badges'] += 1;   // & incremented
+                                // updated count in facilitator 
+                                badgesDuringFacilitatorEvent['gameBadges'] += 1;
                             }
 
-                            if (monthInInteger < 12) // add ending date here
-                            {
-                                NormalArcadeBadgesStatus['Game Badges'] += 1; // & incremented... for the main Arcade program
+                            if (monthInInteger <= 12) {
+                                // updated count in main base arcade.
+                                badgesThroughoutTheArcade['gameBadges'] += 1;
                             }
 
                         }
-                        // * Also make sure not to add badges after the Arcade Facilitator Program...
-                        else if (this.badgeType === "Trivia Badge") {
-                            // if (monthInInteger <= 9 && (date <= 27)) {
+                        // * Trivia Badges
+                        else if (badgeType === "Trivia Badge") {
                             if (monthInInteger < 9 || (date <= 27 && monthInInteger === 9)) {
-                                ArcadeBadgesStatus['Trivia Badges'] += 1;   // & incremented
+                                // updated count in facilitator 
+                                badgesDuringFacilitatorEvent['triviaBadges'] += 1;
                             }
-
-                            if (monthInInteger < 12) // add ending date here
-                            {
-                                NormalArcadeBadgesStatus['Trivia Badges'] += 1; // & incremented... for the main Arcade program
+                            if (monthInInteger <= 12) {
+                                // updated count in main base arcade.
+                                badgesThroughoutTheArcade['triviaBadges'] += 1;
                             }
                         }
 
-                        else if (this.badgeType === "Other Badge" && monthInInteger <= 9 && (date <= 27)) {
-                            if (monthInInteger <= 9 && (date <= 27)) {
-                                ArcadeBadgesStatus['Other Badges'] += 1;   // & incremented
-                            }
-
-                            if (monthInInteger < 12) // add ending date here
-                            {
-                                NormalArcadeBadgesStatus['Other Badges'] += 1; // & incremented... for the main Arcade program
-                            }
-
+                        // * Other Badges
+                        else if (badgeType === "Other Badge") {
+                            // no conditions required
+                            badgesThroughoutTheArcade['otherBadges'] += 1;
                         }
                     }
 
                     else {
                         // console.log(`NOT FOUND: '${badgeName}'`);
                         this.UnknownBadges.push(badgeName);
-                        point = 0;
-                        data["totalPoints"] += point; // point not added
-                        this.badgeType = 'Unknown';
                     }
                 }
 
                 // ADDING ALL DATA
-                badgesDict["Badge Name"] = badgeName;
-                badgesDict["Badge link"] = badgeLink;
-                badgesDict["Earned On"] = `${date} ${month} ${year}`;
-                badgesDict["Arcade Point"] = point;
-                badgesDict["Badge Type"] = this.badgeType;
-                badgesList.push(badgesDict);
+                // Adding the badgeName to the badgesDict
+                badgesDict[badgeName] = {
+                    "earnedOn": `${date} ${month} ${year}`
+                }
             });
 
-            success = "True"
-            message = "Result Fetched Successfully!"
-            statusCode = 200
 
+            // ~------------------------------------PART TO SCRAP THE PAGE IS COMPLETED--------------------------------------------- 
+
+
+
+            // ~--------------------------THIS PART DOING CALCULATIONS FOR FACILITATOR------------------------------------ 
 
             // ! CODE TO MAKE POINT SYSTEM FOR ARCADE FACILITATOR
             // ! Updated Code here
 
-            // here using another file to update the arcade facilitator points for particular milestone
-            // console.log(calculateFacilitatorMilestone)
+            // & here using another file to update bonus points and facilitator applicants points.
             try {
-                ArcadeBadgesStatus = await calculateFacilitatorMilestone(ArcadeBadgesStatus)
+                let tempPointsUpdate = await calculateFacilitatorMilestone(badgesDuringFacilitatorEvent)
+                pointsData['milestoneBonusPoints'] = tempPointsUpdate['milestoneBonusPoints'];
+                pointsData['milestoneEarned'] = tempPointsUpdate['milestoneEarned'];
+                pointsData['facilitator'] = pointsData['nonFacilitator'] + pointsData['milestoneBonusPoints']
 
             } catch (error) {
-                console.log(error);
+                additionalData['error'] = error;
+                additionalData['message'] = 'Failed to calculate points, please try again!'
+                additionalData['statusCode'] = 500;
+                additionalData['success'] = false;
+
+                return { data }
             }
 
 
-            // ! Code to tell the user about the swags he will achieve without any facilitator
-            data['swagsWithoutFacilitator'] = 'None'
+            // ~ Code to put swags details according to the points.
+            // & Non-Facilitator Applicants.
 
-            if (data['totalPoints'] >= 65) {
-                data['swagsWithoutFacilitator'] = 'PremiumPlus'
+            if (pointsData['nonFacilitator'] >= 65) {
+                swags['withoutFacilitatorApplicant'] = 'PremiumPlus'
             }
-            else if (data['totalPoints'] >= 45 && data['totalPoints'] < 65) {
-                data['swagsWithoutFacilitator'] = 'Premium'
+            else if (pointsData['nonFacilitator'] >= 45 && pointsData['nonFacilitator'] < 65) {
+                swags['withoutFacilitatorApplicant'] = 'Premium'
             }
-            else if (data['totalPoints'] >= 30 && data['totalPoints'] < 45) {
-                data['swagsWithoutFacilitator'] = 'Advanced'
+            else if (pointsData['nonFacilitator'] >= 30 && pointsData['nonFacilitator'] < 45) {
+                swags['withoutFacilitatorApplicant'] = 'Advanced'
             }
-            else if (data['totalPoints'] >= 15 && data['totalPoints'] < 30) {
-                data['swagsWithoutFacilitator'] = 'Standard'
-            }
-            else {
-                data['swagsWithoutFacilitator'] = 'None'
-            }
-
-
-            // & this segment returns the total points (if user registered under any facilitator also...)
-            // console.log(ArcadeBadgesStatus)
-            data["totalPointsFacilitator"] = ArcadeBadgesStatus["Facilitator BONUS"] + data["totalPoints"];
-
-            // ! Code to tell the user about the swags he will get with facilitator.
-            data['swagsWithFacilitator'] = 'None'
-            data['swagsInfo'] = {}
-
-            if (data['totalPointsFacilitator'] >= 65) {
-                data['swagsWithFacilitator'] = 'PremiumPlus'
-                data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: '!', Premium: '!', PremiumPlus: true }
-
-
-            }
-            else if (data['totalPointsFacilitator'] >= 45 && data['totalPointsFacilitator'] < 65) {
-                data['swagsWithFacilitator'] = 'Premium'
-                data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: '!', Premium: true, PremiumPlus: false }
-            }
-            else if (data['totalPointsFacilitator'] >= 30 && data['totalPointsFacilitator'] < 45) {
-                data['swagsWithFacilitator'] = 'Advanced'
-                data['swagsInfo']['icons'] = { 'Standard': '!', Advanced: true, Premium: false, PremiumPlus: false }
-            }
-            else if (data['totalPointsFacilitator'] >= 15 && data['totalPoints'] < 30) {
-                data['swagsWithFacilitator'] = 'Standard'
-                data['swagsInfo']['icons'] = { 'Standard': true, Advanced: false, Premium: false, PremiumPlus: false }
+            else if (pointsData['nonFacilitator'] >= 15 && pointsData['nonFacilitator'] < 30) {
+                swags['withoutFacilitatorApplicant'] = 'Standard'
             }
             else {
-                data['swagsWithFacilitator'] = 'None'
-                data['swagsInfo']['icons'] = { 'Standard': false, Advanced: false, Premium: false, PremiumPlus: false }
+                swags['withoutFacilitatorApplicant'] = 'None'
             }
 
 
-            // adding information according to the swags (with facilitator only \-)
+            // & Facilitator Applicants.
 
+            if (pointsData['totalPointsFacilitator'] >= 65) {
+                swags['facilitatorApplicant'] = 'PremiumPlus'
+            }
+            else if (pointsData['totalPointsFacilitator'] >= 45 && pointsData['totalPointsFacilitator'] < 65) {
+                swags['facilitatorApplicant'] = 'Premium'
+            }
+            else if (pointsData['totalPointsFacilitator'] >= 30 && pointsData['totalPointsFacilitator'] < 45) {
+                swags['facilitatorApplicant'] = 'Advanced'
+            }
+            else if (pointsData['totalPointsFacilitator'] >= 15 && pointsData['totalPoints'] < 30) {
+                swags['facilitatorApplicant'] = 'Standard'
+            }
+            else {
+                swags['facilitatorApplicant'] = 'None'
+            }
+
+
+
+            // & Adding Swags Images and required points.
             // Standard Milestone 
-            data['swagsInfo']['Standard'] = {
+            swags['swagsInfo']['Standard'] = {
                 "image": "https://i.ibb.co/txBRWb9/fegvdf.png",
                 requiredPoints: 15,
             }
 
             // Advanced Milestone
-            data['swagsInfo']['Advanced'] = {
+            swags['swagsInfo']['Advanced'] = {
                 "image": "https://i.ibb.co/dthc0qc/Untitled-7.png",
                 requiredPoints: 30,
             }
 
             // Premium Milestone
-            data['swagsInfo']['Premium'] = {
+            swags['swagsInfo']['Premium'] = {
                 "image": "https://i.ibb.co/fkSbQWx/Untitled-3.png",
                 requiredPoints: 45,
             }
 
             // PremiumPlus Milestone
-            data['swagsInfo']['PremiumPlus'] = {
+            swags['swagsInfo']['PremiumPlus'] = {
                 "image": "https://i.ibb.co/qF1BFSz/Untitled-2.png",
                 requiredPoints: 65,
             }
 
 
 
-            // ! Collecting user data in my database!
+            // ~ Collecting user data in my database!
             var splitPublicUrl = publicUrl.split('https://www.cloudskillsboost.google/public_profiles/')[1]
             var dataForDataBase = {
                 "id": splitPublicUrl,
                 "name": userDetails.name,
                 "publicUrl": publicUrl,
-                "normalPoints": data.totalPoints,
-                "swagsWithoutFacilitator": data.swagsWithoutFacilitator,
-                "facilitatorPoints": data.totalPointsFacilitator,
-                "swagsWithFacilitator": data.swagsWithFacilitator
+                "normalPoints": pointsData['nonFacilitator'],
+                "swagsWithoutFacilitator": swags['withoutFacilitatorApplicant'],
+                "facilitatorPoints": pointsData['facilitator'],
+                "swagsWithFacilitator": swags['facilitatorApplicant']
             }
 
 
-            // ^ Adding data in my database
+            // * Adding data in my database
             try {
                 // Remove the existing entry if it exists
                 await User.findOneAndDelete({ id: dataForDataBase['id'] });
@@ -512,11 +522,6 @@ class Arcade {
             }
 
 
-
-
-            //    Deleting the badges because no use of it in the frontend (for now!)
-            delete data.badges;
-
             // * Adding the badges to database which haven't been found!
             try {
                 addUnknownBadges(this.UnknownBadges)
@@ -525,14 +530,18 @@ class Arcade {
             }
 
 
-            return { data, success, message, statusCode }; // return data
+            additionalData['message'] = 'Data has been successfully fetched!';
+            additionalData['success'] = true;
+            additionalData['statusCode'] = 200;
+            return { data }; // returns data
 
         } catch (err) {
             console.error(`Unknown error occurred: ${err}`);
-            success = "False"
-            message = "Please contact the administrator to solve the issue."
-            statusCode = 410 // code is outdated and needs to be upgraded!
-            return { data, success, message, statusCode }; // return data
+            additionalData['error'] = err
+            additionalData['message'] = 'Unknown error occurred please reach out the administrator';
+            additionalData['success'] = false;
+            additionalData['statusCode'] = 500;
+            return { data }; // returns data
         }
     }
 }
