@@ -445,16 +445,16 @@ class Arcade {
 
             // & Facilitator Applicants.
 
-            if (pointsData['totalPointsFacilitator'] >= 65) {
+            if (pointsData['facilitator'] >= 65) {
                 swags['facilitatorApplicant'] = 'PremiumPlus'
             }
-            else if (pointsData['totalPointsFacilitator'] >= 45 && pointsData['totalPointsFacilitator'] < 65) {
+            else if (pointsData['facilitator'] >= 45 && pointsData['facilitator'] < 65) {
                 swags['facilitatorApplicant'] = 'Premium'
             }
-            else if (pointsData['totalPointsFacilitator'] >= 30 && pointsData['totalPointsFacilitator'] < 45) {
+            else if (pointsData['facilitator'] >= 30 && pointsData['facilitator'] < 45) {
                 swags['facilitatorApplicant'] = 'Advanced'
             }
-            else if (pointsData['totalPointsFacilitator'] >= 15 && pointsData['totalPoints'] < 30) {
+            else if (pointsData['facilitator'] >= 15 && pointsData['facilitator'] < 30) {
                 swags['facilitatorApplicant'] = 'Standard'
             }
             else {
