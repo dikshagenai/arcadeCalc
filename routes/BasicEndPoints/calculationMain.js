@@ -472,19 +472,19 @@ class Arcade {
 
             // Advanced Milestone
             swags['swagsInfo']['Advanced'] = {
-                "image": "https://i.ibb.co/M6BRHgW/Untitled-7-3.png",
+                "image": "https://i.ibb.co/Smy5mcn/Untitled-7-5.png",
                 requiredPoints: 30,
             }
 
             // Premium Milestone
             swags['swagsInfo']['Premium'] = {
-                "image": "https://i.ibb.co/4sbDhmP/Untitled-1-4.png",
+                "image": "https://i.ibb.co/HGPHrck/Untitled-2-25.png",
                 requiredPoints: 45,
             }
 
             // PremiumPlus Milestone
             swags['swagsInfo']['PremiumPlus'] = {
-                "image": "https://i.ibb.co/h9dJjh8/Untitled-2-22.png",
+                "image": "https://i.ibb.co/prLMkk4/Untitled-3-1.png",
                 requiredPoints: 65,
             }
 
