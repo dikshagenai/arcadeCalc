@@ -1,0 +1,1566 @@
+{
+  "Manage Kubernetes in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/783?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/SbaluKNBD8ILVo2svsp%2FjP6afBiti7LzxoSPIye9JPs%3D"
+  },
+  "Classify Images with TensorFlow on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/646?catalog_rank=%7B%22rank%22%3A2%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Nl6YqeQV32kx3Ijt2OWacKzXfiLsorsHsb%2F6EsX9B5I%3D"
+  },
+  "Derive Insights from BigQuery Data": {
+    "link": "https://www.cloudskillsboost.google/course_templates/623?catalog_rank=%7B%22rank%22%3A3%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ryTniLyAhIKMMP16FCfNS4BOEOX3PpjWQRnvLf7Q7%2B8%3D"
+  },
+  "Share Data Using Google Data Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/657?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/H5Nw8iJDyQktGkZLbZBXV%2FwyW9tf2co6Sbpu67lz2dU%3D"
+  },
+  "Get Started with Google Workspace Tools": {
+    "link": "https://www.cloudskillsboost.google/course_templates/676?catalog_rank=%7B%22rank%22%3A5%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/GAb62EyA%2BTyfcToHCOmVOYb1SLJJCr%2BtCks1xXo8kTw%3D"
+  },
+  "Migrate MySQL data to Cloud SQL using Database Migration Service": {
+    "link": "https://www.cloudskillsboost.google/course_templates/629?catalog_rank=%7B%22rank%22%3A6%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3Nh9kl8QM4zGjq9S0TXBXkUKs%2FqOG2OXjZrBiz7LR0Y%3D"
+  },
+  "Managing Cloud Infrastructure with Terraform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/746?catalog_rank=%7B%22rank%22%3A7%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/6Oth7a5XcVBG%2FXFAsE%2Fin4n3gYBILiLtEhhnGD48qOY%3D"
+  },
+  "Use Machine Learning APIs on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/630?catalog_rank=%7B%22rank%22%3A8%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/G0nUb7y%2FUlLKTnpNQU6fxMCQEyZvGy0w2QrIBkzfXLY%3D"
+  },
+  "Mitigate Threats and Vulnerabilities with Security Command Center": {
+    "link": "https://www.cloudskillsboost.google/course_templates/759?catalog_rank=%7B%22rank%22%3A9%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5NWaSWLl43%2B5GwhlDm8SyazP662JNNoxufqGhbDH6Bc%3D"
+  },
+  "Monitor Environments with Google Cloud Managed Service for Prometheus": {
+    "link": "https://www.cloudskillsboost.google/course_templates/761?catalog_rank=%7B%22rank%22%3A10%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Opy8Mo%2F0cJ6x8wiZV5GdGmaE0tToSTn66au0LQy0nMM%3D"
+  },
+  "Get Started with Dataplex": {
+    "link": "https://www.cloudskillsboost.google/course_templates/726?catalog_rank=%7B%22rank%22%3A11%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/2tJ1LSxF0ZRz71mWC1oyfMl71xyysS8RcfJThsnrXTM%3D"
+  },
+  "Kubernetes in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/744?catalog_rank=%7B%22rank%22%3A12%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/UyT4%2FWYLZINmnSzoTiy3kqux2fhsMQs6nGOBs%2FKkm3s%3D"
+  },
+  "Automate Deployment and Manage Traffic on a Google Cloud Network ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/764?catalog_rank=%7B%22rank%22%3A13%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/AjCyUfT3Sioy6aCX%2BSrNC5BxIHF%2BG0cyLvN1%2F1Qy%2B1A%3D"
+  },
+  "Network Performance and Optimization": {
+    "link": "https://www.cloudskillsboost.google/course_templates/856?catalog_rank=%7B%22rank%22%3A14%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/rdNrtalxzfq0LZREBG8DSaQiFZ4fnI2wf5hIO1APTLc%3D"
+  },
+  "Google Cloud Solutions I: Scaling Your Infrastructure": {
+    "link": "https://www.cloudskillsboost.google/course_templates/734?catalog_rank=%7B%22rank%22%3A15%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ocIGv71mQQNKorysvLKIwUDH%2BoHTfjHMyRlNXzbNUSM%3D"
+  },
+  "Google Cloud Solutions II: Data and Machine Learning": {
+    "link": "https://www.cloudskillsboost.google/course_templates/733?catalog_rank=%7B%22rank%22%3A16%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/fe16wdw%2FP%2Bik2Jd2LIhf9h87kis2pt2DWzEQhEdIwgw%3D"
+  },
+  "Security & Identity Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/770?catalog_rank=%7B%22rank%22%3A17%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5ljsUX8awqZqKe2b%2B9tVkniUYDSusD5R7X5zK2M3a4E%3D"
+  },
+  "Baseline: Infrastructure": {
+    "link": "https://www.cloudskillsboost.google/course_templates/620?catalog_rank=%7B%22rank%22%3A18%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Y790%2BJuSaVsA6kSdqTFYw7qloXgxdjXtsFUhkz0iz7E%3D"
+  },
+  "Google Cloud Essentials": {
+    "link": "https://www.cloudskillsboost.google/course_templates/621?catalog_rank=%7B%22rank%22%3A19%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/dyxSJZyS0h22FhrU2hapgcoiz9H93IYZaryFRU0qUkA%3D"
+  },
+  "Baseline: Data, ML, AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/619?catalog_rank=%7B%22rank%22%3A20%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YuwgxaRWlZyEKpeMQL%2Bt1SxDjviPP%2F8foVzTHtJqGQc%3D"
+  },
+  "Workspace: Add-ons": {
+    "link": "https://www.cloudskillsboost.google/course_templates/781?catalog_rank=%7B%22rank%22%3A21%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/uP%2BxvSPfJNTd4n6VZMEH%2ByyDoi%2F8vey%2F6GT3tm%2BQwBg%3D"
+  },
+  "Baseline: Deploy & Develop": {
+    "link": "https://www.cloudskillsboost.google/course_templates/675?catalog_rank=%7B%22rank%22%3A22%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/GeGBNrWc18%2BJ0OnDGrhqVhbvmscYqKdv3grsqWMRS0M%3D"
+  },
+  "Cloud SQL": {
+    "link": "https://www.cloudskillsboost.google/course_templates/701?catalog_rank=%7B%22rank%22%3A23%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/6mJZKebMtXKKHZ3WW3gUWwXUhXMmgrrSIbrDDq%2FwX%2B4%3D"
+  },
+  "Exploring APIs": {
+    "link": "https://www.cloudskillsboost.google/course_templates/718?catalog_rank=%7B%22rank%22%3A24%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qwBNs4f9DYGm55O4wb3mp38dnYBrR8%2F3JnpvStIllR0%3D"
+  },
+  "NCAA® March Madness®: Bracketology with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/762?catalog_rank=%7B%22rank%22%3A25%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/7R7Lk%2FFFRKZNpqMWeuoDMDmaMfz0mkZqzCLe7lGayK8%3D"
+  },
+  "Cloud Engineering": {
+    "link": "https://www.cloudskillsboost.google/course_templates/695?catalog_rank=%7B%22rank%22%3A26%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/pF0JeOn6nJ9tN9xs9TjpLMoQWqf%2FIBn%2F6timiDC3Uho%3D"
+  },
+  "BigQuery for Data Warehousing": {
+    "link": "https://www.cloudskillsboost.google/course_templates/679?catalog_rank=%7B%22rank%22%3A27%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/kpB8mQgePQcBW1iGUkE4g%2BjQdafRXW%2B2%2BBqgfgjcehU%3D"
+  },
+  "BigQuery for Marketing Analysts": {
+    "link": "https://www.cloudskillsboost.google/course_templates/678?catalog_rank=%7B%22rank%22%3A28%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/eulCnHdxvQ5f%2BfEqkvq1CpDqRm6bh1jO1hGRfXyZbrA%3D"
+  },
+  "BigQuery for Machine Learning": {
+    "link": "https://www.cloudskillsboost.google/course_templates/680?catalog_rank=%7B%22rank%22%3A29%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Gr%2B1KDEg9PierWF7cnsucC22jKIy6aHZhLYICbWwMFI%3D"
+  },
+  "Intro to ML: Language Processing": {
+    "link": "https://www.cloudskillsboost.google/course_templates/740?catalog_rank=%7B%22rank%22%3A30%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/PMvEwj92V3P6rguG5fqCAhaQ9eK49tlm5CVMnyszVlg%3D"
+  },
+  "Intro to ML: Image Processing": {
+    "link": "https://www.cloudskillsboost.google/course_templates/739?catalog_rank=%7B%22rank%22%3A31%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/A13uL5L4k9eJte78rdSAoCACA7eAemssidFBZbqoe0o%3D"
+  },
+  "Intermediate ML: TensorFlow on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/738?catalog_rank=%7B%22rank%22%3A32%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/NO8%2FynLGGv4ikVKxEb8MX1WT1DCyfSBTzaevdcucI6Q%3D"
+  },
+  "Advanced ML: ML Infrastructure": {
+    "link": "https://www.cloudskillsboost.google/course_templates/666?catalog_rank=%7B%22rank%22%3A33%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/mZC3jGxW7IwtktGeqb0bK3j6s%2B7eQ1P%2B5kb1tn6fPW0%3D"
+  },
+  "Cloud Logging": {
+    "link": "https://www.cloudskillsboost.google/course_templates/698?catalog_rank=%7B%22rank%22%3A34%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/v6rQf1SlxNv0BHE7vg4750gZSoivAJsA2kj%2F2k8lw4w%3D"
+  },
+  "Cloud Healthcare API": {
+    "link": "https://www.cloudskillsboost.google/course_templates/697?catalog_rank=%7B%22rank%22%3A35%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/pmOQ%2BcwIDI5%2FcP4uvtLKANfDRWD2JiTMU0WOebvTfb4%3D"
+  },
+  "Understand Your Google Cloud Costs": {
+    "link": "https://www.cloudskillsboost.google/course_templates/775?catalog_rank=%7B%22rank%22%3A36%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/xqzIx%2FjtMydGDvdeYixoZJkQvb3Agm91ridsEjyPTDw%3D"
+  },
+  "Using the Cloud SDK Command Line": {
+    "link": "https://www.cloudskillsboost.google/course_templates/699?catalog_rank=%7B%22rank%22%3A37%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YilhfiAxeTFgCMJC5lCpRC1GKyGYPubSnasBdEwQWaE%3D"
+  },
+  "DevOps Essentials": {
+    "link": "https://www.cloudskillsboost.google/course_templates/717?catalog_rank=%7B%22rank%22%3A38%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/yxXW7rBaDwpI0Ym03gomm%2F1l6Fw6XMEY%2BYW7HkOKjnM%3D"
+  },
+  "Optimize Your Google Cloud Costs": {
+    "link": "https://www.cloudskillsboost.google/course_templates/767?catalog_rank=%7B%22rank%22%3A39%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/w65oooHTovevRH%2F80rTLriaWIL6qpTICeg%2B52swuch8%3D"
+  },
+  "Applied Data: Blockchain": {
+    "link": "https://www.cloudskillsboost.google/course_templates/672?catalog_rank=%7B%22rank%22%3A40%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/EDqoIpsMmHTQTL5Ea4KFpHwDRaFOV31BMhx0LON5OSw%3D"
+  },
+  "Deploy Kubernetes Applications on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/663?catalog_rank=%7B%22rank%22%3A41%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/SvoU1kUymbVQ3cCF%2Fgfm%2FgIqHVf3%2FZ5MGs7N9uOKNnc%3D"
+  },
+  "Prepare Data for ML APIs on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/631?catalog_rank=%7B%22rank%22%3A42%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ZUhhfh33J7x31SmcU8DIAf3ejiLuMPjfTRgjZMBj0xA%3D"
+  },
+  "Set Up an App Dev Environment on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/637?catalog_rank=%7B%22rank%22%3A43%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/FRpM2MMSR7jg%2FFjdC%2F9EmuOkSJ0F7YptWGKe6VD8sjk%3D"
+  },
+  "Develop your Google Cloud Network": {
+    "link": "https://www.cloudskillsboost.google/course_templates/625?catalog_rank=%7B%22rank%22%3A44%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/BAUF8WPVlWaDyWm1EK%2FKHt9EoU8%2BKdHpodHJ%2BCYVIWE%3D"
+  },
+  "Implement Load Balancing on Compute Engine": {
+    "link": "https://www.cloudskillsboost.google/course_templates/648?catalog_rank=%7B%22rank%22%3A45%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/QlR8VSC38qpQUHJPs6pq2%2F330l9KejU8QDuxYF7cewo%3D"
+  },
+  "Build a Website on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/638?catalog_rank=%7B%22rank%22%3A46%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Rv0QhP4yVyrmO68%2Fe45arpXtdZgM%2BolI2G6JdFN1y0Y%3D"
+  },
+  "Website on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/682?catalog_rank=%7B%22rank%22%3A47%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/DXzOXwkl%2BmPY9V6q8buTSM90NhCORuJ4VVsq3ZVcwSc%3D"
+  },
+  "Cloud Architecture: Design, Implement, and Manage": {
+    "link": "https://www.cloudskillsboost.google/course_templates/640?catalog_rank=%7B%22rank%22%3A48%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/p4JZAfZDpg8laLP1g5%2B2W84mCvbUaCsQrmAfxR7UIng%3D"
+  },
+  "Build a Secure Google Cloud Network": {
+    "link": "https://www.cloudskillsboost.google/course_templates/654?catalog_rank=%7B%22rank%22%3A49%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/HpKzUnOzAJCt2GEWpsF9N96EDKWXDyqhliQzhdPlEGw%3D"
+  },
+  "Getting Started with Go on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/730?catalog_rank=%7B%22rank%22%3A50%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5FafR7VuydVnv77WNkaSMfGFa%2BGLDsXIRKwtzMjLoBo%3D"
+  },
+  "Building Codeless Pipelines on Cloud Data Fusion": {
+    "link": "https://www.cloudskillsboost.google/course_templates/693?catalog_rank=%7B%22rank%22%3A51%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FgFfPyhyX0reXMC7sfH5wg%2FJzE3swXUWKTs%2BBBd1y90%3D"
+  },
+  "Engineer Data for Predictive Modeling with BigQuery ML": {
+    "link": "https://www.cloudskillsboost.google/course_templates/627?catalog_rank=%7B%22rank%22%3A52%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/buCzMzxYUhmRRa4hAgfQAo0FNxdIIQexIdHcyuznQj0%3D"
+  },
+  "Data Catalog Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/709?catalog_rank=%7B%22rank%22%3A53%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/iD31WjCF5w8kx6O6KsxsUPbrB3rPiG7Bgr2f71Kt5Co%3D"
+  },
+  "Implement DevOps Workflows in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/716?catalog_rank=%7B%22rank%22%3A54%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/WGq8WpVC%2Bdd52Yv3wqJG%2F7mP%2FrmFFUikWBuUom12Tuo%3D"
+  },
+  "Monitor and Log with Google Cloud Observability": {
+    "link": "https://www.cloudskillsboost.google/course_templates/749?catalog_rank=%7B%22rank%22%3A55%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4Rb5x1I0pnY4%2BUPvlBp5ady7UwKnLi7GdZafabxCNcY%3D"
+  },
+  "Getting Started with Apache Kafka and Confluent Platform on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/703?catalog_rank=%7B%22rank%22%3A56%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/bk%2FydCtFd6dZzG3FgbN%2FqWu27qWwE3hyCmbY3J8qv2I%3D"
+  },
+  "Create ML Models with BigQuery ML": {
+    "link": "https://www.cloudskillsboost.google/course_templates/626?catalog_rank=%7B%22rank%22%3A57%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Wm106BMo1s08lU7N%2BBp7tWioQwpDFr1R60VxPqqF8r0%3D"
+  },
+  "Build a Data Warehouse with BigQuery": {
+    "link": "https://www.cloudskillsboost.google/course_templates/624?catalog_rank=%7B%22rank%22%3A58%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Fah1omJYpGK0QWlt6On%2FNXijcM0cQwUkp50IvrRpvXI%3D"
+  },
+  "Implement Cloud Security Fundamentals on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/645?catalog_rank=%7B%22rank%22%3A59%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/QZ3Lm78VShnMTK6G4HeVF1JMJUajwq%2BBmdXaizCd5f0%3D"
+  },
+  "Google Developer Essentials": {
+    "link": "https://www.cloudskillsboost.google/course_templates/735?catalog_rank=%7B%22rank%22%3A60%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/uJarxz5zJ1wAndA42XogPv7tMh0QYkf4twdkDcAhX1s%3D"
+  },
+  "Develop Serverless Applications on Cloud Run": {
+    "link": "https://www.cloudskillsboost.google/course_templates/741?catalog_rank=%7B%22rank%22%3A61%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/kFh0tNiUHhgbAFtBWQeTIOCdBx988W3ZYI7Ew2AqALw%3D"
+  },
+  "Develop Serverless Apps with Firebase": {
+    "link": "https://www.cloudskillsboost.google/course_templates/649?catalog_rank=%7B%22rank%22%3A62%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/TxPdjh0YSi66rQsyXacKfuK97yNHtQPky54TIbv9KEY%3D"
+  },
+  "Transform and Clean your Data with Dataprep by Alteryx on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/773?catalog_rank=%7B%22rank%22%3A63%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/yeaN%2BDEQto4PVbYz%2B0NYuKLhcIkD1qizgY%2Fw4aWGLtc%3D"
+  },
+  "Optimize Costs for Google Kubernetes Engine": {
+    "link": "https://www.cloudskillsboost.google/course_templates/655?catalog_rank=%7B%22rank%22%3A64%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JVjBXaXXv2iu10%2FpaeJt0ed1yluhaplGd7HMYNYyxYM%3D"
+  },
+  "Migrating MySQL data to Cloud SQL using Database Migration Service": {
+    "link": "https://www.cloudskillsboost.google/course_templates/758?catalog_rank=%7B%22rank%22%3A65%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/2dOX0oAoZDhYLdVelnECpJp1FdAzWjn0ZGuiNY5FhjU%3D"
+  },
+  "Applying BigQuery ML's Classification, Regression, and Demand Forecasting for Retail Applications": {
+    "link": "https://www.cloudskillsboost.google/course_templates/673?catalog_rank=%7B%22rank%22%3A66%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/458bNHlJ6CpnZwm6UZkoGJoh0dP07oILv9aV0xjx%2B8A%3D"
+  },
+  "Prepare Data for Looker Dashboards and Reports": {
+    "link": "https://www.cloudskillsboost.google/course_templates/628?catalog_rank=%7B%22rank%22%3A67%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/I1pFA2Dk7R2%2FrRvR3WWpruBEEexrlv06SAl0c1J%2Fju0%3D"
+  },
+  "Flutter Development": {
+    "link": "https://www.cloudskillsboost.google/course_templates/720?catalog_rank=%7B%22rank%22%3A68%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2B06k3hUvPg7JACgk7SJLxV%2BCnXTyUybXcXK6%2BXEUeW0%3D"
+  },
+  "Understanding LookML in Looker": {
+    "link": "https://www.cloudskillsboost.google/course_templates/774?catalog_rank=%7B%22rank%22%3A69%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/N2u7k2NMrW%2BQzM9aOPBn5UXgw%2FBtXxOzKKjmD9%2FFJUg%3D"
+  },
+  "Google Workspace Essentials": {
+    "link": "https://www.cloudskillsboost.google/course_templates/779?catalog_rank=%7B%22rank%22%3A70%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vsykz%2BvY86SVS6QCSut0TNP4Dqgx9zFVGOuuXG%2BqTjo%3D"
+  },
+  "Deploy and Manage Apigee X": {
+    "link": "https://www.cloudskillsboost.google/course_templates/661?catalog_rank=%7B%22rank%22%3A71%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/9%2BfjTCoZD5SSJZOTfWz5WWp07GUbHFzxTiQ2m8zaBjs%3D"
+  },
+  "Applying Advanced LookML Concepts in Looker": {
+    "link": "https://www.cloudskillsboost.google/course_templates/665?catalog_rank=%7B%22rank%22%3A72%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/les6ESM3pZNrY3JDKBWYCI9YGAyZWrI0h3EIUJgiygI%3D"
+  },
+  "Build and Deploy Machine Learning Solutions on Vertex AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/684?catalog_rank=%7B%22rank%22%3A73%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ywUZRWwQAPLUq12I1NecVxkw0W57w3W9NYZUBwDEM1A%3D"
+  },
+  "Create and Manage Cloud SQL for PostgreSQL Instances": {
+    "link": "https://www.cloudskillsboost.google/course_templates/652?catalog_rank=%7B%22rank%22%3A74%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/VuW9c3oSDA0JWAwyxysOXQ6EbcUvBhtG2b3nSIhNArA%3D"
+  },
+  "Build LookML Objects in Looker": {
+    "link": "https://www.cloudskillsboost.google/course_templates/639?catalog_rank=%7B%22rank%22%3A75%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/VSikZWpYgfMlYJ1qs5LZ%2FeIRa%2FjTIlm53clSpT5TJrk%3D"
+  },
+  "Flutter Essentials": {
+    "link": "https://www.cloudskillsboost.google/course_templates/721?catalog_rank=%7B%22rank%22%3A76%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/7bIYh59eTgISE%2BoPHoZ11Zr5BpZ%2Bq6FIQ1NOUlaMqGQ%3D"
+  },
+  "Develop and Secure APIs with Apigee X": {
+    "link": "https://www.cloudskillsboost.google/course_templates/714?catalog_rank=%7B%22rank%22%3A77%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zrJ3ITt0ixHh8sU0kb7m1ADYGu8dLKaQ1F0DqLb0F3Y%3D"
+  },
+  "Building No-Code AppSheet Apps": {
+    "link": "https://www.cloudskillsboost.google/course_templates/689?catalog_rank=%7B%22rank%22%3A78%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/U72UITJ%2FVblR5ZCCKyHJhUMQfI6fK%2BAS9%2Fm6wldVux8%3D"
+  },
+  "Workspace: Integrations for Data": {
+    "link": "https://www.cloudskillsboost.google/course_templates/782?catalog_rank=%7B%22rank%22%3A79%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5srJBO5w8gYDAOYx0YCCvIzZRYOMlJNKQoEa%2FctIzbI%3D"
+  },
+  "Manage Data Models in Looker": {
+    "link": "https://www.cloudskillsboost.google/course_templates/651?catalog_rank=%7B%22rank%22%3A80%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/yLL9ckYq9xPQqACrXiISLOO0pZ93pZ1u89BqXycHtbk%3D"
+  },
+  "Detect Manufacturing Defects using Visual Inspection AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/644?catalog_rank=%7B%22rank%22%3A81%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FuPhI%2BUXPoBAn7%2BkgonVcr%2FiyfDqC2qo1JbIy%2Bwot6w%3D"
+  },
+  "Automate Data Capture at Scale with Document AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/674?catalog_rank=%7B%22rank%22%3A82%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zINnuEa2Zsi9GZKbcmUT97b8uWQMGp9vRlOUYsdE3jE%3D"
+  },
+  "Using Vault on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/777?catalog_rank=%7B%22rank%22%3A83%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/o0BbFRNJiaKf7axjqTyzYBl4KiM4EPuIb3xW%2BsYf1WQ%3D"
+  },
+  "Perform Predictive Data Analysis in BigQuery": {
+    "link": "https://www.cloudskillsboost.google/course_templates/656?catalog_rank=%7B%22rank%22%3A84%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/J%2Fxk4xpBWdqQT0JEuTiN5h%2F3gpAS%2BliRT64kJBjcJrs%3D"
+  },
+  "Build Infrastructure with Terraform on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/636?catalog_rank=%7B%22rank%22%3A85%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/VHFZrm%2Bx107vRoKqo%2BxPzwhbMoLCNk1EctzHY7SZwhI%3D"
+  },
+  "Create and Manage Cloud Spanner Instances": {
+    "link": "https://www.cloudskillsboost.google/course_templates/643?catalog_rank=%7B%22rank%22%3A86%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Lwx9nBf13DUavchAbefiCQXovxumLE3Z8hNOuHTHsIk%3D"
+  },
+  "Creating Infrastructure on Google Cloud with Terraform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/707?catalog_rank=%7B%22rank%22%3A87%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/dkP%2F3XaBMAy5EoX0DgxHDRSWmCY3uEXK1UmeGcJCqGE%3D"
+  },
+  "NetApp: Build, Protect and Govern your Data Infrastructure On Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/763?catalog_rank=%7B%22rank%22%3A88%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/R0gtSuvnPFCTYiEevlCf%2FsI0JCWiO8Y0DgBznGqBpjo%3D"
+  },
+  "Use Functions, Formulas, and Charts in Google Sheets": {
+    "link": "https://www.cloudskillsboost.google/course_templates/776?catalog_rank=%7B%22rank%22%3A89%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/QvOcCXRFs6%2BvFDa76EDz73BTH%2BWOiC3JCq0TZKiwdcE%3D"
+  },
+  "Implement CI/CD Pipelines on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/691?catalog_rank=%7B%22rank%22%3A90%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/8FCeW6Ghxq6YJ%2B%2B0wucn4QzO92YLIkf13qHMHxnyRZo%3D"
+  },
+  "Google Kubernetes Engine Best Practices: Security": {
+    "link": "https://www.cloudskillsboost.google/course_templates/732?catalog_rank=%7B%22rank%22%3A91%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KXp0CvdYFdS3gJKkCmHYN7iHdEWu2PwPUcrXRHMFbz0%3D"
+  },
+  "Securing your Network with Cloud Armor": {
+    "link": "https://www.cloudskillsboost.google/course_templates/785?catalog_rank=%7B%22rank%22%3A92%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/1%2B5RovZ8JsoeLRd%2FvDIaF7rZvSg%2BepUG3fItp24%2FFrU%3D"
+  },
+  "Create and Manage Bigtable Instances": {
+    "link": "https://www.cloudskillsboost.google/course_templates/650?catalog_rank=%7B%22rank%22%3A93%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FybkjqsKqUZkugVMQpcLbbiD8%2BdCkPqu4MvVqYhFgRI%3D"
+  },
+  "Vertex AI Search for Retail Agent Builder": {
+    "link": "https://www.cloudskillsboost.google/course_templates/391?catalog_rank=%7B%22rank%22%3A94%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/CxDtq3M8T633djfyHzitz6FLBzK3nDXYY3Of%2FjmjZ%2BY%3D"
+  },
+  "Google Security Operations - SIEM Rules": {
+    "link": "https://www.cloudskillsboost.google/course_templates/690?catalog_rank=%7B%22rank%22%3A95%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/NxFG1sSnAqVjTSYTaALe4rbIUVbmjm68xjsQ56ZLfUo%3D"
+  },
+  "Build Google Cloud Infrastructure for AWS Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/687?catalog_rank=%7B%22rank%22%3A96%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/8w1pVvti1LLNv555uykNY7CBkdROp2O7OIPAdt7K2kM%3D"
+  },
+  "Build Google Cloud Infrastructure for Azure Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/688?catalog_rank=%7B%22rank%22%3A97%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2Ffg4SqAEG%2FnQVIt2ut06Nh5NxTPBZb3QO7cG175FEhg%3D"
+  },
+  "Store, Process, and Manage Data on Google Cloud - Command Line": {
+    "link": "https://www.cloudskillsboost.google/course_templates/659?catalog_rank=%7B%22rank%22%3A98%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/gYTg%2BDXGqVzYT%2FzP4Sfmo0uU8DuwFoU0DAWVviCoaYY%3D"
+  },
+  "Monitor and Manage Google Cloud Resources": {
+    "link": "https://www.cloudskillsboost.google/course_templates/653?catalog_rank=%7B%22rank%22%3A99%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/amYX1KCwe7tlqkFT3BJXJkE1mZR94DuxbAPOPaUzqeA%3D"
+  },
+  "Analyze BigQuery Data in Connected Sheets": {
+    "link": "https://www.cloudskillsboost.google/course_templates/632?catalog_rank=%7B%22rank%22%3A100%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3dEst6RNTZQgSGIi4PTlumTkXxf%2FdmfV%2FBV3rh%2Fx6X4%3D"
+  },
+  "Store, Process, and Manage Data on Google Cloud - Console": {
+    "link": "https://www.cloudskillsboost.google/course_templates/658?catalog_rank=%7B%22rank%22%3A101%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/IBk%2B54Lh16e0KAao3UrPB6buPf5tzxOwSPnVPkmE50s%3D"
+  },
+  "Get Started with Looker": {
+    "link": "https://www.cloudskillsboost.google/course_templates/647?catalog_rank=%7B%22rank%22%3A102%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ulqjHgtu%2Bk%2B8y8mj14KaWAF2o5m8kUPdFRSkjd0Bh7I%3D"
+  },
+  "App Building with AppSheet": {
+    "link": "https://www.cloudskillsboost.google/course_templates/635?catalog_rank=%7B%22rank%22%3A103%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2BHiaxttmNQhNTMn9kWXTSJGmqrPW2XD3hPu%2BduzXvxQ%3D"
+  },
+  "Get Started with API Gateway": {
+    "link": "https://www.cloudskillsboost.google/course_templates/662?catalog_rank=%7B%22rank%22%3A104%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/p4abbcLtmsng92YCgnUZjS41b6t6vr%2FcebRrv0wBroE%3D"
+  },
+  "Streaming Analytics into BigQuery": {
+    "link": "https://www.cloudskillsboost.google/course_templates/752?catalog_rank=%7B%22rank%22%3A105%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/y81rBzff%2BCRvWt9hHWXUK4505cPpZZpfcyi9%2FS2srsU%3D"
+  },
+  "Cloud Functions: 3 Ways": {
+    "link": "https://www.cloudskillsboost.google/course_templates/696?catalog_rank=%7B%22rank%22%3A106%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5Km4VEbYh%2FozGbpwTH8qut6cjJ%2F3NIynIP143rOPOUE%3D"
+  },
+  "Create a Streaming Data Lake on Cloud Storage": {
+    "link": "https://www.cloudskillsboost.google/course_templates/705?catalog_rank=%7B%22rank%22%3A107%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2BmxpiO1TW2GqjnlC2VdxdbcWeJ4k09d2CTlTQP3FfSo%3D"
+  },
+  "Get Started with Cloud Storage": {
+    "link": "https://www.cloudskillsboost.google/course_templates/725?catalog_rank=%7B%22rank%22%3A108%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/kuaGVEw6SmwSZvIEmzgw20IjhRG18j1ZYD40NowhrO4%3D"
+  },
+  "App Engine: 3 Ways": {
+    "link": "https://www.cloudskillsboost.google/course_templates/671?catalog_rank=%7B%22rank%22%3A109%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2Fus%2B9SsjBJvNFaAG9KABofDumpomMuhFAIJrP23UqIE%3D"
+  },
+  "Get Started with Eventarc": {
+    "link": "https://www.cloudskillsboost.google/course_templates/727?catalog_rank=%7B%22rank%22%3A110%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ETszwT0%2BVG1zyW%2FVLj6nH5mZPBq18Jy1vfyghCq%2BBN8%3D"
+  },
+  "Generative AI Explorer - Vertex AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/723?catalog_rank=%7B%22rank%22%3A111%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/pe2siLANBGR4sQmS5Dk%2Bj%2BCFRfCje9Pj6uE%2BshQpVKc%3D"
+  },
+  "Monitoring in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/747?catalog_rank=%7B%22rank%22%3A112%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/s7GqrFeMrvzz%2Bll7n2vKP8bTadKQ5gOvBTkqHTKMcAI%3D"
+  },
+  "Analyze Speech and Language with Google APIs": {
+    "link": "https://www.cloudskillsboost.google/course_templates/634?catalog_rank=%7B%22rank%22%3A113%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/9l3ABNdsyhUC0bPIs6Vf1sAGsC4nb7UGe9GuP39%2FwKI%3D"
+  },
+  "Create a Secure Data Lake on Cloud Storage": {
+    "link": "https://www.cloudskillsboost.google/course_templates/704?catalog_rank=%7B%22rank%22%3A114%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/aDrD1KiIU1kDIUQ2GVPJEeFtmOlfG3s527tsqON5GWM%3D"
+  },
+  "Tag and Discover BigLake Data": {
+    "link": "https://www.cloudskillsboost.google/course_templates/753?catalog_rank=%7B%22rank%22%3A115%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/8B1CrS4m6T2tjlYH9GNe2KQRSChFp%2FVIr%2BNlBo%2FQj9A%3D"
+  },
+  "Getting Started with MongoDB Atlas on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/731?catalog_rank=%7B%22rank%22%3A116%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/WexkSbmEiSgb%2FtM3RJbnDlJC1f%2BLzh1aCDCnX5u%2FwP0%3D"
+  },
+  "Secure BigLake Data": {
+    "link": "https://www.cloudskillsboost.google/course_templates/751?catalog_rank=%7B%22rank%22%3A117%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4IP7mqDtQ4gEwzCEg50kGc8FA%2FFf%2BbY4O3ZO63Yjkos%3D"
+  },
+  "Analyze Images with the Cloud Vision API": {
+    "link": "https://www.cloudskillsboost.google/course_templates/633?catalog_rank=%7B%22rank%22%3A118%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/2BDgUKeuXkt2l%2BKNxw3jfHe%2B1zI4XUtjoERdVj3AGFs%3D"
+  },
+  "Getting Started with Apache Beam": {
+    "link": "https://www.cloudskillsboost.google/course_templates/724?catalog_rank=%7B%22rank%22%3A119%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/o88n%2FmWUBxZ1W6jpcTIpk%2B8GRRv6HIGqFUAwjkiJvg4%3D"
+  },
+  "Get Started with Sensitive Data Protection": {
+    "link": "https://www.cloudskillsboost.google/course_templates/750?catalog_rank=%7B%22rank%22%3A120%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Kf77tCnkMKzyzHaLnmrwvkx%2FUtDN0jwNuUzWJIJ5U3w%3D"
+  },
+  "Networking Fundamentals on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/748?catalog_rank=%7B%22rank%22%3A121%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/gKmq6yHaB6FrhdMvrN50%2BaQ%2Fn%2FhoN2MWxXg9OkOA4RA%3D"
+  },
+  "The Basics of Google Cloud Compute": {
+    "link": "https://www.cloudskillsboost.google/course_templates/754?catalog_rank=%7B%22rank%22%3A122%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/NF0NyO9bRbljief2SSKZl6cc8Y7kMrCPExD%2FZ6YbS5M%3D"
+  },
+  "Use APIs to Work with Cloud Storage": {
+    "link": "https://www.cloudskillsboost.google/course_templates/755?catalog_rank=%7B%22rank%22%3A123%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/d1mWg2UMiEJvwUnG3vIA%2B6lfBHcIY%2BSa5wZFAFWlRro%3D"
+  },
+  "Using the Google Cloud Speech API": {
+    "link": "https://www.cloudskillsboost.google/course_templates/756?catalog_rank=%7B%22rank%22%3A124%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4ofkN4%2BKKacdIrTvLp1ZSAGImsdSAJvyRtXoK4D%2BZSE%3D"
+  },
+  "Develop with Apps Script and AppSheet": {
+    "link": "https://www.cloudskillsboost.google/course_templates/715?catalog_rank=%7B%22rank%22%3A125%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vjyujWQAvAJDCAw%2BFY%2F6AOqEEKNXJ6y7hiBRHadG9IY%3D"
+  },
+  "Analyze Sentiment with Natural Language API": {
+    "link": "https://www.cloudskillsboost.google/course_templates/667?catalog_rank=%7B%22rank%22%3A126%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JOmYLpYKK1IZvJx%2FtSZh%2B5fTLcpu37J8lMm8v0qQm6Q%3D"
+  },
+  "Build a Data Mesh with Dataplex": {
+    "link": "https://www.cloudskillsboost.google/course_templates/681?catalog_rank=%7B%22rank%22%3A127%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/IUGd19ltWmGBltTsy6zNCZ81tYB3NBELNf9%2BW3UPDsw%3D"
+  },
+  "Cloud Speech API: 3 Ways": {
+    "link": "https://www.cloudskillsboost.google/course_templates/700?catalog_rank=%7B%22rank%22%3A128%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Kuk%2BNWucV0QlygxvAs33Octfp6RVtr1YqCmf803l1Gs%3D"
+  },
+  "Integrate BigQuery Data and Google Workspace using Apps Script": {
+    "link": "https://www.cloudskillsboost.google/course_templates/737?catalog_rank=%7B%22rank%22%3A129%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/LgPpZOcvdaVSF6mlyVK2wtUkDcZ0J1Votoh2TdDhIEc%3D"
+  },
+  "Configure Service Accounts and IAM Roles for Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/702?catalog_rank=%7B%22rank%22%3A130%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vFFpJG5%2FzrfiRL0tlhXuKNOsps9N0ItaaX4Omx1oHw8%3D"
+  },
+  "Build Custom Processors with Document AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/686?catalog_rank=%7B%22rank%22%3A131%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Yhrkhgg0y1Nx11lCtTxKElWpI1d%2BDGYy%2BaYD5M7agRo%3D"
+  },
+  "Getting Started with Datadog on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/729?catalog_rank=%7B%22rank%22%3A132%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/lASRFUDKG1f6zNCTPTTec21p2TUH3h6t0y74adeID7k%3D"
+  },
+  "Using DevSecOps in your Google Cloud Environment": {
+    "link": "https://www.cloudskillsboost.google/course_templates/940?catalog_rank=%7B%22rank%22%3A133%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FUkU56QEABW0DjIje4VWTOH9Z8gD0ke90SwbogyuURE%3D"
+  },
+  "Explore Generative AI with the Vertex AI Gemini API": {
+    "link": "https://www.cloudskillsboost.google/course_templates/959?catalog_rank=%7B%22rank%22%3A134%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/D2gzrDb4BDBz%2FfXAWFy8mL56TvwVeRDVDsc9GKSIiVw%3D"
+  },
+  "Develop GenAI Apps with Gemini and Streamlit": {
+    "link": "https://www.cloudskillsboost.google/course_templates/978?catalog_rank=%7B%22rank%22%3A135%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/HGh8OpsJmf3kRhKbLlDBTvJWkBtWGKItyoVQ7PPGnq4%3D"
+  },
+  "Inspect Rich Documents with Gemini Multimodality and Multimodal RAG": {
+    "link": "https://www.cloudskillsboost.google/course_templates/981?catalog_rank=%7B%22rank%22%3A136%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/DKI5VEayf%2B1ZxD3CJ46PRSttLWwSksW3f0BZfwQIfik%3D"
+  },
+  "Build Real World AI Applications with Gemini and Imagen": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1076?catalog_rank=%7B%22rank%22%3A137%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/s%2BgzHsWL6hGBYeWSWPdSZu6mYa7pwCn%2BbEYQ%2FMVOYAA%3D"
+  },
+  "Create and Manage AlloyDB Instances": {
+    "link": "https://www.cloudskillsboost.google/course_templates/642?catalog_rank=%7B%22rank%22%3A138%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vd89ENUiXxPUrl9fIMVYVlOwLADbLb4nVTg%2FVN8PVvw%3D"
+  },
+  "Set Up a Google Cloud Network": {
+    "link": "https://www.cloudskillsboost.google/course_templates/641?catalog_rank=%7B%22rank%22%3A139%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3fzEbPMVqNWlR0wIZMeVmBM4DWZI6isOu6DpXk3JJrU%3D"
+  },
+  "Secure Software Delivery": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1164?catalog_rank=%7B%22rank%22%3A140%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/VwV2%2BSx9Av1v7wWgUp7zbv6%2FQpk37%2F%2Fvc5WBCuLYmRg%3D"
+  },
+  "Get Started with Pub/Sub": {
+    "link": "https://www.cloudskillsboost.google/course_templates/728?catalog_rank=%7B%22rank%22%3A141%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/HP9Ywd7AVBphHAM4HC26Pa3gYdv3Pu15QWZdVjNrbAc%3D"
+  },
+  "Protect Cloud Traffic with Chrome Enterprise Premium Security": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1167?catalog_rank=%7B%22rank%22%3A142%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2F52Skw12Bc6ooaqxekGhftdR71zvzA0bWjDCWy55ulc%3D"
+  },
+  "Discover and Protect Sensitive Data Across Your Ecosystem": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1177?catalog_rank=%7B%22rank%22%3A143%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/sD947lcnCXoU3wIWyKIaUsmf6GsyzxLAtl6zB4ipE4U%3D"
+  },
+  "Hybrid Cloud Infrastructure Foundations with Anthos": {
+    "link": "https://www.cloudskillsboost.google/course_templates/45?catalog_rank=%7B%22rank%22%3A144%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FXZNCNFlefswTsOcJ18DDOCDBIMCFySn9T5qabqvE3o%3D"
+  },
+  "Hybrid Cloud Service Mesh with Anthos": {
+    "link": "https://www.cloudskillsboost.google/course_templates/46?catalog_rank=%7B%22rank%22%3A145%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/URWk0yniMVEvsA%2FK4CcYBzfFe174V1EdqOo9%2F4ysXq4%3D"
+  },
+  "Hybrid Cloud Multi-Cluster with Anthos": {
+    "link": "https://www.cloudskillsboost.google/course_templates/47?catalog_rank=%7B%22rank%22%3A146%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JKE79wDvMc9NhjS%2FEnlIsiw8ruKlJ%2FP6LfQljyv09xk%3D"
+  },
+  "Managing Security in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/21?catalog_rank=%7B%22rank%22%3A147%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/AZrt%2FWfBSOaSL15mMvZ6tYS%2B4X1VIaqp5SWydhoYVUk%3D"
+  },
+  "API Security on Google Cloud's Apigee API Platform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/255?catalog_rank=%7B%22rank%22%3A148%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/U2EWhXz1QbK46%2BaNPljHYGj%2BiuLcXgQgFXl4pt86DFM%3D"
+  },
+  "API Development on Google Cloud's Apigee API Platform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/256?catalog_rank=%7B%22rank%22%3A149%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2B%2Fn9NT9tEv1V38jXmhT0w%2FycqjIYavM%2FDIP6e5NpWyA%3D"
+  },
+  "Preparing for your Professional Data Engineer Journey": {
+    "link": "https://www.cloudskillsboost.google/course_templates/72?catalog_rank=%7B%22rank%22%3A150%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zbGqkjTgatz3a0wQraWcBHC4HSns9uVLIRk6GVs7%2BuQ%3D"
+  },
+  "Natural Language Processing on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/40?catalog_rank=%7B%22rank%22%3A151%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JhKe3%2Fja%2Bkcg3Exx1WBv0C%2Bi64gwE6lTOfkPl0uWL7Y%3D"
+  },
+  "Introduction to Google Workspace Administration": {
+    "link": "https://www.cloudskillsboost.google/course_templates/90?catalog_rank=%7B%22rank%22%3A152%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/h94uxkbeawiy7vB1h09Y2FluFNJ%2ByThv%2BszVdlKA%2BG8%3D"
+  },
+  "Managing Google Workspace": {
+    "link": "https://www.cloudskillsboost.google/course_templates/92?catalog_rank=%7B%22rank%22%3A153%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/QpLuafpYdSq3M2P3Agt4u7E%2B20LQDvXPH0z0FH%2B0MQo%3D"
+  },
+  "Google Workspace Security": {
+    "link": "https://www.cloudskillsboost.google/course_templates/48?catalog_rank=%7B%22rank%22%3A154%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vkaEkb9j2fNyDhYOf5POySfb6oBjqCL1MlbFiVMYMcY%3D"
+  },
+  "Google Workspace Mail Management": {
+    "link": "https://www.cloudskillsboost.google/course_templates/91?catalog_rank=%7B%22rank%22%3A155%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/MtDb2C7gzz4KuKqASewYUaHWUqgBLfQAu7JaVdmT6A8%3D"
+  },
+  "Serverless Data Processing with Dataflow: Foundations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/218?catalog_rank=%7B%22rank%22%3A156%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/cKrkF4A7crzho%2FzK2Pr1GOSExQ041qJpTFosVtNq3Cg%3D"
+  },
+  "Serverless Data Processing with Dataflow: Develop Pipelines": {
+    "link": "https://www.cloudskillsboost.google/course_templates/229?catalog_rank=%7B%22rank%22%3A157%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/BA%2FEaHIdj7CqVcW2EewvTMCyDbZW7UWmosVPhFugdB4%3D"
+  },
+  "Serverless Data Processing with Dataflow: Operations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/264?catalog_rank=%7B%22rank%22%3A158%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ThC03RbL5h%2FltZBV3jg7F7gY1o6DGbBln%2F%2F15BTOWPg%3D"
+  },
+  "Gmail": {
+    "link": "https://www.cloudskillsboost.google/course_templates/200?catalog_rank=%7B%22rank%22%3A159%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/mZjCLzwGO0CEi%2B2POHwiZedYQEW93VmJ1cIbfmIFsmM%3D"
+  },
+  "Google Calendar": {
+    "link": "https://www.cloudskillsboost.google/course_templates/201?catalog_rank=%7B%22rank%22%3A160%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/1%2BQdHM72fqP7T3Z9Y%2FQPCgVMAty4yRhPgIIE%2FzdNpsY%3D"
+  },
+  "Google Docs": {
+    "link": "https://www.cloudskillsboost.google/course_templates/195?catalog_rank=%7B%22rank%22%3A161%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/PVkpOlumdb5PsbEChE5n3%2B056FfSgLILvVD68U3kECA%3D"
+  },
+  "Google Drive": {
+    "link": "https://www.cloudskillsboost.google/course_templates/199?catalog_rank=%7B%22rank%22%3A162%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/eJVTfo0oDTrxP7n5cPdQ9MpaTReTarQS0PwS6IQtUag%3D"
+  },
+  "Google Meet": {
+    "link": "https://www.cloudskillsboost.google/course_templates/198?catalog_rank=%7B%22rank%22%3A163%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vzmfw1YLrDVgqsNvKdY5vF4r0KBYajWWclccpYRVCic%3D"
+  },
+  "Google Sheets": {
+    "link": "https://www.cloudskillsboost.google/course_templates/196?catalog_rank=%7B%22rank%22%3A164%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ySlyv%2FNZfKzwhGzJZXCSqtU4YIuWE3J9EPGoeI9FTVA%3D"
+  },
+  "Google Slides": {
+    "link": "https://www.cloudskillsboost.google/course_templates/197?catalog_rank=%7B%22rank%22%3A165%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/e5BU%2BbDEZFmmwyMrWtnLDmhhSNswETD60tjPZzs90qE%3D"
+  },
+  "Google Sheets - Advanced Topics": {
+    "link": "https://www.cloudskillsboost.google/course_templates/293?catalog_rank=%7B%22rank%22%3A166%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/odbs631N0p0oVl58LNUlnIRZpigfMdwFaZ5SVQqdGcw%3D"
+  },
+  "Developing Data Models with LookML": {
+    "link": "https://www.cloudskillsboost.google/course_templates/327?catalog_rank=%7B%22rank%22%3A167%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2BWwFIhENMBH17%2FZqguzXjHRpjdGOd19A87XSryMHrBA%3D"
+  },
+  "Google Cloud Computing Foundations: Infrastructure in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/154?catalog_rank=%7B%22rank%22%3A168%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/IzdH9xGzGvYG6i3ZJIVCko9zBONDsKw3wkrR4KPgfI4%3D"
+  },
+  "Google Cloud Computing Foundations: Networking & Security in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/155?catalog_rank=%7B%22rank%22%3A169%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/7rVcFCRq2PSF0FTXjHRHcIlj%2BTeMMRP4vVjqUE%2BFeTE%3D"
+  },
+  "Google Cloud Computing Foundations: Data, ML, and AI in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/156?catalog_rank=%7B%22rank%22%3A170%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/fqhsDXMTQNT3eLEdpTXaLjMT1BXjrlPUTgEBefU5fbY%3D"
+  },
+  "Scaling with Google Cloud Operations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/271?catalog_rank=%7B%22rank%22%3A171%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/lxV9aKU6UuvGbfrsZokWP4YRdS%2BUfI8mWszGYqOrX9A%3D"
+  },
+  "Exploring Data Transformation with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/267?catalog_rank=%7B%22rank%22%3A172%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/wxs2e%2FUT49qZEg3PWAtgmcVWmEbCQZbHztKYqWeZqXY%3D"
+  },
+  "Modernize Infrastructure and Applications with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/265?catalog_rank=%7B%22rank%22%3A173%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qa2yoVN4qq29Tmmk3SikfH%2FSZO8AK5ShhT88wTp9DE4%3D"
+  },
+  "Building Scalable Java Microservices with Spring Boot and Spring Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/20?catalog_rank=%7B%22rank%22%3A174%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/WhU%2FcN0VhULLRTOVlmC6CQHyy58BeZhMIxuym%2BkX%2BpQ%3D"
+  },
+  "Introduction to Cloud Identity": {
+    "link": "https://www.cloudskillsboost.google/course_templates/44?catalog_rank=%7B%22rank%22%3A175%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YJSpeCWShzV59nPAiwcnJdkywNB7dmbkVepset8czKQ%3D"
+  },
+  "Site Reliability Engineering: Measuring and Managing Reliability": {
+    "link": "https://www.cloudskillsboost.google/course_templates/59?catalog_rank=%7B%22rank%22%3A176%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/knoD0Ef%2Fd075abGW8oryRP1NIX15RSfQvMZEmLWv%2Ftc%3D"
+  },
+  "Developing a Google SRE Culture": {
+    "link": "https://www.cloudskillsboost.google/course_templates/95?catalog_rank=%7B%22rank%22%3A177%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FRW7sbuo3ZdjXy4OTdX4yCazAVQHq1BQHoKznp%2FwiUA%3D"
+  },
+  "Managing Change when Moving to Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/97?catalog_rank=%7B%22rank%22%3A178%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/iQCVKbpECafpFaCTCin08DM3rAAlzMFRr6DVcYKRFDE%3D"
+  },
+  "Deploying SAP on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/170?catalog_rank=%7B%22rank%22%3A179%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/AJwtUdqYKCgcyCz76bHhZyuT%2FS90MT7%2BxAIb8duK%2Bu8%3D"
+  },
+  "ML Pipelines on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/191?catalog_rank=%7B%22rank%22%3A180%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/WM1rLq5YBGeTMfrn38ZBUvFfJf4S3Wk3Y5f%2B4yAaolA%3D"
+  },
+  "Exploring and Preparing your Data with BigQuery": {
+    "link": "https://www.cloudskillsboost.google/course_templates/14?catalog_rank=%7B%22rank%22%3A181%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/fxO%2BrJxoJenPmhg%2FVtW3GChV4hyxl9YoKPdZIVhTArU%3D"
+  },
+  "The Modern Data Platform and LookML": {
+    "link": "https://www.cloudskillsboost.google/course_templates/226?catalog_rank=%7B%22rank%22%3A182%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/lc98N6thzOBi1GhCuXbJqRtyw68dlNTuSMaHRJdGvPs%3D"
+  },
+  "Creating New BigQuery Datasets and Visualizing Insights": {
+    "link": "https://www.cloudskillsboost.google/course_templates/24?catalog_rank=%7B%22rank%22%3A183%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YQ%2BaUajpum8%2F1HyOPAkWwunlfbF45F4lQOZbLxa8FRI%3D"
+  },
+  "Building No-Code Apps with AppSheet: Implementation": {
+    "link": "https://www.cloudskillsboost.google/course_templates/390?catalog_rank=%7B%22rank%22%3A184%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qwAYS4PSin4sA5759DfU%2F%2FJ5xkjduKke%2FCbQ%2B2GQTGg%3D"
+  },
+  "Planning for a Google Workspace Deployment": {
+    "link": "https://www.cloudskillsboost.google/course_templates/93?catalog_rank=%7B%22rank%22%3A185%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/BxJ7xeCeiurbc%2BCxaWiFfbE5p%2F4G%2BiycPFVgZ%2BvFJU0%3D"
+  },
+  "Digital Transformation with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/266?catalog_rank=%7B%22rank%22%3A186%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/PB8OFB9E2havZSOU3FsNdJscW%2BRRxfFFWtcf9siJpmM%3D"
+  },
+  "Feature Engineering": {
+    "link": "https://www.cloudskillsboost.google/course_templates/11?catalog_rank=%7B%22rank%22%3A187%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/sZuolFXTB8h6i%2FY4nD%2BV5vWAaM5ODjSCxhOCgwi3lEw%3D"
+  },
+  "Enterprise Database Migration": {
+    "link": "https://www.cloudskillsboost.google/course_templates/145?catalog_rank=%7B%22rank%22%3A188%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/djyCiZCgmcnSIjxrb0bjO%2FbQoCYjRplY9eT4fgSZ1io%3D"
+  },
+  "Networking in Google Cloud: Routing and Addressing": {
+    "link": "https://www.cloudskillsboost.google/course_templates/36?catalog_rank=%7B%22rank%22%3A189%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/d1FNFMKkxInh%2Be1bRR%2FRS9XF6%2F1hiT8jin7PRbZVTgk%3D"
+  },
+  "Reliable Google Cloud Infrastructure: Design and Process": {
+    "link": "https://www.cloudskillsboost.google/course_templates/41?catalog_rank=%7B%22rank%22%3A190%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/HMzk9eROHPznRC5TWAV9MKb5PYV8r3kycHzEsgCLBJc%3D"
+  },
+  "Machine Learning Operations (MLOps): Getting Started": {
+    "link": "https://www.cloudskillsboost.google/course_templates/158?catalog_rank=%7B%22rank%22%3A191%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/aR0a6qDHtdCBsgiD2Nl14HERSTNOwPyeKu4M2tGb%2FBY%3D"
+  },
+  "Production Machine Learning Systems": {
+    "link": "https://www.cloudskillsboost.google/course_templates/17?catalog_rank=%7B%22rank%22%3A192%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Ahe5mfwF7Z6BteEHLLjcwpnFpQjpo7I%2FnB5jVJc4j1s%3D"
+  },
+  "API Design and Fundamentals of Google Cloud's Apigee API Platform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/254?catalog_rank=%7B%22rank%22%3A193%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YAmPrK7M6BlbevWNTfKJfnEZRpxHorAS3nCCbxofv5Y%3D"
+  },
+  "Managing and Securing the Apigee Hybrid API Platform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/168?catalog_rank=%7B%22rank%22%3A194%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/rE2EuApE84NnuNuPDge%2F2hpG%2Bgwnup5bYb1U%2BasOgZY%3D"
+  },
+  "Computer Vision Fundamentals with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/18?catalog_rank=%7B%22rank%22%3A195%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KQCD7PC1sYWdsocnnF7qd5vov5VZyTr2Lp4q27516ZI%3D"
+  },
+  "Recommendation Systems on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/39?catalog_rank=%7B%22rank%22%3A196%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/CdOt2JLo02pvn%2Fxy%2FObZ360tqqXi3lHCZYYnoSm5fSQ%3D"
+  },
+  "Networking in Google Cloud: Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/35?catalog_rank=%7B%22rank%22%3A197%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/8gSPe9impyZhTyHmGeWU9U9Aoh7xX9LxBie5GDiO%2Fnw%3D"
+  },
+  "Launching into Machine Learning": {
+    "link": "https://www.cloudskillsboost.google/course_templates/8?catalog_rank=%7B%22rank%22%3A198%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/s69B88wn%2BTNwVGVKKss4OeY6JYByfG7HU6drW2UcGhM%3D"
+  },
+  "Build, Train and Deploy ML Models with Keras on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/12?catalog_rank=%7B%22rank%22%3A199%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/gFGYUO1wLyLWjEFperLDV3AksknYrzRUBvt%2Bpogf5eM%3D"
+  },
+  "Machine Learning in the Enterprise": {
+    "link": "https://www.cloudskillsboost.google/course_templates/9?catalog_rank=%7B%22rank%22%3A200%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5CZ0FD4W6bS8VnQpi9trDITf%2FYkG%2Fp9KmvuZOBBXaJg%3D"
+  },
+  "Smart Analytics, Machine Learning, and AI on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/55?catalog_rank=%7B%22rank%22%3A201%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/n%2BaZAADE%2BtzY2AHOUafALL3pTmX6X8tz9xJPo01Ay64%3D"
+  },
+  "Mitigating Security Vulnerabilities on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/88?catalog_rank=%7B%22rank%22%3A202%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/yEUEJHxk9WO0719rvV06HOGZbSFF0G9snOaTt%2B8RK0s%3D"
+  },
+  "Hybrid Cloud Modernizing Applications with Anthos": {
+    "link": "https://www.cloudskillsboost.google/course_templates/434?catalog_rank=%7B%22rank%22%3A203%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KtqMmnZCQIro2zX3xRZHgFNO0fe0TyJg80nr0MGtpUE%3D"
+  },
+  "Multi-Cluster, Multi-Cloud with Anthos": {
+    "link": "https://www.cloudskillsboost.google/course_templates/436?catalog_rank=%7B%22rank%22%3A204%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/J0WCamyJorgesdNOIIFoMi717vWfQBts5Tl4X%2FLogcE%3D"
+  },
+  "Anthos on Bare Metal": {
+    "link": "https://www.cloudskillsboost.google/course_templates/437?catalog_rank=%7B%22rank%22%3A205%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/29HFMctSmyaGeHaIMfkmCzcAYBfqmQTvjjobO9rYzx4%3D"
+  },
+  "Building Batch Data Pipelines on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/53?catalog_rank=%7B%22rank%22%3A206%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/V1%2BV1JXP14P%2FtJJCkrySNGCGRX29wBCS2WMiUaDZiKo%3D"
+  },
+  "Modernizing Data Lakes and Data Warehouses with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/54?catalog_rank=%7B%22rank%22%3A207%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/kaz%2F0C3lvRMo03bqG6y%2FgDWenKX8PNgN529qYyYRtag%3D"
+  },
+  "Cloud Operations and Service Mesh with Anthos": {
+    "link": "https://www.cloudskillsboost.google/course_templates/435?catalog_rank=%7B%22rank%22%3A208%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/l3Qa71BpoDtucG%2Flvxttq5N%2F4Iu%2B7indJYbXcdESPTY%3D"
+  },
+  "Architecting and Installing the Apigee Hybrid API Platform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/167?catalog_rank=%7B%22rank%22%3A209%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/w5Dh9hEPdW8CM6C%2BTocoZg4t66csvU2fJDYT9Ry1guA%3D"
+  },
+  "Google Cloud Fundamentals for AWS Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/38?catalog_rank=%7B%22rank%22%3A210%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/uXbhlIp7AEEzc3Z4UG0XGE5Q%2BpQ8S3ArrdFHqcrxDdI%3D"
+  },
+  "Getting Started with Terraform for Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/443?catalog_rank=%7B%22rank%22%3A211%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/u9vw5x3noKEMH9%2B6YDSfpyiZ3Lb1OfqDxWILvjPze88%3D"
+  },
+  "Upgrading and Monitoring the Apigee Hybrid API Platform": {
+    "link": "https://www.cloudskillsboost.google/course_templates/169?catalog_rank=%7B%22rank%22%3A212%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/gdS6sSI2kXZPQCaDpMxNs1JRNmkKvp15BQuxl3%2BPOmM%3D"
+  },
+  "Building No-Code Apps with AppSheet: Automation": {
+    "link": "https://www.cloudskillsboost.google/course_templates/449?catalog_rank=%7B%22rank%22%3A213%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/i9USLsd21BDWOW3fDcuaoE%2F8gLnSdH4qsjPsrsi1FRY%3D"
+  },
+  "Preparing for Your Professional Cloud Security Engineer Journey ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/397?catalog_rank=%7B%22rank%22%3A214%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ScZJK7sf718J8eDz9vgOujrVSvvHWKGL5n3uJnmMlAo%3D"
+  },
+  "Preparing for Your Associate Cloud Engineer Journey ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/77?catalog_rank=%7B%22rank%22%3A215%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FhmY3Umv1vX%2BuvnbpRXvK8I2oohRpBx%2BKwZOmIim4Yw%3D"
+  },
+  "Building Resilient Streaming Analytics Systems on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/52?catalog_rank=%7B%22rank%22%3A216%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JO1nGfK0cLteeteI1uJxw1vz4BT%2FXNrNpeyNnDC%2F1hU%3D"
+  },
+  "Google Cloud Big Data and Machine Learning Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/3?catalog_rank=%7B%22rank%22%3A217%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4iVWSbAIMUMgMPkpLbqo2dNzOjI6b94MbA5ijNGYAxQ%3D"
+  },
+  "Securing and Integrating Components of your Application": {
+    "link": "https://www.cloudskillsboost.google/course_templates/42?catalog_rank=%7B%22rank%22%3A218%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2BPNXthK%2FfCuEzASDepJnvHbqhinnmI60Pd7Rmvm8Jo8%3D"
+  },
+  "Getting Started With Application Development": {
+    "link": "https://www.cloudskillsboost.google/course_templates/22?catalog_rank=%7B%22rank%22%3A219%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/jXSK9SvaqoPM0m3QittjZEJPE%2FvlnDkkY%2F4tLtEvA8Y%3D"
+  },
+  "Applying Machine Learning to your Data with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/23?catalog_rank=%7B%22rank%22%3A220%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/oagG4N9mU0h0eGaluYRanyFKLr1D0bP82qx82VnAMXM%3D"
+  },
+  "Achieving Advanced Insights with BigQuery": {
+    "link": "https://www.cloudskillsboost.google/course_templates/25?catalog_rank=%7B%22rank%22%3A221%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/mPjewkyfzc%2FJTiuKTm5Pvvz5GA57RJPNuV09F0YSSQA%3D"
+  },
+  "Role Based Learning Path: Citizen Developer": {
+    "link": "https://www.cloudskillsboost.google/course_templates/417?catalog_rank=%7B%22rank%22%3A222%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/AGSfy0y7iEsKBj2DqmJw0Mm9%2FBPeadfkBV6PWdyKeJs%3D"
+  },
+  "Getting Started with Google Kubernetes Engine": {
+    "link": "https://www.cloudskillsboost.google/course_templates/2?catalog_rank=%7B%22rank%22%3A223%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/x0g7eYyTM7DS8rjX6%2FvFMti0j3PPsIvbkz0vsY4iEOc%3D"
+  },
+  "Architecting with Google Kubernetes Engine: Foundations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/32?catalog_rank=%7B%22rank%22%3A224%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zX%2FSVgiqqzCs6L2RuY9uwy8J6bSflnpw9FIiBWR7Vso%3D"
+  },
+  "Architecting with Google Kubernetes Engine: Workloads": {
+    "link": "https://www.cloudskillsboost.google/course_templates/34?catalog_rank=%7B%22rank%22%3A225%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2Fh9KCkuK0ioRzXqlkVWYC%2F%2BDR96HBmiVJg0a5r5jV6Q%3D"
+  },
+  "Architecting with Google Kubernetes Engine: Production": {
+    "link": "https://www.cloudskillsboost.google/course_templates/33?catalog_rank=%7B%22rank%22%3A226%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/V5WcfLtVhe%2FBRILJLvWVu68wxeIvqNTR57aDFAoUKRc%3D"
+  },
+  "Essential Google Cloud Infrastructure: Core Services": {
+    "link": "https://www.cloudskillsboost.google/course_templates/49?catalog_rank=%7B%22rank%22%3A227%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/GZra1WBAayoYZHrlFCyjQ0%2Bl0nRieaz9kjkjI1Jdakw%3D"
+  },
+  "Essential Google Cloud Infrastructure: Foundation": {
+    "link": "https://www.cloudskillsboost.google/course_templates/50?catalog_rank=%7B%22rank%22%3A228%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/a%2FOKfRyEOa66oTwcZtNbuj1jM3sOvEPCg4LB1%2Fg13EQ%3D"
+  },
+  "Elastic Google Cloud Infrastructure: Scaling and Automation": {
+    "link": "https://www.cloudskillsboost.google/course_templates/178?catalog_rank=%7B%22rank%22%3A229%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/009NyaJIh9iJiWecdKZf%2Bxg0N5OAKX2i6a2qBFjJG90%3D"
+  },
+  "How Google Does Machine Learning": {
+    "link": "https://www.cloudskillsboost.google/course_templates/10?catalog_rank=%7B%22rank%22%3A230%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/lyFBlwJnvUDD6Z1nOQ5poBRbv1ywurzO57Vs%2FEraTaw%3D"
+  },
+  "Google Cloud Fundamentals: Core Infrastructure": {
+    "link": "https://www.cloudskillsboost.google/course_templates/60?catalog_rank=%7B%22rank%22%3A231%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/wY6T3kyRQDOcKcuwFHSdnfiLXHCn6JFLBgi8QrRdmQQ%3D"
+  },
+  "Managing Machine Learning Projects with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/157?catalog_rank=%7B%22rank%22%3A232%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/W71fbiWJSqvejqBPDYZ3k4lcjDTyE%2Fwg%2FzgT345pcnY%3D"
+  },
+  "Service Orchestration and Choreography on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/465?catalog_rank=%7B%22rank%22%3A233%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/EiS8h7yeKjIY5L%2B0Cq7EuLHtw2j%2BaE8z7q7tsdaUAsA%3D"
+  },
+  "Preparing for your Professional Cloud Architect Journey": {
+    "link": "https://www.cloudskillsboost.google/course_templates/78?catalog_rank=%7B%22rank%22%3A234%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/iJ5IlFLiLd8MJft%2BlesvnB4ff4tQcuMZd68F4lbbiSA%3D"
+  },
+  "Building No-Code Apps with AppSheet: Foundations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/336?catalog_rank=%7B%22rank%22%3A235%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/2TC5%2BsFUiioISAMAu%2F8%2FVz%2BiDAPzkaG3wJmLK1CEfbI%3D"
+  },
+  "Analyzing and Visualizing Data in Looker": {
+    "link": "https://www.cloudskillsboost.google/course_templates/323?catalog_rank=%7B%22rank%22%3A236%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/aYReO1vo6o%2Fq5OnBMyycDJ9nW0MRyU4hTpv2AqAOh4c%3D"
+  },
+  "App Deployment, Debugging, and Performance": {
+    "link": "https://www.cloudskillsboost.google/course_templates/43?catalog_rank=%7B%22rank%22%3A237%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/QosdFO3kfYXNtXlrQnNc8RdSzGuSMLCNGu%2Brkzl5vCQ%3D"
+  },
+  "Analyzing and Visualizing Data the Google Way": {
+    "link": "https://www.cloudskillsboost.google/course_templates/480?catalog_rank=%7B%22rank%22%3A238%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/8reBI8O1Xp22jn4%2BGYCUepdMFIIzMKbhfu9Cx7xxDP4%3D"
+  },
+  "Innovating with Data and Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/280?catalog_rank=%7B%22rank%22%3A239%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Y9GRbYf6mqJrmt3XsfdsHV5Nbb0OeFkG5jWOvMicbLE%3D"
+  },
+  "Google Cloud Data Solutions for the Public Sector": {
+    "link": "https://www.cloudskillsboost.google/course_templates/501?catalog_rank=%7B%22rank%22%3A240%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/LuBcaeOGTzosdYzWxmJ%2ByoNQTK7LNb3oWvpVY8420%2Fo%3D"
+  },
+  "Google Cloud Security for the Public Sector": {
+    "link": "https://www.cloudskillsboost.google/course_templates/502?catalog_rank=%7B%22rank%22%3A241%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/nXcDFangRRY1mOyaWePsFuUtGaids7AD9ASTWEQEeZ0%3D"
+  },
+  "Developing Applications with Cloud Run Functions on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/505?catalog_rank=%7B%22rank%22%3A242%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/mKc3a7GCIfFSGpRajrhhm1hcUn58Sri9MOQ7fJf21%2Fc%3D"
+  },
+  "Preparing for Your Professional Cloud Network Engineer Journey ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/383?catalog_rank=%7B%22rank%22%3A243%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/PBo9KpGQ2n6wdwr4qqnwxSwXAYlLnirj3GD60jeRHCA%3D"
+  },
+  "Modernizing Retail and Ecommerce Solutions with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/506?catalog_rank=%7B%22rank%22%3A244%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ZogHSK83SyE6JOrg7zx4%2BSoQk0hWrLu%2BVPPp3jpi8JM%3D"
+  },
+  "Introduction to Vertex Forecasting and Time Series in Practice": {
+    "link": "https://www.cloudskillsboost.google/course_templates/511?catalog_rank=%7B%22rank%22%3A245%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4qjcw3ucGuULkwcexVQUySY%2BH79Z%2BCkM%2BBDVdhwtPts%3D"
+  },
+  "BigQuery Fundamentals for Redshift Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/512?catalog_rank=%7B%22rank%22%3A246%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/egnh6%2BLEDJu%2Bk3UcniM00EOHlx4Cky%2BKfP211yB77rA%3D"
+  },
+  "BigQuery Fundamentals for Teradata Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/513?catalog_rank=%7B%22rank%22%3A247%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/LaSDegp5LsX5TlayIoExG2zheOjWV3XF7j30jm%2FaEts%3D"
+  },
+  "BigQuery Fundamentals for Snowflake Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/514?catalog_rank=%7B%22rank%22%3A248%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2BXqASjl%2F70I6BCu8MF1sVYEG2XCezPybJ27lSw7gbGc%3D"
+  },
+  "BigQuery Fundamentals for Oracle Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/515?catalog_rank=%7B%22rank%22%3A249%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/DcqyXydcgfh38O2btZTYJxn%2BF4wcAW6ubLFmtQ9wHWo%3D"
+  },
+  "Google Chat": {
+    "link": "https://www.cloudskillsboost.google/course_templates/516?catalog_rank=%7B%22rank%22%3A250%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Mhc24GqombYX97ncuZsNQ9UAnGvvJEpNpgtthitBZUY%3D"
+  },
+  "Networking in Google Cloud: Hands-On Practice": {
+    "link": "https://www.cloudskillsboost.google/course_templates/180?catalog_rank=%7B%22rank%22%3A251%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3T7CYWwue5Svckb8gATC8HKoaS4313ZZViTCiauZYYw%3D"
+  },
+  "Google Cloud AI and ML Solutions for the Public Sector": {
+    "link": "https://www.cloudskillsboost.google/course_templates/517?catalog_rank=%7B%22rank%22%3A252%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/9lADq136Z3Sm4461aQMIo32i0uSOf2idnJ8im55bRBU%3D"
+  },
+  "Data Lake Modernization on Google Cloud: Data Governance": {
+    "link": "https://www.cloudskillsboost.google/course_templates/483?catalog_rank=%7B%22rank%22%3A253%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/w8FKY5eeZBe7DLxr36fLgAzvOgHqJ%2FHQUpIjs6y3LeY%3D"
+  },
+  "Data Lake Modernization on Google Cloud: Cloud Composer": {
+    "link": "https://www.cloudskillsboost.google/course_templates/484?catalog_rank=%7B%22rank%22%3A254%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3O11eKPzOMud3IfjS3vBBa3rnEzCL%2FOA4vJg%2BcOzKnM%3D"
+  },
+  "Data Lake Modernization on Google Cloud: Migrate Workflows": {
+    "link": "https://www.cloudskillsboost.google/course_templates/486?catalog_rank=%7B%22rank%22%3A255%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zT8bnC%2FK0gPRk4VuhqmF8KpYTHTZh0kqeIMofI47r4o%3D"
+  },
+  "Planetary Scale Earth Observation with Google Earth Engine": {
+    "link": "https://www.cloudskillsboost.google/course_templates/518?catalog_rank=%7B%22rank%22%3A256%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/1i2qPxboOwdGSGv8X8G9pTUHSbBPSFrz7TWFJ%2BsPS8o%3D"
+  },
+  "Google Cloud IAM and Networking for Azure Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/520?catalog_rank=%7B%22rank%22%3A257%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/o%2BUx9k1g1pJ5eFwJ3EsxxH4EFacJv7cNRjVXvX8VlfI%3D"
+  },
+  "Google Cloud Storage and Containers for AWS Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/519?catalog_rank=%7B%22rank%22%3A258%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Fm3gaIf%2Fhv7zPm%2FuZRmgQZnOnJpayzlwdOCdFtjC%2BfU%3D"
+  },
+  "Deploy and Monitor in Google Cloud for AWS Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/523?catalog_rank=%7B%22rank%22%3A259%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/i%2B5brZ3xOXnVdzAhONau33C%2B0aO2ikIl%2F0yc9DhU6ws%3D"
+  },
+  "Google Cloud Storage and Containers for Azure Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/521?catalog_rank=%7B%22rank%22%3A260%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/MJjeqwpItx%2BRqUg5z%2FIbR%2FdQxThP9j7NGSpYRZZF3vk%3D"
+  },
+  "Google Cloud IAM and Networking for AWS Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/522?catalog_rank=%7B%22rank%22%3A261%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qMQy%2FWCol49wAE%2F64jrGdt1BH6ELlFjnjKGoQ7qj9M8%3D"
+  },
+  "Deploy and Monitor in Google Cloud for Azure Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/524?catalog_rank=%7B%22rank%22%3A262%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/fBEf%2B95wlbIOA20QFicx%2BPnsxA2hKVT14zCJjwsFHFs%3D"
+  },
+  "Infrastructure and Application Modernization with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/283?catalog_rank=%7B%22rank%22%3A263%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": ""
+  },
+  "Google Cloud Compute and Scalability for Azure Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/525?catalog_rank=%7B%22rank%22%3A264%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/8eCxR7cVx9MUH%2B84HDJd5G2ttA%2Bw8vahrdDZzxzuGHA%3D"
+  },
+  "Google Cloud Compute and Scalability for AWS Professionals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/526?catalog_rank=%7B%22rank%22%3A265%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/W%2FsgGkSKeNafdRYHHE6s0oanN9xvsHxgEiKeGWh6PAI%3D"
+  },
+  "Developing Containerized Applications on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/530?catalog_rank=%7B%22rank%22%3A266%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/HaBsWdyp5DUGDf%2BUwpCiyGCoo5tzm6%2B8YlKHl2oRuTI%3D"
+  },
+  "Building Applications with Eventarc on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/531?catalog_rank=%7B%22rank%22%3A267%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/6HQZHqr4gtU3cegqbkVZnUctiamycCNhkgQIoLSUqFc%3D"
+  },
+  "Design Foundations for Streaming with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/532?catalog_rank=%7B%22rank%22%3A268%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qkZpbA4z164yPKKGEZHzvu84tpkBB%2FJw3jGv%2FmtqSEE%3D"
+  },
+  "Logging and Monitoring in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/99?catalog_rank=%7B%22rank%22%3A269%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JUltsAWls7ao4AsaG8%2BIJ67UnUQZOgHQtK%2B%2FHEHKeVk%3D"
+  },
+  "Google Cloud Computing Foundations: Cloud Computing Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/153?catalog_rank=%7B%22rank%22%3A270%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/D1Bwy43XZf55cqnCZVlpEBGefN9IYjZQ1WlIf4V7Jb8%3D"
+  },
+  "Serving Multimedia Content with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/535?catalog_rank=%7B%22rank%22%3A271%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/6I3Vo4%2FUlTMo1oGUv95yTVSoCAkaC1xUzfqyZesSo1E%3D"
+  },
+  "Attention Mechanism": {
+    "link": "https://www.cloudskillsboost.google/course_templates/537?catalog_rank=%7B%22rank%22%3A272%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/rI64q2d%2Bz3FWD5ENjTsKFC4TqEgiGQlRzV42%2FccJ%2Bvs%3D"
+  },
+  "Transformer Models and BERT Model": {
+    "link": "https://www.cloudskillsboost.google/course_templates/538?catalog_rank=%7B%22rank%22%3A273%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/GmtDhQg8P%2B%2BZEgzRWDNuF1Z0iOuqj4dA8HCFc0ZYoGY%3D"
+  },
+  "Introduction to Generative AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/536?catalog_rank=%7B%22rank%22%3A274%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/O9SxhFm3S%2BVaaafaffMV7%2FrWMDbcJb7Jir5dcDTgWEk%3D"
+  },
+  "Introduction to Large Language Models": {
+    "link": "https://www.cloudskillsboost.google/course_templates/539?catalog_rank=%7B%22rank%22%3A275%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/WqNea7Ro9GgoFeD2PZrbfFUoMaunvm8WxfbL1FzNLV0%3D"
+  },
+  "Preparing for Your Google Workspace Administrator Journey": {
+    "link": "https://www.cloudskillsboost.google/course_templates/540?catalog_rank=%7B%22rank%22%3A276%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/0wooo%2F9VK3GQJgsj%2BBBfif0M3gs1n8xo%2BTxRSv9ipL8%3D"
+  },
+  "Introduction to Image Generation": {
+    "link": "https://www.cloudskillsboost.google/course_templates/541?catalog_rank=%7B%22rank%22%3A277%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/QjDngWinHPphS4qtioYiuQJjLOy7ZEGKOB1QewgugXc%3D"
+  },
+  "Create Image Captioning Models": {
+    "link": "https://www.cloudskillsboost.google/course_templates/542?catalog_rank=%7B%22rank%22%3A278%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JKqR15TZlBwijoja5p%2BeWR1dQDGltnDJfdStq5hP4%2FM%3D"
+  },
+  "Encoder-Decoder Architecture": {
+    "link": "https://www.cloudskillsboost.google/course_templates/543?catalog_rank=%7B%22rank%22%3A279%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/yaIXDT%2BnP4I%2BMxRiuQoJvq6G0KLjVf3%2BkNt4ePPv%2FBw%3D"
+  },
+  "Media Rendering with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/549?catalog_rank=%7B%22rank%22%3A280%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/0i9qbGy%2FebwjZnMSyS8phTwcYpKEFvKU3eUpL2aEjME%3D"
+  },
+  "Introduction to Responsible AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/554?catalog_rank=%7B%22rank%22%3A281%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/c90Uw8wVybU28NkPl%2FT%2BcE8kv0x40818In4%2FnbQYGyk%3D"
+  },
+  "Introduction to Vertex AI Studio": {
+    "link": "https://www.cloudskillsboost.google/course_templates/552?catalog_rank=%7B%22rank%22%3A282%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/XWaa53PXhRIVYJ3sWkJq4bZgIYQKAaPDI%2BH44SHDVqw%3D"
+  },
+  "Developing Applications with Cloud Run on Google Cloud: Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/559?catalog_rank=%7B%22rank%22%3A283%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/EbtlakEzvD49C%2FNDVhczECWI%2FfeiATPwgIvY7WCUrWE%3D"
+  },
+  "MySQL to Cloud Spanner": {
+    "link": "https://www.cloudskillsboost.google/course_templates/560?catalog_rank=%7B%22rank%22%3A284%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/0jol%2B7pWGWq0bXXwGI%2BO7OsQiycsV6WDQ0Gu4bqA2%2BI%3D"
+  },
+  "AppSheet Team Hierarchy": {
+    "link": "https://www.cloudskillsboost.google/course_templates/565?catalog_rank=%7B%22rank%22%3A285%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/dUpXJoHa35Egkj3gTJqoAjPuDfCMu82qjrkE%2FvgOPLU%3D"
+  },
+  "Introduction to Data Analytics on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/578?catalog_rank=%7B%22rank%22%3A286%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/r5pHUdzOuAl44ImWq%2BeL%2FdjRLdoo%2FDbYsmTqGoU8JNQ%3D"
+  },
+  "Machine Learning Operations (MLOps) with Vertex AI: Manage Features": {
+    "link": "https://www.cloudskillsboost.google/course_templates/584?catalog_rank=%7B%22rank%22%3A287%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2FZ0Kzr11ADe1C4vDIyzYoSbfy9up9sCleDjJlUyGDKY%3D"
+  },
+  "Responsible AI: Applying AI Principles with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/388?catalog_rank=%7B%22rank%22%3A288%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4%2FKwy%2FwQspL9Ds2l8u764TNqJgud5vd2iFBlaJwJDC8%3D"
+  },
+  "Introduction to AI and Machine Learning on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/593?catalog_rank=%7B%22rank%22%3A289%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/crrDc4TK%2BL8Orv0vo%2BdGCS9vHRNmP%2BCFh71i9VL2AgU%3D"
+  },
+  "Enterprise Search on Generative AI App Builder": {
+    "link": "https://www.cloudskillsboost.google/course_templates/612?catalog_rank=%7B%22rank%22%3A290%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3D7H1l6U4EzvsDOQKZUkdsHUoe0rytolE8a8jaA2PK4%3D"
+  },
+  "Google Security Operations - SOAR Developer": {
+    "link": "https://www.cloudskillsboost.google/course_templates/568?catalog_rank=%7B%22rank%22%3A291%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2Fco4D8IBqaTao5K0BK9tI%2FN3AYCEKRdgWYSVfV6HTFo%3D"
+  },
+  "Google Security Operations - SOAR Analyst": {
+    "link": "https://www.cloudskillsboost.google/course_templates/567?catalog_rank=%7B%22rank%22%3A292%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ZL%2Fd7W%2FBp2wWpCtYgPL5m46wesqUouG%2FuRxb8AlDALY%3D"
+  },
+  "SOAR Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/569?catalog_rank=%7B%22rank%22%3A293%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Qz7p0sNiJaQefW06pXMUACJQAWmzAL72R2tD%2BPEeTxw%3D"
+  },
+  "Configure Google Kubernetes Engine Networking": {
+    "link": "https://www.cloudskillsboost.google/course_templates/660?catalog_rank=%7B%22rank%22%3A294%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/r0BwznFohJYldhkB4xE5%2Frf6nUVC%2By2XpbUjaYOZGnE%3D"
+  },
+  "Security Practices with Google Security Operations - SIEM": {
+    "link": "https://www.cloudskillsboost.google/course_templates/442?catalog_rank=%7B%22rank%22%3A295%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/vtj%2Fn607pbqsutnnNv06u1BnBMes9EcXUoYcN6FATlg%3D"
+  },
+  "Observability in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/864?catalog_rank=%7B%22rank%22%3A296%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3HVGKqE%2FoPno28ip4sSvGzEPXO1jqIX%2F6ZlI3LoALRw%3D"
+  },
+  "BigQuery for Data Analysts": {
+    "link": "https://www.cloudskillsboost.google/course_templates/865?catalog_rank=%7B%22rank%22%3A297%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/WOiMHxQ41MDeb7TjqTu7VMMeZYLLDNFsfVRAUCDPEKY%3D"
+  },
+  "Chronicle SOAR Fundamentals - Locales": {
+    "link": "https://www.cloudskillsboost.google/course_templates/869?catalog_rank=%7B%22rank%22%3A298%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/sL%2Fc7whLi6oDlkxztrfSv4FOev6dgSTyJdKZS1%2BiIIQ%3D"
+  },
+  "Developing Applications with Google Cloud: Foundations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/874?catalog_rank=%7B%22rank%22%3A299%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/K7pW8Qy4Mc1VXUGmTKgmhfCP5YpG%2FmCq0gIlg4Rtpt0%3D"
+  },
+  "AppSheet Administration": {
+    "link": "https://www.cloudskillsboost.google/course_templates/875?catalog_rank=%7B%22rank%22%3A300%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/B9L6Ti%2BODHoQynkzq0p9j2bWxzOOc0Lbvk0vg7ZUbGU%3D"
+  },
+  "Introduction to Gemini for Google Workspace": {
+    "link": "https://www.cloudskillsboost.google/course_templates/888?catalog_rank=%7B%22rank%22%3A301%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/bbXLGXbQmFF2nkDD0DvJRMcwaCLBE1tFSucRGShpNzs%3D"
+  },
+  "Conversational AI on Vertex AI and Dialogflow CX": {
+    "link": "https://www.cloudskillsboost.google/course_templates/892?catalog_rank=%7B%22rank%22%3A302%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KhTqloFKwvOSowzSlJKQUuzplogm2LjiclCZGR0v%2FIs%3D"
+  },
+  "Understanding Cloud Spanner": {
+    "link": "https://www.cloudskillsboost.google/course_templates/616?catalog_rank=%7B%22rank%22%3A303%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/O5psay6trchBApe3u8G5cs4dGrAlL7ZyXKUybjewtug%3D"
+  },
+  "Gemini in Gmail": {
+    "link": "https://www.cloudskillsboost.google/course_templates/896?catalog_rank=%7B%22rank%22%3A304%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/a%2BWwxJydh9JboXgnsgr%2FJ%2B%2FTkk03RGy1dLa7rPViY10%3D"
+  },
+  "Gemini in Google Sheets": {
+    "link": "https://www.cloudskillsboost.google/course_templates/905?catalog_rank=%7B%22rank%22%3A305%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/rfjVVdBUCrOYo5elcYDCjfBBYnHJQyR8tS7%2FPjgmrf4%3D"
+  },
+  "Gemini for Application Developers": {
+    "link": "https://www.cloudskillsboost.google/course_templates/881?catalog_rank=%7B%22rank%22%3A306%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/lP%2BHyEc8CioJeoHQtdwFb9Buvd%2FcLUlAUZZePewC7sQ%3D"
+  },
+  "Gemini for Cloud Architects": {
+    "link": "https://www.cloudskillsboost.google/course_templates/878?catalog_rank=%7B%22rank%22%3A307%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/hxIADeuardp%2FhgNM4JgLvYTrWF5MhtJOZhsh3iKMA0w%3D"
+  },
+  "Gemini for Data Scientists and Analysts": {
+    "link": "https://www.cloudskillsboost.google/course_templates/879?catalog_rank=%7B%22rank%22%3A308%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KuzzjtWE0ciwHsw2i9Sc795n0awH%2F2zukWN1o7lCL9M%3D"
+  },
+  "Gemini for Network Engineers": {
+    "link": "https://www.cloudskillsboost.google/course_templates/884?catalog_rank=%7B%22rank%22%3A309%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/xguxV7iRXVhfFzotHzuUo2VA0ROOvI3lZO6mWq7x%2FUY%3D"
+  },
+  "Gemini for Security Engineers": {
+    "link": "https://www.cloudskillsboost.google/course_templates/886?catalog_rank=%7B%22rank%22%3A310%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KAyuFK%2B%2BvKFcPXCfvqAEXRnSy6L6KfuDs7gbclBVstQ%3D"
+  },
+  "Gemini for DevOps Engineers": {
+    "link": "https://www.cloudskillsboost.google/course_templates/882?catalog_rank=%7B%22rank%22%3A311%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/9YQrsOjttSgsvGpC0mlTY6SWfy7qjPtcbcrCxcv%2F8Jk%3D"
+  },
+  "Gemini for end-to-end SDLC": {
+    "link": "https://www.cloudskillsboost.google/course_templates/885?catalog_rank=%7B%22rank%22%3A312%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YvT%2B4zDccKHJLf1kbYbYXyJboq6srACYHQu6aKUNnsc%3D"
+  },
+  "Security Best Practices in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/87?catalog_rank=%7B%22rank%22%3A313%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zhqonGnl8JO6tToH1LFLZkDmd3HarBJlkPYgCVGFPqE%3D"
+  },
+  "Gemini in Google Docs": {
+    "link": "https://www.cloudskillsboost.google/course_templates/914?catalog_rank=%7B%22rank%22%3A314%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/BKR6f59p6X01dzHGU6YqkS5i44NICAiiaHz5W2kkpB0%3D"
+  },
+  "Working with Notebooks in Vertex AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/923?catalog_rank=%7B%22rank%22%3A315%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Iidvm09Gce1qnPpm97Ds4%2BskxRvnEp5iH8zKycJziJw%3D"
+  },
+  "Machine Learning Operations (MLOps)  for Generative AI ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/927?catalog_rank=%7B%22rank%22%3A316%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/xs7dNrvBaVXInKHMeAMkgc6opD6B1yXZwOmRo0nQHrA%3D"
+  },
+  "Gemini in Google Slides": {
+    "link": "https://www.cloudskillsboost.google/course_templates/931?catalog_rank=%7B%22rank%22%3A317%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YkR1LOIcjCe4%2B6MbpAKeXpdu%2F7NHntf4RtVu3tmzHEs%3D"
+  },
+  "Vector Search and Embeddings": {
+    "link": "https://www.cloudskillsboost.google/course_templates/939?catalog_rank=%7B%22rank%22%3A318%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/82ZxHxNsAwY2pTK6Q2wUob4Ala9bDy11Fpqe9%2Bds7pQ%3D"
+  },
+  "Gemini in Google Meet": {
+    "link": "https://www.cloudskillsboost.google/course_templates/943?catalog_rank=%7B%22rank%22%3A319%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/AhMPiifouHD72KWvokbcyBxt775bpEDmhCae%2FQ06Sqg%3D"
+  },
+  "Handle Consumer Interactions with CCAIP": {
+    "link": "https://www.cloudskillsboost.google/course_templates/944?catalog_rank=%7B%22rank%22%3A320%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Huezsyam38f8klbWIneR2P3aZ5au8SFFxNpfld6hMQU%3D"
+  },
+  "Trust and Security with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/945?catalog_rank=%7B%22rank%22%3A321%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/NkEcqiKSxxmLEbYXIkUMzt5Yj%2BtHWjeUJxOi73LNMno%3D"
+  },
+  "Innovating with Google Cloud Artificial Intelligence": {
+    "link": "https://www.cloudskillsboost.google/course_templates/946?catalog_rank=%7B%22rank%22%3A322%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/JEGmR%2B%2BJi5wWt39hMTfue9hHLmmJfnjD0Wctwc6qJWE%3D"
+  },
+  "Security Command Center Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/953?catalog_rank=%7B%22rank%22%3A323%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/zXoKLFC1Xm%2BGHOhNY7p9icvSJQ9BFPb%2FH7mxIzRNiys%3D"
+  },
+  "Google Cloud Customer Care Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/957?catalog_rank=%7B%22rank%22%3A324%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": ""
+  },
+  "Manage Functions and Reporting with CCAIP": {
+    "link": "https://www.cloudskillsboost.google/course_templates/958?catalog_rank=%7B%22rank%22%3A325%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/pft69HTQDBe9S58fKRUPgayA6EgutdmaMnPyUuwIQSg%3D"
+  },
+  "Google Security Operations - Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/971?catalog_rank=%7B%22rank%22%3A326%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/sUOK8ltKoqU%2F%2BIeJC1tarF9Pw3ns2oHLsnXiBQGl6vY%3D"
+  },
+  "Google Security Operations - Deep Dive": {
+    "link": "https://www.cloudskillsboost.google/course_templates/972?catalog_rank=%7B%22rank%22%3A327%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5uQGiQG9S7IkzVCKIQK27ttciNJfE2E9gjvtsbkNlg4%3D"
+  },
+  "Getting Started with Security Command Center Enterprise": {
+    "link": "https://www.cloudskillsboost.google/course_templates/960?catalog_rank=%7B%22rank%22%3A328%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/29bBFKGVCK0GaVFf%2BzGkl%2Bt2NKFQHqkCJWh8deA8O0o%3D"
+  },
+  "Integrating Applications with Gemini 1.0 Pro on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/980?catalog_rank=%7B%22rank%22%3A329%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/1eO1dRaiS89Yj0kYMv7ozFzCbvO1XcGVddG4TqWgDUI%3D"
+  },
+  "Responsible AI for Developers: Fairness & Bias": {
+    "link": "https://www.cloudskillsboost.google/course_templates/985?catalog_rank=%7B%22rank%22%3A330%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/0lPQZh64HefTzChr751Hs8gFd1UGMRJOKhC9mISckHQ%3D"
+  },
+  "Responsible AI for Developers: Interpretability & Transparency": {
+    "link": "https://www.cloudskillsboost.google/course_templates/989?catalog_rank=%7B%22rank%22%3A331%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/L5kqwqw6JbG4BhqkZELn35%2FmS%2B4NhD%2Fb8s3NhHiwC4o%3D"
+  },
+  "Introduction to Security Principles in Cloud Computing": {
+    "link": "https://www.cloudskillsboost.google/course_templates/966?catalog_rank=%7B%22rank%22%3A332%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/nkkbvw9prnilggQNb%2BBEpDR4lTrCHXaVfMSkDZktxRI%3D"
+  },
+  "Strategies for Cloud Security Risk Management": {
+    "link": "https://www.cloudskillsboost.google/course_templates/967?catalog_rank=%7B%22rank%22%3A333%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/KBPhwjX9qDprR6YleEuLLyJoskZEcgn7fHk25yRrDoI%3D"
+  },
+  "Cloud Security Risks: Identify and Protect Against Threats": {
+    "link": "https://www.cloudskillsboost.google/course_templates/968?catalog_rank=%7B%22rank%22%3A334%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/wtuSprWo7hHT9alSOvXsd%2ByGSpWZ6ry1DoZNrkHxcI8%3D"
+  },
+  "Detect, Respond, and Recover from Cloud Cybersecurity Attacks": {
+    "link": "https://www.cloudskillsboost.google/course_templates/969?catalog_rank=%7B%22rank%22%3A335%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/NWeZHSOlCZO7nZ840nI%2F3FrvcN%2B8M4BTOMU1fM1skRQ%3D"
+  },
+  "Put It All Together: Prepare for a Cloud Security Analyst Job": {
+    "link": "https://www.cloudskillsboost.google/course_templates/970?catalog_rank=%7B%22rank%22%3A336%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/AtYtBtWLEjsYoUW99E%2BcUFlIl6wYJJVk2T3Nka6GDaE%3D"
+  },
+  "Introduction to Data Analytics in Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/961?catalog_rank=%7B%22rank%22%3A337%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/oeYybfk%2FerJwx31ufSASmF5yuQPxx5UJDt%2BsNYClxR4%3D"
+  },
+  "Data Management and Storage in the Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/962?catalog_rank=%7B%22rank%22%3A338%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/thO95H%2BkRHUn7h59eTwD%2BnE9nQymhTK2%2F6HjWLzWSKg%3D"
+  },
+  "The Power of Storytelling: How to Visualize Data in the Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/964?catalog_rank=%7B%22rank%22%3A339%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/xR2D2Jy0DedBV75YfFQhLUwGxbL60LmtrriCRup%2BETU%3D"
+  },
+  "Put It All Together: Prepare for a Cloud Data Analyst Job": {
+    "link": "https://www.cloudskillsboost.google/course_templates/965?catalog_rank=%7B%22rank%22%3A340%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/uFco%2F1nFaqhlaUaN8y6DSNIbGHSMBQcZyVtcl2IZtJ8%3D"
+  },
+  "Data Transformation in the Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/963?catalog_rank=%7B%22rank%22%3A341%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/goPfHXUKuaH0yWg2xF%2FHQkIY%2BonlsHvRhMU2P0Ni6j4%3D"
+  },
+  "Configure and Maintain CCAIP as an Admin": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1029?catalog_rank=%7B%22rank%22%3A342%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/jvb6lxBM87Tc%2Fekf50l7R%2FY9Feb6P2DFQHDhgY%2BMNB8%3D"
+  },
+  "Responsible AI for Developers: Privacy & Safety": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1036?catalog_rank=%7B%22rank%22%3A343%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/0%2FC6vBlS3d1LFOVUYoCcHWnkz5vokitQPCZGeyIwfHc%3D"
+  },
+  "Cloud Retail Search Quiz": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1044?catalog_rank=%7B%22rank%22%3A344%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": ""
+  },
+  "Using BigQuery Machine Learning for inference": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1060?catalog_rank=%7B%22rank%22%3A345%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5NopGCC8Ewrjz2Uc6QP16pxN39YJ4QjhA2TdBZOEo%2B4%3D"
+  },
+  "Change Management for Google Workspace": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1061?catalog_rank=%7B%22rank%22%3A346%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/P138eKtpuq9cqV%2B8EGfx7GyhhQ01DAnKJiAVY%2FS%2FnNY%3D"
+  },
+  "CCAI Frontend Integrations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1013?catalog_rank=%7B%22rank%22%3A347%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/v0e1Ugyck1b2VKFOBKTAR7KezFUL8g3h0LrD3tUxpy0%3D"
+  },
+  "CCAI Architecture": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1002?catalog_rank=%7B%22rank%22%3A348%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/2dfQbs6jPks3lgnsLaZhhz%2FlL068%2B597F8WeGGGnif8%3D"
+  },
+  "Introduction to ChromeOS Administration": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1068?catalog_rank=%7B%22rank%22%3A349%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": ""
+  },
+  "Responsible AI for Digital Leaders with Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1069?catalog_rank=%7B%22rank%22%3A350%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Aj73AAm0qoJSlWnzhpRxImL%2FzObRVtX%2FuUQCBjv4w6I%3D"
+  },
+  "Machine Learning Operations (MLOps) with Vertex AI: Model Evaluation": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1080?catalog_rank=%7B%22rank%22%3A351%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/fe8UCJ2vaoLjz9jghPyIFJaXW%2BhXe2RsgQrQ2j4yiSY%3D"
+  },
+  "Generative AI for Healthcare": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1081?catalog_rank=%7B%22rank%22%3A352%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/IBPw82nikzRkLGkV3LH4p6jZ06W0kVzrXzsF6CXqFzU%3D"
+  },
+  "Website Modernization with Generative AI on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1097?catalog_rank=%7B%22rank%22%3A353%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/gYVFj13Fx3WpEY0wCPyazNft1imMaV8JzWqzVMXGdWE%3D"
+  },
+  "Advanced Performance Measurement": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1099?catalog_rank=%7B%22rank%22%3A354%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/YrnYMoxIRwioD2Xc3pPlO2x6hT5KfOj0pDdDzTGXJVI%3D"
+  },
+  "Virtual FAQ with data store agents": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1101?catalog_rank=%7B%22rank%22%3A355%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ofghQzQ7gMxtwq1dlvAJlgHH6YjwHCWaYhmHHxbfvNA%3D"
+  },
+  "Agent Summarization (Custom)": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1102?catalog_rank=%7B%22rank%22%3A356%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/BvqUU7plMK%2BRuEYE55D5st4uDPkgsb7q2n%2FzactSAag%3D"
+  },
+  "Incorporating Generative Features into Complex DFCX Agents ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1104?catalog_rank=%7B%22rank%22%3A357%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/dicOsLPWE12xjdwI5rdARCMO1xKdDAIVPd2quyz2GaY%3D"
+  },
+  "Building Complex End to End Self-Service Experiences in Dialogflow CX": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1103?catalog_rank=%7B%22rank%22%3A358%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/hPusMAOjW2YhE%2F4ufnW0TLV%2FVXyblrU8FktqqQuCaXM%3D"
+  },
+  "Advanced Webhook Concepts": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1098?catalog_rank=%7B%22rank%22%3A359%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/sdeDcnmvo1M%2FkhzZBKat4u1E8IjmkWgeMAbY2o%2BKq2g%3D"
+  },
+  "DFCX Bot Building Quality Assurance and Deployment Lifecycle": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1105?catalog_rank=%7B%22rank%22%3A360%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/BIVGczGNbZntkQfI2tIW6nWDiEPO9%2BY4SgKPvuAivKY%3D"
+  },
+  "Advanced Conversation Design": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1106?catalog_rank=%7B%22rank%22%3A361%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/5oZTnaOz0fqEbFFCK9L79vk8szo0l4VJ1uSDVUF%2B0sM%3D"
+  },
+  "Webhook fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1107?catalog_rank=%7B%22rank%22%3A362%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Dxgkz8Q6Zo%2BME3ohDuW7Q1v8SFR9yIj0r9FxMnvlHI4%3D"
+  },
+  "Intro to CCAI and CCAI Engagement Framework": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1108?catalog_rank=%7B%22rank%22%3A363%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/E7xohJPVdjgf%2B8HN1%2Bd%2BT7VcBXTfT2YnMVy2p0ZN4uc%3D"
+  },
+  "Conversation Design Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1070?catalog_rank=%7B%22rank%22%3A364%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/T91AwbY%2BilmX2Ov%2BAMpvMNzCYL4Wkh7Euev4gS%2BANak%3D"
+  },
+  "Basic Performance Measurement": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1121?catalog_rank=%7B%22rank%22%3A365%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Q2TpCP8HzoxxLeZkvZ7OF9nhoFbuy2kVP03skDRH0kI%3D"
+  },
+  "Create Generative AI Apps on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1120?catalog_rank=%7B%22rank%22%3A366%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/NZjkRzcCusZ61oE8mWpjEmZktZUXkmO%2F%2F19TokDAnsU%3D"
+  },
+  "Generative Playbooks": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1122?catalog_rank=%7B%22rank%22%3A367%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/prHB5NBIAzg%2FxFJMDBQt%2Bgw5TEq2QbIh9wxSB%2BQUJzU%3D"
+  },
+  "CCAI Insights": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1123?catalog_rank=%7B%22rank%22%3A368%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/3k04C%2FE%2FP38PWXlqz07JKN%2Fp0BakE%2F6LaXX%2FCNuWROc%3D"
+  },
+  "Building a Virtual Agent with Dialogflow CX": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1124?catalog_rank=%7B%22rank%22%3A369%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/1o3IAUhCMzHhKQFGXwmr42m%2BGhS7cXgBzdl0MwfYWeA%3D"
+  },
+  "Google Cloud VMware Engine Fundamentals": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1127?catalog_rank=%7B%22rank%22%3A370%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qEjRIjFAfI83Ypv1mXWuuyY6YdIys7Hq%2B5ANHpS2LAo%3D"
+  },
+  "Application Development with Cloud Run": {
+    "link": "https://www.cloudskillsboost.google/course_templates/371?catalog_rank=%7B%22rank%22%3A371%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/M2MFXihLYfmPL5XizQ503DYQDkpSB6KDom%2BgM65np0E%3D"
+  },
+  "Google Cloud: Prompt Engineering Guide": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1132?catalog_rank=%7B%22rank%22%3A372%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/IvauEZ1fdB0EPQdfM4Vsg9OW%2B9JK0jJ0premnrutQPE%3D"
+  },
+  "Work with Gemini Models in BigQuery ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1133?catalog_rank=%7B%22rank%22%3A373%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/jbX7W%2FDXplkbXS55CRwm7JsHndWeKrXsUPJbNKw8d8I%3D"
+  },
+  "Gemini in Google Drive": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1135?catalog_rank=%7B%22rank%22%3A374%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/w8bjeVRLjF5Ni91fmOfSaRxDRk4hVttjvLVnJdK%2FP6A%3D"
+  },
+  "Networking in Google Cloud: Network Security": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1142?catalog_rank=%7B%22rank%22%3A375%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/1Ou0vSKbSKA81mbrfhg5gjOl7f0mryfi6JmEslCBZ%2F4%3D"
+  },
+  "Networking in Google Cloud: Load Balancing": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1143?catalog_rank=%7B%22rank%22%3A376%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/qUwToTraWTdu3wrdANWzN1WJhQ8dfrBq15Aw%2BYc9HXg%3D"
+  },
+  "Networking in Google Cloud: Network Architecture": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1144?catalog_rank=%7B%22rank%22%3A377%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/4rnYi6Wb0sApN2OEUtpzuPI62qY0ZheW%2FvsJmUDB9do%3D"
+  },
+  "Networking in Google Cloud: Hybrid and Multicloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1145?catalog_rank=%7B%22rank%22%3A378%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/%2BEQDQB6bjUsH%2FyWHxl6ygnEGkBPUWdfDYUcg4ap81%2B0%3D"
+  },
+  "Introduction to Security in the World of AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1146?catalog_rank=%7B%22rank%22%3A379%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/mGzA5ilvgUWbe3k8sh0yQpn%2FngJsuiqyoqUz%2BlpyExE%3D"
+  },
+  "Modern Security Operations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1153?catalog_rank=%7B%22rank%22%3A380%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": ""
+  },
+  "Google Threat Intelligence": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1152?catalog_rank=%7B%22rank%22%3A381%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Pe48JgLf1rGOhTpnUrXviteexk2iUon%2BtMlkkofQ5Cw%3D"
+  },
+  "Introduction to Data Engineering on Google Cloud": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1157?catalog_rank=%7B%22rank%22%3A382%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/PmV5sb2hCmtArxc8beGwM218PIJ%2FW58xhRXBKzrIpkY%3D"
+  },
+  "Introduction to Reliable Deep Learning ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1158?catalog_rank=%7B%22rank%22%3A383%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/nHAWFrknKWTdAFvMC6%2FL1Sozj4mkCkeYtEzVrik%2Bfos%3D"
+  },
+  "Introduction to Agent Assist and its GenAI Capabilities": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1159?catalog_rank=%7B%22rank%22%3A384%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/tuHVvvghHbXf529BTmH9nZ%2B1oXZFYX%2Bw3YlGyzubxrI%3D"
+  },
+  "Agent Assist Voice and Integrations": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1161?catalog_rank=%7B%22rank%22%3A385%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/GboN6Yu9jFEOZDmDWEPYQvmM97BquV8Hfmtx3XzJFek%3D"
+  },
+  "Build Generative AI Agents with Vertex AI and Flutter": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1162?catalog_rank=%7B%22rank%22%3A386%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Y9MObp6TP3%2FHFad6Qfp0jw0vwowRZCVU1AJAOOD3h2E%3D"
+  },
+  "Streamline App Development with Gemini Code Assist": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1166?catalog_rank=%7B%22rank%22%3A387%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/J17O0R5UjzXYrMNJhLX7dOFHKsqTrj4R3S7PPejLv%2Fo%3D"
+  },
+  "Boost Productivity with Gemini in BigQuery ": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1169?catalog_rank=%7B%22rank%22%3A388%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/tmHkKn2uxMVMeTFfnmxQUWxmJbwzaIcZqjybNVjbuzY%3D"
+  },
+  "Professional Machine Learning Engineer Study Guide": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1171?catalog_rank=%7B%22rank%22%3A389%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/ld3Djkr7qiKtRyCxlSUbL8KifD424gkoRCgoFgElAbY%3D"
+  },
+  "Unleash Team Potential: Assess Learning Needs Using GenAI\n": {
+    "link": "https://www.cloudskillsboost.google/course_templates/1178?catalog_rank=%7B%22rank%22%3A390%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/Y9tbQSeIj3SRalJ5Dhq92i62JXIkJYATgxi4rdoMeew%3D"
+  },
+  "Prompt Design in Vertex AI": {
+    "link": "https://www.cloudskillsboost.google/course_templates/976?catalog_rank=%7B%22rank%22%3A391%2C%22num_filters%22%3A1%2C%22has_search%22%3Afalse%7D",
+    "image": "https://cdn.qwiklabs.com/kvJk32JsyICfy4g1ioCI6Z5j6H7yJirWKQWiLTzgyFc%3D"
+  }
+}

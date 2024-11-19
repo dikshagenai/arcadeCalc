@@ -36,6 +36,17 @@ class Arcade {
             "Scaling with Google Cloud Operations"
         ];
         this.coursePoints = 5;
+
+        this.classRoomBadges = [
+            "Webhook fundamentals",
+            "Advanced Webhook Concepts",
+            "Basic Performance Measurement",
+            "Advanced Performance Measurement",
+            "Advanced Conversation Design",
+            "Conversation Design Fundamentals",
+            "CCAI Architecture",
+            "CCAI Frontend Integrations"
+        ]
     }
 
 
@@ -296,11 +307,27 @@ class Arcade {
 
                 //^ ----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
 
+
+                // ~ Classroom Badges
+                if (this.classRoomBadges.includes(badgeName)) {
+                    if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 5)))) {
+                        badgesThroughoutTheArcade['otherBadges'] += 1;
+                        pointsData['nonFacilitator'] += 0.5;
+                    }
+                }
+
                 // ~ Skill Badge
                 if (skillBadges && skillBadges.includes(badgeName)) {
 
+                    // ^ Classroom event - during this period, no points will be granted!
+                    if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 5)))) {
+                        badgesThroughoutTheArcade['skillBadges'] += 1;
+                        // ^ not adding the points here because no points will be given during this period. 
+                    }
+
+
                     // ^ Monsoon Event 
-                    if (year === 2024 && monthInInteger === 7 && (date >= 22 && date <= 31)) {
+                    else if (year === 2024 && monthInInteger === 7 && (date >= 22 && date <= 31)) {
                         // monsoon event have 1 skill badge = 1 arcade point
                         pointsData['nonFacilitator'] += 1
 
