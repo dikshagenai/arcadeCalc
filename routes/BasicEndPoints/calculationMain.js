@@ -493,7 +493,7 @@ class Arcade {
             // & Adding Swags Images and required points.
             // Standard Milestone 
             swags['swagsInfo']['Standard'] = {
-                "image": "https://i.ibb.co/txBRWb9/fegvdf.png",
+                "image": "https://i.ibb.co/bbby8KJ/Untitled-6.png",
                 requiredPoints: 15,
             }
 
