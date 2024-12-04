@@ -310,7 +310,7 @@ class Arcade {
 
                 // ~ Classroom Badges
                 if (this.classRoomBadges.includes(badgeName)) {
-                    if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 5)))) {
+                    if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 3)))) {
                         badgesThroughoutTheArcade['otherBadges'] += 1;
                         pointsData['nonFacilitator'] += 0.5;
                     }
@@ -320,7 +320,7 @@ class Arcade {
                 if (skillBadges && skillBadges.includes(badgeName)) {
 
                     // ^ Classroom event - during this period, no points will be granted!
-                    if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 5)))) {
+                    if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 3)))) {
                         badgesThroughoutTheArcade['skillBadges'] += 1;
                         // ^ not adding the points here because no points will be given during this period. 
                     }
