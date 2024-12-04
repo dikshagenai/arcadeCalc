@@ -454,6 +454,9 @@ class Arcade {
             // & Non-Facilitator Applicants.
 
             if (pointsData['nonFacilitator'] >= 65) {
+                swags['withoutFacilitatorApplicant'] = 'Champion'
+            }
+            else if (pointsData['nonFacilitator'] >= 65 && pointsData['nonFacilitator'] < 75) {
                 swags['withoutFacilitatorApplicant'] = 'PremiumPlus'
             }
             else if (pointsData['nonFacilitator'] >= 45 && pointsData['nonFacilitator'] < 65) {
@@ -472,7 +475,11 @@ class Arcade {
 
             // & Facilitator Applicants.
 
-            if (pointsData['facilitator'] >= 65) {
+
+            if (pointsData['facilitator'] >= 75) {
+                swags['facilitatorApplicant'] = 'Champion'
+            }
+            else if (pointsData['facilitator'] >= 65 && pointsData['facilitator'] < 75) {
                 swags['facilitatorApplicant'] = 'PremiumPlus'
             }
             else if (pointsData['facilitator'] >= 45 && pointsData['facilitator'] < 65) {
@@ -513,6 +520,12 @@ class Arcade {
             swags['swagsInfo']['PremiumPlus'] = {
                 "image": "https://i.ibb.co/1T9X4px/Untitled-3-2.png",
                 requiredPoints: 65,
+            }
+
+            // champion milestone
+            swags['swagsInfo']['Champion'] = {
+                "image": "https://i.pinimg.com/736x/f9/fb/ab/f9fbab837fa9431be2338e9ed6618432.jpg",
+                requiredPoints: 75,
             }
 
 
