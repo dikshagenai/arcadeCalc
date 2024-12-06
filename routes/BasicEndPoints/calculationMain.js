@@ -453,7 +453,7 @@ class Arcade {
             // ~ Code to put swags details according to the points.
             // & Non-Facilitator Applicants.
 
-            if (pointsData['nonFacilitator'] >= 65) {
+            if (pointsData['nonFacilitator'] >= 75) {
                 swags['withoutFacilitatorApplicant'] = 'Champion'
             }
             else if (pointsData['nonFacilitator'] >= 65 && pointsData['nonFacilitator'] < 75) {
