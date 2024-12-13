@@ -524,7 +524,7 @@ class Arcade {
 
             // champion milestone
             swags['swagsInfo']['Champion'] = {
-                "image": "https://i.pinimg.com/736x/8d/b2/4b/8db24b2cac20039640463771ed8e545b.jpg",
+                "image": "https://i.pinimg.com/736x/12/3f/14/123f148cd35f03252e2c8111bbadfd3d.jpg",
                 requiredPoints: 75,
             }
 
