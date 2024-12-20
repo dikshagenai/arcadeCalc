@@ -338,7 +338,7 @@ class Arcade {
                     }
 
                     // ^ Normal Event Throughout the Arcade.
-                    else if (year === 2024 && monthInInteger > 7) {
+                    else if (year === 2024 && monthInInteger > 7 && (monthInInteger !== 12 || (monthInInteger === 12 && date <= 25))) {
                         // normally 1 skill badge = 0.5 arcade point
                         pointsData['nonFacilitator'] += 0.5
 
@@ -355,9 +355,10 @@ class Arcade {
                     }
                 }
 
-                // ~ Arcade Cloud Digital Leader Challenge
+                // ~ Arcade Cloud Digital Leader Challenge or CDL Challenge
                 else if (this.courseBadge.includes(badgeName)) {
-                    if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
+                    // if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
+                    if (year <= 2024 && monthInInteger === 8 && date <= 5) {
                         this.coursePoints -= 1;
                         if (this.coursePoints === 0) {
                             // * As user has completed this course during this specific time period, he will be awarded for 5 BONUS POINTS.
@@ -385,7 +386,7 @@ class Arcade {
                                 badgesDuringFacilitatorEvent['gameBadges'] += 1;
                             }
 
-                            if (monthInInteger <= 12) {
+                            if (monthInInteger < 12 || (monthInInteger === 12 && date <= 25)) {
                                 // updated count in main base arcade.
                                 badgesThroughoutTheArcade['gameBadges'] += 1;
                             }
@@ -397,7 +398,7 @@ class Arcade {
                                 // updated count in facilitator 
                                 badgesDuringFacilitatorEvent['triviaBadges'] += 1;
                             }
-                            if (monthInInteger <= 12) {
+                            if (monthInInteger < 12 || (monthInInteger === 12 && date <= 25)) {
                                 // updated count in main base arcade.
                                 badgesThroughoutTheArcade['triviaBadges'] += 1;
                             }
