@@ -35,7 +35,7 @@ class Arcade {
             "Trust and Security with Google Cloud",
             "Scaling with Google Cloud Operations"
         ];
-        this.coursePoints = 5;
+        this.coursePoints = 6;
 
         this.classRoomCompletedCount = 0;
         this.classRoomBadges = [
