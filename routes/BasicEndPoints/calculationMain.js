@@ -317,7 +317,7 @@ class Arcade {
                 }
 
                 // ~ Skill Badge
-                if (skillBadges && skillBadges.includes(badgeName)) {
+                else if (skillBadges && skillBadges.includes(badgeName)) {
 
                     // ^ Classroom event - during this period, no points will be granted!
                     if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 3)))) {
