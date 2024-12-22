@@ -37,6 +37,7 @@ class Arcade {
         ];
         this.coursePoints = 5;
 
+        this.classRoomCompletedCount = 0;
         this.classRoomBadges = [
             "Webhook fundamentals",
             "Advanced Webhook Concepts",
@@ -312,7 +313,9 @@ class Arcade {
                 if (this.classRoomBadges.includes(badgeName)) {
                     if (year === 2024 && (((monthInInteger == 11) && (date >= 19)) || ((monthInInteger == 12) && (date <= 3)))) {
                         badgesThroughoutTheArcade['otherBadges'] += 1;
-                        pointsData['nonFacilitator'] += 0.5;
+                        this.classRoomCompletedCount += 1;
+                        // pointsData['nonFacilitator'] += 0.5;
+                        // INSTEAD OF UPDATING POINTS HERE, COUNT THE BADGES AND THEN IN THE END, DIVIDE THEM BY 2 SO THESE 0.5 POINTS DON'T MIX UP WITH 0.5 POINTS FROM SKILL BADGES.
                     }
                 }
 
@@ -423,6 +426,11 @@ class Arcade {
                     "earnedOn": `${date} ${month} ${year}`
                 }
             });
+
+
+            // ^ incrementing points for the arcade classroom 
+            let points = parseInt(this.classRoomCompletedCount / 2);
+            pointsData['nonFacilitator'] += points;
 
 
             // ~------------------------------------PART TO SCRAP THE PAGE IS COMPLETED--------------------------------------------- 
