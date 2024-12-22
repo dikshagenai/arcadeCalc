@@ -35,7 +35,7 @@ class Arcade {
             "Trust and Security with Google Cloud",
             "Scaling with Google Cloud Operations"
         ];
-        this.coursePoints = 6;
+        this.isCoursePointsAdded = false;
 
         this.classRoomCompletedCount = 0;
         this.classRoomBadges = [
@@ -360,10 +360,9 @@ class Arcade {
 
                 // ~ Arcade Cloud Digital Leader Challenge or CDL Challenge
                 else if (this.courseBadge.includes(badgeName)) {
-                    // if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
-                    if (year <= 2024 && monthInInteger === 8 && date <= 5) {
-                        this.coursePoints -= 1;
-                        if (this.coursePoints === 0) {
+                    if (year === 2024 && monthInInteger === 8 && (date >= 1 && date <= 5)) {
+                        if (!this.isCoursePointsAdded) {
+                            this.isCoursePointsAdded = true;
                             // * As user has completed this course during this specific time period, he will be awarded for 5 BONUS POINTS.
                             pointsData['nonFacilitator'] += 5;
                         }
