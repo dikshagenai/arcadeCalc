@@ -89,7 +89,7 @@ const calculateFacilitatorMilestone = function async(badgesDuringFacilitatorEven
             result["milestoneEarned"] = "Milestone 1 - (2)"
         }
 
-        if (badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 8) {
+        else if (badgesDuringFacilitatorEvent["gameBadges"] >= 2 && badgesDuringFacilitatorEvent["triviaBadges"] >= 2 && badgesDuringFacilitatorEvent["skillBadges"] >= 8) {
             result['milestoneBonusPoints'] += 2
             result["milestoneEarned"] = "Milestone 1 - (1)"
         }
