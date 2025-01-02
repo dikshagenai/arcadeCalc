@@ -1,0 +1,618 @@
+[
+  {
+    "skillBadge": "Analyze BigQuery Data in Connected Sheets",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/632",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/3dEst6RNTZQgSGIi4PTlumTkXxf%2FdmfV%2FBV3rh%2Fx6X4%3D"
+  },
+  {
+    "skillBadge": "Streaming Analytics into BigQuery",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/752",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/y81rBzff%2BCRvWt9hHWXUK4505cPpZZpfcyi9%2FS2srsU%3D"
+  },
+  {
+    "skillBadge": "Store, Process, and Manage Data on Google Cloud - Console",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/658",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/IBk%2B54Lh16e0KAao3UrPB6buPf5tzxOwSPnVPkmE50s%3D"
+  },
+  {
+    "skillBadge": "Using the Google Cloud Speech API",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/756",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/4ofkN4%2BKKacdIrTvLp1ZSAGImsdSAJvyRtXoK4D%2BZSE%3D"
+  },
+  {
+    "skillBadge": "Analyze Speech and Language with Google APIs",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/634",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/9l3ABNdsyhUC0bPIs6Vf1sAGsC4nb7UGe9GuP39%2FwKI%3D"
+  },
+  {
+    "skillBadge": "Create a Secure Data Lake on Cloud Storage",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/704",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/aDrD1KiIU1kDIUQ2GVPJEeFtmOlfG3s527tsqON5GWM%3D"
+  },
+  {
+    "skillBadge": "Get Started with API Gateway",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/662",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/p4abbcLtmsng92YCgnUZjS41b6t6vr%2FcebRrv0wBroE%3D"
+  },
+  {
+    "skillBadge": "Get Started with Dataplex",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/726",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/2tJ1LSxF0ZRz71mWC1oyfMl71xyysS8RcfJThsnrXTM%3D"
+  },
+  {
+    "skillBadge": "Get Started with Pub/Sub",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/728",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/HDQKD%2Btnlq2juEuFJFBBmtJ9JWrHrbVI0v7J8uQp1VA%3D"
+  },
+  {
+    "skillBadge": "Tag and Discover BigLake Data",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/753",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/8B1CrS4m6T2tjlYH9GNe2KQRSChFp%2FVIr%2BNlBo%2FQj9A%3D"
+  },
+  {
+    "skillBadge": "Use APIs to Work with Cloud Storage",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/755",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/d1mWg2UMiEJvwUnG3vIA%2B6lfBHcIY%2BSa5wZFAFWlRro%3D"
+  },
+  {
+    "skillBadge": "Integrate BigQuery Data and Google Workspace using Apps Script",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/737",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/LgPpZOcvdaVSF6mlyVK2wtUkDcZ0J1Votoh2TdDhIEc%3D"
+  },
+  {
+    "skillBadge": "Configure Service Accounts and IAM Roles for Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/702",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/vFFpJG5%2FzrfiRL0tlhXuKNOsps9N0ItaaX4Omx1oHw8%3D"
+  },
+  {
+    "skillBadge": "Prepare Data for Looker Dashboards and Reports",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/628",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/oQzIxeIv%2F5iBbNR5dcJtoGDClQ6hcrioCnaW8lHxCGQ%3D"
+  },
+  {
+    "skillBadge": "Create and Manage Cloud Spanner Instances",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/643",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/Lwx9nBf13DUavchAbefiCQXovxumLE3Z8hNOuHTHsIk%3D"
+  },
+  {
+    "skillBadge": "Create and Manage AlloyDB Instances",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/642",
+    "totalLabs": 6,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/vd89ENUiXxPUrl9fIMVYVlOwLADbLb4nVTg%2FVN8PVvw%3D"
+  },
+  {
+    "skillBadge": "Build Real World AI Applications with Gemini and Imagen",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/1076",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/s%2BgzHsWL6hGBYeWSWPdSZu6mYa7pwCn%2BbEYQ%2FMVOYAA%3D"
+  },
+  {
+    "skillBadge": "App Engine: 3 Ways",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/671",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/%2Fus%2B9SsjBJvNFaAG9KABofDumpomMuhFAIJrP23UqIE%3D"
+  },
+  {
+    "skillBadge": "Create a Streaming Data Lake on Cloud Storage",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/705",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/%2BmxpiO1TW2GqjnlC2VdxdbcWeJ4k09d2CTlTQP3FfSo%3D"
+  },
+  {
+    "skillBadge": "Store, Process, and Manage Data on Google Cloud - Command Line",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/659",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/gYTg%2BDXGqVzYT%2FzP4Sfmo0uU8DuwFoU0DAWVviCoaYY%3D"
+  },
+  {
+    "skillBadge": "App Building with AppSheet",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/635",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/%2BHiaxttmNQhNTMn9kWXTSJGmqrPW2XD3hPu%2BduzXvxQ%3D"
+  },
+  {
+    "skillBadge": "Cloud Functions: 3 Ways",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/696",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/5Km4VEbYh%2FozGbpwTH8qut6cjJ%2F3NIynIP143rOPOUE%3D"
+  },
+  {
+    "skillBadge": "Get Started with Cloud Storage",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/725",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/kuaGVEw6SmwSZvIEmzgw20IjhRG18j1ZYD40NowhrO4%3D"
+  },
+  {
+    "skillBadge": "Get Started with Looker",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/647",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/ulqjHgtu%2Bk%2B8y8mj14KaWAF2o5m8kUPdFRSkjd0Bh7I%3D"
+  },
+  {
+    "skillBadge": "The Basics of Google Cloud Compute",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/754",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/NF0NyO9bRbljief2SSKZl6cc8Y7kMrCPExD%2FZ6YbS5M%3D"
+  },
+  {
+    "skillBadge": "Analyze Images with the Cloud Vision API",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/633",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/2BDgUKeuXkt2l%2BKNxw3jfHe%2B1zI4XUtjoERdVj3AGFs%3D"
+  },
+  {
+    "skillBadge": "Analyze Sentiment with Natural Language API",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/667",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/JOmYLpYKK1IZvJx%2FtSZh%2B5fTLcpu37J8lMm8v0qQm6Q%3D"
+  },
+  {
+    "skillBadge": "Cloud Speech API: 3 Ways",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/700",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/Kuk%2BNWucV0QlygxvAs33Octfp6RVtr1YqCmf803l1Gs%3D"
+  },
+  {
+    "skillBadge": "Monitor and Manage Google Cloud Resources",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/653",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/amYX1KCwe7tlqkFT3BJXJkE1mZR94DuxbAPOPaUzqeA%3D"
+  },
+  {
+    "skillBadge": "Protect Sensitive Data with Data Loss Prevention",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/750",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/%2BVrQu7%2Bfm7hBi%2FI8OUUQmDMVS2c4nibG2IN7Q9Vv0rg%3D"
+  },
+  {
+    "skillBadge": "Secure BigLake Data",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/751",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/4IP7mqDtQ4gEwzCEg50kGc8FA%2FFf%2BbY4O3ZO63Yjkos%3D"
+  },
+  {
+    "skillBadge": "Get Started with Eventarc",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/727",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/ETszwT0%2BVG1zyW%2FVLj6nH5mZPBq18Jy1vfyghCq%2BBN8%3D"
+  },
+  {
+    "skillBadge": "Implement Load Balancing on Compute Engine",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/648",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/QlR8VSC38qpQUHJPs6pq2%2F330l9KejU8QDuxYF7cewo%3D"
+  },
+  {
+    "skillBadge": "Monitoring in Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/747",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/s7GqrFeMrvzz%2Bll7n2vKP8bTadKQ5gOvBTkqHTKMcAI%3D"
+  },
+  {
+    "skillBadge": "Networking Fundamentals on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/748",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/gKmq6yHaB6FrhdMvrN50%2BaQ%2Fn%2FhoN2MWxXg9OkOA4RA%3D"
+  },
+  {
+    "skillBadge": "Prompt Design in Vertex AI",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/976",
+    "totalLabs": 4,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/s%2FZRePds6xWgygxn10JCzWgR584W9Df2%2BngG2Leq0dI%3D"
+  },
+  {
+    "skillBadge": "Create and Manage Cloud SQL for PostgreSQL Instances",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/652",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/VuW9c3oSDA0JWAwyxysOXQ6EbcUvBhtG2b3nSIhNArA%3D"
+  },
+  {
+    "skillBadge": "Build a Data Mesh with Dataplex",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/681",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/IUGd19ltWmGBltTsy6zNCZ81tYB3NBELNf9%2BW3UPDsw%3D"
+  },
+  {
+    "skillBadge": "Share Data Using Google Data Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/657",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/H5Nw8iJDyQktGkZLbZBXV%2FwyW9tf2co6Sbpu67lz2dU%3D"
+  },
+  {
+    "skillBadge": "Monitor and Log with Google Cloud Observability",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/749",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/4Rb5x1I0pnY4%2BUPvlBp5ady7UwKnLi7GdZafabxCNcY%3D"
+  },
+  {
+    "skillBadge": "Build LookML Objects in Looker",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/639",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/VSikZWpYgfMlYJ1qs5LZ%2FeIRa%2FjTIlm53clSpT5TJrk%3D"
+  },
+  {
+    "skillBadge": "Build a Website on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/638",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/Rv0QhP4yVyrmO68%2Fe45arpXtdZgM%2BolI2G6JdFN1y0Y%3D"
+  },
+  {
+    "skillBadge": "Monitor Environments with Google Cloud Managed Service for Prometheus",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/761",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/Opy8Mo%2F0cJ6x8wiZV5GdGmaE0tToSTn66au0LQy0nMM%3D"
+  },
+  {
+    "skillBadge": "Create and Manage Bigtable Instances",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/650",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/%2FybkjqsKqUZkugVMQpcLbbiD8%2BdCkPqu4MvVqYhFgRI%3D"
+  },
+  {
+    "skillBadge": "Deploy and Manage Apigee X",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/661",
+    "totalLabs": 5,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/9%2BfjTCoZD5SSJZOTfWz5WWp07GUbHFzxTiQ2m8zaBjs%3D"
+  },
+  {
+    "skillBadge": "Set Up an App Dev Environment on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/637",
+    "totalLabs": 10,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/FRpM2MMSR7jg%2FFjdC%2F9EmuOkSJ0F7YptWGKe6VD8sjk%3D"
+  },
+  {
+    "skillBadge": "Derive Insights from BigQuery Data",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/623",
+    "totalLabs": 7,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/ryTniLyAhIKMMP16FCfNS4BOEOX3PpjWQRnvLf7Q7%2B8%3D"
+  },
+  {
+    "skillBadge": "Set Up a Google Cloud Network",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/641",
+    "totalLabs": 7,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/RIYYNU%2BR2ph1OI51G3CNug%2FvziE7K1cVWxX96RWfS%2F4%3D"
+  },
+  {
+    "skillBadge": "Implement Cloud Security Fundamentals on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/645",
+    "totalLabs": 8,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/QZ3Lm78VShnMTK6G4HeVF1JMJUajwq%2BBmdXaizCd5f0%3D"
+  },
+  {
+    "skillBadge": "Develop your Google Cloud Network",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/625",
+    "totalLabs": 6,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/BAUF8WPVlWaDyWm1EK%2FKHt9EoU8%2BKdHpodHJ%2BCYVIWE%3D"
+  },
+  {
+    "skillBadge": "Get Started with Google Workspace Tools",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/676",
+    "totalLabs": 7,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/dBCW5W%2B3GnYkggMUwTo3NBLf3W1pWwP2hUbzy3%2FCCZ8%3D"
+  },
+  {
+    "skillBadge": "Prepare Data for ML APIs on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/631",
+    "totalLabs": 8,
+    "difficulty": "Introductory",
+    "image": "https://cdn.qwiklabs.com/ZUhhfh33J7x31SmcU8DIAf3ejiLuMPjfTRgjZMBj0xA%3D"
+  },
+  {
+    "skillBadge": "Use Functions, Formulas, and Charts in Google Sheets",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/776",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/QvOcCXRFs6%2BvFDa76EDz73BTH%2BWOiC3JCq0TZKiwdcE%3D"
+  },
+  {
+    "skillBadge": "Automate Data Capture at Scale with Document AI",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/674",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/zINnuEa2Zsi9GZKbcmUT97b8uWQMGp9vRlOUYsdE3jE%3D"
+  },
+  {
+    "skillBadge": "Develop Serverless Apps with Firebase",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/649",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/TxPdjh0YSi66rQsyXacKfuK97yNHtQPky54TIbv9KEY%3D"
+  },
+  {
+    "skillBadge": "Develop with Apps Script and AppSheet",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/715",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/vjyujWQAvAJDCAw%2BFY%2F6AOqEEKNXJ6y7hiBRHadG9IY%3D"
+  },
+  {
+    "skillBadge": "Build Google Cloud Infrastructure for Azure Professionals",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/688",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/%2Ffg4SqAEG%2FnQVIt2ut06Nh5NxTPBZb3QO7cG175FEhg%3D"
+  },
+  {
+    "skillBadge": "Engineer Data for Predictive Modeling with BigQuery ML",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/627",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/buCzMzxYUhmRRa4hAgfQAo0FNxdIIQexIdHcyuznQj0%3D"
+  },
+  {
+    "skillBadge": "Deploy Kubernetes Applications on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/663",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/EXyE%2FCxxZ6VQwYc5s0G%2Bpfsa2h5gY1TKPlCWSRiPGxw%3D"
+  },
+  {
+    "skillBadge": "Explore Generative AI with the Vertex AI Gemini API",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/959",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/D2gzrDb4BDBz%2FfXAWFy8mL56TvwVeRDVDsc9GKSIiVw%3D"
+  },
+  {
+    "skillBadge": "Implement CI/CD Pipelines on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/691",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/8FCeW6Ghxq6YJ%2B%2B0wucn4QzO92YLIkf13qHMHxnyRZo%3D"
+  },
+  {
+    "skillBadge": "Implement DevOps Workflows in Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/716",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/WGq8WpVC%2Bdd52Yv3wqJG%2F7mP%2FrmFFUikWBuUom12Tuo%3D"
+  },
+  {
+    "skillBadge": "Build Google Cloud Infrastructure for AWS Professionals",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/687",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/8w1pVvti1LLNv555uykNY7CBkdROp2O7OIPAdt7K2kM%3D"
+  },
+  {
+    "skillBadge": "Inspect Rich Documents with Gemini Multimodality and Multimodal RAG",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/981",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/DKI5VEayf%2B1ZxD3CJ46PRSttLWwSksW3f0BZfwQIfik%3D"
+  },
+  {
+    "skillBadge": "Manage Kubernetes in Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/783",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/SbaluKNBD8ILVo2svsp%2FjP6afBiti7LzxoSPIye9JPs%3D"
+  },
+  {
+    "skillBadge": "Protect Cloud Traffic with BeyondCorp Enterprise (BCE) Security",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/784",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/d42ZZliCfFCzlxlm%2Fvh43Q%2Ff1%2BV5q9Utm%2B4umCmQFwI%3D"
+  },
+  {
+    "skillBadge": "Build LangChain Applications using Vertex AI",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/984",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/Nh2ORGK2cC1wzFv%2Fx34N0sF6NggfUk3kANtFIy4ct1Y%3D"
+  },
+  {
+    "skillBadge": "Build a Data Warehouse with BigQuery",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/624",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/Fah1omJYpGK0QWlt6On%2FNXijcM0cQwUkp50IvrRpvXI%3D"
+  },
+  {
+    "skillBadge": "Perform Predictive Data Analysis in BigQuery",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/656",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/J%2Fxk4xpBWdqQT0JEuTiN5h%2F3gpAS%2BliRT64kJBjcJrs%3D"
+  },
+  {
+    "skillBadge": "Build Infrastructure with Terraform on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/636",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/VHFZrm%2Bx107vRoKqo%2BxPzwhbMoLCNk1EctzHY7SZwhI%3D"
+  },
+  {
+    "skillBadge": "Develop Serverless Applications on Cloud Run",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/741",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/kFh0tNiUHhgbAFtBWQeTIOCdBx988W3ZYI7Ew2AqALw%3D"
+  },
+  {
+    "skillBadge": "Create ML Models with BigQuery ML",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/626",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/Wm106BMo1s08lU7N%2BBp7tWioQwpDFr1R60VxPqqF8r0%3D"
+  },
+  {
+    "skillBadge": "Mitigate Threats and Vulnerabilities with Security Command Center",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/759",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/5NWaSWLl43%2B5GwhlDm8SyazP662JNNoxufqGhbDH6Bc%3D"
+  },
+  {
+    "skillBadge": "Develop GenAI Apps with Gemini and Streamlit",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/978",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/HGh8OpsJmf3kRhKbLlDBTvJWkBtWGKItyoVQ7PPGnq4%3D"
+  },
+  {
+    "skillBadge": "Detect Manufacturing Defects using Visual Inspection AI",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/644",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/%2FuPhI%2BUXPoBAn7%2BkgonVcr%2FiyfDqC2qo1JbIy%2Bwot6w%3D"
+  },
+  {
+    "skillBadge": "Optimize Costs for Google Kubernetes Engine",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/655",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/JVjBXaXXv2iu10%2FpaeJt0ed1yluhaplGd7HMYNYyxYM%3D"
+  },
+  {
+    "skillBadge": "Build and Deploy Machine Learning Solutions on Vertex AI",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/684",
+    "totalLabs": 5,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/ywUZRWwQAPLUq12I1NecVxkw0W57w3W9NYZUBwDEM1A%3D"
+  },
+  {
+    "skillBadge": "Develop and Secure APIs with Apigee X",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/714",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/zrJ3ITt0ixHh8sU0kb7m1ADYGu8dLKaQ1F0DqLb0F3Y%3D"
+  },
+  {
+    "skillBadge": "Build Custom Processors with Document AI",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/686",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/Yhrkhgg0y1Nx11lCtTxKElWpI1d%2BDGYy%2BaYD5M7agRo%3D"
+  },
+  {
+    "skillBadge": "Cloud Architecture: Design, Implement, and Manage",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/640",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/p4JZAfZDpg8laLP1g5%2B2W84mCvbUaCsQrmAfxR7UIng%3D"
+  },
+  {
+    "skillBadge": "Build a Secure Google Cloud Network",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/654",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/HpKzUnOzAJCt2GEWpsF9N96EDKWXDyqhliQzhdPlEGw%3D"
+  },
+  {
+    "skillBadge": "Manage Data Models in Looker",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/651",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/yLL9ckYq9xPQqACrXiISLOO0pZ93pZ1u89BqXycHtbk%3D"
+  },
+  {
+    "skillBadge": "Classify Images with TensorFlow on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/646",
+    "totalLabs": 6,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/Nl6YqeQV32kx3Ijt2OWacKzXfiLsorsHsb%2F6EsX9B5I%3D"
+  },
+  {
+    "skillBadge": "Use Machine Learning APIs on Google Cloud",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/630",
+    "totalLabs": 7,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/G0nUb7y%2FUlLKTnpNQU6fxMCQEyZvGy0w2QrIBkzfXLY%3D"
+  },
+  {
+    "skillBadge": "Migrate MySQL data to Cloud SQL using Database Migration Service",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/629",
+    "totalLabs": 5,
+    "difficulty": "Advanced",
+    "image": "https://cdn.qwiklabs.com/szTWW02B6wvs24aW4bLPiUCnjikwKZLAFI55zwmXpRw%3D"
+  },
+  {
+    "skillBadge": "Protect Cloud Traffic with Chrome Enterprise Premium Security",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/784",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/j2b%2F8EPFIubafNJjgIl9J1JsHMO4PKZXdWQDmtdWrgs%3D"
+  },
+  {
+    "skillBadge": "Get Started with Sensitive Data Protection",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/750",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/Kf77tCnkMKzyzHaLnmrwvkx%2FUtDN0jwNuUzWJIJ5U3w%3D"
+  },
+  {
+    "skillBadge": "Secure Software Delivery",
+    "skillBadgeLink": "https://www.cloudskillsboost.google/course_templates/1164",
+    "totalLabs": 4,
+    "difficulty": "Intermediate",
+    "image": "https://cdn.qwiklabs.com/VwV2%2BSx9Av1v7wWgUp7zbv6%2FQpk37%2F%2Fvc5WBCuLYmRg%3D"
+  }
+]

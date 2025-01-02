@@ -10,7 +10,7 @@ const cheerio = require('cheerio');
 // {BadgeName : ['Badge Link', "Badge Image"]}
 // const skillBadgesFromDatabase = require('../../requiredFiles/SkillBadgesLinkImages.json')
 
-const { getSkillBadges } = require('../BasicEndPoints/Functions/Badges/extractBadgesFromServer')
+const { getSkillBadges } = require('../routes/BasicEndPoints/Functions/Badges/extractBadgesFromServer')
 
 // For notifications.
 class IncompleteSkillBadges {

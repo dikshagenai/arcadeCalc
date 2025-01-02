@@ -10,14 +10,14 @@ const cheerio = require('cheerio');
 
 
 // fetch badges from database
-const { getSkillBadges, getSpecialBadges } = require('../BasicEndPoints/Functions/Badges/extractBadgesFromServer')
+const { getSkillBadges, getSpecialBadges } = require('../routes/BasicEndPoints/Functions/Badges/extractBadgesFromServer')
 
 // add unknown badges in the database!
-const addUnknownBadges = require('../BasicEndPoints/Functions/Badges/addUnknownBadgesToServer')
-const calculateFacilitatorMilestone = require('../BasicEndPoints/Functions/calculateFacilitatorMilestone')
+const addUnknownBadges = require('../routes/BasicEndPoints/Functions/Badges/addUnknownBadgesToServer')
+const calculateFacilitatorMilestone = require('../routes/BasicEndPoints/Functions/calculateFacilitatorMilestone')
 
 // MongoDB: Database Models.
-const User = require('../../models/Users')
+const User = require('../models/Users')
 
 
 class Arcade {

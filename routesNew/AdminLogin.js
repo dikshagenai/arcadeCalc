@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const User = require('../../models/Users')
+const User = require('../models/Users')
 const jwt = require('jsonwebtoken');
 
-const AdminAuthentication = require('../../middleware/verifyAdmin')
+const AdminAuthentication = require('../middleware/verifyAdmin')
 
 
 // * Middleware to check user authentication.

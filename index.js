@@ -30,32 +30,44 @@ app.get('/', async (req, res) => {
 
 
 // ^ For calculating points
-app.use('/calculate', require('./routes/NoAuthRequired/calculate'));
+// app.use('/calculate', require('./routes/NoAuthRequired/calculate'));
 
 // ^ For Incomplete Skill Badges.
-app.use('/incompleteSkillBadges', require('./routes/NoAuthRequired/incompleteSkillBadges'));
+// app.use('/incompleteSkillBadges', require('./routes/NoAuthRequired/incompleteSkillBadges'));
 
 
 
 // ! API BASED REQUESTS.
 // & For storing Users and Notifications.
-app.use("/api/users", require("./routes/NoAuthRequired/users.js"));
-app.use("/api/notifications", require("./routes/NoAuthRequired/notifications.js"));
+// app.use("/api/users", require("./routes/NoAuthRequired/users.js"));
+// app.use("/api/notifications", require("./routes/NoAuthRequired/notifications.js"));
 
 // & For storing responses of the contact page.
-app.use("/api/contact", require("./routes/NoAuthRequired/contact.js"));
+// app.use("/api/contact", require("./routes/NoAuthRequired/contact.js"));
 
 // & For fetching badges.
-app.use("/api/badges", require("./routes/BasicEndPoints/extractBadgesFromDB.js"))
+// app.use("/api/badges", require("./routes/BasicEndPoints/extractBadgesFromDB.js"))
 
 // & For Admin
-app.use("/admin", require("./routes/AuthRequired/admin.js")); // used for login
-app.use("/admin/users", require("./routes/AuthRequired/users")) // used for fetching users.
-app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
-app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
+// app.use("/admin", require("./routes/AuthRequired/admin.js")); // used for login
+// app.use("/admin/users", require("./routes/AuthRequired/users")) // used for fetching users.
+// app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
+// app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
 
 
+// & Badges
+app.use("/api/new/skill", require("./routesNew/Badges/SkillBadges.js"));
+app.use("/api/new/game", require("./routesNew/Badges/GameBadges.js"));
+app.use("/api/new/not", require("./routesNew/Badges/UnknownBadges.js"));
+app.use("/api/new/ignore", require("./routesNew/Badges/IgnoreBadges.js"));
 
+// & Notifications and Users count
+app.use("/api/new/notification", require("./routesNew/notifications.js"));
+app.use("/api/new/user", require("./routesNew/UserEngagement/engagement.js"));
+app.use("/api/new/count", require("./routesNew/UserEngagement/users.js"));
+
+// & Main calculation part
+app.use("/api/new/calculate", require("./routesNew/Calc/arcade.js"))
 
 
 
