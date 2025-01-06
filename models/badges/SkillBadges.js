@@ -23,6 +23,10 @@ const skillBadgeSchema = new Schema({
     image: {
         type: String,
         required: true,
+    },
+    solution: {
+        type: String,
+        required: true,
     }
 });
 

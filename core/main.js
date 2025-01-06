@@ -1,0 +1,246 @@
+const cheerio = require('cheerio');
+
+
+// ~ --------------------------------------- HELPER FILES HERE ---------------------------------------
+// fetch badges from database
+const getArcadeBadges = require("../DataBase/Badges/GameBadges").fetchBadges;
+const getSkillBadges = require("../DataBase/Badges/SkillBadges").fetchSkillBadges;
+
+// convert monthStr to monthInt
+const monthInt = require("./arcade/monthStrToInt");
+
+// add unknown badges in the database!
+const addUnknownBadges = require("../DataBase/Badges/UnknownBadges").addOrUpdateUnknownBadge;
+
+// scrap the page
+const scrapPage = require('./arcade/scrapPage') // giving out scrapped page + userDetails
+
+// gather user data
+const storeUserData = require('./arcade/storeUserData');
+
+
+
+// ~ --------------------------------------- MAIN CODE HERE ---------------------------------------
+
+class Arcade {
+    // Main function
+    async analyzeProfile(publicUrl) {
+
+        // !-------------------------CONSTANTS HERE --------------------------------
+
+
+        let badgesCount = {
+            skillBadges: 0,
+            gameBadges: 0,
+            triviaBadges: 0,
+            certificationBadges: 0,
+            specialBadges: 0,
+            baseCampBadges: 0,
+            unknownBadges: 0,
+        }
+
+        let pointsCount = {
+            skillBadges: 0,
+            gameBadges: 0,
+            triviaBadges: 0,
+            certificationZoneBadges: 0,
+            specialBadges: 0,
+            baseCampBadges: 0,
+            unknownBadges: "NaN",
+        }
+
+        let totalPoints = 0;
+
+
+
+        // * additional data to handle the request status.
+        const additionalData = {
+            success: false,
+            statusCode: 500,
+            message: "Internal Server Error"
+        }
+
+        // output that gonna hold all the data.
+        const output = {
+            additionalData, badgesCount, pointsCount, totalPoints
+        }
+
+        // !-------------------------CONSTANTS ENDS --------------------------------
+
+
+        // ! Analysis the validity of url--------------------------------
+        if (!publicUrl.includes("https://www.cloudskillsboost.google/public_profiles/")) {
+            return { output };
+        }
+
+
+        try {
+
+
+            // ~------------------ SCRAPING THE PAGE ------------------ 
+            const resultScrapPage = await scrapPage(publicUrl)
+            
+
+            if (resultScrapPage['success'] == false) {
+                output.additionalData.message = "Failed to scrap page."
+                output['scrapped'] = resultScrapPage;
+                return { output };
+            }
+
+            // * PREPARING MORE DATA --------------------------------
+            const userDetails = resultScrapPage['userDetails'];
+            const subSoup = cheerio.load(resultScrapPage['subSoup']);
+
+
+            // ~----------- SAVING SKILL AND GAME BADGES FROM THE DATABASE --------------------------------
+            const skillBadges = await getSkillBadges();
+            const arcadeBadges = await getArcadeBadges();
+
+
+            // ~------------------ CALCULATE THE POINTS ------------------ 
+            //^ -----------------------Running a loop for all the `profile-badge`-----------------------
+
+            subSoup('.profile-badge').each((i, badge) => {
+
+                // ------------ START Basic Badge Details --------------------------------
+                const $ = cheerio.load(badge);
+                // parsing Badge url (just in case, it is not present in the database) 
+                let badgeLink = $('a').first().attr('href');
+
+                //  parsing badge details -> Name, Claimed On
+                let badgeName = $('img').first().attr('alt').trim();
+                badgeName = badgeName.split(" ").slice(2).join(" ");
+                let badgeEarnedOn = $('span').last().text().trim().split(" ");
+                const month = badgeEarnedOn[1];
+                const monthInInteger = monthInt(month);
+                let date, year;
+
+                // parsing date and year
+                if (badgeEarnedOn[2] === "") {
+                    date = parseInt(badgeEarnedOn[3].split(",")[0]);
+                    year = parseInt(badgeEarnedOn[4]);
+                } else {
+                    date = parseInt(badgeEarnedOn[2].split(",")[0]);
+                    year = parseInt(badgeEarnedOn[3]);
+                }
+                // ------------ END Basic Badge Details --------------------------------
+
+
+                // &----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
+
+                // ~ Skill Badge
+                if (skillBadges && skillBadges.includes(badgeName)) {
+                    // ~ NEW
+                    if (
+                        year === 2025 &&
+                        monthInInteger >= 1 &&
+                        monthInInteger <= 6 &&
+                        (monthInInteger !== 1 || date > 15)
+                    ) {
+                        // increase count and points
+                        badgesCount['skillBadges'] += 1;
+                        pointsCount['skillBadges'] += 0.5;
+                        totalPoints += 0.5;
+                    }
+                    else {
+                        // increase count only
+                        badgesCount['skillBadges'] += 1;
+                    }
+                }
+
+
+                // ~ Other game badges...
+                else if (arcadeBadges && arcadeBadges.includes(badgeName)) {
+                    let badgeType = arcadeBadges['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
+                    let point = arcadeBadges['points'] // points for the badge.
+
+                    if (
+                        year === 2025 &&
+                        monthInInteger >= 1 &&
+                        monthInInteger <= 6 &&
+                        (monthInInteger !== 1 || date > 15)
+                    ) {
+                        // increase count and points
+                        badgesCount[badgeType] += 1;
+                        pointsCount[badgeType] += point;
+                        totalPoints += point;
+
+                    }
+                    else {
+                        // increase count only
+                        badgesCount[badgeType] += 1;
+                    }
+                }
+
+
+                // ~ Unknown badges...
+                else {
+                    // ~ add unknown badges in the database
+                    try {
+                        addUnknownBadges({ badgeName, badgeLink })
+                    } catch (error) {
+                        console.log('Error while saving data in database' + error);
+                    }
+                }
+
+                // &----------------------------- END COUNTING THE POINTS -----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            })
+
+            // ~------------------ DONE WITH CALCULATION, TIME TO STEAL SOME DATA ------------------ 
+            let splitPublicUrl = publicUrl.split('https://www.cloudskillsboost.google/public_profiles/')[1]
+            let dataForDataBase = {
+                "id": splitPublicUrl,
+                "name": userDetails.name,
+                "publicUrl": publicUrl,
+                "points": totalPoints,
+                "swagsEligibility": "None",
+                "facilitatorPoints": 0,
+                "swagsEligibilityFacilitator": "NaN"
+            }
+            storeUserData(dataForDataBase);
+
+
+            // return data 
+            output.additionalData.success = true;
+            output.additionalData.statusCode = 200;
+            output.additionalData.message = "Profile analyzed successfully!";
+            output.badgesCount = badgesCount;
+            output.pointsCount = pointsCount;
+            output.totalPoints = totalPoints;
+
+            return output;
+
+
+        } catch (error) {
+            output['ErrorMessage'] = error.message;
+            return output;
+        }
+
+
+
+    }
+}
+
+
+module.exports = Arcade;

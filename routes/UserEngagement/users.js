@@ -3,27 +3,18 @@ const router = express.Router();
 const fs = require('fs');
 
 
-// Models
-const User = require('../../models/Users')
-const IncrementUser = require('../../models/UsersCount');
+const { incrementUniqueUsers, incrementDashboardSearches, countUniqueUsers, countDashboardUsers } = require("../../DataBase/WebsiteEngagement/user");
 
 
 
 
 // ! To increment the user count... (overall main searches)
-
 router.post('/incrementUniqueUser', async (req, res) => {
     // means one more to be added in the main json
     try {
         // Endpoint to increment totalVisitedUsers
-        var entries = await IncrementUser.findOne();
-        if (!entries) {
-            IncrementUser.create({ uniqueUsers: 1 })
-        }
-        else {
-            await IncrementUser.findOneAndUpdate({}, { $inc: { uniqueUsers: 1 } }, { new: true });
-        }
-        res.send("User successfully incremented!");
+        const result = await incrementUniqueUsers();
+        res.send(result.message);
     } catch (error) {
         res.status(500).send("Unknown error occurred!")
     }
@@ -33,17 +24,11 @@ router.post('/incrementUniqueUser', async (req, res) => {
 router.post('/incrementDashboardSearches', async (req, res) => {
     // means one more to be added in the main json
     try {
-        // Endpoint to increment totalVisitedUsers
-        var entries = await IncrementUser.findOne();
-        if (!entries) {
-            IncrementUser.create({ dashboardSearches: 1 })
-        }
-        else {
-            await IncrementUser.findOneAndUpdate({}, { $inc: { dashboardSearches: 1 } }, { new: true });
-        }
-        res.send("User successfully incremented!");
+        const result = await incrementDashboardSearches();
+        res.send(result.message);
     } catch (error) {
-        res.status(500).send("Unknown error occurred!")
+        console.error(error);
+        res.status(500).send("Unknown error occurred!");
     }
 })
 
@@ -70,10 +55,10 @@ router.post('/addUser', async (req, res) => {
 // ~ Count the unique users...
 router.get('/countUniqueUsers', async (req, res) => {
     try {
-        const amountOfUsers = (await IncrementUser.findOne().select(['uniqueUsers', '-_id']))
-        return res.status(200).json({ success: true, amountOfUsers: amountOfUsers['uniqueUsers'] });
+        const result = await countUniqueUsers();
+        res.status(200).json(result);
     } catch (error) {
-
+        console.error(error);
         res.status(500).json({ success: false, message: error.message });
     }
 })
@@ -82,10 +67,10 @@ router.get('/countUniqueUsers', async (req, res) => {
 // ~ Count the dashboard users...
 router.get('/countDashboardUsers', async (req, res) => {
     try {
-        const amountOfUsers = (await IncrementUser.findOne().select(['dashboardSearches', '-_id']))
-        return res.status(200).json({ success: true, amountOfUsers: amountOfUsers['dashboardSearches'] });
+        const result = await countDashboardUsers();
+        res.status(200).json(result);
     } catch (error) {
-
+        console.error(error);
         res.status(500).json({ success: false, message: error.message });
     }
 })

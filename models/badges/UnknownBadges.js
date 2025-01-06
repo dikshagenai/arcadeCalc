@@ -7,7 +7,7 @@ const unknownBadgeSchema = new Schema({
         type: String,
         required: true
     },
-    profileUrl: {
+    badgeLink: {
         type: String,
         required: true
     }

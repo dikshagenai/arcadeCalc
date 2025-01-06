@@ -21,7 +21,7 @@ const gameBadgeSchema = new mongoose.Schema({
     badgeType: {
         type: String,
         required: true, // Ensures badgeType is provided
-        enum: ['Game', 'Trivia', 'Certification', 'Speedrun'] // Only allows values 
+        enum: ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp'] // Only allows values 
     }
 });
 

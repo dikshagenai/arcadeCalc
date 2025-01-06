@@ -56,18 +56,18 @@ app.get('/', async (req, res) => {
 
 
 // & Badges
-app.use("/api/new/skill", require("./routesNew/Badges/SkillBadges.js"));
-app.use("/api/new/game", require("./routesNew/Badges/GameBadges.js"));
-app.use("/api/new/not", require("./routesNew/Badges/UnknownBadges.js"));
-app.use("/api/new/ignore", require("./routesNew/Badges/IgnoreBadges.js"));
+app.use("/api/new/skill", require("./routes/Badges/SkillBadges.js"));
+app.use("/api/new/game", require("./routes/Badges/GameBadges.js"));
+app.use("/api/new/not", require("./routes/Badges/UnknownBadges.js"));
+app.use("/api/new/ignore", require("./routes/Badges/IgnoreBadges.js"));
 
 // & Notifications and Users count
-app.use("/api/new/notification", require("./routesNew/notifications.js"));
-app.use("/api/new/user", require("./routesNew/UserEngagement/engagement.js"));
-app.use("/api/new/count", require("./routesNew/UserEngagement/users.js"));
+app.use("/api/new/notification", require("./routes/notifications.js"));
+app.use("/api/new/user", require("./routes/UserEngagement/engagement.js"));
+app.use("/api/new/count", require("./routes/UserEngagement/users.js"));
 
 // & Main calculation part
-app.use("/api/new/calculate", require("./routesNew/Calc/arcade.js"))
+app.use("/api/new/calculate", require("./routes/Calc/arcade.js"))
 
 
 
