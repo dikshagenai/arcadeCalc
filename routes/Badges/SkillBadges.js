@@ -15,7 +15,7 @@ const { fetchSkillBadges, addOrUpdateSkillBadge, deleteSkillBadge
 // --------------------------- MAIN ------------------------
 
 // Fetching all game badges
-router.get('/getBadges', async (req, res) => {
+router.get('/fetch', async (req, res) => {
     try {
         const result = await fetchSkillBadges();
         res.status(200).json(result);
@@ -25,7 +25,7 @@ router.get('/getBadges', async (req, res) => {
 })
 
 // Adding a new badge
-router.post('/addBadge', [
+router.post('/push', [
     body('badgeName', 'Skill badge name is required').notEmpty(),
     body('badgeLink', 'Skill badge link must be a valid URL').isURL(),
     body('totalLabs', 'Total labs must be a valid number').isInt({ min: 1 }),
@@ -50,7 +50,7 @@ router.post('/addBadge', [
 })
 
 // Deleting a badge
-router.delete('/deleteBadge', [
+router.delete('/pop', [
     body('badgeName', 'Badge Name is needed for this action!').notEmpty(),
     // AdminAuthentication
 ], async (req, res) => {

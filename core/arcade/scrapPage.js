@@ -31,7 +31,6 @@ const scrapPage = async (publicUrl) => {
         const subSoup = cheerio.load(badgesArea).html();
 
         let success = true;
-        // console.log(userDetails)
         return {
             userDetails,
             subSoup,

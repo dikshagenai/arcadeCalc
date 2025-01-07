@@ -54,12 +54,12 @@ app.get('/', async (req, res) => {
 // app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
 // app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
 
-
+// ----------------------------------- NEW
 // & Badges
-app.use("/api/new/skill", require("./routes/Badges/SkillBadges.js"));
-app.use("/api/new/game", require("./routes/Badges/GameBadges.js"));
-app.use("/api/new/not", require("./routes/Badges/UnknownBadges.js"));
-app.use("/api/new/ignore", require("./routes/Badges/IgnoreBadges.js"));
+app.use("/api/skillBadges", require("./routes/Badges/SkillBadges.js"));
+app.use("/api/gameBadges", require("./routes/Badges/GameBadges.js"));
+app.use("/api/unknownBadges", require("./routes/Badges/UnknownBadges.js"));
+app.use("/api/ignoreBadges", require("./routes/Badges/IgnoreBadges.js"));
 
 // & Notifications and Users count
 app.use("/api/new/notification", require("./routes/notifications.js"));

@@ -17,7 +17,7 @@ async function addBadge(badgeData) {
     try {
         // Use findOneAndUpdate with upsert to add or update the skill badge
         const updatedBadge = await Badges.findOneAndUpdate(
-            { badgeName: badgeData.badgeName }, // Match criteria (e.g., badgeName)
+            { badgeName: badgeData.badgeName.trim() }, // Match criteria (e.g., badgeName)
             { $set: badgeData }, // Data to update or insert
             { new: true, upsert: true } // Options: return the updated document and create if it doesn't exist
         );
@@ -32,7 +32,7 @@ async function addBadge(badgeData) {
 async function deleteBadge(badgeName) {
     try {
         // Use findOneAndDelete to delete a skill badge by its badgeName
-        const deletedBadge = await Badges.findOneAndDelete({ badgeName });
+        const deletedBadge = await Badges.findOneAndDelete({ badgeName: badgeName.trim() });
 
         // If the skill badge doesn't exist, return null
         if (!deletedBadge) {

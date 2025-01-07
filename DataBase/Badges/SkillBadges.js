@@ -24,7 +24,8 @@ async function fetchSkillBadges() {
 async function addOrUpdateSkillBadge(badgeData) {
     try {
         const updatedBadge = await SkillBadge.findOneAndUpdate(
-            { badgeName: badgeData.badgeName }, // Match criteria (e.g., skillBadge)
+            // trim this badgeName
+            { badgeName: badgeData.badgeName.trim() }, // Match criteria (e.g., skillBadge)
             { $set: badgeData }, // Update data
             { new: true, upsert: true } // Return updated badge and create if not found
         );
@@ -42,7 +43,7 @@ async function addOrUpdateSkillBadge(badgeData) {
  */
 async function deleteSkillBadge(skillBadgeName) {
     try {
-        const deletedBadge = await SkillBadge.findOneAndDelete({ badgeName: skillBadgeName });
+        const deletedBadge = await SkillBadge.findOneAndDelete({ badgeName: skillBadgeName.trim() });
         return { success: true, message: "Skill badge has been deleted", data: deletedBadge };
     } catch (error) {
         console.error('Error deleting skill badge:', error);

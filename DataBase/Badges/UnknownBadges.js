@@ -24,7 +24,7 @@ async function fetchUnknownBadges() {
 async function addOrUpdateUnknownBadge(badgeData) {
     try {
         const updatedBadge = await UnknownBadge.findOneAndUpdate(
-            { badgeName: badgeData.badgeName }, // Match criteria (e.g., badgeName)
+            { badgeName: badgeData.badgeName.trim() }, // Match criteria (e.g., badgeName)
             { $set: badgeData }, // Update data
             { new: true, upsert: true } // Return updated badge and create if not found
         );
@@ -42,7 +42,7 @@ async function addOrUpdateUnknownBadge(badgeData) {
  */
 async function deleteUnknownBadge(badgeName) {
     try {
-        const deletedBadge = await UnknownBadge.findOneAndDelete({ badgeName });
+        const deletedBadge = await UnknownBadge.findOneAndDelete({ badgeName: badgeName.trim() });
         return { success: true, message: 'Badge has been successfully deleted!', data: deletedBadge };
     } catch (error) {
         console.error('Error deleting unknown badge:', error);

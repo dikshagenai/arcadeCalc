@@ -10,7 +10,7 @@ const {
     fetchUnknownBadges, addOrUpdateUnknownBadge, deleteUnknownBadge } = require('../../DataBase/Badges/UnknownBadges');
 
 // Fetching all game badges
-router.get('/getBadges', async (req, res) => {
+router.get('/fetch', async (req, res) => {
     try {
         const result = await fetchUnknownBadges();
         res.status(200).json(result);
@@ -20,7 +20,7 @@ router.get('/getBadges', async (req, res) => {
 })
 
 // Adding a new badge
-router.post('/addBadge', [
+router.post('/push', [
     body('badgeName', 'Badge name is required').notEmpty(),
     body('profileUrl', 'Profile URL must be a valid URL').isURL(),
 ], async (req, res) => {
@@ -39,7 +39,7 @@ router.post('/addBadge', [
 })
 
 // Deleting a badge
-router.delete('/deleteBadge', [
+router.delete('/pop', [
     body('badgeName', 'Badge name is required').notEmpty(),
     AdminAuthentication
 ], async (req, res) => {

@@ -102,7 +102,6 @@ class Arcade {
             }
 
             const skillBadgesData = fetchedSkillBadges['data'];
-            let skillBadges = skillBadgesData.map(badge => badge.badgeName);
 
             // Game Badges
             const fetchedArcadeBadges = await getArcadeBadges();
@@ -147,9 +146,13 @@ class Arcade {
                 // &----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
 
                 // ~ Skill Badge
-                if (skillBadges && skillBadges.includes(badgeName)) {
+                if (skillBadgesData && (skillBadgesData.indexOf(badge => badge.badgeName === badgeName) !== -1)) {
+
                     // Remove the badge that has been found already!
-                    skillBadges = skillBadges.filter(badge => badge !== badgeName);
+                    const index = skillBadgesData.findIndex(badge => badge.badgeName === badgeNameToRemove);
+                    if (index !== -1) {
+                        skillBadgesData.splice(index, 1);
+                    }
 
 
                     // ~ Check for 2025 and specific date range
@@ -251,6 +254,15 @@ class Arcade {
             output.pointsCount = pointsCount;
             output.totalPoints = totalPoints;
 
+            // Taking the incomplete skill badges in more detailed and simple format.
+            let incompleteSkillBadges = {};
+            skillBadgesData.forEach(badge => {
+                const { badgeName, ...otherKeys } = badge.toObject ? badge.toObject() : badge; // Use toObject() if it exists
+                incompleteSkillBadges[badgeName] = otherKeys;
+            });
+
+
+            output.skillBadges = incompleteSkillBadges;
             return output;
 
 

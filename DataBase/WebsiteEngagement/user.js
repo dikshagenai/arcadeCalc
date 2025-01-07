@@ -55,11 +55,11 @@ async function incrementDashboardSearches() {
 
     try {
         // Endpoint to increment totalVisitedUsers
-        var entries = await IncrementUser.findOne();
+        var entries = await UsersCount.findOne();
         if (!entries) {
-            await IncrementUser.create({ dashboardSearches: 1, updates: [{ timestamp: new Date(), count: 1 }] });
+            await UsersCount.create({ dashboardSearches: 1, updates: [{ timestamp: new Date(), count: 1 }] });
         } else {
-            await IncrementUser.findOneAndUpdate(
+            await UsersCount.findOneAndUpdate(
                 {},
                 {
                     $inc: { dashboardSearches: 1 },

@@ -12,7 +12,7 @@ const { fetchBadges, addBadge, deleteBadge } = require('../../DataBase/Badges/Ga
 
 
 // Fetching all game badges
-router.get('/getBadges', async (req, res) => {
+router.get('/fetch', async (req, res) => {
     try {
         const result = await fetchBadges();
         res.status(200).json(result);
@@ -22,7 +22,7 @@ router.get('/getBadges', async (req, res) => {
 })
 
 // Adding a new badge
-router.post('/addBadge', [
+router.post('/push', [
     body('badgeName', 'Badge name is required').notEmpty(),
     body('badgeName', 'Badge name should be a string').isString(),
     body('points', 'Points must be a valid number').isInt({ min: 0 }),  // Ensure points is a positive integer
@@ -47,7 +47,7 @@ router.post('/addBadge', [
 })
 
 // Deleting a badge
-router.delete('/deleteBadge', [
+router.delete('/pop', [
     body('badgeName', 'Badge Name is needed for this action!').notEmpty(),
     // AdminAuthentication
 ],
