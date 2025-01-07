@@ -70,6 +70,9 @@ app.use("/api/new/count", require("./routes/UserEngagement/users.js"));
 app.use("/api/new/calculate", require("./routes/Calc/arcade.js"))
 
 
+// & Test
+app.use("/api/test", require("./routes/test/checkingFunctions.js"));
+
 
 // * Reload the website every 5 minutes. Replace with your Render URL.
 

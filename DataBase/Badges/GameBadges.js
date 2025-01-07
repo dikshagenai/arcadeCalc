@@ -9,7 +9,7 @@ async function fetchBadges() {
         return { success: true, message: 'Badges fetched and sorted successfully!', data: badges };
     } catch (error) {
         console.error('Error fetching and sorting badges:', error);
-        throw error;
+        return { success: false, message: error.message }
     }
 }
 
@@ -25,7 +25,7 @@ async function addBadge(badgeData) {
         return { success: true, message: 'Badge has been successfully added.', data: updatedBadge };
     } catch (error) {
         console.error('Error adding or updating badge:', error);
-        throw error;
+        return { success: false, message: error.message }
     }
 }
 
@@ -42,7 +42,7 @@ async function deleteBadge(badgeName) {
         return { success: true, message: 'Badge has been successfully deleted.', data: deletedBadge };
     } catch (error) {
         console.error('Error deleting badge:', error);
-        throw error;
+        return { success: false, message: error.message }
     }
 }
 

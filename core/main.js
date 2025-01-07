@@ -79,7 +79,7 @@ class Arcade {
 
             // ~------------------ SCRAPING THE PAGE ------------------ 
             const resultScrapPage = await scrapPage(publicUrl)
-            
+
 
             if (resultScrapPage['success'] == false) {
                 output.additionalData.message = "Failed to scrap page."
@@ -93,8 +93,26 @@ class Arcade {
 
 
             // ~----------- SAVING SKILL AND GAME BADGES FROM THE DATABASE --------------------------------
-            const skillBadges = await getSkillBadges();
-            const arcadeBadges = await getArcadeBadges();
+            // Skill Badge
+            const fetchedSkillBadges = await getSkillBadges();
+            if (fetchedSkillBadges['success'] === false) {
+                output.additionalData.success = false;
+                output.additionalData.message = fetchedSkillBadges['message'];
+                return { output };
+            }
+
+            const skillBadgesData = fetchedSkillBadges['data'];
+            let skillBadges = skillBadgesData.map(badge => badge.badgeName);
+
+            // Game Badges
+            const fetchedArcadeBadges = await getArcadeBadges();
+            if (fetchedArcadeBadges['success'] === false) {
+                output.additionalData.success = false;
+                output.additionalData.message = fetchedArcadeBadges['message'];
+                return { output };
+            }
+            const arcadeBadgesData = fetchedArcadeBadges['data'];
+            const arcadeBadges = arcadeBadgesData.map(badge => badge.badgeName);
 
 
             // ~------------------ CALCULATE THE POINTS ------------------ 
@@ -130,29 +148,50 @@ class Arcade {
 
                 // ~ Skill Badge
                 if (skillBadges && skillBadges.includes(badgeName)) {
-                    // ~ NEW
+                    // Remove the badge that has been found already!
+                    skillBadges = skillBadges.filter(badge => badge !== badgeName);
+
+
+                    // ~ Check for 2025 and specific date range
                     if (
                         year === 2025 &&
                         monthInInteger >= 1 &&
                         monthInInteger <= 6 &&
                         (monthInInteger !== 1 || date > 15)
                     ) {
-                        // increase count and points
+                        // Increase count and points
                         badgesCount['skillBadges'] += 1;
                         pointsCount['skillBadges'] += 0.5;
                         totalPoints += 0.5;
                     }
                     else {
-                        // increase count only
+                        // Increase count only
                         badgesCount['skillBadges'] += 1;
                     }
+
+                    // // ~ Check for 2025 and specific date range
+                    // if (
+                    //     year === 2024 &&
+                    //     monthInInteger === 12
+                    // ) {
+                    //     // Increase count and points
+                    //     badgesCount['skillBadges'] += 1;
+                    //     pointsCount['skillBadges'] += 0.5;
+                    //     totalPoints += 0.5;
+                    // }
+                    // else {
+                    //     // Increase count only
+                    //     badgesCount['skillBadges'] += 1;
+                    // }
                 }
 
 
                 // ~ Other game badges...
                 else if (arcadeBadges && arcadeBadges.includes(badgeName)) {
-                    let badgeType = arcadeBadges['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
-                    let point = arcadeBadges['points'] // points for the badge.
+
+                    let badgeIndex = arcadeBadges.indexOf(badgeName);
+                    let badgeType = arcadeBadgesData[badgeIndex]['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
+                    let point = arcadeBadgesData[badgeIndex]['points'] // points for the badge.
 
                     if (
                         year === 2025 &&
@@ -184,23 +223,6 @@ class Arcade {
                 }
 
                 // &----------------------------- END COUNTING THE POINTS -----------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

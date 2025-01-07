@@ -26,8 +26,8 @@ router.get('/getBadges', async (req, res) => {
 
 // Adding a new badge
 router.post('/addBadge', [
-    body('skillBadge', 'Skill badge name is required').notEmpty(),
-    body('skillBadgeLink', 'Skill badge link must be a valid URL').isURL(),
+    body('badgeName', 'Skill badge name is required').notEmpty(),
+    body('badgeLink', 'Skill badge link must be a valid URL').isURL(),
     body('totalLabs', 'Total labs must be a valid number').isInt({ min: 1 }),
     body('difficulty', 'Difficulty must be one of Introductory, Intermediate, or Advanced').isIn(['Introductory', 'Intermediate', 'Advanced']),
     body('image', 'Image link must be a valid URL').isURL(),

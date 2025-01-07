@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 // Define the SkillBadge schema
 const skillBadgeSchema = new Schema({
-    skillBadge: {
+    badgeName: {
         type: String,
         required: true,
     },
-    skillBadgeLink: {
+    badgeLink: {
         type: String,
         required: true,
     },
@@ -26,7 +26,7 @@ const skillBadgeSchema = new Schema({
     },
     solution: {
         type: String,
-        required: true,
+        default: "https://www.youtube.com/"
     }
 });
 
