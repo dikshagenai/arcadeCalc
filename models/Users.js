@@ -7,6 +7,9 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String, required: true
     },
+    profileImage: {
+        type: String, required: false, default: 'https://i.pinimg.com/736x/b8/cc/52/b8cc521993c9de7a8a6389255405f535.jpg',
+    },
     publicUrl: {
         type: String, required: true
     },

@@ -240,7 +240,8 @@ class Arcade {
                 "points": totalPoints,
                 "swagsEligibility": "None",
                 "facilitatorPoints": 0,
-                "swagsEligibilityFacilitator": "NaN"
+                "swagsEligibilityFacilitator": "NaN",
+                "profileImage": userDetails.profileImage
             }
             storeUserData(dataForDataBase);
 
