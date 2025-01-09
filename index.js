@@ -66,7 +66,7 @@ app.use("/api/unknownBadges", require("./routes/Badges/UnknownBadges.js"));
 app.use("/api/ignoreBadges", require("./routes/Badges/IgnoreBadges.js"));
 
 // & Notifications and Users count
-app.use("/api/notification", require("./routes/notifications.js"));
+app.use("/api/notifications", require("./routes/notifications.js"));
 app.use("/api/usersData", require("./routes/UserEngagement/engagement.js"));
 app.use("/api/analytics", require("./routes/UserEngagement/users.js"));
 
@@ -86,6 +86,7 @@ app.use("/api/test", require("./routes/test/checkingFunctions.js"));
 
 // * Updates rank every 10 minutes.
 setInterval(updateRanks, 10 * 60 * 1000); // Update every 10 minutes
+// updateRanks();
 
 
 // * Reload the website every 5 minutes. Replace with your Render URL.

@@ -38,7 +38,7 @@ async function getLeaderboardAndUser(userId) {
         const topUsers = await UsersEngagement.find({ rank: { $ne: -1 } }).sort({ rank: 1 }).limit(10).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints']);
 
         // Fetch the current user by ID
-        const currentUser = await UsersEngagement.findOne({ id: userId });
+        const currentUser = await UsersEngagement.findOne({ id: userId }).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints']);
 
         // Include current user only if their rank is valid
         const currentUserData = currentUser && currentUser.rank !== -1
