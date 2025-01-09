@@ -6,7 +6,7 @@ const AdminAuthentication = require('../../middleware/verifyAdmin')
 
 // ! For fetching all users...
 router.post('/fetchUsers',
-    // AdminAuthentication,
+    AdminAuthentication,
     async (req, res) => {
 
         try {
@@ -22,7 +22,7 @@ router.post('/fetchUsers',
     });
 
 router.post('/totalUsers',
-    // AdminAuthentication,
+    AdminAuthentication,
     async (req, res) => {
         try {
             const amountOfUsers = (await User.find()).length

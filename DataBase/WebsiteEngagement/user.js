@@ -14,6 +14,49 @@ async function UpdateUsersEngagement(data) {
     }
 }
 
+async function updateRanks() {
+    try {
+        // Fetch all users sorted by points, including those with rank -1
+        const users = await UsersEngagement.find({}).sort({ points: -1 });
+
+        // Assign ranks to all users
+        for (let i = 0; i < users.length; i++) {
+            users[i].rank = i + 1; // Rank starts from 1
+            await users[i].save();
+        }
+
+        console.log('Ranks updated successfully.');
+    } catch (error) {
+        console.error('Error updating ranks:', error);
+    }
+}
+
+
+async function getLeaderboardAndUser(userId) {
+    try {
+        // Fetch the top 10 users, excluding those with rank -1
+        const topUsers = await UsersEngagement.find({ rank: { $ne: -1 } }).sort({ rank: 1 }).limit(10);
+
+        // Fetch the current user by ID
+        const currentUser = await UsersEngagement.findOne({ id: userId });
+
+        // Include current user only if their rank is valid
+        const currentUserData = currentUser && currentUser.rank !== -1
+            ? { ...currentUser.toObject() }
+            : null;
+
+        return {
+            success: true,
+            topUsers,
+            currentUser: currentUserData
+        };
+    } catch (error) {
+        console.error('Error fetching leaderboard and user:', error);
+        return { success: false, error: 'Server Error' };
+    }
+}
+
+
 // -------------- Users Count --------------
 
 // ! To increment the user count... (overall main searches)
@@ -108,4 +151,4 @@ async function countDashboardUsers() {
 }
 
 
-module.exports = { UpdateUsersEngagement, incrementUniqueUsers, incrementDashboardSearches, countUniqueUsers, countDashboardUsers };
+module.exports = { UpdateUsersEngagement, updateRanks, getLeaderboardAndUser, incrementUniqueUsers, incrementDashboardSearches, countUniqueUsers, countDashboardUsers };

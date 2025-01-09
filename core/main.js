@@ -146,36 +146,20 @@ class Arcade {
                 // &----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
 
                 // ~ Skill Badge
-                if (skillBadgesData && (skillBadgesData.indexOf(badge => badge.badgeName === badgeName) !== -1)) {
-
+                if (skillBadgesData && (skillBadgesData.findIndex(badge => badge.badgeName === badgeName) !== -1)) {
                     // Remove the badge that has been found already!
-                    const index = skillBadgesData.findIndex(badge => badge.badgeName === badgeNameToRemove);
+                    const index = skillBadgesData.findIndex(badge => badge.badgeName === badgeName);
                     if (index !== -1) {
                         skillBadgesData.splice(index, 1);
                     }
 
 
                     // ~ Check for 2025 and specific date range
-                    if (
-                        year === 2025 &&
-                        monthInInteger >= 1 &&
-                        monthInInteger <= 6 &&
-                        (monthInInteger !== 1 || date > 15)
-                    ) {
-                        // Increase count and points
-                        badgesCount['skillBadges'] += 1;
-                        pointsCount['skillBadges'] += 0.5;
-                        totalPoints += 0.5;
-                    }
-                    else {
-                        // Increase count only
-                        badgesCount['skillBadges'] += 1;
-                    }
-
-                    // // ~ Check for 2025 and specific date range
                     // if (
-                    //     year === 2024 &&
-                    //     monthInInteger === 12
+                    //     year === 2025 &&
+                    //     monthInInteger >= 1 &&
+                    //     monthInInteger <= 6 &&
+                    //     (monthInInteger !== 1 || date > 15)
                     // ) {
                     //     // Increase count and points
                     //     badgesCount['skillBadges'] += 1;
@@ -186,6 +170,21 @@ class Arcade {
                     //     // Increase count only
                     //     badgesCount['skillBadges'] += 1;
                     // }
+
+                    // ~ For experiment and specific date range
+                    // console.log(year)
+                    if (
+                        year === 2024
+                    ) {
+                        // Increase count and points
+                        badgesCount['skillBadges'] += 1;
+                        pointsCount['skillBadges'] += 0.5;
+                        totalPoints += 0.5;
+                    }
+                    else {
+                        // Increase count only
+                        badgesCount['skillBadges'] += 1;
+                    }
                 }
 
 
@@ -247,9 +246,7 @@ class Arcade {
 
 
             // return data 
-            output.additionalData.success = true;
-            output.additionalData.statusCode = 200;
-            output.additionalData.message = "Profile analyzed successfully!";
+            output.userDetails = userDetails;
             output.badgesCount = badgesCount;
             output.pointsCount = pointsCount;
             output.totalPoints = totalPoints;
@@ -261,10 +258,14 @@ class Arcade {
                 incompleteSkillBadges[badgeName] = otherKeys;
             });
 
-
             output.skillBadges = incompleteSkillBadges;
-            return output;
 
+            // Additional data
+            output.additionalData.success = true;
+            output.additionalData.statusCode = 200;
+            output.additionalData.message = "Profile analyzed successfully!";
+
+            return output;
 
         } catch (error) {
             output['ErrorMessage'] = error.message;

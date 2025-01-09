@@ -11,9 +11,8 @@ const { body, validationResult } = require('express-validator');
 router.post('/', [
     body('publicUrl')
         .notEmpty()
-        .withMessage('We need a public URL so we can work on it')
-        .custom((value) => value.includes('https://www.cloudskillsboost.google/public_profiles/'))
-        .withMessage('Public URL is wrong.'),
+        .withMessage('Please provide a valid public URL')
+        .custom((value) => value.includes('https://www.cloudskillsboost.google/public_profiles/')),
 ],
     async (req, res) => {
         // Check for the validation results!

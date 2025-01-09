@@ -21,8 +21,10 @@ const userSchema = new mongoose.Schema({
     },
     swagsEligibilityFacilitator: {
         type: String, required: false, default: 'NaN'
-    }
+    },
+    rank: { type: Number, required: false, default: -1 } // New field to store rank
 });
 
 const User = mongoose.model('UserDetails', userSchema);
+
 module.exports = User;

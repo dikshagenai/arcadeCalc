@@ -4,6 +4,10 @@ const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const axios = require('axios');
 
+// * Update Ranks
+const { updateRanks } = require('./DataBase/WebsiteEngagement/user.js');
+
+
 // * Files
 const SERVER = require('./buildTime')
 
@@ -62,23 +66,30 @@ app.use("/api/unknownBadges", require("./routes/Badges/UnknownBadges.js"));
 app.use("/api/ignoreBadges", require("./routes/Badges/IgnoreBadges.js"));
 
 // & Notifications and Users count
-app.use("/api/new/notification", require("./routes/notifications.js"));
-app.use("/api/new/user", require("./routes/UserEngagement/engagement.js"));
-app.use("/api/new/count", require("./routes/UserEngagement/users.js"));
+app.use("/api/notification", require("./routes/notifications.js"));
+app.use("/api/usersData", require("./routes/UserEngagement/engagement.js"));
+app.use("/api/analytics", require("./routes/UserEngagement/users.js"));
 
 // & Main calculation part
-app.use("/api/new/calculate", require("./routes/Calc/arcade.js"))
+app.use("/api/analyzeProfile", require("./routes/Calc/arcade.js"))
+app.use("/api/leaderboard", require("./routes/Calc/leaderboard.js"))
+
+// & Admin 
+
+
+
 
 
 // & Test
 app.use("/api/test", require("./routes/test/checkingFunctions.js"));
 
 
+// * Updates rank every 10 minutes.
+setInterval(updateRanks, 10 * 60 * 1000); // Update every 10 minutes
+
+
 // * Reload the website every 5 minutes. Replace with your Render URL.
-
-
 const interval = 300000; // Interval in milliseconds (5 minutes)
-
 // Reloader Function
 function reloadWebsite() {
     axios.get(SERVER)
@@ -89,7 +100,6 @@ function reloadWebsite() {
             console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
         });
 }
-
 setInterval(reloadWebsite, interval);
 
 app.listen(PORT, () => {

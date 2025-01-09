@@ -23,7 +23,7 @@ router.post('/addNotifications', [
     body('imageUrl', 'Please provide a link for the image.').isLength({ min: 3 }),
     body('content', 'Please share description about the notification').isLength({ min: 3 }),
     body('redirectTo', 'Must pass the link where to redirect the user.').isLength({ min: 5 }),
-    // AdminAuthentication,
+    AdminAuthentication,
 ], async (req, res) => {
     // Check for the validation results!
     const errors = validationResult(req);
@@ -48,7 +48,7 @@ router.post('/addNotifications', [
 // ^ DELETE NOTIFICATION
 router.delete('/deleteNotification', [
     body('key', 'Please pass a unique key').isLength({ min: 3 }),
-    // AdminAuthentication,
+    AdminAuthentication,
 ], async (req, res) => {
     // Check for the validation results!
     const errors = validationResult(req);
