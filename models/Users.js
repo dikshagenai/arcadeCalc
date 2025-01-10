@@ -28,6 +28,6 @@ const userSchema = new mongoose.Schema({
     rank: { type: Number, required: false, default: -1 } // New field to store rank
 });
 
-const User = mongoose.model('UserDetails', userSchema);
+const User = mongoose.model('UserDetails2025(1)', userSchema);
 
 module.exports = User;
