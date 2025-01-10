@@ -23,6 +23,7 @@ router.get('/fetch', async (req, res) => {
 router.post('/push', [
     body('badgeName', 'Badge name is required').notEmpty(),
     body('profileUrl', 'Profile URL must be a valid URL').isURL(),
+    AdminAuthentication
 ], async (req, res) => {
     // Check for the validation results!
     const errors = validationResult(req);
@@ -49,7 +50,7 @@ router.delete('/pop', [
         return res.status(400).json({ errors: errors.array() });
     }
     try {
-        const {badgeName} = req.body;
+        const { badgeName } = req.body;
         const result = await deleteUnknownBadge(badgeName);
         res.status(200).json(result);
     } catch (error) {

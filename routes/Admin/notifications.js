@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { fetchNotifications, addOrUpdateNotification, deleteNotification, } = require("../DataBase/Notifications")
+const { fetchNotifications, addOrUpdateNotification, deleteNotification, } = require("../../DataBase/Notifications")
 
 // & Validations
 const { body, validationResult } = require('express-validator');
-const AdminAuthentication = require('../middleware/verifyAdmin')
+const AdminAuthentication = require('../../middleware/verifyAdmin')
 
 
 // ^ This is responsible to fetch all the notifications

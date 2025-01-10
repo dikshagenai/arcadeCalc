@@ -28,7 +28,7 @@ router.post('/push', [
     body('points', 'Points must be a valid number').isInt({ min: 0 }),  // Ensure points is a positive integer
     body('badgeMonth', 'Badge month must be a number between 1 and 12').isInt({ min: 1, max: 12 }),
     body('badgeType', "Please select a badge type").notEmpty().isIn(['gameBadges', 'triviaBadges', 'certificationBadges', 'specialBadges', 'baseCampBadges']),
-    // AdminAuthentication
+    AdminAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!
@@ -49,7 +49,7 @@ router.post('/push', [
 // Deleting a badge
 router.delete('/pop', [
     body('badgeName', 'Badge Name is needed for this action!').notEmpty(),
-    // AdminAuthentication
+    AdminAuthentication
 ],
     async (req, res) => {
 

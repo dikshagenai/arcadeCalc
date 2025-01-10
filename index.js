@@ -53,7 +53,6 @@ app.get('/', async (req, res) => {
 // app.use("/api/badges", require("./routes/BasicEndPoints/extractBadgesFromDB.js"))
 
 // & For Admin
-// app.use("/admin", require("./routes/AuthRequired/admin.js")); // used for login
 // app.use("/admin/users", require("./routes/AuthRequired/users")) // used for fetching users.
 // app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
 // app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
@@ -66,7 +65,7 @@ app.use("/api/unknownBadges", require("./routes/Badges/UnknownBadges.js"));
 app.use("/api/ignoreBadges", require("./routes/Badges/IgnoreBadges.js"));
 
 // & Notifications and Users count
-app.use("/api/notifications", require("./routes/notifications.js"));
+app.use("/api/notifications", require("./routes/Admin/notifications.js"));
 app.use("/api/usersData", require("./routes/UserEngagement/engagement.js"));
 app.use("/api/analytics", require("./routes/UserEngagement/users.js"));
 
@@ -75,6 +74,7 @@ app.use("/api/analyzeProfile", require("./routes/Calc/arcade.js"))
 app.use("/api/leaderboard", require("./routes/Calc/leaderboard.js"))
 
 // & Admin 
+app.use("/api/admin/auth", require("./routes/Admin/AdminLogin")); // used for login
 app.use("/api/admin", require("./routes/Admin/handleIncompleteBadges.js"))
 
 

@@ -25,7 +25,7 @@ router.get('/fetch', async (req, res) => {
 router.post('/push', [
     body('badgeName', 'Badge name is required').notEmpty(),
     body('reason', 'Reason is required').notEmpty(),
-    // AdminAuthentication
+    AdminAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!
@@ -46,7 +46,7 @@ router.post('/push', [
 // Deleting a badge
 router.delete('/pop', [
     body('badgeName', 'Badge Name is needed for this action!').notEmpty(),
-    // AdminAuthentication
+    AdminAuthentication
 ],
     async (req, res) => {
 

@@ -9,7 +9,7 @@ const { body, validationResult } = require('express-validator');
 
 // Fetch unknown badges.
 router.post('/fetchUnknownBadges', [
-    // AdminAuthentication
+    AdminAuthentication
 ], async (req, res) => {
 
     try {
@@ -33,7 +33,7 @@ router.delete('/deleteUnknownBadge', [
     body('badgeName')
         .notEmpty()
         .withMessage('Please provide a badge name to delete.'),
-    // AdminAuthentication
+    AdminAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!

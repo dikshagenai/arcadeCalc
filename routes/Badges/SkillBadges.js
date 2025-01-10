@@ -31,7 +31,7 @@ router.post('/push', [
     body('totalLabs', 'Total labs must be a valid number').isInt({ min: 1 }),
     body('difficulty', 'Difficulty must be one of Introductory, Intermediate, or Advanced').isIn(['Introductory', 'Intermediate', 'Advanced']),
     body('image', 'Image link must be a valid URL').isURL(),
-    // AdminAuthentication
+    AdminAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!
@@ -52,7 +52,7 @@ router.post('/push', [
 // Deleting a badge
 router.delete('/pop', [
     body('badgeName', 'Badge Name is needed for this action!').notEmpty(),
-    // AdminAuthentication
+    AdminAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!
