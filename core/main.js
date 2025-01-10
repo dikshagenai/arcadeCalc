@@ -112,7 +112,6 @@ class Arcade {
                 return { output };
             }
             const arcadeBadgesData = fetchedArcadeBadges['data'];
-            const arcadeBadges = arcadeBadgesData.map(badge => badge.badgeName);
 
             // Ignore Badges
             const fetchedIgnoreBadges = await getIgnoreBadges();
@@ -166,26 +165,11 @@ class Arcade {
 
 
                     // ~ Check for 2025 and specific date range
-                    // if (
-                    //     year === 2025 &&
-                    //     monthInInteger >= 1 &&
-                    //     monthInInteger <= 6 &&
-                    //     (monthInInteger !== 1 || date > 15)
-                    // ) {
-                    //     // Increase count and points
-                    //     badgesCount['skillBadges'] += 1;
-                    //     pointsCount['skillBadges'] += 0.5;
-                    //     totalPoints += 0.5;
-                    // }
-                    // else {
-                    //     // Increase count only
-                    //     badgesCount['skillBadges'] += 1;
-                    // }
-
-                    // ~ For experiment and specific date range
-                    // console.log(year)
                     if (
-                        year === 2024
+                        year === 2025 &&
+                        monthInInteger >= 1 &&
+                        monthInInteger <= 6 &&
+                        (monthInInteger !== 1 || date >= 9)
                     ) {
                         // Increase count and points
                         badgesCount['skillBadges'] += 1;
@@ -196,21 +180,37 @@ class Arcade {
                         // Increase count only
                         badgesCount['skillBadges'] += 1;
                     }
+
+                    // ~ For experiment and specific date range
+                    // console.log(year)
+                    // if (
+                    //     year === 2024
+                    // ) {
+                    //     // Increase count and points
+                    //     badgesCount['skillBadges'] += 1;
+                    //     pointsCount['skillBadges'] += 0.5;
+                    //     totalPoints += 0.5;
+                    // }
+                    // else {
+                    //     // Increase count only
+                    //     badgesCount['skillBadges'] += 1;
+                    // }
                 }
 
 
                 // ~ Other game badges...
-                else if (arcadeBadges && (arcadeBadges.includes(badgeName))) {
+                else if (arcadeBadgesData && (arcadeBadgesData.findIndex(badge => badge.badgeName === badgeName) !== -1)) {
 
-                    let badgeIndex = arcadeBadges.indexOf(badgeName);
+                    let badgeIndex = arcadeBadgesData.findIndex(badge => badge.badgeName === badgeName);
                     let badgeType = arcadeBadgesData[badgeIndex]['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
-                    let point = arcadeBadgesData[badgeIndex]['points'] // points for the badge.
-
+                    const point = arcadeBadgesData[badgeIndex]['points'] // points for the badge.
+                    console.log(point)
+                    
                     if (
                         year === 2025 &&
                         monthInInteger >= 1 &&
                         monthInInteger <= 6 &&
-                        (monthInInteger !== 1 || date > 15)
+                        (monthInInteger !== 1 || date >= 9)
                     ) {
                         // increase count and points
                         badgesCount[badgeType] += 1;

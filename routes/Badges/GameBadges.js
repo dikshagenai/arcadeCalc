@@ -27,7 +27,7 @@ router.post('/push', [
     body('badgeName', 'Badge name should be a string').isString(),
     body('points', 'Points must be a valid number').isInt({ min: 0 }),  // Ensure points is a positive integer
     body('badgeMonth', 'Badge month must be a number between 1 and 12').isInt({ min: 1, max: 12 }),
-    body('badgeType', "Please select a badge type").notEmpty().isIn(['Game', 'Trivia', 'Certification', 'Speedrun']),
+    body('badgeType', "Please select a badge type").notEmpty().isIn(['gameBadges', 'triviaBadges', 'certificationBadges', 'specialBadges', 'baseCampBadges']),
     // AdminAuthentication
 ], async (req, res) => {
 
