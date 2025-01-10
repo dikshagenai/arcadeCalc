@@ -4,6 +4,10 @@ const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const axios = require('axios');
 
+// * Update Ranks
+const { updateRanks } = require('./DataBase/WebsiteEngagement/user.js');
+
+
 // * Files
 const SERVER = require('./buildTime')
 
@@ -30,40 +34,63 @@ app.get('/', async (req, res) => {
 
 
 // ^ For calculating points
-app.use('/calculate', require('./routes/NoAuthRequired/calculate'));
+// app.use('/calculate', require('./routes/NoAuthRequired/calculate'));
 
 // ^ For Incomplete Skill Badges.
-app.use('/incompleteSkillBadges', require('./routes/NoAuthRequired/incompleteSkillBadges'));
+// app.use('/incompleteSkillBadges', require('./routes/NoAuthRequired/incompleteSkillBadges'));
 
 
 
 // ! API BASED REQUESTS.
 // & For storing Users and Notifications.
-app.use("/api/users", require("./routes/NoAuthRequired/users.js"));
-app.use("/api/notifications", require("./routes/NoAuthRequired/notifications.js"));
+// app.use("/api/users", require("./routes/NoAuthRequired/users.js"));
+// app.use("/api/notifications", require("./routes/NoAuthRequired/notifications.js"));
 
 // & For storing responses of the contact page.
-app.use("/api/contact", require("./routes/NoAuthRequired/contact.js"));
+// app.use("/api/contact", require("./routes/NoAuthRequired/contact.js"));
 
 // & For fetching badges.
-app.use("/api/badges", require("./routes/BasicEndPoints/extractBadgesFromDB.js"))
+// app.use("/api/badges", require("./routes/BasicEndPoints/extractBadgesFromDB.js"))
 
 // & For Admin
-app.use("/admin", require("./routes/AuthRequired/admin.js")); // used for login
-app.use("/admin/users", require("./routes/AuthRequired/users")) // used for fetching users.
-app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
-app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
+// app.use("/admin/users", require("./routes/AuthRequired/users")) // used for fetching users.
+// app.use("/admin/contact", require("./routes/AuthRequired/contact.js"))
+// app.use("/admin/notifications", require("./routes/AuthRequired/notifications.js"))
+
+// ----------------------------------- NEW
+// & Badges
+app.use("/api/skillBadges", require("./routes/Badges/SkillBadges.js"));
+app.use("/api/gameBadges", require("./routes/Badges/GameBadges.js"));
+app.use("/api/unknownBadges", require("./routes/Badges/UnknownBadges.js"));
+app.use("/api/ignoreBadges", require("./routes/Badges/IgnoreBadges.js"));
+
+// & Notifications and Users count
+app.use("/api/notifications", require("./routes/Admin/notifications.js"));
+app.use("/api/usersData", require("./routes/UserEngagement/engagement.js"));
+app.use("/api/analytics", require("./routes/UserEngagement/users.js"));
+
+// & Main calculation part
+app.use("/api/analyzeProfile", require("./routes/Calc/arcade.js"))
+app.use("/api/leaderboard", require("./routes/Calc/leaderboard.js"))
+
+// & Admin 
+app.use("/api/admin/auth", require("./routes/Admin/AdminLogin")); // used for login
+app.use("/api/admin", require("./routes/Admin/handleIncompleteBadges.js"))
 
 
 
 
+// & Test
+app.use("/api/test", require("./routes/test/checkingFunctions.js"));
+
+
+// * Updates rank every 10 minutes.
+setInterval(updateRanks, 10 * 60 * 1000); // Update every 10 minutes
+// updateRanks();
 
 
 // * Reload the website every 5 minutes. Replace with your Render URL.
-
-
 const interval = 300000; // Interval in milliseconds (5 minutes)
-
 // Reloader Function
 function reloadWebsite() {
     axios.get(SERVER)
@@ -74,7 +101,6 @@ function reloadWebsite() {
             console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);
         });
 }
-
 setInterval(reloadWebsite, interval);
 
 app.listen(PORT, () => {
