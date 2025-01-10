@@ -75,7 +75,7 @@ app.use("/api/analyzeProfile", require("./routes/Calc/arcade.js"))
 app.use("/api/leaderboard", require("./routes/Calc/leaderboard.js"))
 
 // & Admin 
-
+app.use("/api/admin", require("./routes/Admin/handleIncompleteBadges.js"))
 
 
 

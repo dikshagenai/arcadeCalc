@@ -5,6 +5,7 @@ const cheerio = require('cheerio');
 // fetch badges from database
 const getArcadeBadges = require("../DataBase/Badges/GameBadges").fetchBadges;
 const getSkillBadges = require("../DataBase/Badges/SkillBadges").fetchSkillBadges;
+const getIgnoreBadges = require("../DataBase/Badges/IgnoreBadges").fetchBadges;
 
 // convert monthStr to monthInt
 const monthInt = require("./arcade/monthStrToInt");
@@ -43,7 +44,7 @@ class Arcade {
             skillBadges: 0,
             gameBadges: 0,
             triviaBadges: 0,
-            certificationZoneBadges: 0,
+            certificationBadges: 0,
             specialBadges: 0,
             baseCampBadges: 0,
             unknownBadges: "NaN",
@@ -112,6 +113,16 @@ class Arcade {
             }
             const arcadeBadgesData = fetchedArcadeBadges['data'];
             const arcadeBadges = arcadeBadgesData.map(badge => badge.badgeName);
+
+            // Ignore Badges
+            const fetchedIgnoreBadges = await getIgnoreBadges();
+            if (fetchedIgnoreBadges['success'] === false) {
+                output.additionalData.success = false;
+                output.additionalData.message = fetchedIgnoreBadges['message'];
+                return { output };
+            }
+
+            const ignoreBadgesData = fetchedIgnoreBadges['data'];
 
 
             // ~------------------ CALCULATE THE POINTS ------------------ 
@@ -189,7 +200,7 @@ class Arcade {
 
 
                 // ~ Other game badges...
-                else if (arcadeBadges && arcadeBadges.includes(badgeName)) {
+                else if (arcadeBadges && (arcadeBadges.includes(badgeName))) {
 
                     let badgeIndex = arcadeBadges.indexOf(badgeName);
                     let badgeType = arcadeBadgesData[badgeIndex]['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
@@ -214,8 +225,14 @@ class Arcade {
                 }
 
 
+                else if (ignoreBadgesData && (ignoreBadgesData.findIndex(badge => badge.badgeName === badgeName) !== -1)) {
+                    // no need to do anything its gonna be ignored.
+                }
+
                 // ~ Unknown badges...
                 else {
+                    badgesCount['unknownBadges'] += 1;
+
                     // ~ add unknown badges in the database
                     try {
                         addUnknownBadges({ badgeName, badgeLink })

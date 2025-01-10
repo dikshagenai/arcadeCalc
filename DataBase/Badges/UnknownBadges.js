@@ -10,7 +10,7 @@ async function fetchUnknownBadges() {
         return { success: true, message: 'Badges has been successfully fetched', data: badges };
     } catch (error) {
         console.error('Error fetching unknown badges:', error);
-        throw error;
+        return { success: false, message: 'Error fetching unknown badges', error: error.message }
     }
 }
 
@@ -31,7 +31,7 @@ async function addOrUpdateUnknownBadge(badgeData) {
         return { success: true, message: 'The badge has been successfully updated.', data: updatedBadge };
     } catch (error) {
         console.error('Error adding or updating unknown badge:', error);
-        throw error;
+        return { success: false, message: 'Error adding or updating unknown badge', error: error.message }
     }
 }
 
@@ -46,7 +46,8 @@ async function deleteUnknownBadge(badgeName) {
         return { success: true, message: 'Badge has been successfully deleted!', data: deletedBadge };
     } catch (error) {
         console.error('Error deleting unknown badge:', error);
-        throw error;
+        return { success: false, message: 'Error deleting unknown badge', error: error.message }
+
     }
 }
 
