@@ -260,7 +260,9 @@ class Arcade {
                 "swagsEligibilityFacilitator": "NaN",
                 "profileImage": userDetails.profileImage
             }
-            storeUserData(dataForDataBase);
+            if (dataForDataBase.name != "" && dataForDataBase.points != 0){
+                storeUserData(dataForDataBase);
+            }
 
 
             // return data 
