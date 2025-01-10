@@ -5,6 +5,7 @@ const router = express.Router();
 // validations
 const { body, validationResult } = require('express-validator');
 const AdminAuthentication = require('../../middleware/verifyAdmin');
+const WebsiteAuthentication = require('../../middleware/verifyWebsite');
 
 // importing functions from the database folder
 const { fetchSkillBadges, addOrUpdateSkillBadge, deleteSkillBadge
