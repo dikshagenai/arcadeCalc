@@ -10,6 +10,11 @@ const unknownBadgeSchema = new Schema({
     badgeLink: {
         type: String,
         required: true
+    },
+    badgeImg: {
+        type: String,
+        required: true,
+        default: "NULL"
     }
 });
 

@@ -133,7 +133,7 @@ class Arcade {
                 const $ = cheerio.load(badge);
                 // parsing Badge url (just in case, it is not present in the database) 
                 let badgeLink = $('a').first().attr('href');
-
+                let badgeImg = $('img').first().attr('src');
                 //  parsing badge details -> Name, Claimed On
                 let badgeName = $('img').first().attr('alt').trim();
                 badgeName = badgeName.split(" ").slice(2).join(" ");
@@ -205,7 +205,7 @@ class Arcade {
                     let badgeType = arcadeBadgesData[badgeIndex]['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
                     const point = arcadeBadgesData[badgeIndex]['points'] // points for the badge.
                     console.log(point)
-                    
+
                     if (
                         year === 2025 &&
                         monthInInteger >= 1 &&
@@ -235,7 +235,8 @@ class Arcade {
 
                     // ~ add unknown badges in the database
                     try {
-                        addUnknownBadges({ badgeName, badgeLink })
+                        console.log(`Image url -> ${badgeImg}`)
+                        addUnknownBadges({ badgeName, badgeLink, badgeImg })
                     } catch (error) {
                         console.log('Error while saving data in database' + error);
                     }
@@ -260,7 +261,7 @@ class Arcade {
                 "swagsEligibilityFacilitator": "NaN",
                 "profileImage": userDetails.profileImage
             }
-            if (dataForDataBase.name != "" && dataForDataBase.points != 0){
+            if (dataForDataBase.name != "" && dataForDataBase.points != 0) {
                 storeUserData(dataForDataBase);
             }
 

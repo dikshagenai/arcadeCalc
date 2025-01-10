@@ -8,7 +8,7 @@ const router = express.Router();
 
 // ^ Middleware for authentication
 const authMiddleware = (req, res, next) => {
-    const authHeader = req.headers.authorization;
+    const authHeader = req.headers.source;
     if (!authHeader) {
         return res.status(401).json({ message: 'Unauthorized Source Detected!', success: false });
     }
