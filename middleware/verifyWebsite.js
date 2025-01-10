@@ -10,7 +10,7 @@ const router = express.Router();
 const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
-        return res.status(401).json({ message: 'Unauthorized Access!', success: false });
+        return res.status(401).json({ message: 'Unauthorized Source Detected!', success: false });
     }
 
     const token = authHeader;
@@ -19,10 +19,10 @@ const authMiddleware = (req, res, next) => {
             next();
         }
         else {
-            return res.status(403).json({ message: 'Unauthorized access detected!', success: false });
+            return res.status(403).json({ message: 'Unauthorized Source detected!', success: false });
         }
     } catch (error) {
-        return res.status(403).json({ message: 'Unauthorized access detected!', success: false });
+        return res.status(403).json({ message: 'Unauthorized Source detected!', success: false });
     }
 };
 

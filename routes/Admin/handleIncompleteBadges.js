@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { fetchUnknownBadges, deleteUnknownBadge } = require('../../DataBase/Badges/UnknownBadges');
 const AdminAuthentication = require('../../middleware/verifyAdmin');
+const WebsiteAuthentication = require('../../middleware/verifyWebsite');
 
 // VALIDATION
 const { body, validationResult } = require('express-validator');
@@ -9,7 +10,8 @@ const { body, validationResult } = require('express-validator');
 
 // Fetch unknown badges.
 router.post('/fetchUnknownBadges', [
-    AdminAuthentication
+    AdminAuthentication,
+    WebsiteAuthentication
 ], async (req, res) => {
 
     try {
@@ -33,7 +35,8 @@ router.delete('/deleteUnknownBadge', [
     body('badgeName')
         .notEmpty()
         .withMessage('Please provide a badge name to delete.'),
-    AdminAuthentication
+    AdminAuthentication,
+    WebsiteAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!

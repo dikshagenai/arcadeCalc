@@ -4,6 +4,7 @@ const router = express.Router();
 // validations
 const { body, validationResult } = require('express-validator');
 const AdminAuthentication = require('../../middleware/verifyAdmin');
+const WebsiteAuthentication = require('../../middleware/verifyWebsite');
 
 
 
@@ -12,7 +13,7 @@ const { fetchBadges, addBadge, deleteBadge } = require('../../DataBase/Badges/Ga
 
 
 // Fetching all game badges
-router.get('/fetch', async (req, res) => {
+router.get('/fetch', WebsiteAuthentication, async (req, res) => {
     try {
         const result = await fetchBadges();
         res.status(200).json(result);
@@ -28,7 +29,8 @@ router.post('/push', [
     body('points', 'Points must be a valid number').isInt({ min: 0 }),  // Ensure points is a positive integer
     body('badgeMonth', 'Badge month must be a number between 1 and 12').isInt({ min: 1, max: 12 }),
     body('badgeType', "Please select a badge type").notEmpty().isIn(['gameBadges', 'triviaBadges', 'certificationBadges', 'specialBadges', 'baseCampBadges']),
-    AdminAuthentication
+    AdminAuthentication,
+    WebsiteAuthentication
 ], async (req, res) => {
 
     // Check for the validation results!
@@ -49,7 +51,8 @@ router.post('/push', [
 // Deleting a badge
 router.delete('/pop', [
     body('badgeName', 'Badge Name is needed for this action!').notEmpty(),
-    AdminAuthentication
+    AdminAuthentication,
+    WebsiteAuthentication
 ],
     async (req, res) => {
 

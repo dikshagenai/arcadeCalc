@@ -5,10 +5,11 @@ const { fetchNotifications, addOrUpdateNotification, deleteNotification, } = req
 // & Validations
 const { body, validationResult } = require('express-validator');
 const AdminAuthentication = require('../../middleware/verifyAdmin')
+const WebsiteAuthentication = require('../../middleware/verifyWebsite')
 
 
 // ^ This is responsible to fetch all the notifications
-router.get('/getNotifications', async (req, res) => {
+router.get('/getNotifications', WebsiteAuthentication, async (req, res) => {
     try {
         const result = await fetchNotifications();
         res.status(200).json(result);
@@ -24,6 +25,7 @@ router.post('/addNotifications', [
     body('content', 'Please share description about the notification').isLength({ min: 3 }),
     body('redirectTo', 'Must pass the link where to redirect the user.').isLength({ min: 5 }),
     AdminAuthentication,
+    WebsiteAuthentication
 ], async (req, res) => {
     // Check for the validation results!
     const errors = validationResult(req);
@@ -49,6 +51,7 @@ router.post('/addNotifications', [
 router.delete('/deleteNotification', [
     body('key', 'Please pass a unique key').isLength({ min: 3 }),
     AdminAuthentication,
+    WebsiteAuthentication
 ], async (req, res) => {
     // Check for the validation results!
     const errors = validationResult(req);

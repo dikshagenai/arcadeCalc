@@ -1,15 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const fs = require('fs');
-
 
 const { incrementUniqueUsers, incrementDashboardSearches, countUniqueUsers, countDashboardUsers } = require("../../DataBase/WebsiteEngagement/user");
 
-
+const WebsiteAuthentication = require("../../middleware/verifyWebsite")
 
 
 // ! To increment the user count... (overall main searches)
-router.post('/incrementUniqueUser', async (req, res) => {
+router.post('/incrementUniqueUser', WebsiteAuthentication, async (req, res) => {
     // means one more to be added in the main json
     try {
         // Endpoint to increment totalVisitedUsers
@@ -21,7 +19,7 @@ router.post('/incrementUniqueUser', async (req, res) => {
 })
 
 // ! To increment the user count... (dashboard searches...)
-router.post('/incrementDashboardSearches', async (req, res) => {
+router.post('/incrementDashboardSearches', WebsiteAuthentication, async (req, res) => {
     // means one more to be added in the main json
     try {
         const result = await incrementDashboardSearches();
@@ -34,7 +32,7 @@ router.post('/incrementDashboardSearches', async (req, res) => {
 
 
 // ! For adding new users...
-router.post('/addUser', async (req, res) => {
+router.post('/addUser', WebsiteAuthentication, async (req, res) => {
     try {
         await User.findOneAndUpdate(
             { id: req.body.id },
@@ -53,7 +51,7 @@ router.post('/addUser', async (req, res) => {
 //  ! Counting users...
 
 // ~ Count the unique users...
-router.get('/countUniqueUsers', async (req, res) => {
+router.get('/countUniqueUsers', WebsiteAuthentication, async (req, res) => {
     try {
         const result = await countUniqueUsers();
         res.status(200).json(result);
@@ -65,7 +63,7 @@ router.get('/countUniqueUsers', async (req, res) => {
 
 
 // ~ Count the dashboard users...
-router.get('/countDashboardUsers', async (req, res) => {
+router.get('/countDashboardUsers', WebsiteAuthentication, async (req, res) => {
     try {
         const result = await countDashboardUsers();
         res.status(200).json(result);
