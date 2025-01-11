@@ -261,7 +261,7 @@ class Arcade {
                 "swagsEligibilityFacilitator": "NaN",
                 "profileImage": userDetails.profileImage
             }
-            if (dataForDataBase.name != "" && dataForDataBase.points != 0) {
+            if (dataForDataBase.name != "") {
                 storeUserData(dataForDataBase);
             }
 
