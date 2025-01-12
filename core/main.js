@@ -10,6 +10,9 @@ const getIgnoreBadges = require("../DataBase/Badges/IgnoreBadges").fetchBadges;
 // convert monthStr to monthInt
 const monthInt = require("./arcade/monthStrToInt");
 
+// to keep a track of all the badges completed in a week
+const { generateLast7DayNames, initializeBadgesWithDayNames, updateBadgesWithDayNames } = require("./arcade/BadgesCompletedInAWeek");
+
 // add unknown badges in the database!
 const addUnknownBadges = require("../DataBase/Badges/UnknownBadges").addOrUpdateUnknownBadge;
 
@@ -51,6 +54,10 @@ class Arcade {
         }
 
         let totalPoints = 0;
+
+        // Data for the graph about the last 7 days progress.
+        const last7DayNames = generateLast7DayNames();
+        let badgesCompletedInAWeek = initializeBadgesWithDayNames(last7DayNames);
 
 
 
@@ -152,6 +159,10 @@ class Arcade {
                 }
                 // ------------ END Basic Badge Details --------------------------------
 
+                // ADD BADGES COMPLETED COUNT IN TIME FRAME GRAPH DATA --------------------------------
+                updateBadgesWithDayNames(badgesCompletedInAWeek, date, monthInInteger, year);
+                // END
+
 
                 // &----------------------------- LOGIC FOR COUNTING THE POINTS -----------------------------------
 
@@ -204,7 +215,6 @@ class Arcade {
                     let badgeIndex = arcadeBadgesData.findIndex(badge => badge.badgeName === badgeName);
                     let badgeType = arcadeBadgesData[badgeIndex]['badgeType'] // ['Game', 'Trivia', 'Certification', 'Special', 'BaseCamp']
                     const point = arcadeBadgesData[badgeIndex]['points'] // points for the badge.
-                    console.log(point)
 
                     if (
                         year === 2025 &&
@@ -235,10 +245,9 @@ class Arcade {
 
                     // ~ add unknown badges in the database
                     try {
-                        console.log(`Image url -> ${badgeImg}`)
                         addUnknownBadges({ badgeName, badgeLink, badgeImg })
                     } catch (error) {
-                        console.log('Error while saving data in database' + error);
+                        // nothing we can do here
                     }
                 }
 
@@ -271,6 +280,8 @@ class Arcade {
             output.badgesCount = badgesCount;
             output.pointsCount = pointsCount;
             output.totalPoints = totalPoints;
+            output.badgesCompletedInAWeek = badgesCompletedInAWeek;
+
 
             // Taking the incomplete skill badges in more detailed and simple format.
             let incompleteSkillBadges = {};

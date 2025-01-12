@@ -9,7 +9,7 @@ async function UpdateUsersEngagement(data) {
         );
         res.send("User successfully updated!");
     } catch (error) {
-        console.log('Error Updating the user in the database.')
+        // console.log('Error Updating the user in the database.')
         throw error;
     }
 }
@@ -25,7 +25,6 @@ async function updateRanks() {
             await users[i].save();
         }
 
-        console.log('Ranks updated successfully.');
     } catch (error) {
         console.error('Error updating ranks:', error);
     }
@@ -112,10 +111,9 @@ async function incrementDashboardSearches() {
             );
         }
 
-        console.log("User successfully incremented!");
         return { success: true, message: "Dashboard searches successfully incremented!" };
     } catch (error) {
-        console.log("Failed to increment user.");
+        // console.log("Failed to increment user.");
     }
 }
 

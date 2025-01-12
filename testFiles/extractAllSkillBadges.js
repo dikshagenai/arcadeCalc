@@ -4,7 +4,6 @@ const axios = require("axios");
 //^ ------------------------------------------- CODE TO EXTRACT ALL SKILL BADGES INTO A FILE 
 const extractSkillBadges = async () => {
 
-    console.log("Extracting all the names of skill badges");
     try {
         const urls = [];
         for (let page = 1; page < 10; page++) {

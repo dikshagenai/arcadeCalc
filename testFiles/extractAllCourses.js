@@ -9,7 +9,6 @@ let finalData = {};
 // for (let index = 0; index < badges.length; index++) {
 for (let index = 0; index < 10; index++) {
 const badge = badges[index];
-    console.log(badge)
 
     finalData[badge['title']] = { "link": "", "image": "" }
 
@@ -22,5 +21,3 @@ const badge = badges[index];
     finalData[badge['title']] = { "link": `${mainUrl}${badge['path']}`, "image": imageUrl}
 
 }
-
-console.log(finalData)

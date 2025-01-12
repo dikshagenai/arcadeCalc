@@ -59,7 +59,6 @@ const addOrUpdateNotification = async (notificationData) => {
         }
     } catch (error) {
         // return { success: false, error: error.message };
-        console.log("Failed to add notification.")
         throw error;
     }
 };
@@ -76,7 +75,6 @@ const deleteNotification = async (key) => {
             return { success: false, message: 'Notifications not found' };
         }
     } catch (error) {
-        console.log("Failed to delete");
         throw error;
     }
 };

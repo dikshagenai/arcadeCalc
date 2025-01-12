@@ -36,9 +36,6 @@ const storeUserData = async (userData) => {
             { $set: userData }, // Only update the fields provided in `userData`
             { upsert: true, new: true } // Create a new document if it doesn't exist and return the updated document
         );
-
-        console.log("User has been successfully updated!");
-        console.log(updatedUser);
     } catch (error) {
         console.error("An error occurred while updating data in the database:", error);
     }
