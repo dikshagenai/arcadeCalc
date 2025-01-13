@@ -25,6 +25,7 @@ function initializeBadgesWithDayNames(dayNames) {
 // Update badgesCompleted function
 function updateBadgesWithDayNames(badgesCompletedInAWeek, date, monthInInteger, year) {
     // Create a Date object for the given input date
+    monthInInteger -= 1; // month indexing was started with 0.
     const givenDate = new Date(year, monthInInteger, date);
     const today = new Date();
 
