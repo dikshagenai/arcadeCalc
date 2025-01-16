@@ -142,8 +142,8 @@ class Arcade {
                 let badgeLink = $('a').first().attr('href');
                 let badgeImg = $('img').first().attr('src');
                 //  parsing badge details -> Name, Claimed On
-                let badgeName = $('img').first().attr('alt').trim();
-                badgeName = badgeName.split(" ").slice(2).join(" ");
+                let badgeName = $('span').first().text().trim();
+                // badgeName = badgeName.split(" ").slice(2).join(" ");
                 let badgeEarnedOn = $('span').last().text().trim().split(" ");
                 const month = badgeEarnedOn[1];
                 const monthInInteger = monthInt(month);
