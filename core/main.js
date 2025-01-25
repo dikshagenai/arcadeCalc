@@ -235,7 +235,7 @@ class Arcade {
                 }
 
 
-                else if (ignoreBadgesData && (ignoreBadgesData.findIndex(badge => badge.badgeName === badgeName) !== -1)) {
+                else if (year < 2025 || ignoreBadgesData && (ignoreBadgesData.findIndex(badge => badge.badgeName === badgeName) !== -1)) {
                     // no need to do anything its gonna be ignored.
                 }
 
