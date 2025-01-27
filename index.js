@@ -19,8 +19,36 @@ connectToMongo();
 // * Starting Server!
 const app = express();
 app.use(express.json());
-app.use(cors());
 
+
+// Define allowed origin
+const allowedOrigins = [
+    // 'http://localhost:3000', // development
+    'https://arcadecalc.netlify.app' // production
+];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        // Allow requests from the specified origins or block them
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Include credentials if needed (e.g., cookies)
+};
+// Apply CORS with the specified options
+app.use(cors(corsOptions));
+
+app.use((err, req, res, next) => {
+    if (err.message === 'Not allowed by CORS') {
+        res.status(403).json({ error: 'Access denied!' });
+    } else {
+        next(err);
+    }
+});
 
 
 
