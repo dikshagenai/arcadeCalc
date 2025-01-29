@@ -16,28 +16,32 @@ async function UpdateUsersEngagement(data) {
 
 async function updateRanks() {
     try {
-        // Fetch all users sorted by points, including those with rank -1
         const users = await UsersEngagement.find({}).sort({ points: -1 });
 
-        // Assign ranks to all users
-        for (let i = 0; i < users.length; i++) {
-            users[i].rank = i + 1; // Rank starts from 1
-            await users[i].save();
-        }
+        const bulkOps = users.map((user, index) => ({
+            updateOne: {
+                filter: { _id: user._id }, // Match user by `_id`
+                update: { $set: { rank: index + 1 } }, // Update only the `rank` field
+                timestamps: false, // Prevents `updatedAt` from being modified
+            }
+        }));
 
+        // Perform bulk update
+        await UsersEngagement.bulkWrite(bulkOps);
     } catch (error) {
         console.error('Error updating ranks:', error);
     }
 }
 
 
+
 async function getLeaderboardAndUser(userId) {
     try {
         // Fetch the top 10 users, excluding those with rank -1
-        const topUsers = await UsersEngagement.find({ rank: { $ne: -1 } }).sort({ rank: 1 }).limit(10).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints']);
+        const topUsers = await UsersEngagement.find({ rank: { $ne: -1 } }).sort({ rank: 1 }).limit(10).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints', '-createdAt', '-updatedAt', '-publicUrl']);
 
         // Fetch the current user by ID
-        const currentUser = await UsersEngagement.findOne({ id: userId }).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints']);
+        const currentUser = await UsersEngagement.findOne({ id: userId }).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints', '-createdAt', '-updatedAt', '-publicUrl']);
 
         // Include current user only if their rank is valid
         const currentUserData = currentUser && currentUser.rank !== -1

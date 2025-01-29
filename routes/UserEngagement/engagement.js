@@ -15,7 +15,7 @@ router.post('/fetchUsers', [
         const page = parseInt(req.body.page) || 1;
         const limit = 9;
         const skip = (page - 1) * limit;
-        const users = await User.find().sort({ _id: -1 }).skip(skip).limit(limit).select(['-_id', '-__v']);
+        const users = await User.find().sort({ updatedAt: -1 }).skip(skip).limit(limit).select(['-_id', '-__v']);
         res.status(200).json({ success: true, users: users });
     } catch (error) {
         console.error(error);

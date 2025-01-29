@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
         type: String, required: false, default: 'NaN'
     },
     rank: { type: Number, required: false, default: -1 } // New field to store rank
-});
+}, { timestamps: true }
+);
 
 const User = mongoose.model('UserDetails2025(1)', userSchema);
 
