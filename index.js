@@ -23,7 +23,7 @@ app.use(express.json());
 
 // Define allowed origin
 const allowedOrigins = [
-    // 'http://localhost:3000', // development
+    'http://localhost:3000', // development
     'https://arcadecalc.netlify.app' // production
 ];
 

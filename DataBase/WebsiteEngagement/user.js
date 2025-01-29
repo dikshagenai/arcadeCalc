@@ -38,7 +38,7 @@ async function updateRanks() {
 async function getLeaderboardAndUser(userId) {
     try {
         // Fetch the top 10 users, excluding those with rank -1
-        const topUsers = await UsersEngagement.find({ rank: { $ne: -1 } }).sort({ rank: 1 }).limit(10).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints', '-createdAt', '-updatedAt', '-publicUrl']);
+        const topUsers = await UsersEngagement.find({ rank: { $ne: -1 } }).sort({ rank: 1 }).limit(20).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints', '-createdAt', '-updatedAt', '-publicUrl']);
 
         // Fetch the current user by ID
         const currentUser = await UsersEngagement.findOne({ id: userId }).select(["-__v", '-swagsEligibility', '-swagsEligibilityFacilitator', '-_id', '-facilitatorPoints', '-createdAt', '-updatedAt', '-publicUrl']);
