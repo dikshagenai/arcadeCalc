@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { fetchNotifications, addOrUpdateNotification, deleteNotification, } = require("../../DataBase/Notifications")
+const { fetchNotifications, addNotifications, updateNotification, deleteNotification, } = require("../../DataBase/Notifications")
 
 // & Validations
 const { body, validationResult } = require('express-validator');
@@ -20,7 +20,6 @@ router.get('/getNotifications', WebsiteAuthentication, async (req, res) => {
 
 // ^ This route is responsible for adding new notifications...
 router.post('/addNotifications', [
-    body('key', 'Please pass a unique key').isLength({ min: 3 }),
     body('imageUrl', 'Please provide a link for the image.').isLength({ min: 3 }),
     body('content', 'Please share description about the notification').isLength({ min: 3 }),
     body('redirectTo', 'Must pass the link where to redirect the user.').isLength({ min: 5 }),
@@ -34,7 +33,36 @@ router.post('/addNotifications', [
     }
     try {
         data = req.body;
-        const result = await addOrUpdateNotification(data);
+        const result = await addNotifications(data);
+        if (result.success) {
+            res.status(200).json({ success: true, message: "Notification has been successfully added!" });
+        } else {
+            res.status(400).json({ success: true, message: "Failed to add notification." });
+        }
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Error getting notifications", Error: error.message })
+    }
+})
+
+
+// ^ This Route is to edit any existing notification.
+router.post('/editNotification', [
+    body('key', 'Key is required in order to update the notification').isLength({ min: 3 }),
+    body('imageUrl', 'Please provide a link for the image.').isLength({ min: 3 }),
+    body('content', 'Please share description about the notification').isLength({ min: 3 }),
+    body('redirectTo', 'Must pass the link where to redirect the user.').isLength({ min: 5 }),
+    AdminAuthentication,
+    WebsiteAuthentication
+], async (req, res) => {
+    // Check for the validation results!
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+        data = req.body
+        const result = await updateNotification(data);
         if (result.success) {
             res.status(200).json({ success: true, message: "Notification has been successfully updated!" });
         } else {
@@ -44,6 +72,7 @@ router.post('/addNotifications', [
         res.status(500).json({ success: false, message: "Error getting notifications", Error: error.message })
     }
 })
+
 
 
 
