@@ -9,4 +9,4 @@ const SERVER = 'https://arcadecalc-f7cj.onrender.com';
 // Testing Url
 // const SERVER = 'http://localhost:5000';
 
-module.exports = SERVER;https://arcadecalc.netlify.app/
+module.exports = SERVER;
